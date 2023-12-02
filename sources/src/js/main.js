@@ -1,7 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    // Your code here
-    
+document.addEventListener("DOMContentLoaded", function (event) {
+  luxy.init();
 });
 
 // Your functions here
-
