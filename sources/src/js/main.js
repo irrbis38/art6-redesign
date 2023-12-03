@@ -24,5 +24,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // init luxy library
   luxy.init();
 
+  // init header logic
   initHeader();
 });

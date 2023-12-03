@@ -2,18 +2,20 @@ header.header_art6
 
     .header_art6__container
 
+
+        case pageName
+
+            when 'index'
+                .header_art6__logo
+                    img(src="./images/header_art6/logo.svg" alt="logo")
+
+
+            default
+                a.header_art6__logo(href="./index.html")
+                    img(src="./images/header_art6/logo.svg" alt="logo")
+
         nav.header_art6__menu
 
-            case pageName
-
-                when 'index'
-                    .header_art6__logo
-                        img(src="./images/header_art6/logo.svg" alt="logo")
-
-
-                default
-                    a.header_art6__logo(href="./index.html")
-                        img(src="./images/header_art6/logo.svg" alt="logo")
 
 
             ul.header_art6__links
@@ -42,11 +44,11 @@ header.header_art6
                     span.header_art6__burger 
                         span
 
-        .header_art6__call
+            .header_art6__call
 
-            a.header_art6__phone(href="tel:+78003505590") +7 800 350-55-90
+                a.header_art6__phone(href="tel:+78003505590") +7 800 350-55-90
 
-            button.header_art6__cta(type="button") + Стать клиентом
+                button.header_art6__cta(type="button") + Стать клиентом
 
         button.header_art6__mobile(type="button" aria-label="Показать или скрыть меню")
             span Меню

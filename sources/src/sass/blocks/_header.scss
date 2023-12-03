@@ -29,22 +29,26 @@
 
 .header_art6__menu {
   width: 100%;
-  max-width: 1202px;
+  // max-width: 1202px;
+  max-width: 1403px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0 50px;
 
   @include xl {
-    max-width: 896px;
+    // max-width: 896px;
+    max-width: 1092px;
   }
 
   @include lg {
-    max-width: 741px;
+    // max-width: 741px;
+    max-width: 944px;
   }
 
-  @include md {
-    max-width: 555px;
+  @include sm {
+    // max-width: 555px;
+    max-width: 566px;
   }
 }
 
@@ -264,10 +268,20 @@ button.header_art6__more,
 
 .header_art6__phone,
 .header_art6__cta {
-  position: relative;
   font-weight: 600;
   line-height: 2.25;
   letter-spacing: -0.03em;
+  transition: color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color_blue;
+    }
+  }
+}
+
+.header_art6__phone {
+  position: relative;
 
   &::after {
     content: "";
@@ -277,16 +291,6 @@ button.header_art6__more,
     width: 100%;
     height: 3px;
     background-color: $color_blue;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
-  }
-
-  @media (hover: hover) {
-    &:hover::after {
-      opacity: 1;
-      visibility: visible;
-    }
   }
 }
 
