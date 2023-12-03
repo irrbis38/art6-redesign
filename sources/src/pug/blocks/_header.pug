@@ -1,2 +1,54 @@
 header.header_art6
-    .header_art6__container Header
+
+    .header_art6__container
+
+        nav.header_art6__menu
+
+            case pageName
+
+                when 'index'
+                    .header_art6__logo
+                        img(src="./images/header_art6/logo.svg" alt="logo")
+
+
+                default
+                    a.header_art6__logo(href="./index.html")
+                        img(src="./images/header_art6/logo.svg" alt="logo")
+
+
+            ul.header_art6__links
+                li
+                    button.header_art6__show(type="button" aria-label="Показать список услуг") Услуги
+                    ul.header_art6__submenu
+                        li: a(href="#") Разработка сайтов
+                        li: a(href="#") SEO-продвижение
+                        li: a(href="#") Реклама
+                        li: a(href="#") SMM
+                li: a(href="#") Кейсы
+                li: a(href="#") Отрасли
+                li: a(href="#") Партнерам
+                li: a(href="#") Отзывы
+                li
+                    button.header_art6__show(type="button" aria-label="Показать список услуг") Компания
+                    ul.header_art6__submenu
+                        li: a(href="#") Карьера
+                        li: a(href="#") Культура
+                        li: a(href="#") История
+                        li: a(href="#") О компании
+                        li: a(href="#") Достижение
+                li: a(href="#") Контакты
+                li: button.header_art6__more(type="button" aria-label="Показать остальные пункты меню")
+                    span Ещё
+                    span.header_art6__burger 
+                        span
+
+        .header_art6__call
+
+            a.header_art6__phone(href="tel:+78003505590") +7 800 350-55-90
+
+            button.header_art6__cta(type="button") + Стать клиентом
+
+        button.header_art6__mobile(type="button" aria-label="Показать или скрыть меню")
+            span Меню
+            span.header_art6__burger 
+                span
