@@ -53,15 +53,51 @@ var initHeader = () => {
 
   mq991.addEventListener("change", handleMQ);
 
+  /*== TOGGLE SUBMENU ON MOBILE SCREEN ==*/
+  var toggle_submenu_buttons = Array.from(
+    document.querySelectorAll(".header_art6__mobile-item-has-submenu button")
+  );
+
+  var handleToggleSubmenuButtons = (e) => {
+    var container = e.target.parentElement;
+    var submenu = e.target.nextElementSibling;
+    var isOpen = container.classList.contains("submenu-opened");
+
+    if (!isOpen) {
+      requestAnimationFrame(() => {
+        container.classList.add("submenu-opened");
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+      });
+    } else {
+      requestAnimationFrame(() => {
+        container.classList.remove("submenu-opened");
+        submenu.style.maxHeight = 0;
+      });
+    }
+  };
+
+  toggle_submenu_buttons.forEach((btn) =>
+    btn.addEventListener("click", handleToggleSubmenuButtons)
+  );
+
   /*== TOGGLE HEADER MOBILE MENU ==*/
 
   var header = document.getElementById("header");
-  // var mobile_menu = document.getElementById("mobile-menu");
   var burger_button = document.getElementById("burger-button");
-
-  burger_button.addEventListener("click", () =>
-    header.classList.toggle("mobile-menu-open")
+  var submenues = document.querySelectorAll(
+    ".header_art6__mobile-item-has-submenu ul"
   );
+
+  burger_button.addEventListener("click", () => {
+    header.classList.toggle("mobile-menu-open");
+    submenues.forEach((submenu) => {
+      requestAnimationFrame(() => {
+        var container = submenu.parentElement;
+        container.classList.remove("submenu-opened");
+        submenu.style.maxHeight = 0;
+      });
+    });
+  });
 };
 
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
