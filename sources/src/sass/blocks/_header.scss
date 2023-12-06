@@ -207,7 +207,7 @@
     transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
   }
 
-  &.active ul {
+  &.active > ul {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
@@ -268,6 +268,67 @@ button.header_art6__more,
     }
   }
 }
+
+// more list
+.header_art6__item-more {
+  ul {
+    width: auto;
+    min-width: 211px;
+  }
+
+  ul {
+    ul {
+      top: 0;
+      left: unset;
+      left: 100%;
+      background-color: $color_grey;
+    }
+
+    ul a {
+      color: $color_dark;
+    }
+
+    @media (hover: hover) {
+      button:hover,
+      a:hover {
+        color: $color_white;
+      }
+    }
+
+    li:nth-child(4) {
+      display: none;
+    }
+
+    @include md {
+      li:nth-child(4) {
+        display: block;
+      }
+    }
+  }
+
+  .header_art6__item-has-submenu button {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      height: 100%;
+      width: 200px;
+      background-color: transparent;
+    }
+
+    &:hover {
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+// burger button
 
 .header_art6__burger {
   display: block;
@@ -357,17 +418,18 @@ button.header_art6__more,
   & > span:first-child::before,
   & > span:first-child::after {
     position: absolute;
-    left: 0;
     top: -6px;
     transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
   }
 
   & > span:first-child::before {
     content: "Меню";
+    left: 23px;
   }
 
   & > span:first-child::after {
     content: "Закрыть";
+    left: 0;
     opacity: 0;
     visibility: hidden;
   }

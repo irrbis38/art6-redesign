@@ -39,10 +39,25 @@ header.header_art6#header
                             li: a(href="#") О компании
                             li: a(href="#") Достижение
                     li: a(href="#") Контакты
-                    li: button.header_art6__more(type="button" aria-label="Показать остальные пункты меню")
-                        span Ещё
-                        span.header_art6__burger 
-                            span
+                    li.header_art6__item-has-submenu.header_art6__item-more
+                        button.header_art6__more(type="button" aria-label="Показать остальные пункты меню")
+                            span Ещё
+                            span.header_art6__burger 
+                                span
+
+                        ul
+                            li: a(href="#") Отрасли
+                            li: a(href="#") Партнерам
+                            li: a(href="#") Отзывы
+                            li.header_art6__item-has-submenu.header_art6__more-submenu
+                                button(type="button" aria-label="Показать список услуг") Компания
+                                ul
+                                    li: a(href="#") Карьера
+                                    li: a(href="#") Культура
+                                    li: a(href="#") История
+                                    li: a(href="#") О компании
+                                    li: a(href="#") Достижение
+
 
                 .header_art6__call
 
