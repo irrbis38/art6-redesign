@@ -34,10 +34,25 @@ body.lock {
 
 .container {
   width: 100%;
-  max-width: 1530px;
+  max-width: 1586px;
   min-width: 320px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 43px;
+
+  @include lg {
+    max-width: 1088px;
+    padding: 0 32px;
+  }
+
+  @include sm {
+    max-width: 832px;
+    padding: 0 32px;
+  }
+
+  @include xs {
+    max-width: 100%;
+    padding: 0 15px;
+  }
 }
 
 a {
@@ -92,4 +107,18 @@ button {
 :focus {
   outline: 0;
   outline-offset: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
 }

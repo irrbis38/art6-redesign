@@ -81,7 +81,7 @@ var initHeader = () => {
   );
 
   /*== TOGGLE HEADER MOBILE MENU ==*/
-
+  var body = document.body;
   var header = document.getElementById("header");
   var burger_button = document.getElementById("burger-button");
   var submenues = document.querySelectorAll(
@@ -90,6 +90,7 @@ var initHeader = () => {
 
   burger_button.addEventListener("click", () => {
     header.classList.toggle("mobile-menu-open");
+    body.classList.toggle("lock");
     submenues.forEach((submenu) => {
       requestAnimationFrame(() => {
         var container = submenu.parentElement;

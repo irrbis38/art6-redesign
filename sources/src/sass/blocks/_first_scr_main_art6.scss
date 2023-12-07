@@ -1,0 +1,404 @@
+.first_scr_main_art6 {
+  padding-top: 92px;
+  background-size: 922px 663px;
+
+  .container {
+    position: relative;
+    margin-top: 267px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -203px;
+      right: -220px;
+      z-index: -1;
+      width: 993px;
+      height: 633px;
+      background: url("./../images/first_scr_main_art6/first-bg.svg") center /
+        contain no-repeat;
+    }
+  }
+
+  @include xl {
+    .container {
+      margin-top: 198px;
+
+      &::after {
+        top: -156px;
+        right: -20px;
+        width: 739px;
+        height: 486px;
+      }
+    }
+  }
+
+  @include lg {
+    .container {
+      margin-top: 190px;
+
+      &::after {
+        top: -146px;
+        right: -225px;
+        width: 705px;
+        height: 464px;
+      }
+    }
+  }
+
+  @include sm {
+    .container {
+      margin-top: 131px;
+
+      &::after {
+        top: -97px;
+        right: -146px;
+        width: 592px;
+        height: 389px;
+      }
+    }
+  }
+
+  @include xs {
+    .container {
+      margin-top: 97px;
+
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -117px;
+        right: -178px;
+        width: 492px;
+        height: 329px;
+        background: url("./../images/first_scr_main_art6/first-bg-small.svg")
+          center / contain no-repeat;
+      }
+    }
+  }
+}
+
+.first_scr_main_art6__title {
+  position: relative;
+  left: -10px;
+  max-width: 1140px;
+  margin-bottom: 35px;
+  font-size: 120px;
+  font-weight: 600;
+  line-height: 125px;
+  letter-spacing: -0.02em;
+
+  span {
+    display: inline-block;
+
+    &:nth-child(1) {
+      width: 100%;
+    }
+
+    &:nth-child(2) {
+      margin-right: 20px;
+    }
+
+    &:nth-child(3) {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 40px;
+        height: 66px;
+        background: url("./../images/first_scr_main_art6/zipper.svg")
+          center/contain no-repeat;
+        animation: twinkle 1.5s ease-out infinite;
+      }
+    }
+  }
+
+  @include xl {
+    left: -8px;
+    margin-bottom: 26px;
+    font-size: 90px;
+    line-height: 95.5px;
+
+    span {
+      &:nth-child(2) {
+        margin-right: 17px;
+      }
+
+      &:nth-child(3) {
+        &::before {
+          width: 30px;
+          height: 52px;
+        }
+      }
+    }
+  }
+
+  @include lg {
+    margin-bottom: 17px;
+    font-size: 80px;
+    left: -4px;
+  }
+
+  @include sm {
+    margin-bottom: 40px;
+    font-size: 60px;
+    line-height: 72px;
+
+    span {
+      &:nth-child(2) {
+        margin-right: 11px;
+      }
+
+      &:nth-child(3) {
+        &::before {
+          width: 20px;
+          height: 33px;
+        }
+      }
+    }
+  }
+
+  @include xs {
+    margin-bottom: 20px;
+    position: static;
+    font-size: 52px;
+    line-height: 60px;
+
+    span {
+      &:nth-child(1) {
+        display: inline;
+        margin-right: 13px;
+      }
+
+      &:nth-child(3) {
+        &::before {
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+
+  @include r(359px) {
+    font-size: 46px;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// subtitle
+
+.first_scr_main_art6__subtitle {
+  max-width: 1111px;
+  margin-bottom: 48px;
+  padding: 8px 10px 8px 14px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+  color: $color_white;
+  background-color: $color_blue;
+
+  @include xl {
+    max-width: 955px;
+    margin-bottom: 37px;
+    padding: 1px 10px 1px 15px;
+    font-size: 35px;
+    line-height: 48px;
+  }
+
+  @include lg {
+    max-width: 820px;
+    font-size: 30px;
+  }
+
+  @include sm {
+    max-width: 537px;
+    margin-bottom: 25px;
+    padding: 0;
+    background-color: transparent;
+
+    span {
+      background-color: $color_blue;
+      padding: 0 7px 0 14px;
+
+      &:nth-child(1) {
+        display: inline-block;
+        width: 100%;
+      }
+
+      &:nth-child(3) {
+        position: relative;
+        padding-bottom: 3px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 90%;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background-color: $color_blue;
+        }
+      }
+    }
+  }
+
+  @include xs {
+    max-width: 360px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+
+    span {
+      padding: 0;
+
+      &:nth-child(3) {
+        padding-right: 3px;
+      }
+    }
+  }
+
+  .first_scr_main_art6__380-br {
+    display: none;
+
+    @include r(379px) {
+      display: inline;
+    }
+  }
+
+  @include r(379px) {
+    span {
+      &:nth-child(1) {
+        max-width: 220px;
+      }
+    }
+  }
+}
+
+.first_scr_main_art6__list {
+  display: flex;
+
+  @include sm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px 20px;
+  }
+
+  @include xs {
+    gap: 33px 20px;
+  }
+}
+
+.first_scr_main_art6__item {
+  position: relative;
+  max-width: 280px;
+  padding-top: 48px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:nth-child(1) {
+    margin-right: 52px;
+    &::before {
+      background-image: url("./../images/first_scr_main_art6/first-icon-1.svg");
+    }
+  }
+
+  &:nth-child(2) {
+    margin-right: 50px;
+    &::before {
+      background-image: url("./../images/first_scr_main_art6/first-icon-2.svg");
+    }
+  }
+
+  &:nth-child(3) {
+    max-width: 230px;
+    margin-right: 47px;
+    &::before {
+      background-image: url("./../images/first_scr_main_art6/first-icon-3.svg");
+    }
+  }
+
+  &:nth-child(4) {
+    &::before {
+      background-image: url("./../images/first_scr_main_art6/first-icon-4.svg");
+    }
+  }
+
+  @include xl {
+    padding-top: 38px;
+    line-height: 24px;
+
+    &::before {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:not(:last-child) {
+      max-width: 275px;
+      margin-right: 50px;
+    }
+
+    &:nth-child(2) {
+      margin-right: 40px;
+    }
+
+    &:nth-child(3) {
+      max-width: 247px;
+    }
+  }
+
+  @include lg {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @include sm {
+    padding-top: 36px;
+
+    &:nth-child(n) {
+      max-width: 370px;
+      margin-right: 0;
+    }
+  }
+
+  @include xs {
+    line-height: 26px;
+
+    &::before {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

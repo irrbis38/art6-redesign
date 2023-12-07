@@ -56,6 +56,10 @@
     padding: 0 18px 0 15px;
   }
 
+  @include xxs {
+    gap: 0 10px;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -685,17 +689,3 @@ button.header_art6__more,
     transform: translateY(100%);
   }
 }
-
-// .overlay {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 1;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0.2);
-//   pointer-events: none;
-//   opacity: 0;
-//   visibility: hidden;
-//   transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
-// }
