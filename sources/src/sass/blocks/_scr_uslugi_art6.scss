@@ -1,0 +1,383 @@
+// .scr_uslugi_art6
+
+.scr_uslugi_art6 {
+  @include sm {
+    margin-top: 143px;
+  }
+
+  @include xs {
+    margin-top: 180px;
+  }
+}
+
+.scr_uslugi_art6__title__block {
+  min-height: 244px;
+  margin-bottom: 100px;
+  overflow-x: auto;
+
+  @include xl {
+    margin-bottom: 27px;
+  }
+
+  @include lg {
+    min-height: 172px;
+  }
+
+  @include sm {
+    min-height: auto;
+    margin-bottom: 63px;
+    overflow-x: unset;
+  }
+
+  @include xs {
+    margin-bottom: 38px;
+  }
+}
+
+.scr_uslugi_art6__title {
+  position: relative;
+  padding-top: 124px;
+  font-weight: 600;
+  font-size: 120px;
+  line-height: 83%;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    width: 200px;
+    height: 1px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 2px;
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-top: 24px solid $color-blue;
+    transform: rotate(-14deg);
+  }
+
+  @include xl {
+    padding-top: 92px;
+    font-size: 90px;
+    line-height: 111%;
+
+    &::before {
+      top: 54px;
+      left: 9px;
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      border-top: 19px solid $color-blue;
+    }
+  }
+
+  @include lg {
+    padding-top: 53px;
+    font-size: 80px;
+    line-height: 100%;
+
+    &::before {
+      top: 22px;
+    }
+  }
+
+  @include sm {
+    padding-top: 0;
+    font-size: 60px;
+    line-height: 83%;
+    white-space: unset;
+
+    &::before {
+      display: none;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  @include xs {
+    font-size: 50px;
+    line-height: 120%;
+  }
+
+  @include r(359px) {
+    font-size: 40px;
+  }
+}
+
+// == services items
+
+.scr_uslugi_art6__item {
+  background-color: $color_white;
+  transition: background-color 0.2s ease-out;
+
+  // @include xl {
+  //   min-height: 352px;
+  // }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color_dark;
+
+      .scr_uslugi_art6__inner {
+        border-bottom-color: transparent;
+      }
+
+      .scr_uslugi_art6__heading,
+      .scr_uslugi_art6__subheading,
+      .scr_uslugi_art6__more,
+      .scr_uslugi_art6__all {
+        color: $color_white;
+      }
+
+      .scr_uslugi_art6__more {
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .scr_uslugi_art6__all {
+        color: $color_grey;
+
+        &:hover {
+          color: $color_white;
+        }
+      }
+
+      .scr_uslugi_art6__heading {
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .scr_uslugi_art6__img {
+        img {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.scr_uslugi_art6__inner {
+  min-height: 412px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid $color_grey_light;
+
+  @include xl {
+    min-height: 352px;
+  }
+
+  @include lg {
+    min-height: 326px;
+  }
+
+  @include sm {
+    min-height: 289px;
+  }
+
+  @include xs {
+    min-height: 248px;
+    display: block;
+  }
+}
+
+.scr_uslugi_art6__content {
+  padding: 119px 0 100px;
+
+  @include xl {
+    padding: 95px 0 50px;
+  }
+
+  @include lg {
+    padding: 80px 0 30px;
+  }
+
+  @include sm {
+    padding: 58px 0 30px;
+  }
+
+  @include xs {
+    padding: 44px 0 30px;
+  }
+}
+
+.scr_uslugi_art6__heading {
+  position: relative;
+  width: max-content;
+  margin-bottom: 23px;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+  transition: color 0.2s ease-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: -92px;
+    width: 40px;
+    height: 40px;
+    background: url("../images/scr_uslugi_art6/arrow-top-left.svg") center /
+      contain no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  }
+
+  @include xl {
+    font-size: 35px;
+  }
+
+  @include lg {
+    margin-bottom: 19px;
+    font-size: 30px;
+  }
+
+  @include sm {
+    max-width: 360px;
+    margin-bottom: 17px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include xs {
+    width: 100%;
+    padding-right: 40px;
+    font-size: 28px;
+
+    &::after {
+      display: block;
+      right: 0;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.scr_uslugi_art6__subheading {
+  margin-bottom: 54px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+  transition: color 0.2s ease-out;
+
+  @include lg {
+    max-width: 413px;
+    margin-bottom: 48px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  @include sm {
+    max-width: 360px;
+    margin-bottom: 39px;
+  }
+}
+
+.scr_uslugi_art6__more,
+.scr_uslugi_art6__all {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+  transition: color 0.2s ease-out;
+
+  @include sm {
+    font-size: 16px;
+  }
+}
+
+.scr_uslugi_art6__more {
+  position: relative;
+  margin-right: 50px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $color-blue;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  }
+
+  @include sm {
+    margin-right: 33px;
+
+    &::after {
+      top: 115%;
+    }
+  }
+}
+
+.scr_uslugi_art6__img {
+  position: relative;
+  width: 420px;
+  height: 100%;
+
+  img {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  }
+
+  @include xl {
+    width: 383px;
+
+    img {
+      width: 383px;
+      height: 383px;
+    }
+  }
+
+  @include lg {
+    width: 341px;
+
+    img {
+      width: 341px;
+      height: 341px;
+    }
+  }
+
+  @include sm {
+    width: 289px;
+
+    img {
+      top: 46px;
+      width: 289px;
+      height: 289px;
+    }
+  }
+
+  @include xs {
+    display: none;
+  }
+}

@@ -6,14 +6,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 324px 0 220px;
+  padding: 331px 0 330px;
 
   @include xl {
-    padding: 155px 0 200px;
+    padding: 155px 0 173px;
   }
 
   @include lg {
-    padding: 140px 0 200px;
+    padding: 140px 0 160px;
   }
 
   @include sm {
@@ -25,7 +25,7 @@
 
 .scr_scrolling_right_art6__title {
   position: relative;
-  margin-right: 90px;
+  margin-right: 71px;
   font-size: 80px;
   font-weight: 600;
   line-height: 140px;
@@ -34,6 +34,8 @@
 
   &::after {
     content: "!";
+    position: relative;
+    left: -18px;
 
     @include xs {
       display: none;
@@ -41,12 +43,12 @@
   }
 
   @include xl {
-    margin-right: 60px;
+    margin-right: 44px;
     font-size: 60px;
   }
 
   @include lg {
-    margin-right: 53px;
+    margin-right: 35px;
     font-size: 55px;
   }
 
@@ -218,6 +220,8 @@
 
 /*=== SUBTITLE ===*/
 .scr_scrolling_right_art6__subtitle {
+  position: relative;
+  top: -7px;
   font-size: 80px;
   font-weight: 600;
   line-height: 140px;
@@ -235,6 +239,8 @@
   // first pink figure
   .years_amount {
     position: relative;
+    margin-left: 17px;
+    margin-right: 21px;
 
     &::after {
       content: "";
@@ -391,8 +397,10 @@
 
   .clients_amount {
     position: relative;
-    margin-left: 20px;
-    margin-right: 28px;
+    margin-left: 37px;
+    margin-right: 49px;
+    // margin-left: 20px;
+    // margin-right: 28px;
     font-size: 120px;
 
     &::after {
@@ -446,15 +454,19 @@
   .clients_lines {
     &::before {
       width: 153px;
-      top: -184px;
-      left: -402px;
+      // top: -184px;
+      // left: -402px;
+      top: -145px;
+      left: -373px;
       transform: rotate(-62deg);
     }
 
     &::after {
       width: 271px;
-      top: 246px;
-      left: -60px;
+      // top: 246px;
+      // left: -60px;
+      top: 284px;
+      left: -32px;
       transform: rotate(-20deg);
     }
   }
