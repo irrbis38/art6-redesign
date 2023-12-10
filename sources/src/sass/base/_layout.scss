@@ -109,6 +109,19 @@ button {
   outline-offset: 0;
 }
 
+.hidescrollbar {
+  // hide scrollbar in Firefox
+  scrollbar-width: none;
+
+  // hide scrollbar in Chrome, Safari
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
 .overlay {
   position: fixed;
   top: 0;

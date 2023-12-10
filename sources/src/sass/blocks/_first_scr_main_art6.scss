@@ -1,4 +1,5 @@
 .first_scr_main_art6 {
+  margin-bottom: 120px;
   padding-top: 92px;
   background-size: 922px 663px;
 
@@ -33,6 +34,8 @@
   }
 
   @include lg {
+    margin-bottom: 50px;
+
     .container {
       margin-top: 190px;
 
