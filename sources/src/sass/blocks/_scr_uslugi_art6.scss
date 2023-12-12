@@ -1,32 +1,36 @@
 // .scr_uslugi_art6
 
 .scr_uslugi_art6 {
+  margin-bottom: 374px;
+
+  @include xl {
+    margin-bottom: 221px;
+  }
+
+  @include lg {
+    margin-bottom: 213px;
+  }
+
   @include sm {
     margin-top: 143px;
+    margin-bottom: 226px;
   }
 
   @include xs {
     margin-top: 180px;
+    margin-bottom: 185px;
   }
 }
 
 .scr_uslugi_art6__title__block {
-  min-height: 244px;
   margin-bottom: 100px;
-  overflow-x: auto;
 
   @include xl {
     margin-bottom: 27px;
   }
 
-  @include lg {
-    min-height: 172px;
-  }
-
   @include sm {
-    min-height: auto;
     margin-bottom: 63px;
-    overflow-x: unset;
   }
 
   @include xs {
@@ -34,83 +38,120 @@
   }
 }
 
-.scr_uslugi_art6__title {
-  position: relative;
-  padding-top: 124px;
-  font-weight: 600;
-  font-size: 120px;
-  line-height: 83%;
-  letter-spacing: -0.02em;
-  color: $color_dark;
-  white-space: nowrap;
+// .scr_uslugi_art6__title__block {
+//   min-height: 244px;
+//   margin-bottom: 100px;
+//   overflow-x: auto;
 
-  span {
-    display: inline-block;
-    width: 200px;
-    height: 1px;
-  }
+//   @include xl {
+//     margin-bottom: 27px;
+//   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 14px;
-    left: 2px;
-    width: 0;
-    height: 0;
-    border-left: 13px solid transparent;
-    border-right: 13px solid transparent;
-    border-top: 24px solid $color-blue;
-    transform: rotate(-14deg);
-  }
+//   @include lg {
+//     min-height: 172px;
+//   }
 
-  @include xl {
-    padding-top: 92px;
-    font-size: 90px;
-    line-height: 111%;
+//   @include sm {
+//     min-height: auto;
+//     margin-bottom: 63px;
+//     overflow-x: unset;
+//   }
 
-    &::before {
-      top: 54px;
-      left: 9px;
-      border-left: 11px solid transparent;
-      border-right: 11px solid transparent;
-      border-top: 19px solid $color-blue;
-    }
-  }
+//   @include xs {
+//     margin-bottom: 38px;
+//   }
+// }
 
-  @include lg {
-    padding-top: 53px;
-    font-size: 80px;
-    line-height: 100%;
+// .scr_uslugi_art6__title {
+//   position: relative;
+//   padding-top: 124px;
+//   font-weight: 600;
+//   font-size: 120px;
+//   line-height: 83%;
+//   letter-spacing: -0.02em;
+//   color: $color_dark;
+//   white-space: nowrap;
 
-    &::before {
-      top: 22px;
-    }
-  }
+//   span {
+//     display: inline-block;
+//     width: 200px;
+//     height: 1px;
+//   }
 
-  @include sm {
-    padding-top: 0;
-    font-size: 60px;
-    line-height: 83%;
-    white-space: unset;
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 54px;
+//     left: 2px;
+//     width: 0;
+//     height: 0;
+//     border-left: 13px solid transparent;
+//     border-right: 13px solid transparent;
+//     border-top: 24px solid $color-blue;
+//     transform: rotate(-14deg);
+//   }
 
-    &::before {
-      display: none;
-    }
+//   @include xl {
+//     padding-top: 92px;
+//     font-size: 90px;
+//     line-height: 111%;
 
-    span {
-      display: none;
-    }
-  }
+//     &::before {
+//       top: 54px;
+//       left: 9px;
+//       border-left: 11px solid transparent;
+//       border-right: 11px solid transparent;
+//       border-top: 19px solid $color-blue;
+//     }
+//   }
 
-  @include xs {
-    font-size: 50px;
-    line-height: 120%;
-  }
+//   @include lg {
+//     padding-top: 53px;
+//     font-size: 80px;
+//     line-height: 100%;
 
-  @include r(359px) {
-    font-size: 40px;
-  }
-}
+//     &::before {
+//       top: 22px;
+//     }
+//   }
+
+//   @include sm {
+//     display: none;
+//     padding-top: 0;
+//     font-size: 60px;
+//     line-height: 83%;
+//     white-space: unset;
+
+//     &::before {
+//       display: none;
+//     }
+
+//     span {
+//       display: none;
+//     }
+//   }
+// }
+
+// .scr_uslugi_art6__title-sm {
+//   display: none;
+
+//   @include sm {
+//     display: block;
+//     font-size: 60px;
+//     line-height: 83%;
+//     font-weight: 600;
+//     letter-spacing: -0.02em;
+//   }
+
+//   @include xs {
+//     font-size: 50px;
+//     line-height: 120%;
+//   }
+
+//   @include r(359px) {
+//     font-size: 40px;
+//   }
+// }
 
 // == services items
 
