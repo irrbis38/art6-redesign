@@ -1,0 +1,59 @@
+.scr_text_director_art6__bg {
+  height: 880px;
+  background-color: $color_dark_bg;
+
+  .container {
+    position: relative;
+    height: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: calc(100% - 166px);
+      background: url("../images/scr_text_director_art6/scr_text_director_art6_bg.webp")
+        center / cover no-repeat;
+    }
+  }
+
+  @include xl {
+    height: 627px;
+
+    .container {
+      &::after {
+        width: calc(100% - 328px);
+      }
+    }
+  }
+
+  @include sm {
+    height: 382px;
+    .container {
+      &::after {
+        width: calc(100% - 188px);
+      }
+    }
+  }
+
+  @include xs {
+    height: 300px;
+    .container {
+      &::after {
+        width: calc(100% + 30px);
+      }
+    }
+  }
+
+  @include xxs {
+    height: 240px;
+    .container {
+      &::after {
+        width: calc(100% + 30px);
+      }
+    }
+  }
+}
