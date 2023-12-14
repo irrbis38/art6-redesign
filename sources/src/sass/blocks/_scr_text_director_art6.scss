@@ -1,59 +1,438 @@
-.scr_text_director_art6__bg {
+// .scr_text_director_art6 {
+//   // .container {
+//   //   @include sm {
+//   //     padding: 0 15px;
+//   //   }
+//   // }
+// }
+
+.scr_text_director_art6__wrapper {
+  position: relative;
   height: 880px;
   background-color: $color_dark_bg;
-
-  .container {
-    position: relative;
-    height: 100%;
-
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      height: 100%;
-      width: calc(100% - 166px);
-      background: url("../images/scr_text_director_art6/scr_text_director_art6_bg.webp")
-        center / cover no-repeat;
-    }
-  }
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 52px;
+  padding-bottom: 25px;
 
   @include xl {
     height: 627px;
+    margin-bottom: 82px;
+  }
 
-    .container {
-      &::after {
-        width: calc(100% - 328px);
-      }
-    }
+  @include lg {
+    margin-bottom: 45px;
   }
 
   @include sm {
     height: 382px;
-    .container {
-      &::after {
-        width: calc(100% - 188px);
+    margin-bottom: 30px;
+  }
+
+  @include xs {
+    height: 300px;
+    margin-bottom: 38px;
+  }
+
+  @include xxs {
+    height: 240px;
+  }
+}
+
+.scr_text_director_art6__director {
+  position: absolute;
+  top: 220px;
+  right: 142px;
+  z-index: 2;
+
+  @include xl {
+    top: 162px;
+    right: 201px;
+  }
+
+  @include lg {
+    right: 155px;
+  }
+
+  @include sm {
+    top: 114px;
+    right: -43px;
+  }
+
+  @include xs {
+    display: none;
+  }
+}
+
+.scr_text_director_art6__name {
+  position: relative;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: $color_white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 9px;
+    width: 12px;
+    height: 12px;
+    background-color: $color_white;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 30px;
+    bottom: 0;
+    z-index: -1;
+    background-color: $color_blue;
+  }
+
+  @include xl {
+    font-size: 20px;
+
+    &::before {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  @include lg {
+    font-size: 18px;
+
+    &::after {
+      right: 60px;
+    }
+  }
+}
+
+.scr_text_director_art6__post {
+  font-weight: 500;
+  font-size: 14px;
+  color: $color_grey;
+}
+
+.scr_text_director_art6__director-sm {
+  position: static;
+  display: none;
+  margin-bottom: 44px;
+  padding-left: 24px;
+
+  @include xs {
+    display: block;
+  }
+
+  .scr_text_director_art6__name {
+    font-size: 22px;
+
+    &::before {
+      width: 12px;
+      height: 12px;
+      background-color: $color_dark;
+    }
+  }
+
+  .scr_text_director_art6__name {
+    &::before {
+      left: -23px;
+      top: 6px;
+    }
+
+    &::after {
+      right: unset;
+      width: 164px;
+    }
+  }
+}
+
+.scr_text_director_art6__bg {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  max-width: 1500px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 93px;
+
+  @include xl {
+    max-width: 1280px;
+    padding: 0 150px;
+  }
+
+  @include lg {
+    padding: 0 130px;
+  }
+
+  @include sm {
+    max-width: 670px;
+    padding: 0 50px;
+  }
+
+  @include xs {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.scr_text_director_art6__intro {
+  width: 100%;
+}
+
+.scr_text_director_art6__title__block {
+  position: relative;
+  z-index: 2;
+
+  @include xl {
+    top: 46px;
+  }
+}
+
+.scr_text_director_art6__title {
+  color: $color_white;
+}
+
+.scr_text_director_art6__title-sm {
+  line-height: 117%;
+
+  @include sm {
+    margin-bottom: 58px;
+  }
+
+  @include xs {
+    margin-bottom: 81px;
+    font-size: 40px;
+    line-height: 120%;
+  }
+
+  @include r(360px) {
+    font-size: 34px;
+  }
+}
+
+.scr_text_director_art6__info {
+  max-width: 740px;
+  margin: 0 126px 0 auto;
+
+  @include xl {
+    margin: 0 54px 0 auto;
+  }
+
+  @include lg {
+    max-width: 620px;
+    margin: 0 46px 0 auto;
+  }
+
+  @include sm {
+    max-width: 475px;
+    margin: 0 0 0 auto;
+    padding: 0;
+  }
+
+  @include xs {
+    max-width: 355px;
+    margin: 0 auto 0 50px;
+  }
+
+  @include xxs {
+    margin: 0;
+  }
+}
+
+.scr_text_director_art6__cite {
+  position: relative;
+  margin-bottom: 70px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 164%;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+
+  span {
+    display: inline-block;
+    width: 100%;
+
+    &:last-child {
+      margin-top: 36px;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    // pointer-events: none;
+  }
+
+  &::before {
+    top: 0;
+    left: -52px;
+    background: url("../images/scr_text_director_art6/quote-start.svg") center /
+      contain no-repeat;
+  }
+
+  &::after {
+    bottom: 10px;
+    right: -52px;
+    background: url("../images/scr_text_director_art6/quote-end.svg") center /
+      contain no-repeat;
+  }
+
+  @include xl {
+    font-size: 20px;
+    line-height: 170%;
+
+    &::before,
+    &::after {
+      width: 28px;
+      height: 28px;
+    }
+
+    &::before {
+      left: -46px;
+    }
+
+    &::after {
+      bottom: -4px;
+      right: -25px;
+    }
+
+    span {
+      &:last-child {
+        margin-top: 34px;
+      }
+    }
+  }
+
+  @include lg {
+    margin-bottom: 37px;
+    font-size: 18px;
+    line-height: 189%;
+
+    &::after {
+      bottom: 28px;
+      right: -45px;
+    }
+  }
+
+  @include sm {
+    margin-bottom: 77px;
+    font-size: 16px;
+    line-height: 150%;
+
+    &::before,
+    &::after {
+      width: 32px;
+      height: 32px;
+    }
+
+    &::before {
+      top: -41px;
+      left: -4px;
+    }
+
+    &::after {
+      bottom: -38px;
+      right: 14px;
+    }
+
+    span {
+      &:last-child {
+        margin-top: 24px;
       }
     }
   }
 
   @include xs {
-    height: 300px;
-    .container {
-      &::after {
-        width: calc(100% + 30px);
-      }
+    margin-bottom: 46px;
+
+    &::before {
+      top: -41px;
+      left: -1px;
+    }
+
+    &::after {
+      bottom: -33px;
+      right: -5px;
+    }
+  }
+}
+
+.scr_text_director_art6__consultation {
+  position: relative;
+  display: inline-block;
+  padding-left: 60px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: url("../images/scr_keysy_art6/arrow-right-blue.svg") center /
+      contain no-repeat;
+    transition: transform 0.2s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      transform: translateX(10px);
     }
   }
 
-  @include xxs {
-    height: 240px;
-    .container {
-      &::after {
-        width: calc(100% + 30px);
-      }
+  @include xl {
+    padding-left: 57px;
+    font-size: 24px;
+    line-height: 133%;
+
+    &::before {
+      left: 5px;
+    }
+  }
+
+  @include lg {
+    font-size: 20px;
+    line-height: 160%;
+
+    &::before {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  @include xs {
+    padding-left: 49px;
+    font-size: 24px;
+    line-height: 133%;
+
+    &::before {
+      left: 0;
+      width: 30px;
+      height: 30px;
     }
   }
 }
