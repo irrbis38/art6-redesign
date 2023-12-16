@@ -1,10 +1,22 @@
-// .scr_text_director_art6 {
-//   // .container {
-//   //   @include sm {
-//   //     padding: 0 15px;
-//   //   }
-//   // }
-// }
+.scr_text_director_art6 {
+  margin-bottom: 370px;
+
+  @include xl {
+    margin-bottom: 220px;
+  }
+
+  @include lg {
+    margin-bottom: 198px;
+  }
+
+  @include sm {
+    margin-bottom: 207px;
+  }
+
+  @include xs {
+    margin-bottom: 191px;
+  }
+}
 
 .scr_text_director_art6__wrapper {
   position: relative;
@@ -433,6 +445,15 @@
       left: 0;
       width: 30px;
       height: 30px;
+    }
+  }
+
+  @include r(360px) {
+    font-size: 18px;
+
+    &::before {
+      width: 26px;
+      height: 26px;
     }
   }
 }

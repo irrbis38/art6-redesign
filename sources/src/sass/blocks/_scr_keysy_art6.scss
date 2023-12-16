@@ -866,4 +866,13 @@
       height: 30px;
     }
   }
+
+  @include r(360px) {
+    font-size: 18px;
+
+    &::before {
+      width: 26px;
+      height: 26px;
+    }
+  }
 }
