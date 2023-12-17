@@ -108,4 +108,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // init header logic
   initHeader();
+
+  var splide = new Splide(".scr_komanda_art6__splide", {
+    type: "loop",
+    gap: "20px",
+    autoWidth: false,
+    arrows: false,
+    pagination: false,
+    drag: true,
+    perPage: 4,
+    breakpoints: {
+      1600: {
+        gap: "18px",
+      },
+      1300: {
+        perPage: 3,
+      },
+      991: {
+        perPage: 2,
+        gap: "48px",
+      },
+      767: {
+        gap: "20px",
+      },
+      575: {
+        perPage: 1,
+        gap: "20px",
+      },
+    },
+  }).mount();
+
+  var btnNext = document.querySelector(".scr_komanda_art6__next");
+  var btnPrev = document.querySelector(".scr_komanda_art6__prev");
+
+  //attach events to custom buttons
+  btnNext.addEventListener("click", (e) => {
+    splide.go("+1");
+  });
+
+  btnPrev.addEventListener("click", (e) => {
+    splide.go("-1");
+  });
 });

@@ -1,6 +1,22 @@
 .scr_company_art6 {
   background-color: $color_dark;
   padding-bottom: 128px;
+
+  @include xl {
+    padding-bottom: 92px;
+  }
+
+  @include lg {
+    padding-bottom: 79px;
+  }
+
+  @include sm {
+    padding-bottom: 68px;
+  }
+
+  @include xs {
+    padding-bottom: 48px;
+  }
 }
 
 .scr_company_art6__wrapper {

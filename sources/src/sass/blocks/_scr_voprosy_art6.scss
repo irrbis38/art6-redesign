@@ -1,0 +1,122 @@
+.scr_voprosy_art6 {
+  margin-bottom: 100px;
+}
+
+.scr_voprosy_art6__title {
+  margin-bottom: 68px;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 107%;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+
+  @include xl {
+    margin-bottom: 21px;
+    font-size: 60px;
+  }
+
+  @include lg {
+    margin-bottom: 20px;
+    font-size: 55px;
+  }
+
+  @include sm {
+    font-size: 60px;
+  }
+
+  @include xs {
+    margin-bottom: 26px;
+    font-size: 38px;
+  }
+
+  @include r(360px) {
+    font-size: 30px;
+  }
+}
+
+.scr_voprosy_art6__question {
+  border-bottom: 2px solid $color_grey_light;
+
+  &:first-child {
+    border-top: 2px solid $color_grey_light;
+  }
+}
+
+.scr_voprosy_art6__heading {
+  position: relative;
+  min-height: 79px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+  padding: 10px 50px 10px 0;
+
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    right: 0;
+    top: 27px;
+    width: 24px;
+    height: 24px;
+    display: block;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $color_grey;
+      transition: background-color 0.2s ease-out;
+    }
+
+    &::before {
+      top: 11px;
+      left: 5px;
+      width: 14px;
+      height: 2px;
+    }
+
+    &::after {
+      top: 5px;
+      left: 11px;
+      width: 2px;
+      height: 14px;
+    }
+  }
+
+  @include xl {
+    font-size: 30px;
+  }
+
+  @include lg {
+    margin-bottom: 25px;
+  }
+
+  @include sm {
+    margin-bottom: 0;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      span:last-child::before,
+      span:last-child::after {
+        background-color: $color_blue;
+      }
+    }
+  }
+
+  @include xs {
+    font-size: 24px;
+  }
+}
+
+.scr_voprosy_art6__text {
+  font-size: 18px;
+  line-height: 144%;
+  p {
+    padding-bottom: 23px;
+  }
+}

@@ -1,0 +1,266 @@
+.scr_komanda_art6 {
+  padding-top: 117px;
+
+  @include xl {
+    padding-top: 86px;
+  }
+
+  @include lg {
+    padding-top: 69px;
+  }
+
+  @include sm {
+    padding-top: 58px;
+  }
+
+  @include xs {
+    padding-top: 71px;
+  }
+}
+
+.scr_komanda_art6__title {
+  margin-bottom: 53px;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+
+  @include xl {
+    margin-bottom: 55px;
+    font-size: 35px;
+  }
+
+  @include lg {
+    margin-bottom: 45px;
+    font-size: 30px;
+  }
+
+  @include sm {
+    margin-bottom: 36px;
+  }
+
+  @include xs {
+    margin-bottom: 26px;
+    font-size: 32px;
+  }
+
+  @include r(360px) {
+    font-size: 26px;
+  }
+}
+
+.scr_komanda_art6__splide {
+  position: relative;
+}
+
+.scr_komanda_art6__nav {
+  position: absolute;
+  left: 0;
+  top: 148px;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+
+  @include xl {
+    top: 110px;
+  }
+
+  @include lg {
+    top: 118px;
+  }
+
+  @include sm {
+    top: 130px;
+  }
+
+  @include xxs {
+    top: 148px;
+  }
+}
+
+.scr_komanda_art6__prev,
+.scr_komanda_art6__next {
+  display: block;
+  width: 44px;
+  height: 44px;
+  background-color: $color_dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color_blue;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  @include xl {
+    width: 32px;
+    height: 32px;
+
+    &::after {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  @include xxs {
+    width: 44px;
+    height: 44px;
+
+    &::after {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.scr_komanda_art6__prev {
+  &::after {
+    background: url("../images/scr_komanda_art6/arrow_prev.svg") center /
+      contain no-repeat;
+  }
+}
+
+.scr_komanda_art6__next {
+  &::after {
+    background: url("../images/scr_komanda_art6/arrow_next.svg") center /
+      contain no-repeat;
+  }
+}
+
+.scr_komanda_art6__slide:hover {
+  .scr_komanda_art6__img {
+    img {
+      &:first-child {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &:last-child {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  .scr_komanda_art6__name {
+    padding-left: 24px;
+
+    span {
+      color: $color_white;
+      background-color: $color_blue;
+      // transform: translateX(24px);
+    }
+
+    &::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.scr_komanda_art6__img {
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;
+  background-color: $color_grey_btn_bg;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 94.17%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 94.17%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+
+    &:last-child {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @include xl {
+    margin-bottom: 20px;
+  }
+
+  @include sm {
+    margin-bottom: 23px;
+  }
+
+  @include xs {
+    margin-bottom: 26px;
+  }
+}
+
+.scr_komanda_art6__name {
+  position: relative;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+  transition: padding 0.2s ease-out;
+
+  span {
+    transition: color 0.2s ease-out, background-color 0.2s ease-out;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    background-color: $color_dark;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  }
+
+  @include xl {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  @include lg {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  @include sm {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  @include xs {
+    margin-bottom: 10px;
+  }
+}
+
+.scr_komanda_art6__post {
+  font-weight: 500;
+  font-size: 14px;
+  color: $color_grey;
+}
