@@ -56,7 +56,8 @@
 .scr_komanda_art6__nav {
   position: absolute;
   left: 0;
-  top: 148px;
+  // top: 148px;
+  top: 35.41%;
   z-index: 2;
   width: 100%;
   display: flex;
@@ -64,21 +65,21 @@
   align-items: center;
   pointer-events: none;
 
-  @include xl {
-    top: 110px;
-  }
+  // @include xl {
+  //   top: 110px;
+  // }
 
-  @include lg {
-    top: 118px;
-  }
+  // @include lg {
+  //   top: 118px;
+  // }
 
-  @include sm {
-    top: 130px;
-  }
+  // @include sm {
+  //   top: 130px;
+  // }
 
-  @include xxs {
-    top: 148px;
-  }
+  // @include xxs {
+  //   top: 148px;
+  // }
 }
 
 .scr_komanda_art6__prev,

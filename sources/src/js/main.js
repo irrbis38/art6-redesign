@@ -109,44 +109,44 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // init header logic
   initHeader();
 
-  var splide = new Splide(".scr_komanda_art6__splide", {
-    type: "loop",
-    gap: "20px",
-    autoWidth: false,
-    arrows: false,
-    pagination: false,
-    drag: true,
-    perPage: 4,
+  // init slider
+
+  var glide = new Glide(".scr_komanda_art6__slider", {
+    type: "carousel",
+    gap: 20,
+    perView: 4,
     breakpoints: {
-      1600: {
-        gap: "18px",
-      },
       1300: {
-        perPage: 3,
+        perView: 3,
       },
       991: {
-        perPage: 2,
-        gap: "48px",
+        perView: 2,
+        gap: 48,
       },
       767: {
-        gap: "20px",
+        perView: 2,
+        gap: 20,
       },
       575: {
-        perPage: 1,
-        gap: "20px",
+        perView: 1,
       },
     },
-  }).mount();
+  });
 
   var btnNext = document.querySelector(".scr_komanda_art6__next");
   var btnPrev = document.querySelector(".scr_komanda_art6__prev");
 
-  //attach events to custom buttons
-  btnNext.addEventListener("click", (e) => {
-    splide.go("+1");
+  btnNext.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    glide.go(">");
   });
 
-  btnPrev.addEventListener("click", (e) => {
-    splide.go("-1");
+  btnPrev.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    glide.go("<");
   });
+
+  glide.mount();
 });

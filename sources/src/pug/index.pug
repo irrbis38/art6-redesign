@@ -456,47 +456,89 @@ block page
 
 
 
-    section.scr_komanda_art6
+    .scr_komanda_art6
         .container 
             h2.scr_komanda_art6__title Команда
 
-            .scr_komanda_art6__splide.splide
-                .scr_komanda_art6__track.splide__track
-                    ul.scr_komanda_art6__list.splide__list
-                        li.scr_komanda_art6__slide.splide__slide
+            .scr_komanda_art6__slider.glide
+                .scr_komanda_art6__track.glide__track(data-glide-el="track")
+                    ul.scr_komanda_art6__list.glide__slides
+                        li.scr_komanda_art6__slide.glide__slide
                             .scr_komanda_art6__img
                                 img(src="./images/scr_komanda_art6/slide_1_blur.webp" alt="Дружко Игорь, директор")
                                 img(src="./images/scr_komanda_art6/slide_1.webp" alt="Дружко Игорь, директор")
                             h3.scr_komanda_art6__name #[span Джурко Игорь]
                             p.scr_komanda_art6__post Директор
 
-                        li.scr_komanda_art6__slide.splide__slide
+                        li.scr_komanda_art6__slide.glide__slide
                             .scr_komanda_art6__img
                                 img(src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор")
                                 img(src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор")
                             h3.scr_komanda_art6__name #[span Джурко Игорь]
                             p.scr_komanda_art6__post Руководитель SEO-отдела
 
-                        li.scr_komanda_art6__slide.splide__slide
+                        li.scr_komanda_art6__slide.glide__slide
                             .scr_komanda_art6__img
                                 img(src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор")
                                 img(src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор")
                             h3.scr_komanda_art6__name #[span Джурко Игорь]
                             p.scr_komanda_art6__post Системный админестратор
 
-                        li.scr_komanda_art6__slide.splide__slide
+                        li.scr_komanda_art6__slide.glide__slide
                             .scr_komanda_art6__img
                                 img(src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор")
                                 img(src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор")
                             h3.scr_komanda_art6__name #[span Джурко Игорь]
                             p.scr_komanda_art6__post Програмист
 
-                        li.scr_komanda_art6__slide.splide__slide
+                        li.scr_komanda_art6__slide.glide__slide
                             .scr_komanda_art6__img
                                 img(src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор")
                                 img(src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор")
                             h3.scr_komanda_art6__name #[span Джурко Игорь]
                             p.scr_komanda_art6__post Програмист
+
+                .scr_komanda_art6__nav
+                    button.scr_komanda_art6__prev(type="button")
+                    button.scr_komanda_art6__next(type="button")
+
+            //- .scr_komanda_art6__splide.splide
+            //-     .scr_komanda_art6__track.splide__track
+            //-         ul.scr_komanda_art6__list.splide__list
+            //-             li.scr_komanda_art6__slide.splide__slide
+            //-                 .scr_komanda_art6__img
+            //-                     img(src="./images/scr_komanda_art6/slide_1_blur.webp" alt="Дружко Игорь, директор")
+            //-                     img(src="./images/scr_komanda_art6/slide_1.webp" alt="Дружко Игорь, директор")
+            //-                 h3.scr_komanda_art6__name #[span Джурко Игорь]
+            //-                 p.scr_komanda_art6__post Директор
+
+            //-             li.scr_komanda_art6__slide.splide__slide
+            //-                 .scr_komanda_art6__img
+            //-                     img(src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор")
+            //-                     img(src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор")
+            //-                 h3.scr_komanda_art6__name #[span Джурко Игорь]
+            //-                 p.scr_komanda_art6__post Руководитель SEO-отдела
+
+            //-             li.scr_komanda_art6__slide.splide__slide
+            //-                 .scr_komanda_art6__img
+            //-                     img(src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор")
+            //-                     img(src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор")
+            //-                 h3.scr_komanda_art6__name #[span Джурко Игорь]
+            //-                 p.scr_komanda_art6__post Системный админестратор
+
+            //-             li.scr_komanda_art6__slide.splide__slide
+            //-                 .scr_komanda_art6__img
+            //-                     img(src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор")
+            //-                     img(src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор")
+            //-                 h3.scr_komanda_art6__name #[span Джурко Игорь]
+            //-                 p.scr_komanda_art6__post Програмист
+
+            //-             li.scr_komanda_art6__slide.splide__slide
+            //-                 .scr_komanda_art6__img
+            //-                     img(src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор")
+            //-                     img(src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор")
+            //-                 h3.scr_komanda_art6__name #[span Джурко Игорь]
+            //-                 p.scr_komanda_art6__post Програмист
 
 
                 .scr_komanda_art6__nav
