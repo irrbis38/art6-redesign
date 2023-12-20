@@ -101,16 +101,23 @@ var initHeader = () => {
   });
 };
 
-// ===== START JS LOGIC AFTER DOM CONTENT LOADED
-document.addEventListener("DOMContentLoaded", function (event) {
-  // init luxy library
-  luxy.init();
+// ===== INIT SMOOTH SCROLL
+var initSmothScroll = () => {
+  window.innerWidth >= 992 && luxy.init();
 
-  // init header logic
-  initHeader();
+  var handleMQ = (e) => {
+    if (!e.matches) {
+      luxy.init();
+    }
+  };
 
-  // init slider
+  var mq991 = window.matchMedia("(max-width: 991px)");
 
+  mq991.addEventListener("change", handleMQ);
+};
+
+// ===== INIT SLIDER ON MAIN PAGE
+var initTeamSlider = () => {
   var glide = new Glide(".scr_komanda_art6__slider", {
     type: "carousel",
     gap: 20,
@@ -149,4 +156,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   glide.mount();
+};
+
+// =============================================
+// ===== START JS LOGIC AFTER DOM CONTENT LOADED
+document.addEventListener("DOMContentLoaded", function (event) {
+  // init luxy library
+  initSmothScroll();
+
+  // init header logic
+  initHeader();
+
+  var index_page = document.querySelector(".index");
+
+  index_page &&
+    // init slider
+    initTeamSlider();
 });

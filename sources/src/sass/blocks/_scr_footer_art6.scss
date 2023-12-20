@@ -324,6 +324,20 @@
       overflow: hidden;
       transition: max-height 0.2s ease-out;
     }
+
+    &.active {
+      .scr_footer_art6__heading {
+        span {
+          &::after {
+            transform: rotate(90deg);
+          }
+
+          &::before {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -391,6 +405,11 @@
     line-height: 256%;
     letter-spacing: -0.03em;
     color: $color_grey;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+      color: $color_white;
+    }
   }
 
   @include lg {
