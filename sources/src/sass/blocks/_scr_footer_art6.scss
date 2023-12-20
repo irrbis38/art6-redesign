@@ -1,5 +1,415 @@
 .scr_footer_art6 {
   background-color: $color_dark;
-  margin-top: 123px;
-  padding: 20px;
+  padding: 128px 0 106px;
+
+  @include xl {
+    padding: 94px 0 95px;
+  }
+
+  @include lg {
+    padding: 67px 0 77px;
+  }
+
+  @include sm {
+    padding: 67px 0 42px;
+  }
+
+  @include xs {
+    padding: 90px 0 133px;
+  }
+}
+
+.scr_footer_art6__container {
+  display: grid;
+  grid-template-columns: 49.33% 46.67%;
+  gap: 192px 4%;
+  grid-template-areas:
+    "f_main f_links"
+    "f_info f_links";
+
+  @include xl {
+    grid-template-columns: 36.48% 49.3%;
+    gap: 207px 14.22%;
+  }
+
+  @include lg {
+    grid-template-columns: 35.84% 50.98%;
+    gap: 207px 13.18%;
+  }
+
+  @include sm {
+    grid-template-columns: 47.79% 43.41%;
+    gap: 207px 8.8%;
+    grid-template-areas:
+      "f_main f_links"
+      "f_info f_links"
+      ". f_links";
+  }
+
+  @include xs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    grid-template-areas:
+      "f_main"
+      "f_links"
+      "f_info";
+  }
+}
+
+.scr_footer_art6__main {
+  grid-area: f_main;
+
+  @include sm {
+    height: max-content;
+  }
+}
+
+.scr_footer_art6__info {
+  grid-area: f_info;
+}
+
+.scr_footer_art6__links {
+  grid-area: f_links;
+}
+
+.scr_footer_art6__logo {
+  width: 278px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 20px;
+  margin-bottom: 112px;
+
+  @include xs {
+    margin-bottom: 77px;
+  }
+}
+
+.scr_footer_art6__icon {
+  width: 133px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.scr_footer_art6__text {
+  width: 125px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 115%;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+}
+
+.scr_footer_art6__contacts {
+  @include xs {
+    margin-bottom: 94px;
+  }
+}
+
+.scr_footer_art6__adress {
+  position: relative;
+  width: max-content;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 191%;
+  letter-spacing: -0.03em;
+  color: $color_white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color_blue;
+  }
+
+  @include xl {
+    font-size: 20px;
+    line-height: 210%;
+  }
+
+  @include lg {
+    font-size: 18px;
+    line-height: 233%;
+  }
+
+  @include xs {
+    margin-bottom: 12px;
+    font-size: 20px;
+    line-height: 210%;
+
+    &::after {
+      bottom: 7px;
+    }
+  }
+
+  @include r(360px) {
+    font-size: 17px;
+  }
+}
+
+.scr_footer_art6__phone,
+.scr_footer_art6__email {
+  display: block;
+  width: max-content;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 164%;
+  letter-spacing: -0.03em;
+  color: $color_white;
+  transition: color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color_grey;
+    }
+  }
+
+  @include xl {
+    font-size: 20px;
+    line-height: 180%;
+  }
+
+  @include lg {
+    font-size: 18px;
+    line-height: 200%;
+  }
+
+  @include xs {
+    font-size: 20px;
+    line-height: 210%;
+  }
+
+  @include r(360px) {
+    font-size: 17px;
+  }
+}
+
+.scr_footer_art6__phone {
+  margin-bottom: 22px;
+
+  @include xs {
+    margin-bottom: 15px;
+  }
+}
+
+.scr_footer_art6__offices {
+  display: flex;
+  align-items: center;
+  gap: 0 16px;
+  margin-bottom: 25px;
+  padding-left: 3px;
+  font-weight: 500;
+  font-size: 18px;
+  color: $color_grey;
+  transition: color 0.2s ease-out;
+
+  path {
+    transition: all 0.2s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color_white;
+
+      path {
+        fill: $color_white;
+      }
+    }
+  }
+
+  @include lg {
+    font-size: 16px;
+  }
+}
+
+.scr_footer_art6__policy,
+.scr_footer_art6__payment {
+  display: block;
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  color: $color_grey;
+  transition: color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color_white;
+    }
+  }
+
+  @include lg {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+}
+
+.scr_footer_art6__copyright {
+  margin-top: 38px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+
+  span {
+    display: block;
+    max-width: 650px;
+  }
+
+  @include lg {
+    font-size: 16px;
+    line-height: 162%;
+  }
+}
+
+// =========
+// =========
+// =========
+// =========
+// =========
+
+.scr_footer_art6__links {
+  display: flex;
+  gap: 0 123px;
+
+  @include lg {
+    gap: 0 73px;
+  }
+
+  @include sm {
+    display: block;
+  }
+
+  @include xs {
+    margin-bottom: 83px;
+  }
+}
+
+.scr_footer_art6__group {
+  &:not(:last-child) {
+    margin-bottom: 35px;
+  }
+
+  @include sm {
+    margin-bottom: 35px;
+  }
+
+  @include xs {
+    &:nth-child(n) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@include sm {
+  .scr_footer_art6__group-submenu {
+    .scr_footer_art6__heading {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .scr_footer_art6__list {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+  }
+}
+
+.scr_footer_art6__heading {
+  padding-bottom: 11px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: $color_white;
+
+  span {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    width: 20px;
+    height: 20px;
+    display: block;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $color_white;
+      transition: transform 0.2s ease-out;
+    }
+
+    &::before {
+      top: 9px;
+      left: 4px;
+      width: 12px;
+      height: 2px;
+    }
+
+    &::after {
+      top: 4px;
+      left: 9px;
+      width: 2px;
+      height: 12px;
+    }
+  }
+
+  @include lg {
+    font-size: 16px;
+  }
+
+  @include sm {
+    font-size: 20px;
+
+    span {
+      display: block;
+    }
+  }
+
+  @include xs {
+    padding-bottom: 14px;
+    font-size: 18px;
+  }
+}
+
+.scr_footer_art6__list {
+  a {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 256%;
+    letter-spacing: -0.03em;
+    color: $color_grey;
+  }
+
+  @include lg {
+    a {
+      font-size: 16px;
+      line-height: 241%;
+    }
+  }
+
+  @include sm {
+    a {
+      line-height: 216%;
+    }
+  }
+
+  @include xs {
+    a {
+      font-size: 18px;
+      line-height: 267%;
+    }
+  }
 }

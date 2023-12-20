@@ -1,5 +1,21 @@
 .scr_voprosy_art6 {
-  margin-bottom: 100px;
+  padding-bottom: 128px;
+
+  @include xl {
+    padding-bottom: 88px;
+  }
+
+  @include lg {
+    padding-bottom: 69px;
+  }
+
+  @include sm {
+    padding-bottom: 58px;
+  }
+
+  @include xs {
+    padding-bottom: 80px;
+  }
 }
 
 .scr_voprosy_art6__title {
@@ -11,21 +27,22 @@
   color: $color_dark;
 
   @include xl {
-    margin-bottom: 21px;
+    margin-bottom: 54px;
     font-size: 60px;
   }
 
   @include lg {
-    margin-bottom: 20px;
+    margin-bottom: 41px;
     font-size: 55px;
   }
 
   @include sm {
+    margin-bottom: 34px;
     font-size: 60px;
   }
 
   @include xs {
-    margin-bottom: 26px;
+    margin-bottom: 42px;
     font-size: 38px;
   }
 
@@ -34,11 +51,66 @@
   }
 }
 
-.scr_voprosy_art6__question {
-  border-bottom: 2px solid $color_grey_light;
+.scr_voprosy_art6__wrapper {
+  margin-bottom: 80px;
 
-  &:first-child {
-    border-top: 2px solid $color_grey_light;
+  @include xl {
+    margin-bottom: 55px;
+  }
+
+  @include lg {
+    margin-bottom: 44px;
+  }
+
+  @include sm {
+    margin-bottom: 36px;
+  }
+
+  @include xs {
+    margin-bottom: 50px;
+  }
+}
+
+.scr_voprosy_art6__question {
+  border-top: 2px solid $color_grey_light;
+  transition: border-color 0.2s ease-out;
+
+  &:last-child {
+    border-bottom: 2px solid $color_grey_light;
+  }
+
+  &.active {
+    border-top-color: $color_dark;
+
+    & + .scr_voprosy_art6__question {
+      border-top-color: $color_dark;
+    }
+
+    &:last-child {
+      border-bottom-color: $color_dark;
+    }
+
+    .scr_voprosy_art6__heading {
+      color: $color_dark;
+
+      span {
+        &::after {
+          transform: rotate(90deg);
+        }
+
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .scr_voprosy_art6__text {
+      max-height: 200px;
+
+      p {
+        color: $color_dark;
+      }
+    }
   }
 }
 
@@ -47,18 +119,18 @@
   min-height: 79px;
   display: flex;
   align-items: center;
-  margin-bottom: 22px;
-  padding: 10px 50px 10px 0;
+  margin-bottom: 4px;
+  padding: 10px 70px 10px 0;
 
   font-weight: 500;
   font-size: 22px;
   letter-spacing: -0.02em;
-  color: $color_dark;
+  color: $color_grey;
   cursor: pointer;
 
   span {
     position: absolute;
-    right: 0;
+    right: 28px;
     top: 27px;
     width: 24px;
     height: 24px;
@@ -69,7 +141,7 @@
       content: "";
       position: absolute;
       background-color: $color_grey;
-      transition: background-color 0.2s ease-out;
+      transition: background-color 0.2s ease-out, transform 0.2s ease-out;
     }
 
     &::before {
@@ -88,15 +160,19 @@
   }
 
   @include xl {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   @include lg {
-    margin-bottom: 25px;
+    font-size: 18px;
   }
 
   @include sm {
-    margin-bottom: 0;
+    font-size: 20px;
+  }
+
+  @include r(360px) {
+    font-size: 18px;
   }
 
   @media (hover: hover) {
@@ -107,16 +183,89 @@
       }
     }
   }
-
-  @include xs {
-    font-size: 24px;
-  }
 }
 
 .scr_voprosy_art6__text {
-  font-size: 18px;
-  line-height: 144%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+
   p {
+    max-width: 1120px;
     padding-bottom: 23px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: -0.02em;
+    color: $color_grey;
+  }
+
+  @include lg {
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+.scr_voprosy_art6__more {
+  position: relative;
+  display: inline-block;
+  padding-left: 60px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: url("../images/scr_klienty_onas_art6/plus.svg") center / contain
+      no-repeat;
+    transition: transform 0.2s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      transform: rotate(90deg);
+    }
+  }
+
+  @include xl {
+    font-size: 24px;
+    line-height: 133%;
+  }
+
+  @include lg {
+    font-size: 20px;
+    line-height: 160%;
+
+    &::before {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  @include xs {
+    font-size: 24px;
+    line-height: 133%;
+
+    &::before {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @include r(360px) {
+    font-size: 18px;
+
+    &::before {
+      width: 26px;
+      height: 26px;
+    }
   }
 }

@@ -1,5 +1,21 @@
 .scr_klienty_onas_art6 {
   margin-bottom: 369px;
+
+  @include xl {
+    margin-bottom: 202px;
+  }
+
+  @include lg {
+    margin-bottom: 166px;
+  }
+
+  @include sm {
+    margin-bottom: 130px;
+  }
+
+  @include xs {
+    margin-bottom: 184px;
+  }
 }
 
 .scr_klienty_onas_art6__title {
