@@ -88,16 +88,16 @@
 }
 
 .scr_forma_footer_art6__fields {
-  // width: 49.33%;
-  width: 740px;
-  flex-shrink: 0;
+  width: 100%;
+  max-width: 740px;
+  flex-shrink: 1;
 
   @include lg {
-    width: 618px;
+    max-width: 618px;
   }
 
   @include sm {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -277,14 +277,8 @@
   }
 }
 
-// 1500 - 100 = 49.33
-// 740 - x = 9.8
-// 147 - y
-// 1500-740-147 = 40.87
-
 .scr_forma_footer_art6__list {
-  // width: 40.87%;
-  flex: 0 1 613px;
+  flex: 0 2 613px;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -292,6 +286,14 @@
 
   li {
     display: inline-block;
+  }
+
+  @include xl {
+    min-width: 440px;
+  }
+
+  @include lg {
+    min-width: 320px;
   }
 
   @include sm {

@@ -239,16 +239,8 @@ var initAccordion = (group_class, heading_class) => {
     }
   };
 
-  var handleWindowResize = () => {
-    // var currentGroup = groups.filter((g) => g.classList.contains("active"));
-    // if (currentGroup.length > 0) {
-    //   var list = currentGroup[0].children[1];
-    //   list.style.maxHeight = list.scrollHeight + "px";
-    // }
-
+  var handleWindowResize = () =>
     activeList && (activeList.style.maxHeight = activeList.scrollHeight + "px");
-  };
-
   // toggle class 'active'
   var toggleAccordionByMatchMedia = () => {
     var handleMQ = (e) => {
@@ -285,6 +277,37 @@ var initAccordion = (group_class, heading_class) => {
   }
 };
 
+// ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "СТАТЬ КЛИЕНТОМ"
+var toggleBecomeClient = () => {
+  var btn = document.querySelector(".header_art6__cta"),
+    btn_mobile = document.querySelector(".header_art6__mobile-cta"),
+    client_modal = document.querySelector(".scr_b_client_art6"),
+    body = document.body,
+    close_btn = document.querySelector(".scr_b_client_art6__btn"),
+    overlay = document.querySelector(".scr_b_client_art6__overlay");
+
+  [btn, btn_mobile].forEach((btn) =>
+    btn.addEventListener("click", () => {
+      client_modal.classList.add("active");
+      body.classList.add("lock");
+    })
+  );
+
+  [close_btn, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      client_modal.classList.remove("active");
+      body.classList.remove("lock");
+    })
+  );
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      client_modal.classList.remove("active");
+      body.classList.remove("lock");
+    }
+  });
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
@@ -294,6 +317,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // init header logic
   initHeader();
+  toggleBecomeClient();
 
   var index_page = document.querySelector(".index");
 

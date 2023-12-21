@@ -1,0 +1,20 @@
+section.scr_b_client_art6
+    .scr_b_client_art6__overlay
+    .scr_b_client_art6__wrapper
+
+        .scr_b_client_art6__top
+            h2.scr_b_client_art6__title Стать клиентом
+            button.scr_b_client_art6__btn(type="button" aria-label="Закрыть окно")
+                svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M25.3327 8.54602L23.4527 6.66602L15.9993 14.1193L8.54602 6.66602L6.66602 8.54602L14.1193 15.9993L6.66602 23.4527L8.54602 25.3327L15.9993 17.8793L23.4527 25.3327L25.3327 23.4527L17.8793 15.9993L25.3327 8.54602Z" fill="#1C1C20")
+        p.scr_b_client_art6__instruction Введите ваше имя и номер телефона
+        form.scr_b_client_art6__form(action="#")
+            .scr_b_client_art6__item
+                input.scr_b_client_art6__input.required(type="text" placeholder="Имя" name="client_name")
+
+            .scr_b_client_art6__item
+                input.scr_b_client_art6__input.required(type="text" placeholder="Телефон*" name="client_contact" required)
+
+            button.scr_b_client_art6__submit(type="submit") Перезвоните мне
+
+            p.scr_b_client_art6__confirm Нажав на кнопку, вы даете согласие на обработку #[a(href="./index.html") персональных данных]
