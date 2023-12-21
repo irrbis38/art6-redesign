@@ -95,10 +95,12 @@
 
       span {
         &::after {
+          background-color: $color_blue;
           transform: rotate(90deg);
         }
 
         &::before {
+          background-color: $color_blue;
           transform: rotate(180deg);
         }
       }
@@ -125,6 +127,7 @@
   letter-spacing: -0.02em;
   color: $color_grey;
   cursor: pointer;
+  transition: color 0.2s ease-out;
 
   span {
     position: absolute;
@@ -175,10 +178,11 @@
 
   @media (hover: hover) {
     &:hover {
-      span:last-child::before,
-      span:last-child::after {
-        background-color: $color_blue;
-      }
+      color: $color_dark;
+      // span:last-child::before,
+      // span:last-child::after {
+      //   background-color: $color_blue;
+      // }
     }
   }
 }

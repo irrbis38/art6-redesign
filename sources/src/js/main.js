@@ -235,7 +235,6 @@ var initAccordion = (group_class, heading_class) => {
         group.classList.add("active");
         list.style.maxHeight = list.scrollHeight + "px";
         activeList = list;
-        console.log(activeList);
       }
     }
   };

@@ -141,10 +141,12 @@
       .scr_tematiki_art6__heading {
         & > span:last-child {
           &::after {
+            background-color: $color_blue;
             transform: rotate(90deg);
           }
 
           &::before {
+            background-color: $color_blue;
             transform: rotate(180deg);
           }
         }
@@ -217,14 +219,14 @@
       }
     }
 
-    @media (hover: hover) {
-      &:hover {
-        & > span:last-child::before,
-        & > span:last-child::after {
-          background-color: $color_blue;
-        }
-      }
-    }
+    // @media (hover: hover) {
+    //   &:hover {
+    //     & > span:last-child::before,
+    //     & > span:last-child::after {
+    //       background-color: $color_blue;
+    //     }
+    //   }
+    // }
   }
 
   @include xs {
