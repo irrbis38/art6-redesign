@@ -210,6 +210,7 @@ var initQuestionsAccordion = () => {
 // ===== INIT ACCORDION FOR TEMATICS (main page) AND FOOTER
 var initAccordion = (group_class, heading_class) => {
   var groups = Array.from(document.querySelectorAll(group_class));
+  var activeList = null;
 
   var accordionHandle = (e) => {
     var heading = e.target.closest(heading_class);
@@ -221,6 +222,7 @@ var initAccordion = (group_class, heading_class) => {
       if (group.classList.contains("active")) {
         group.classList.remove("active");
         list.style.maxHeight = null;
+        activeList = null;
       } else {
         groups.forEach((g) => {
           // remove class 'active' for every group element
@@ -232,16 +234,20 @@ var initAccordion = (group_class, heading_class) => {
         // add class 'active' to current group and maxHeight to  curret description list
         group.classList.add("active");
         list.style.maxHeight = list.scrollHeight + "px";
+        activeList = list;
+        console.log(activeList);
       }
     }
   };
 
   var handleWindowResize = () => {
-    var currentGroup = groups.filter((g) => g.classList.contains("active"));
-    if (currentGroup.length > 0) {
-      var list = currentGroup[0].children[1];
-      list.style.maxHeight = list.scrollHeight + "px";
-    }
+    // var currentGroup = groups.filter((g) => g.classList.contains("active"));
+    // if (currentGroup.length > 0) {
+    //   var list = currentGroup[0].children[1];
+    //   list.style.maxHeight = list.scrollHeight + "px";
+    // }
+
+    activeList && (activeList.style.maxHeight = activeList.scrollHeight + "px");
   };
 
   // toggle class 'active'
@@ -273,6 +279,7 @@ var initAccordion = (group_class, heading_class) => {
   if (window.innerWidth <= 991) {
     groups.forEach((group) => group.addEventListener("click", accordionHandle));
     groups[0].classList.add("active");
+    activeList = groups[0].children[1];
     groups[0].children[1].style.maxHeight =
       groups[0].children[1].scrollHeight + "px";
     window.addEventListener("resize", handleWindowResize);
