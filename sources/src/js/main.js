@@ -308,6 +308,142 @@ var toggleBecomeClient = () => {
   });
 };
 
+// ===== ВАЛИДАЦИЯ ФОРМ
+
+var checkValidity = (elements) => {
+  elements.forEach(
+    (el) => el.validity.valueMissing && el.classList.add("error")
+  );
+};
+
+var checkForm = (elements) =>
+  elements.some((el) => el.classList.contains("error"));
+
+var formValidation = () => {
+  var forms = Array.from(document.forms);
+
+  forms.forEach((form) =>
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      var requiredElements = Array.from(form.elements).filter((el) =>
+        el.classList.contains("required")
+      );
+
+      if (requiredElements.length > 0) {
+        checkValidity(requiredElements);
+
+        if (checkForm(requiredElements)) {
+          // console.log("Заполните все обязательные поля");
+        } else {
+          form.reset();
+
+          // if current form into modal window than close modal
+          var modal = form.closest(".modal_w");
+          if (modal) {
+            modal.classList.remove("active");
+          }
+
+          var msg = document.querySelector(".scr_success_msg_art6"),
+            body = document.body;
+
+          msg.classList.add("active");
+          body.classList.add("lock");
+        }
+      }
+    })
+  );
+};
+
+var checkRequiredInputs = () => {
+  var inputs = document.querySelectorAll(".required");
+
+  var inputHandle = (input) => {
+    input.value.length > 0
+      ? input.classList.remove("error")
+      : input.classList.add("error");
+  };
+
+  inputs.forEach((i) => i.addEventListener("input", () => inputHandle(i)));
+};
+
+var handleSuccessMsgModal = () => {
+  var modal = document.querySelector(".scr_success_msg_art6"),
+    body = document.body,
+    close_btn = document.querySelector(".scr_success_msg_art6__btn"),
+    overlay = document.querySelector(".scr_success_msg_art6__overlay");
+
+  [close_btn, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+    })
+  );
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+    }
+  });
+};
+
+// ===== ВЫБОР ГОРОДА
+
+var changeCity = () => {
+  var btn = document.querySelector(".scr_footer_art6__offices"),
+    body = document.body,
+    modal = document.querySelector(".scr_cities_art6"),
+    close_btn = document.querySelector(".scr_cities_art6__btn"),
+    overlay = document.querySelector(".scr_cities_art6__overlay"),
+    inputs = Array.from(document.querySelectorAll(".scr_cities_art6__input")),
+    search = document.querySelector(".scr_cities_art6__search");
+
+  btn.addEventListener("click", () => {
+    modal.classList.add("active");
+    body.classList.add("lock");
+  });
+
+  [close_btn, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    })
+  );
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    }
+  });
+
+  // handle city inputs
+  inputs.forEach((i) =>
+    i.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      btn.children[1].textContent = i.value;
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    })
+  );
+
+  // city searching
+  search.addEventListener("input", () => {
+    inputs.forEach((i) => {
+      if (i.value.toLowerCase().includes(search.value.toLowerCase())) {
+        i.classList.remove("hidden");
+      } else {
+        i.classList.add("hidden");
+      }
+    });
+  });
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
@@ -319,16 +455,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
   initHeader();
   toggleBecomeClient();
 
+  // init footer logic
+  changeCity();
+
+  //=== LOGIC FOR DIFFERENT PAGES
   var index_page = document.querySelector(".index");
 
   if (index_page) {
     // init slider
     initTeamSlider();
+    // init accordions
     initQuestionsAccordion();
     initAccordion(".scr_tematiki_art6__group", ".scr_tematiki_art6__heading");
     initAccordion(
       ".scr_footer_art6__group-submenu",
       ".scr_footer_art6__heading"
     );
+
+    // init forms validation
+    checkRequiredInputs();
+    formValidation();
+    handleSuccessMsgModal();
   }
 });

@@ -117,22 +117,17 @@
 .scr_forma_footer_art6__name,
 .scr_forma_footer_art6__contact {
   width: 50%;
-  padding: 10px 0;
-  border-bottom: 2px solid #cfcfcf;
-
-  @include lg {
-    padding: 12px 0;
-  }
 
   @include xs {
     width: 100%;
-    padding: 10px 0;
   }
 }
 
 .scr_forma_footer_art6__input {
   display: block;
   width: 100%;
+  padding: 10px 0;
+  border-bottom: 2px solid #cfcfcf;
   font-weight: 500;
   font-size: 20px;
   line-height: 160%;
@@ -143,12 +138,27 @@
     color: $color_grey;
   }
 
+  &:focus {
+    border-bottom-color: $color_dark;
+  }
+
+  &.error {
+    color: red;
+    border-bottom-color: red;
+
+    &::placeholder {
+      color: red;
+    }
+  }
+
   @include lg {
+    padding: 12px 0;
     font-size: 18px;
     line-height: 178%;
   }
 
   @include xs {
+    padding: 10px 0;
     font-size: 20px;
     line-height: 160%;
   }
@@ -177,6 +187,10 @@
 
   &::placeholder {
     color: $color_grey;
+  }
+
+  &:focus {
+    border-bottom-color: $color_dark;
   }
 
   @include lg {

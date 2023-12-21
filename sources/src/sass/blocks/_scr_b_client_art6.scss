@@ -126,6 +126,19 @@
     color: $color_grey;
   }
 
+  &:focus {
+    border-bottom-color: $color_dark;
+  }
+
+  &.error {
+    color: red;
+    border-bottom-color: red;
+
+    &::placeholder {
+      color: red;
+    }
+  }
+
   @include xxs {
     height: 43px;
     font-size: 18px;
