@@ -210,6 +210,7 @@ var initQuestionsAccordion = () => {
 // ===== INIT ACCORDION FOR TEMATICS (main page) AND FOOTER
 var initAccordion = (group_class, heading_class) => {
   var groups = Array.from(document.querySelectorAll(group_class));
+  var activeList = null;
 
   var accordionHandle = (e) => {
     var heading = e.target.closest(heading_class);
@@ -221,6 +222,7 @@ var initAccordion = (group_class, heading_class) => {
       if (group.classList.contains("active")) {
         group.classList.remove("active");
         list.style.maxHeight = null;
+        activeList = null;
       } else {
         groups.forEach((g) => {
           // remove class 'active' for every group element
@@ -232,18 +234,13 @@ var initAccordion = (group_class, heading_class) => {
         // add class 'active' to current group and maxHeight to  curret description list
         group.classList.add("active");
         list.style.maxHeight = list.scrollHeight + "px";
+        activeList = list;
       }
     }
   };
 
-  var handleWindowResize = () => {
-    var currentGroup = groups.filter((g) => g.classList.contains("active"));
-    if (currentGroup.length > 0) {
-      var list = currentGroup[0].children[1];
-      list.style.maxHeight = list.scrollHeight + "px";
-    }
-  };
-
+  var handleWindowResize = () =>
+    activeList && (activeList.style.maxHeight = activeList.scrollHeight + "px");
   // toggle class 'active'
   var toggleAccordionByMatchMedia = () => {
     var handleMQ = (e) => {
@@ -273,10 +270,178 @@ var initAccordion = (group_class, heading_class) => {
   if (window.innerWidth <= 991) {
     groups.forEach((group) => group.addEventListener("click", accordionHandle));
     groups[0].classList.add("active");
+    activeList = groups[0].children[1];
     groups[0].children[1].style.maxHeight =
       groups[0].children[1].scrollHeight + "px";
     window.addEventListener("resize", handleWindowResize);
   }
+};
+
+// ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "СТАТЬ КЛИЕНТОМ"
+var toggleBecomeClient = () => {
+  var btn = document.querySelector(".header_art6__cta"),
+    btn_mobile = document.querySelector(".header_art6__mobile-cta"),
+    client_modal = document.querySelector(".scr_b_client_art6"),
+    body = document.body,
+    close_btn = document.querySelector(".scr_b_client_art6__btn"),
+    overlay = document.querySelector(".scr_b_client_art6__overlay");
+
+  [btn, btn_mobile].forEach((btn) =>
+    btn.addEventListener("click", () => {
+      client_modal.classList.add("active");
+      body.classList.add("lock");
+    })
+  );
+
+  [close_btn, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      client_modal.classList.remove("active");
+      body.classList.remove("lock");
+    })
+  );
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      client_modal.classList.remove("active");
+      body.classList.remove("lock");
+    }
+  });
+};
+
+// ===== ВАЛИДАЦИЯ ФОРМ
+
+var checkValidity = (elements) => {
+  elements.forEach(
+    (el) => el.validity.valueMissing && el.classList.add("error")
+  );
+};
+
+var checkForm = (elements) =>
+  elements.some((el) => el.classList.contains("error"));
+
+var formValidation = () => {
+  var forms = Array.from(document.forms);
+
+  forms.forEach((form) =>
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      var requiredElements = Array.from(form.elements).filter((el) =>
+        el.classList.contains("required")
+      );
+
+      if (requiredElements.length > 0) {
+        checkValidity(requiredElements);
+
+        if (checkForm(requiredElements)) {
+          // console.log("Заполните все обязательные поля");
+        } else {
+          form.reset();
+
+          // if current form into modal window than close modal
+          var modal = form.closest(".modal_w");
+          if (modal) {
+            modal.classList.remove("active");
+          }
+
+          var msg = document.querySelector(".scr_success_msg_art6"),
+            body = document.body;
+
+          msg.classList.add("active");
+          body.classList.add("lock");
+        }
+      }
+    })
+  );
+};
+
+var checkRequiredInputs = () => {
+  var inputs = document.querySelectorAll(".required");
+
+  var inputHandle = (input) => {
+    input.value.length > 0
+      ? input.classList.remove("error")
+      : input.classList.add("error");
+  };
+
+  inputs.forEach((i) => i.addEventListener("input", () => inputHandle(i)));
+};
+
+var handleSuccessMsgModal = () => {
+  var modal = document.querySelector(".scr_success_msg_art6"),
+    body = document.body,
+    close_btn = document.querySelector(".scr_success_msg_art6__btn"),
+    overlay = document.querySelector(".scr_success_msg_art6__overlay");
+
+  [close_btn, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+    })
+  );
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+    }
+  });
+};
+
+// ===== ВЫБОР ГОРОДА
+
+var changeCity = () => {
+  var btn = document.querySelector(".scr_footer_art6__offices"),
+    body = document.body,
+    modal = document.querySelector(".scr_cities_art6"),
+    close_btn = document.querySelector(".scr_cities_art6__btn"),
+    overlay = document.querySelector(".scr_cities_art6__overlay"),
+    inputs = Array.from(document.querySelectorAll(".scr_cities_art6__input")),
+    search = document.querySelector(".scr_cities_art6__search");
+
+  btn.addEventListener("click", () => {
+    modal.classList.add("active");
+    body.classList.add("lock");
+  });
+
+  [close_btn, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    })
+  );
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    }
+  });
+
+  // handle city inputs
+  inputs.forEach((i) =>
+    i.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      btn.children[1].textContent = i.value;
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    })
+  );
+
+  // city searching
+  search.addEventListener("input", () => {
+    inputs.forEach((i) => {
+      if (i.value.toLowerCase().includes(search.value.toLowerCase())) {
+        i.classList.remove("hidden");
+      } else {
+        i.classList.add("hidden");
+      }
+    });
+  });
 };
 
 // =============================================
@@ -288,17 +453,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // init header logic
   initHeader();
+  toggleBecomeClient();
 
+  // init footer logic
+  changeCity();
+
+  //=== LOGIC FOR DIFFERENT PAGES
   var index_page = document.querySelector(".index");
 
   if (index_page) {
     // init slider
     initTeamSlider();
+    // init accordions
     initQuestionsAccordion();
     initAccordion(".scr_tematiki_art6__group", ".scr_tematiki_art6__heading");
     initAccordion(
       ".scr_footer_art6__group-submenu",
       ".scr_footer_art6__heading"
     );
+
+    // init forms validation
+    checkRequiredInputs();
+    formValidation();
+    handleSuccessMsgModal();
   }
 });
