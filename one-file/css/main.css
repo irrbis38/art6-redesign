@@ -979,7 +979,8 @@ button.header_art6__more {
 .first_scr_main_art6 {
   margin-bottom: 120px;
   padding-top: 92px;
-  background-size: 922px 663px
+  background-size: 922px 663px;
+  overflow: hidden
 }
 .first_scr_main_art6 .container {
   position: relative;
@@ -2011,37 +2012,35 @@ button.header_art6__more {
   background-color: #fff;
   transition: background-color .2s ease-out
 }
-@media (hover:hover) {
-  .scr_uslugi_art6__item:hover {
-    background-color: #1c1c20
-  }
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__inner {
-    border-bottom-color: transparent
-  }
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__all,
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__heading,
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__more,
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__subheading {
-    color: #fff
-  }
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__more::after {
-    opacity: 1;
-    visibility: visible
-  }
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__all {
-    color: #8e8e93
-  }
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__all:hover {
-    color: #fff
-  }
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__heading::after {
-    opacity: 1;
-    visibility: visible
-  }
-  .scr_uslugi_art6__item:hover .scr_uslugi_art6__img img {
-    opacity: 1;
-    visibility: visible
-  }
+.scr_uslugi_art6__item:hover {
+  background-color: #1c1c20
+}
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__inner {
+  border-bottom-color: transparent
+}
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__all,
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__heading,
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__more,
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__subheading {
+  color: #fff
+}
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__more::after {
+  opacity: 1;
+  visibility: visible
+}
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__all {
+  color: #8e8e93
+}
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__all:hover {
+  color: #fff
+}
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__heading::after {
+  opacity: 1;
+  visibility: visible
+}
+.scr_uslugi_art6__item:hover .scr_uslugi_art6__img img {
+  opacity: 1;
+  visibility: visible
 }
 .scr_uslugi_art6__inner {
   min-height: 412px;
@@ -3694,8 +3693,13 @@ button.header_art6__more {
     margin-bottom: 0;
     border-bottom: 2px solid #f2f2f2
   }
-  .scr_tematiki_art6__group.active .scr_tematiki_art6__list {
-    max-height: 200px
+  .scr_tematiki_art6__group.active .scr_tematiki_art6__heading > span:last-child::after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+  }
+  .scr_tematiki_art6__group.active .scr_tematiki_art6__heading > span:last-child::before {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
   }
 }
 .scr_tematiki_art6__heading {
@@ -3749,7 +3753,9 @@ button.header_art6__more {
     content: "";
     position: absolute;
     background-color: #8e8e93;
-    transition: background-color .2s ease-out
+    transition: background-color .2s ease-out,-webkit-transform .2s ease-out;
+    transition: background-color .2s ease-out,transform .2s ease-out;
+    transition: background-color .2s ease-out,transform .2s ease-out,-webkit-transform .2s ease-out
   }
   .scr_tematiki_art6__heading > span:last-child::before {
     top: 11px;
@@ -5440,9 +5446,6 @@ button.header_art6__more {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg)
 }
-.scr_voprosy_art6__question.active .scr_voprosy_art6__text {
-  max-height: 200px
-}
 .scr_voprosy_art6__question.active .scr_voprosy_art6__text p {
   color: #1c1c20
 }
@@ -6315,6 +6318,14 @@ button.header_art6__more {
     overflow: hidden;
     transition: max-height .2s ease-out
   }
+  .scr_footer_art6__group-submenu.active .scr_footer_art6__heading span::after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+  }
+  .scr_footer_art6__group-submenu.active .scr_footer_art6__heading span::before {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+  }
 }
 .scr_footer_art6__heading {
   padding-bottom: 11px;
@@ -6377,7 +6388,11 @@ button.header_art6__more {
   font-size: 18px;
   line-height: 256%;
   letter-spacing: -.03em;
-  color: #8e8e93
+  color: #8e8e93;
+  transition: color .2s ease-out
+}
+.scr_footer_art6__list a:hover {
+  color: #fff
 }
 @media (max-width:1300px) {
   .scr_footer_art6__list a {

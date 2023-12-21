@@ -101,16 +101,23 @@ var initHeader = () => {
   });
 };
 
-// ===== START JS LOGIC AFTER DOM CONTENT LOADED
-document.addEventListener("DOMContentLoaded", function (event) {
-  // init luxy library
-  luxy.init();
+// ===== INIT SMOOTH SCROLL
+var initSmothScroll = () => {
+  window.innerWidth >= 992 && luxy.init();
 
-  // init header logic
-  initHeader();
+  var handleMQ = (e) => {
+    if (!e.matches) {
+      luxy.init();
+    }
+  };
 
-  // init slider
+  var mq991 = window.matchMedia("(max-width: 991px)");
 
+  mq991.addEventListener("change", handleMQ);
+};
+
+// ===== INIT SLIDER ON MAIN PAGE
+var initTeamSlider = () => {
   var glide = new Glide(".scr_komanda_art6__slider", {
     type: "carousel",
     gap: 20,
@@ -149,4 +156,149 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   glide.mount();
+};
+// ===== INIT ACCORDION FOR QUESTIONS (main page)
+var initQuestionsAccordion = () => {
+  var questions = Array.from(
+    document.querySelectorAll(".scr_voprosy_art6__question")
+  );
+  var headings = questions.map((q) => q.children[0]);
+  var texts = questions.map((q) => q.children[1]);
+
+  // set start state
+  var firstBlock = questions[0];
+  var firstText = firstBlock.children[1];
+  firstBlock.classList.add("active");
+  firstText.style.maxHeight = firstText.scrollHeight + "px";
+
+  var activeText = firstText;
+
+  // add listeners to headings
+
+  headings.forEach((h) =>
+    h.addEventListener("click", () => {
+      var parent = h.parentElement;
+      var isActive = parent.classList.contains("active");
+      var text = h.nextElementSibling;
+
+      if (isActive) {
+        parent.classList.remove("active");
+        text.style.maxHeight = null;
+        activeText = null;
+      } else {
+        questions.forEach((q) => q.classList.remove("active"));
+        texts.forEach((t) => (t.style.maxHeight = null));
+        parent.classList.add("active");
+        text.style.maxHeight = text.scrollHeight + "px";
+        activeText = text;
+      }
+    })
+  );
+
+  window.addEventListener(
+    "resize",
+    () =>
+      activeText &&
+      (activeText.style.maxHeight = activeText.scrollHeight + "px")
+  );
+
+  // TODO: update all elements by more_btn click
+  // var more_btn = document.querySelector(".scr_voprosy_art6__more");
+  // more_btn.addEventListener("click", initQuestionsAccordion);
+};
+
+// ===== INIT ACCORDION FOR TEMATICS (main page) AND FOOTER
+var initAccordion = (group_class, heading_class) => {
+  var groups = Array.from(document.querySelectorAll(group_class));
+
+  var accordionHandle = (e) => {
+    var heading = e.target.closest(heading_class);
+
+    if (heading) {
+      var group = heading.parentElement;
+      var list = heading.nextElementSibling;
+
+      if (group.classList.contains("active")) {
+        group.classList.remove("active");
+        list.style.maxHeight = null;
+      } else {
+        groups.forEach((g) => {
+          // remove class 'active' for every group element
+          g.classList.remove("active");
+
+          // set maxHeight property to 'null' for every description list
+          g.children[1].style.maxHeight = null;
+        });
+        // add class 'active' to current group and maxHeight to  curret description list
+        group.classList.add("active");
+        list.style.maxHeight = list.scrollHeight + "px";
+      }
+    }
+  };
+
+  var handleWindowResize = () => {
+    var currentGroup = groups.filter((g) => g.classList.contains("active"));
+    if (currentGroup.length > 0) {
+      var list = currentGroup[0].children[1];
+      list.style.maxHeight = list.scrollHeight + "px";
+    }
+  };
+
+  // toggle class 'active'
+  var toggleAccordionByMatchMedia = () => {
+    var handleMQ = (e) => {
+      if (e.matches) {
+        groups[0].classList.add("active");
+        groups.forEach((group) => {
+          group.addEventListener("click", accordionHandle);
+          window.addEventListener("resize", handleWindowResize);
+        });
+      } else {
+        groups.forEach((group) => group.classList.remove("active"));
+        groups.forEach((group) => {
+          group.removeEventListener("click", accordionHandle);
+          window.removeEventListener("resize", handleWindowResize);
+        });
+      }
+    };
+
+    var mq991 = window.matchMedia("(max-width: 991px)");
+
+    mq991.addEventListener("change", handleMQ);
+  };
+
+  toggleAccordionByMatchMedia();
+
+  // set init state
+  if (window.innerWidth <= 991) {
+    groups.forEach((group) => group.addEventListener("click", accordionHandle));
+    groups[0].classList.add("active");
+    groups[0].children[1].style.maxHeight =
+      groups[0].children[1].scrollHeight + "px";
+    window.addEventListener("resize", handleWindowResize);
+  }
+};
+
+// =============================================
+// ===== START JS LOGIC AFTER DOM CONTENT LOADED
+// =============================================
+document.addEventListener("DOMContentLoaded", function (event) {
+  // init luxy library
+  initSmothScroll();
+
+  // init header logic
+  initHeader();
+
+  var index_page = document.querySelector(".index");
+
+  if (index_page) {
+    // init slider
+    initTeamSlider();
+    initQuestionsAccordion();
+    initAccordion(".scr_tematiki_art6__group", ".scr_tematiki_art6__heading");
+    initAccordion(
+      ".scr_footer_art6__group-submenu",
+      ".scr_footer_art6__heading"
+    );
+  }
 });
