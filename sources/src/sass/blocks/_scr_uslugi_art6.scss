@@ -163,48 +163,46 @@
   //   min-height: 352px;
   // }
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: $color_dark;
+  &:hover {
+    background-color: $color_dark;
 
-      .scr_uslugi_art6__inner {
-        border-bottom-color: transparent;
+    .scr_uslugi_art6__inner {
+      border-bottom-color: transparent;
+    }
+
+    .scr_uslugi_art6__heading,
+    .scr_uslugi_art6__subheading,
+    .scr_uslugi_art6__more,
+    .scr_uslugi_art6__all {
+      color: $color_white;
+    }
+
+    .scr_uslugi_art6__more {
+      &::after {
+        opacity: 1;
+        visibility: visible;
       }
+    }
 
-      .scr_uslugi_art6__heading,
-      .scr_uslugi_art6__subheading,
-      .scr_uslugi_art6__more,
-      .scr_uslugi_art6__all {
+    .scr_uslugi_art6__all {
+      color: $color_grey;
+
+      &:hover {
         color: $color_white;
       }
+    }
 
-      .scr_uslugi_art6__more {
-        &::after {
-          opacity: 1;
-          visibility: visible;
-        }
+    .scr_uslugi_art6__heading {
+      &::after {
+        opacity: 1;
+        visibility: visible;
       }
+    }
 
-      .scr_uslugi_art6__all {
-        color: $color_grey;
-
-        &:hover {
-          color: $color_white;
-        }
-      }
-
-      .scr_uslugi_art6__heading {
-        &::after {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-
-      .scr_uslugi_art6__img {
-        img {
-          opacity: 1;
-          visibility: visible;
-        }
+    .scr_uslugi_art6__img {
+      img {
+        opacity: 1;
+        visibility: visible;
       }
     }
   }

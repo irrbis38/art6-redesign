@@ -138,8 +138,16 @@
     &.active {
       // remove when add javacript
 
-      .scr_tematiki_art6__list {
-        max-height: 200px;
+      .scr_tematiki_art6__heading {
+        & > span:last-child {
+          &::after {
+            transform: rotate(90deg);
+          }
+
+          &::before {
+            transform: rotate(180deg);
+          }
+        }
       }
     }
   }
@@ -191,7 +199,7 @@
         content: "";
         position: absolute;
         background-color: $color_grey;
-        transition: background-color 0.2s ease-out;
+        transition: background-color 0.2s ease-out, transform 0.2s ease-out;
       }
 
       &::before {
