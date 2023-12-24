@@ -2,23 +2,14 @@
   min-height: 244px;
   overflow-x: auto;
 
-  // @include xl {
-  //   margin-bottom: 27px;
-  // }
-
   @include lg {
     min-height: 172px;
   }
 
   @include sm {
     min-height: auto;
-    // margin-bottom: 63px;
     overflow-x: unset;
   }
-
-  // @include xs {
-  //   margin-bottom: 38px;
-  // }
 }
 
 .index_page_title {
@@ -108,6 +99,6 @@
   }
 
   @include r(359px) {
-    font-size: 40px;
+    font-size: 38px;
   }
 }
