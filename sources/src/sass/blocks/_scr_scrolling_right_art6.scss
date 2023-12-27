@@ -3,9 +3,9 @@
 }
 
 .scr_scrolling_right_art6__wrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  // display: flex;
+  // justify-content: flex-start;
+  // align-items: center;
   padding: 331px 0 330px;
 
   @include xl {
@@ -19,6 +19,12 @@
   @include sm {
     display: none;
   }
+}
+
+.scr_scrolling_right_art6__scroll {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /*=== TITLE ===*/
@@ -652,7 +658,7 @@
 /*=== END of SUBTITLE ===*/
 
 .scr_scrolling_right_art6__offset {
-  min-width: 100px;
+  min-width: 420px;
   height: 1px;
 }
 
