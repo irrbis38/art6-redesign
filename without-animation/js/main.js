@@ -157,6 +157,7 @@ var initTeamSlider = () => {
 
   glide.mount();
 };
+
 // ===== INIT ACCORDION FOR QUESTIONS (main page)
 var initQuestionsAccordion = () => {
   var questions = Array.from(
@@ -444,12 +445,45 @@ var changeCity = () => {
   });
 };
 
+// ===== АНИМАЦИЯ ПО СКРОЛЛУ
+
+var startScrollingBlockAnimation = () => {
+  var scrolledBlock = document.querySelector(
+    ".scr_scrolling_right_art6__scroll"
+  );
+
+  function getScrollAmount() {
+    let scrolledBlockWidth = scrolledBlock.scrollWidth;
+    return -(scrolledBlockWidth - window.innerWidth);
+  }
+
+  console.log(getScrollAmount());
+
+  const tween = gsap.to(scrolledBlock, {
+    x: getScrollAmount,
+    duration: 3,
+    ease: "none",
+  });
+
+  ScrollTrigger.create({
+    trigger: ".scr_scrolling_right_art6__wrapper",
+    start: "top 10%",
+    end: () => `+=${getScrollAmount() * -1}`,
+    pin: true,
+    animation: tween,
+    scrub: 1,
+    invalidateOnRefresh: true,
+    markers: true,
+  });
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
 document.addEventListener("DOMContentLoaded", function (event) {
+  //===== ADD BASIC LOGIC FOR ALL PAGE
   // init luxy library
-  initSmothScroll();
+  // initSmothScroll();
 
   // init header logic
   initHeader();
@@ -458,10 +492,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // init footer logic
   changeCity();
 
-  //=== LOGIC FOR DIFFERENT PAGES
+  //===== LOGIC FOR DIFFERENT PAGES
+  //=== START INDEX PAGE
   var index_page = document.querySelector(".index");
 
   if (index_page) {
+    // init GSAP ScrollTrigger
+    // gsap.registerPlugin(ScrollTrigger);
     // init slider
     initTeamSlider();
     // init accordions
@@ -476,5 +513,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
     checkRequiredInputs();
     formValidation();
     handleSuccessMsgModal();
+    // startScrollingBlockAnimation();
   }
+  //=== END INDEX PAGE
 });
+
+// TODO: plug GSAP after delay
+// function doCreateMapScript(cb) {
+//   setTimeout(function () {
+//     var script = document.createElement("script");
+//     script.async = false;
+//     script.src = "https://api-maps.yandex.ru/2.1/?apikey=key&lang=ru_RU";
+//     document.body.appendChild(script);
+//     script.onload = () => cb();
+//   }, 2000);
+// }
