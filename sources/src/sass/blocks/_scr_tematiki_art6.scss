@@ -34,6 +34,47 @@
   }
 }
 
+.scr_tematiki_art6__title {
+  position: relative;
+  padding-top: 124px;
+  font-weight: 600;
+  font-size: 120px;
+  line-height: 83%;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    width: 200px;
+    height: 1px;
+  }
+
+  @include xl {
+    padding-top: 92px;
+    font-size: 90px;
+    line-height: 111%;
+  }
+
+  @include lg {
+    padding-top: 53px;
+    font-size: 80px;
+    line-height: 100%;
+  }
+
+  @include sm {
+    display: none;
+    padding-top: 0;
+    font-size: 60px;
+    line-height: 83%;
+    white-space: unset;
+
+    span {
+      display: none;
+    }
+  }
+}
+
 .scr_tematiki_art6__line {
   position: relative;
   z-index: 2;
@@ -168,6 +209,18 @@
     position: relative;
   }
 
+  // & > span:nth-child(2) {
+  //   position: relative;
+  //   display: inline-block;
+  //   width: 1px;
+  //   height: 100%;
+
+  //   &::after {
+  //     content: "|";
+  //     opacity: 0;
+  //   }
+  // }
+
   & > span:last-child {
     display: none;
   }
@@ -232,6 +285,12 @@
   @include xs {
     font-size: 24px;
   }
+
+  @include r(400px) {
+    & > span:first-child {
+      max-width: 200px;
+    }
+  }
 }
 
 .scr_tematiki_art6__amount {
@@ -254,6 +313,7 @@
 
   @include xs {
     top: -9px;
+    right: -30px;
   }
 }
 
@@ -276,6 +336,10 @@
       display: block;
       width: 100%;
       height: 31px;
+    }
+
+    &::before {
+      display: none;
     }
   }
 

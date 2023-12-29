@@ -57,23 +57,30 @@
 .scr_sertif_partnery_art6__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px 21px;
+  grid-template-columns: 25.2% 25.2% 25.2% 24.4%;
+  // gap: 32px 21px;
+  gap: 32px 0;
 
   @include xl {
-    gap: 23px 38px;
+    // gap: 23px 38px;
+    gap: 23px 0;
   }
 
   @include lg {
-    gap: 51px 60px;
+    // gap: 51px 60px;
+    grid-template-columns: 27% 27% 27% 19%;
+    gap: 51px 0;
   }
 
   @include sm {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 64px 45px;
+    grid-template-columns: 53.13% 46.87%;
+    // gap: 64px 45px;
+    gap: 44px 0;
   }
 
   @include xs {
-    gap: 34px 23px;
+    // gap: 34px 23px;
+    gap: 34px 0;
   }
 }
 
@@ -103,13 +110,18 @@
     min-height: 139px;
   }
 
+  @include sm {
+    min-height: 149px;
+  }
+
   @include xs {
     min-height: 100px;
   }
 }
 
 .scr_sertif_partnery_art6__img {
-  width: 75%;
+  // width: 75%;
+  width: 70.37%;
 
   img {
     display: block;
@@ -120,19 +132,21 @@
     transition: opacity 0.2s ease-out;
   }
 
-  @include lg {
-    width: 83%;
-  }
+  // @include lg {
+  //   // width: 83%;
+  //   width: 62.99%;
+  // }
 
   @include sm {
-    width: 58%;
+    // width: 58%;
+    width: 51%;
   }
 
   @include xs {
     width: 83%;
   }
 
-  @include xxs {
-    width: 100%;
-  }
+  // @include xxs {
+  //   width: 100%;
+  // }
 }

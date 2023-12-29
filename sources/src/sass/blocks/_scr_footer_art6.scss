@@ -39,11 +39,10 @@
 
   @include sm {
     grid-template-columns: 47.79% 43.41%;
-    gap: 207px 8.8%;
+    gap: 190px 8.8%;
     grid-template-areas:
       "f_main f_links"
-      "f_info f_links"
-      ". f_links";
+      "f_info f_links";
   }
 
   @include xs {
@@ -309,8 +308,14 @@
     margin-bottom: 35px;
   }
 
+  @include lg {
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+
   @include sm {
-    margin-bottom: 35px;
+    margin-bottom: 18px;
   }
 
   @include xs {

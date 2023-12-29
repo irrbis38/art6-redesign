@@ -498,7 +498,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   if (index_page) {
     // init GSAP ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
     // init slider
     initTeamSlider();
     // init accordions

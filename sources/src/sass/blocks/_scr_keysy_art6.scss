@@ -29,6 +29,7 @@
 
   @include sm {
     min-height: 83px;
+    min-height: auto;
   }
 }
 
@@ -46,7 +47,7 @@
 
 .scr_keysy_art6__title-sm {
   @include sm {
-    margin-bottom: 33px;
+    margin-bottom: 23px;
   }
 
   @include xs {
@@ -777,6 +778,16 @@
     }
   }
 
+  @include sm {
+    &::after {
+      display: none;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
   @include xs {
     font-size: 28px;
   }
@@ -827,7 +838,8 @@
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     width: 32px;
     height: 32px;
@@ -838,7 +850,7 @@
 
   @media (hover: hover) {
     &:hover::before {
-      transform: translateX(10px);
+      transform: translate(10px, -50%);
     }
   }
 
@@ -855,6 +867,10 @@
       width: 26px;
       height: 26px;
     }
+  }
+
+  @include sm {
+    padding-left: 46px;
   }
 
   @include xs {

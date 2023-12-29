@@ -283,6 +283,10 @@
   @include lg {
     margin-bottom: 19px;
     font-size: 30px;
+
+    &::after {
+      top: -1px;
+    }
   }
 
   @include sm {

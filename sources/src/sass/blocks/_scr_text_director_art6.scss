@@ -340,7 +340,7 @@
     line-height: 189%;
 
     &::after {
-      bottom: 28px;
+      bottom: 0;
       right: -45px;
     }
   }
@@ -401,7 +401,8 @@
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     width: 32px;
     height: 32px;
@@ -412,7 +413,7 @@
 
   @media (hover: hover) {
     &:hover::before {
-      transform: translateX(10px);
+      transform: translate(10px, -50%);
     }
   }
 

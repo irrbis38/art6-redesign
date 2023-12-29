@@ -79,8 +79,9 @@
   }
 
   @include xs {
-    margin-bottom: 42px;
+    margin-bottom: 30px;
     font-size: 18px;
+    line-height: 140%;
   }
 }
 
@@ -320,6 +321,10 @@
       width: 26px;
       height: 26px;
     }
+  }
+
+  @include sm {
+    padding-left: 50px;
   }
 
   @include xs {

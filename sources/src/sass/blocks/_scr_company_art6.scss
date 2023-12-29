@@ -36,7 +36,7 @@
   }
 
   @include xs {
-    margin-bottom: 76px;
+    margin-bottom: 45px;
   }
 }
 
@@ -130,10 +130,10 @@
   &::after {
     content: "";
     position: absolute;
-    width: 4px;
-    height: -13px;
+    width: 6px;
+    height: 6px;
     top: 5px;
-    right: -5px;
+    right: -13px;
     z-index: 1;
     background-color: $color_white;
   }
@@ -160,6 +160,40 @@
       bottom: 20px;
       transform: rotate(-84deg);
     }
+  }
+}
+
+.scr_company_art6__manager {
+  position: absolute;
+  top: 57%;
+  left: 84.4%;
+  width: 86px;
+  height: 50px;
+  z-index: 2;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @include xl {
+    top: 55.3%;
+    left: 84.1%;
+  }
+
+  @include lg {
+    top: 57.8%;
+    left: 84.2%;
+  }
+
+  @include sm {
+    top: 31.4%;
+    left: 80.4%;
+  }
+
+  @include xs {
+    display: none;
   }
 }
 
@@ -331,6 +365,11 @@
   @include lg {
     max-width: 504px;
     margin: 0 0 103px auto;
+
+    p {
+      font-size: 16px;
+      line-height: 150%;
+    }
   }
 
   @include sm {
