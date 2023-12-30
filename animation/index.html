@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Main</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/manifest.json">
+    <link rel="yandex-tableau-widget" href="images/favicons/yandex-browser-manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body class="index">
+    <header class="header_art6" id="header">
+      <div class="header_art6__container">
+        <div class="header_art6__logo"><img src="./images/header_art6/logo.svg" alt="logo"></div>
+        <nav class="header_art6__wide-menu">
+          <div class="header_art6__wrapper">
+            <ul class="header_art6__links">
+              <li class="header_art6__item-has-submenu">
+                <button type="button" aria-label="Показать список услуг">Услуги</button>
+                <ul>
+                  <li><a href="#">Разработка сайтов</a></li>
+                  <li><a href="#">SEO-продвижение</a></li>
+                  <li><a href="#">Реклама</a></li>
+                  <li><a href="#">SMM</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Кейсы</a></li>
+              <li><a href="#">Отрасли</a></li>
+              <li><a href="#">Партнерам</a></li>
+              <li><a href="#">Отзывы</a></li>
+              <li class="header_art6__item-has-submenu">
+                <button type="button" aria-label="Показать список услуг">Компания</button>
+                <ul>
+                  <li><a href="#">Карьера</a></li>
+                  <li><a href="#">Культура</a></li>
+                  <li><a href="#">История</a></li>
+                  <li><a href="#">О компании</a></li>
+                  <li><a href="#">Достижение</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Контакты</a></li>
+              <li class="header_art6__item-has-submenu header_art6__item-more">
+                <button class="header_art6__more" type="button" aria-label="Показать остальные пункты меню"><span>Ещё</span><span class="header_art6__burger"> <span></span></span></button>
+                <ul>
+                  <li><a href="#">Отрасли</a></li>
+                  <li><a href="#">Партнерам</a></li>
+                  <li><a href="#">Отзывы</a></li>
+                  <li class="header_art6__item-has-submenu">
+                    <button type="button" aria-label="Показать список услуг">Компания</button>
+                    <ul>
+                      <li><a href="#">Карьера</a></li>
+                      <li><a href="#">Культура</a></li>
+                      <li><a href="#">История</a></li>
+                      <li><a href="#">О компании</a></li>
+                      <li><a href="#">Достижение</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="header_art6__call">
+              <div class="header_art6__contacts"><a class="header_art6__phone" href="tel:+78003505590">+7 800 350-55-90</a></div>
+              <button class="header_art6__cta" type="button">+ Стать клиентом</button>
+            </div>
+          </div>
+        </nav>
+        <button class="header_art6__burger-btn" id="burger-button" type="button" aria-label="Показать или скрыть меню"><span></span><span class="header_art6__burger"> <span></span></span></button>
+        <nav class="header_art6__mobile-menu" id="mobile-menu">
+          <div class="header_art6__mobile-wrapper">
+            <ul class="header_art6__mobile-links">
+              <li class="header_art6__mobile-item-has-submenu">
+                <button type="button" aria-label="Показать список услуг">Услуги</button>
+                <ul>
+                  <li><a href="#">Разработка сайтов</a></li>
+                  <li><a href="#">SEO-продвижение</a></li>
+                  <li><a href="#">Реклама</a></li>
+                  <li><a href="#">SMM</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Кейсы</a></li>
+              <li><a href="#">Отрасли</a></li>
+              <li><a href="#">Партнерам</a></li>
+              <li><a href="#">Отзывы</a></li>
+              <li class="header_art6__mobile-item-has-submenu">
+                <button type="button" aria-label="Показать список услуг">Компания</button>
+                <ul>
+                  <li><a href="#">Карьера</a></li>
+                  <li><a href="#">Культура</a></li>
+                  <li><a href="#">История</a></li>
+                  <li><a href="#">О компании</a></li>
+                  <li><a href="#">Достижение</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+            <div class="header_art6__mobile-call">
+              <div class="header_art6__mobile-contacts"><a class="header_art6__moblie-phone" href="tel:+78003505590">+7 800 350-55-90</a><a class="header_art6__mobile-email" href="tel:+78003505590">sale@art6.ru</a></div>
+              <button class="header_art6__mobile-cta" type="button">Стать клиентом</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="overlay"></div>
+    <div id="luxy">
+      <main class="main">
+        <section class="first_scr_main_art6">
+          <div class="container">
+            <h1 class="first_scr_main_art6__title"><span>Целевые клиенты</span><span>из</span><span>Интернета</span></h1>
+            <p class="first_scr_main_art6__subtitle"><span>В сотрудничестве с эффективным</span> <br class="first_scr_main_art6__380-br"> <span>digital-агентством</span></p>
+            <ul class="first_scr_main_art6__list"> 
+              <li class="first_scr_main_art6__item">Клиенты в 2 раза дешевле за счет эффективного подхода</li>
+              <li class="first_scr_main_art6__item">Исследование и стратегия – залог дальнейшего успеха</li>
+              <li class="first_scr_main_art6__item">Широкие возможности с упором на результат</li>
+              <li class="first_scr_main_art6__item">Все работы осуществляются агентством “под ключ”</li>
+            </ul>
+          </div>
+        </section>
+        <section class="scr_scrolling_right_art6 hidescrollbar">
+          <div class="container">
+            <div class="scr_scrolling_right_art6__wrapper">
+              <div class="scr_scrolling_right_art6__scroll">
+                <h2 class="scr_scrolling_right_art6__title"><span class="first_word">Комплексны<span class="letter">й<span class="manager"></span></span>
+                    <span class="designer"></span>
+                    <span class="proger"></span>
+                    <span class="support"></span>
+                    <span class="seo"></span>
+                    <span class="adw"></span></span>интернет-маркетинг
+                  
+                  
+                </h2>
+                <p class="scr_scrolling_right_art6__subtitle">За<span class="years_amount">10<span class="years_lines"></span></span>лет digital-агентство ART6<span class="color_blocks"><span class="develop">разработало<span class="proger"></span><span class="manager"></span></span><span class="promotion">продвинуло<span class="seo"></span></span><span class="advertise">прорекламировало<span class="adw"></span></span></span>более<span class="sites_amount">500</span>сайтов для более чем<span class="clients_amount">300<span class="clients_lines"></span></span>клиентов из Краснодара и<span class="regions_amount">37</span>регионов России.
+                  
+                </p>
+              </div>
+            </div>
+            <div class="scr_scrolling_right_art6__wrapper-sm">
+              <h2 class="scr_scrolling_right_art6__title-sm"><span>Комплексный</span><br> интернет-маркетинг</h2>
+              <p class="scr_scrolling_right_art6__subtitle-sm">С 2013 года digital-агентство ART6 разработало, продвинуло и прорекламировало более 500 сайтов для более чем 300 клиентов из Краснодара и 37 регионов России.</p>
+            </div>
+          </div>
+        </section>
+        <section class="scr_uslugi_art6">
+          <div class="scr_uslugi_art6__title__block index_page__title_block hidescrollbar">
+            <div class="container">
+              <h2 class="scr_uslugi_art6__title index_page_title">Широкие возможности с упором на результат</h2>
+              <h2 class="scr_uslugi_art6__title-sm index_page_title-sm">Широкие возможности с упором на результат</h2>
+            </div>
+          </div>
+          <div class="scr_uslugi_art6__wrapper">
+            <article class="scr_uslugi_art6__item">
+              <div class="container">
+                <div class="scr_uslugi_art6__inner">
+                  <div class="scr_uslugi_art6__content">
+                    <h2 class="scr_uslugi_art6__heading">Создание сайтов</h2>
+                    <p class="scr_uslugi_art6__subheading">Разрабатываем высококонверсионные сайты на CMS 1С-Битрикс и платформе Tilda</p><a class="scr_uslugi_art6__more" href="./index.html">Подробнее +</a><a class="scr_uslugi_art6__all" href="./index.html">Все услуги</a>
+                  </div>
+                  <div class="scr_uslugi_art6__img"> <img src="./images/scr_uslugi_art6/services-1.webp" alt="создание сайтов"></div>
+                </div>
+              </div>
+            </article>
+            <article class="scr_uslugi_art6__item">
+              <div class="container">
+                <div class="scr_uslugi_art6__inner">
+                  <div class="scr_uslugi_art6__content">
+                    <h2 class="scr_uslugi_art6__heading">SEO-продвижение сайтов</h2>
+                    <p class="scr_uslugi_art6__subheading">Разрабатываем высококонверсионные сайты на CMS 1С-Битрикс и платформе Tilda</p><a class="scr_uslugi_art6__more" href="./index.html">Подробнее +</a><a class="scr_uslugi_art6__all" href="./index.html">Все услуги</a>
+                  </div>
+                  <div class="scr_uslugi_art6__img"> <img src="./images/scr_uslugi_art6/services-1.webp" alt="создание сайтов"></div>
+                </div>
+              </div>
+            </article>
+            <article class="scr_uslugi_art6__item">
+              <div class="container">
+                <div class="scr_uslugi_art6__inner">
+                  <div class="scr_uslugi_art6__content">
+                    <h2 class="scr_uslugi_art6__heading">Контекстная реклама</h2>
+                    <p class="scr_uslugi_art6__subheading">Разрабатываем высококонверсионные сайты на CMS 1С-Битрикс и платформе Tilda</p><a class="scr_uslugi_art6__more" href="./index.html">Подробнее +</a><a class="scr_uslugi_art6__all" href="./index.html">Все услуги</a>
+                  </div>
+                  <div class="scr_uslugi_art6__img"> <img src="./images/scr_uslugi_art6/services-1.webp" alt="создание сайтов"></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="scr_keysy_art6">
+          <div class="scr_keysy_art6__title__block index_page__title_block hidescrollbar">
+            <div class="container">
+              <h2 class="scr_keysy_art6__title index_page_title">Ооогромное количество проектов</h2>
+              <h2 class="scr_keysy_art6__title-sm index_page_title-sm">Ооогромное количество проектов</h2>
+            </div>
+          </div>
+          <div class="container">
+            <div class="scr_keysy_art6__wrapper">
+              <p class="scr_keysy_art6__subtitle">Более <span>1 000</span> проектов в digital-маркетинге с <span>2013</span> года</p>
+              <ul class="scr_keysy_art6__filters"> 
+                <li>
+                  <input class="scr_keysy_art6__filter" type="button" value="Все работы">
+                </li>
+                <li>
+                  <input class="scr_keysy_art6__filter" type="button" value="Создание сайтов">
+                </li>
+                <li>
+                  <input class="scr_keysy_art6__filter" type="button" value="SEO-продвижение">
+                </li>
+                <li>
+                  <input class="scr_keysy_art6__filter" type="button" value="Реклама">
+                </li>
+                <li>
+                  <input class="scr_keysy_art6__filter" type="button" value="Маркетинг">
+                </li>
+              </ul>
+              <div class="scr_keysy_art6__cases"> 
+                <div class="scr_keysy_art6__group scr_keysy_art6__group-left">
+                  <div class="scr_keysy_art6__case scr_keysy_art6__case-red">
+                    <div class="scr_keysy_art6__img"><img src="./images/scr_keysy_art6/case-1.webp" alt=""></div>
+                    <h3 class="scr_keysy_art6__heading"><span>Черноголовка</span></h3>
+                    <p class="scr_keysy_art6__text">Запуск контекстной рекламы Яндекс.Директ (поиск и РСЯ) </p><a href="./index.html" aria-label="Черноголовка "> </a>
+                  </div>
+                  <div class="scr_keysy_art6__case scr_keysy_art6__case-purple">
+                    <h3 class="scr_keysy_art6__heading"><span>Акватим</span></h3>
+                    <p class="scr_keysy_art6__text">Запуск контекстной рекламы Яндекс.Директ (поиск и РСЯ) </p>
+                    <div class="scr_keysy_art6__img"><img src="./images/scr_keysy_art6/case-2.webp" alt=""></div>
+                    <div class="scr_keysy_art6__data">
+                      <div class="scr_keysy_art6__rate"><span>5,2% </span><span>CR на РСЯ</span></div>
+                      <div class="scr_keysy_art6__rate"><span>10% </span><span>CR на поиске</span></div>
+                      <div class="scr_keysy_art6__rate"><span>742₽</span><span>стоимость лида РСЯ</span></div>
+                    </div><a href="./index.html" aria-label="Акватим "></a>
+                  </div>
+                  <div class="scr_keysy_art6__case scr_keysy_art6__case-dark-blue">
+                    <h3 class="scr_keysy_art6__heading"><span>Evi Clinic</span></h3>
+                    <p class="scr_keysy_art6__text">Запуск контекстной рекламы Яндекс.Директ (поиск и РСЯ) </p>
+                    <div class="scr_keysy_art6__data">
+                      <div class="scr_keysy_art6__rate"><span>5,2% </span><span>CR на РСЯ</span></div>
+                      <div class="scr_keysy_art6__rate"><span>10% </span><span>CR на поиске</span></div>
+                      <div class="scr_keysy_art6__rate"><span>742₽</span><span>стоимость лида РСЯ</span></div>
+                    </div>
+                    <div class="scr_keysy_art6__img"><img src="./images/scr_keysy_art6/case-3.webp" alt=""></div><a href="./index.html" aria-label="Evi Clinic "></a>
+                  </div>
+                </div>
+                <div class="scr_keysy_art6__group scr_keysy_art6__group-right">
+                  <div class="scr_keysy_art6__case scr_keysy_art6__case-blue">
+                    <h3 class="scr_keysy_art6__heading"><span>Italtherm</span></h3>
+                    <p class="scr_keysy_art6__text">Запуск контекстной рекламы Яндекс.Директ (поиск и РСЯ) </p>
+                    <div class="scr_keysy_art6__img"><img src="./images/scr_keysy_art6/case-4.webp" alt=""></div><a href="./index.html" aria-label="Italtherm "></a>
+                  </div>
+                  <div class="scr_keysy_art6__case scr_keysy_art6__case-violet">
+                    <h3 class="scr_keysy_art6__heading"><span>Астра–Пул</span></h3>
+                    <p class="scr_keysy_art6__text">Запуск контекстной рекламы Яндекс.Директ (поиск и РСЯ)</p>
+                    <div class="scr_keysy_art6__data">
+                      <div class="scr_keysy_art6__rate"><span>5,2% </span><span>CR на РСЯ</span></div>
+                      <div class="scr_keysy_art6__rate"><span>10% </span><span>CR на поиске</span></div>
+                      <div class="scr_keysy_art6__rate"><span>742₽</span><span>стоимость лида РСЯ</span></div>
+                    </div>
+                    <div class="scr_keysy_art6__data">
+                      <div class="scr_keysy_art6__rate"><span>5,2% </span><span>CR на РСЯ</span></div>
+                      <div class="scr_keysy_art6__rate"><span>10% </span><span>CR на поиске</span></div>
+                      <div class="scr_keysy_art6__rate"><span>742₽</span><span>стоимость лида РСЯ</span></div>
+                    </div>
+                    <p class="scr_keysy_art6__info">Увеличение количества целевых заявок в B2С сегменте. Выход и закрепление на рынки всех регионов России</p>
+                    <div class="scr_keysy_art6__img"><img src="./images/scr_keysy_art6/case-5.webp" alt=""></div><a href="./index.html" aria-label="Астра–Пул "></a>
+                  </div>
+                  <div class="scr_keysy_art6__case scr_keysy_art6__case-green">
+                    <h3 class="scr_keysy_art6__heading"><span>Aurora</span></h3>
+                    <p class="scr_keysy_art6__text">Запуск контекстной рекламы Яндекс.Директ (поиск и РСЯ) </p>
+                    <div class="scr_keysy_art6__img"><img src="./images/scr_keysy_art6/case-6.webp" alt=""></div><a href="./index.html" aria-label="Aurora "></a>
+                  </div>
+                </div>
+              </div>
+            </div><a class="scr_keysy_art6__more" href="./index.html">Показать больше</a>
+          </div>
+        </section>
+        <section class="scr_text_director_art6">
+          <div class="scr_text_director_art6__wrapper">
+            <div class="scr_text_director_art6__bg"><img src="./images/scr_text_director_art6/scr_text_director_art6_bg.webp" alt="">
+              <div class="scr_text_director_art6__director">
+                <p class="scr_text_director_art6__name">Джурко Игорь</p>
+                <p class="scr_text_director_art6__post">Директор и руководитель</p>
+              </div>
+            </div>
+            <div class="scr_text_director_art6__intro">
+              <div class="scr_text_director_art6__title__block index_page__title_block hidescrollbar">
+                <div class="container">
+                  <h2 class="scr_text_director_art6__title index_page_title">Эффективный и честный подход</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <h2 class="scr_text_director_art6__title-sm index_page_title-sm">Эффективный и честный подход</h2>
+            <div class="scr_text_director_art6__info">
+              <p class="scr_text_director_art6__cite"><span>Я лично гарантирую вам честный подход</span><span>Работая с нами вы получаете эффективную ответственную команду с огромным опытом оказания услуг в области digital-маркетинга по Краснодару и всей России. Мы заинтересованы в партнерских отношениях на долгие годы или как мы говорим “на всю жизнь” и достижении самых высоких бизнес-результатов для вашей компании.</span><span>Выжимаем из интернет-маркетинга максимум за счет грамотной стратегии и подбора эффективных каналов и инструментов.</span></p>
+              <div class="scr_text_director_art6__director-sm">
+                <p class="scr_text_director_art6__name">Джурко Игорь</p>
+                <p class="scr_text_director_art6__post">Директор и руководитель</p>
+              </div>
+              <button class="scr_text_director_art6__consultation" type="button">Получить консультацию</button>
+            </div>
+          </div>
+        </section>
+        <section class="scr_tematiki_art6">
+          <div class="scr_tematiki_art6__inner">
+            <div class="scr_tematiki_art6__title__block index_page__title_block hidescrollbar">
+              <div class="container">
+                <h2 class="scr_tematiki_art6__title">С вероятностью 88% мы имеем опыт работы с вашей тематикой</h2>
+                <h2 class="scr_tematiki_art6__title-sm index_page_title-sm">С вероятностью 88% мы имеем опыт работы с вашей тематикой</h2>
+              </div>
+            </div>
+            <div class="scr_tematiki_art6__line"></div>
+          </div>
+          <div class="scr_tematiki_art6__wrapper">
+            <div class="container">
+              <div class="scr_tematiki_art6__group">
+                <h3 class="scr_tematiki_art6__heading"> <span>Строительство <span class="scr_tematiki_art6__amount">92</span></span><span></span></h3>
+                <div class="scr_tematiki_art6__list"><a class="scr_tematiki_art6__item" href="./index.html">Частные дома</a><a class="scr_tematiki_art6__item" href="./index.html">Заборы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Асфальтирование</a><a class="scr_tematiki_art6__item" href="./index.html">Ремонт домов и квартир</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a></div>
+              </div>
+              <div class="scr_tematiki_art6__group">
+                <h3 class="scr_tematiki_art6__heading"><span>Мебель<span class="scr_tematiki_art6__amount">82</span></span><span></span></h3>
+                <div class="scr_tematiki_art6__list"><a class="scr_tematiki_art6__item" href="./index.html">Частные дома</a><a class="scr_tematiki_art6__item" href="./index.html">Заборы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Ремонт домов и квартир</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Ландшафтный дизайн</a></div>
+              </div>
+              <div class="scr_tematiki_art6__group">
+                <h3 class="scr_tematiki_art6__heading"><span>Производство и поставки <span class="scr_tematiki_art6__amount">47</span></span><span></span></h3>
+                <div class="scr_tematiki_art6__list"><a class="scr_tematiki_art6__item" href="./index.html">Частные дома</a><a class="scr_tematiki_art6__item" href="./index.html">Заборы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Ремонт домов и квартир</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a></div>
+              </div>
+              <div class="scr_tematiki_art6__group">
+                <h3 class="scr_tematiki_art6__heading"><span>Мебель <span class="scr_tematiki_art6__amount">82</span></span><span></span></h3>
+                <div class="scr_tematiki_art6__list"><a class="scr_tematiki_art6__item" href="./index.html">Частные дома</a><a class="scr_tematiki_art6__item" href="./index.html">Заборы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Ремонт домов и квартир</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Ландшафтный дизайн</a></div>
+              </div>
+              <div class="scr_tematiki_art6__group">
+                <h3 class="scr_tematiki_art6__heading"> <span>Медицина <span class="scr_tematiki_art6__amount">150</span></span><span></span></h3>
+                <div class="scr_tematiki_art6__list"><a class="scr_tematiki_art6__item" href="./index.html">Частные дома</a><a class="scr_tematiki_art6__item" href="./index.html">Заборы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Ремонт домов и квартир</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Ландшафтный дизайн</a></div>
+              </div>
+              <div class="scr_tematiki_art6__group">
+                <h3 class="scr_tematiki_art6__heading"><span>E-commerce <span class="scr_tematiki_art6__amount">25</span></span><span></span></h3>
+                <div class="scr_tematiki_art6__list"><a class="scr_tematiki_art6__item" href="./index.html">Частные дома</a><a class="scr_tematiki_art6__item" href="./index.html">Заборы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Ремонт домов и квартир</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Ландшафтный дизайн</a></div>
+              </div>
+              <div class="scr_tematiki_art6__group">
+                <h3 class="scr_tematiki_art6__heading"><span>Медицина <span class="scr_tematiki_art6__amount">150</span></span><span></span></h3>
+                <div class="scr_tematiki_art6__list"><a class="scr_tematiki_art6__item" href="./index.html">Частные дома</a><a class="scr_tematiki_art6__item" href="./index.html">Заборы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Навесы</a><a class="scr_tematiki_art6__item" href="./index.html">Ремонт домов и квартир</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Лестницы</a><a class="scr_tematiki_art6__item" href="./index.html">Ландшафтный дизайн</a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="scr_company_art6">
+          <div class="scr_company_art6__wrapper">
+            <div class="scr_company_art6__bg"><img src="./images/scr_company_art6/scr_company_art6_bg.webp" alt="Наша дружная команда">
+              <div class="scr_company_art6__person">
+                <p class="scr_company_art6__name">Ваня Комов</p>
+                <p class="scr_company_art6__post">Product Manager</p>
+              </div>
+              <div class="scr_company_art6__manager"><svg width="86" height="51" viewBox="0 0 86 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.000464651 44.6565L25.9152 37.5263L12.9195 33.7427L11.7193 20.8434L0.000464651 44.6565Z" fill="#8E8E93" />
+<path d="M81.2051 26.615V19.0025H82.9015V21.0981L82.7019 20.4851C82.93 19.9719 83.2864 19.5822 83.7711 19.3161C84.2653 19.05 84.8783 18.917 85.61 18.917V20.6134C85.534 20.5944 85.4627 20.5849 85.3962 20.5849C85.3297 20.5754 85.2632 20.5706 85.1966 20.5706C84.5219 20.5706 83.9849 20.7702 83.5858 21.1694C83.1866 21.559 82.987 22.1435 82.987 22.9228V26.615H81.2051Z" fill="#8E8E93" />
+<path d="M76.1995 26.7148C75.3537 26.7148 74.6124 26.5484 73.9757 26.2158C73.3484 25.8737 72.859 25.408 72.5073 24.8188C72.1652 24.2295 71.9941 23.5595 71.9941 22.8087C71.9941 22.0485 72.1605 21.3784 72.4931 20.7987C72.8352 20.2095 73.3009 19.7486 73.8901 19.4159C74.4889 19.0833 75.1684 18.917 75.9287 18.917C76.67 18.917 77.3305 19.0786 77.9102 19.4017C78.4899 19.7248 78.9461 20.181 79.2787 20.7702C79.6113 21.3594 79.7777 22.0532 79.7777 22.8515C79.7777 22.9275 79.7729 23.0131 79.7634 23.1081C79.7634 23.2032 79.7586 23.2934 79.7491 23.379H73.4054V22.1958H78.8083L78.1098 22.5664C78.1193 22.1292 78.029 21.7443 77.8389 21.4117C77.6488 21.0791 77.3875 20.8177 77.0548 20.6277C76.7317 20.4376 76.3563 20.3425 75.9287 20.3425C75.4915 20.3425 75.1066 20.4376 74.774 20.6277C74.4508 20.8177 74.1942 21.0838 74.0042 21.426C73.8236 21.7586 73.7333 22.153 73.7333 22.6092V22.8943C73.7333 23.3505 73.8379 23.7544 74.0469 24.106C74.256 24.4576 74.5506 24.7285 74.9308 24.9186C75.3109 25.1086 75.7481 25.2037 76.2423 25.2037C76.6699 25.2037 77.0548 25.1371 77.397 25.0041C77.7391 24.871 78.0432 24.662 78.3093 24.3769L79.2645 25.4745C78.9223 25.8737 78.4899 26.1826 77.9672 26.4011C77.454 26.6102 76.8648 26.7148 76.1995 26.7148Z" fill="#8E8E93" />
+<path d="M66.4589 29.4803C65.7556 29.4803 65.0666 29.3853 64.3919 29.1952C63.7266 29.0147 63.1801 28.7485 62.7525 28.3969L63.5508 27.0569C63.8834 27.3325 64.3016 27.5511 64.8053 27.7126C65.3185 27.8837 65.8364 27.9692 66.3591 27.9692C67.1954 27.9692 67.8084 27.7744 68.1981 27.3848C68.5877 27.0046 68.7826 26.4296 68.7826 25.6599V24.3056L68.9251 22.5807L68.8681 20.8557V19.0025H70.5645V25.4603C70.5645 26.8383 70.2129 27.8504 69.5096 28.4967C68.8063 29.1525 67.7894 29.4803 66.4589 29.4803ZM66.2308 26.2728C65.5085 26.2728 64.8528 26.1208 64.2636 25.8167C63.6838 25.503 63.2229 25.0706 62.8808 24.5194C62.5481 23.9682 62.3818 23.3219 62.3818 22.5807C62.3818 21.8489 62.5481 21.2074 62.8808 20.6562C63.2229 20.105 63.6838 19.6773 64.2636 19.3732C64.8528 19.0691 65.5085 18.917 66.2308 18.917C66.8771 18.917 67.4568 19.0453 67.97 19.3019C68.4832 19.5585 68.8919 19.9576 69.196 20.4994C69.5096 21.0411 69.6664 21.7348 69.6664 22.5807C69.6664 23.4265 69.5096 24.125 69.196 24.6762C68.8919 25.2179 68.4832 25.6218 67.97 25.8879C67.4568 26.1445 66.8771 26.2728 66.2308 26.2728ZM66.5017 24.7618C66.9484 24.7618 67.3475 24.6715 67.6991 24.4909C68.0508 24.3008 68.3216 24.0442 68.5117 23.7211C68.7113 23.3885 68.8111 23.0083 68.8111 22.5807C68.8111 22.153 68.7113 21.7776 68.5117 21.4545C68.3216 21.1218 68.0508 20.87 67.6991 20.6989C67.3475 20.5184 66.9484 20.4281 66.5017 20.4281C66.055 20.4281 65.6511 20.5184 65.29 20.6989C64.9383 20.87 64.6627 21.1218 64.4631 21.4545C64.2731 21.7776 64.178 22.153 64.178 22.5807C64.178 23.0083 64.2731 23.3885 64.4631 23.7211C64.6627 24.0442 64.9383 24.3008 65.29 24.4909C65.6511 24.6715 66.055 24.7618 66.5017 24.7618Z" fill="#8E8E93" />
+<path d="M59.3119 26.615V25.0754L59.2121 24.7475V22.0532C59.2121 21.5305 59.0553 21.1266 58.7416 20.8415C58.428 20.5469 57.9528 20.3996 57.3161 20.3996C56.8884 20.3996 56.4655 20.4661 56.0473 20.5991C55.6387 20.7322 55.2918 20.9175 55.0067 21.1551L54.3082 19.8579C54.7168 19.5442 55.2015 19.3114 55.7622 19.1593C56.3325 18.9978 56.9217 18.917 57.5299 18.917C58.6323 18.917 59.4829 19.1831 60.0817 19.7153C60.6899 20.238 60.994 21.0506 60.994 22.153V26.615H59.3119ZM56.9169 26.7148C56.3467 26.7148 55.8478 26.6197 55.4201 26.4296C54.9924 26.2301 54.6598 25.9592 54.4222 25.6171C54.1941 25.2654 54.0801 24.871 54.0801 24.4339C54.0801 24.0062 54.1799 23.6213 54.3794 23.2792C54.5885 22.937 54.9259 22.6662 55.3916 22.4666C55.8573 22.267 56.475 22.1672 57.2448 22.1672H59.4544V23.3505H57.3731C56.7649 23.3505 56.3562 23.4502 56.1471 23.6498C55.9381 23.8399 55.8335 24.0775 55.8335 24.3626C55.8335 24.6857 55.9618 24.9423 56.2184 25.1324C56.475 25.3225 56.8314 25.4175 57.2876 25.4175C57.7247 25.4175 58.1144 25.3177 58.4565 25.1181C58.8082 24.9186 59.06 24.624 59.2121 24.2343L59.5114 25.3035C59.3404 25.7501 59.0315 26.097 58.5848 26.3441C58.1477 26.5912 57.5917 26.7148 56.9169 26.7148Z" fill="#8E8E93" />
+<path d="M49.4669 18.917C50.0751 18.917 50.6168 19.0358 51.092 19.2734C51.5767 19.511 51.9568 19.8769 52.2325 20.3711C52.5081 20.8557 52.6459 21.483 52.6459 22.2528V26.615H50.8639V22.4809C50.8639 21.8061 50.7024 21.3024 50.3792 20.9698C50.0656 20.6372 49.6237 20.4708 49.0535 20.4708C48.6353 20.4708 48.2647 20.5564 47.9415 20.7274C47.6184 20.8985 47.3666 21.1551 47.186 21.4972C47.0149 21.8299 46.9294 22.2528 46.9294 22.766V26.615H45.1475V19.0025H46.8439V21.0553L46.5445 20.4281C46.8106 19.9434 47.1955 19.5727 47.6992 19.3161C48.2124 19.05 48.8016 18.917 49.4669 18.917Z" fill="#8E8E93" />
+<path d="M41.4632 26.615V25.0754L41.3634 24.7475V22.0532C41.3634 21.5305 41.2066 21.1266 40.893 20.8415C40.5794 20.5469 40.1042 20.3996 39.4674 20.3996C39.0398 20.3996 38.6169 20.4661 38.1987 20.5991C37.79 20.7322 37.4432 20.9175 37.1581 21.1551L36.4595 19.8579C36.8682 19.5442 37.3529 19.3114 37.9136 19.1593C38.4838 18.9978 39.073 18.917 39.6813 18.917C40.7837 18.917 41.6343 19.1831 42.233 19.7153C42.8413 20.238 43.1454 21.0506 43.1454 22.153V26.615H41.4632ZM39.0683 26.7148C38.4981 26.7148 37.9991 26.6197 37.5715 26.4296C37.1438 26.2301 36.8112 25.9592 36.5736 25.6171C36.3455 25.2654 36.2314 24.871 36.2314 24.4339C36.2314 24.0062 36.3312 23.6213 36.5308 23.2792C36.7399 22.937 37.0773 22.6662 37.543 22.4666C38.0086 22.267 38.6264 22.1672 39.3962 22.1672H41.6058V23.3505H39.5245C38.9162 23.3505 38.5076 23.4502 38.2985 23.6498C38.0894 23.8399 37.9849 24.0775 37.9849 24.3626C37.9849 24.6857 38.1132 24.9423 38.3698 25.1324C38.6264 25.3225 38.9828 25.4175 39.4389 25.4175C39.8761 25.4175 40.2658 25.3177 40.6079 25.1181C40.9595 24.9186 41.2114 24.624 41.3634 24.2343L41.6628 25.3035C41.4917 25.7501 41.1829 26.097 40.7362 26.3441C40.299 26.5912 39.7431 26.7148 39.0683 26.7148Z" fill="#8E8E93" />
+<path d="M23.6143 26.6151V16.6362H25.1396L29.5018 23.9208H28.7035L32.9944 16.6362H34.5197L34.534 26.6151H32.7806L32.7663 19.3875H33.1369L29.4875 25.4747H28.6607L24.9543 19.3875H25.3819V26.6151H23.6143Z" fill="#8E8E93" />
+<path d="M77.6382 10.6771C76.8019 10.6771 76.1557 10.4633 75.6995 10.0356C75.2433 9.59843 75.0152 8.95694 75.0152 8.11111V1.28271H76.7972V8.06834C76.7972 8.42948 76.8875 8.70984 77.068 8.90942C77.2581 9.10899 77.5194 9.20878 77.8521 9.20878C78.2512 9.20878 78.5839 9.10424 78.85 8.89516L79.3489 10.1639C79.1398 10.335 78.8832 10.4633 78.5791 10.5488C78.275 10.6343 77.9614 10.6771 77.6382 10.6771ZM73.7607 4.44744V3.02189H78.8357V4.44744H73.7607Z" fill="#8E8E93" />
+<path d="M70.1706 10.6772C69.3723 10.6772 68.6595 10.5108 68.0323 10.1782C67.4146 9.83609 66.9299 9.37041 66.5782 8.78118C66.2266 8.19195 66.0508 7.52194 66.0508 6.77115C66.0508 6.01086 66.2266 5.34085 66.5782 4.76112C66.9299 4.1719 67.4146 3.71097 68.0323 3.37834C68.6595 3.04571 69.3723 2.87939 70.1706 2.87939C70.9119 2.87939 71.5629 3.03145 72.1236 3.33557C72.6939 3.63019 73.1263 4.06735 73.4209 4.64708L72.0524 5.44539C71.8243 5.08425 71.5439 4.81815 71.2113 4.64708C70.8882 4.47601 70.5365 4.39048 70.1564 4.39048C69.7192 4.39048 69.3248 4.48552 68.9732 4.67559C68.6215 4.86566 68.3459 5.14127 68.1463 5.50241C67.9468 5.85405 67.847 6.27696 67.847 6.77115C67.847 7.26534 67.9468 7.69301 68.1463 8.05415C68.3459 8.40579 68.6215 8.67664 68.9732 8.86671C69.3248 9.05679 69.7192 9.15182 70.1564 9.15182C70.5365 9.15182 70.8882 9.06629 71.2113 8.89522C71.5439 8.72416 71.8243 8.45805 72.0524 8.09691L73.4209 8.89522C73.1263 9.46544 72.6939 9.90737 72.1236 10.221C71.5629 10.5251 70.9119 10.6772 70.1706 10.6772Z" fill="#8E8E93" />
+<path d="M60.4809 10.6776C59.8347 10.6776 59.2644 10.5588 58.7703 10.3212C58.2761 10.0741 57.8912 9.70344 57.6156 9.20925C57.34 8.70555 57.2021 8.07356 57.2021 7.31327V2.96533H58.9841V7.07092C58.9841 7.75519 59.1361 8.26839 59.4403 8.61052C59.7539 8.94315 60.1958 9.10946 60.766 9.10946C61.1842 9.10946 61.5453 9.02393 61.8494 8.85286C62.1631 8.6818 62.4054 8.4252 62.5765 8.08306C62.757 7.74093 62.8473 7.31802 62.8473 6.81432V2.96533H64.6293V10.5778H62.9329V8.52498L63.2322 9.15223C62.9756 9.64642 62.6002 10.0266 62.106 10.2927C61.6119 10.5493 61.0701 10.6776 60.4809 10.6776Z" fill="#8E8E93" />
+<path d="M50.9799 10.6774C50.2481 10.6774 49.5876 10.5158 48.9983 10.1927C48.4186 9.86007 47.9624 9.40389 47.6298 8.82417C47.2972 8.24444 47.1309 7.56018 47.1309 6.77137C47.1309 5.98257 47.2972 5.2983 47.6298 4.71858C47.9624 4.13885 48.4186 3.68743 48.9983 3.3643C49.5876 3.04118 50.2481 2.87962 50.9799 2.87962C51.6166 2.87962 52.1868 3.02217 52.6905 3.30728C53.1942 3.58289 53.5934 4.0058 53.888 4.57602C54.1826 5.14624 54.3299 5.87803 54.3299 6.77137C54.3299 7.65521 54.1873 8.387 53.9022 8.96672C53.6171 9.53694 53.2227 9.96461 52.719 10.2497C52.2153 10.5348 51.6356 10.6774 50.9799 10.6774ZM51.1937 9.15204C51.6213 9.15204 52.0015 9.05701 52.3341 8.86693C52.6763 8.67686 52.9471 8.40125 53.1467 8.04011C53.3558 7.67897 53.4603 7.25606 53.4603 6.77137C53.4603 6.27718 53.3558 5.85427 53.1467 5.50263C52.9471 5.14149 52.6763 4.86588 52.3341 4.67581C52.0015 4.48574 51.6213 4.3907 51.1937 4.3907C50.766 4.3907 50.3811 4.48574 50.039 4.67581C49.7064 4.86588 49.4355 5.14149 49.2264 5.50263C49.0268 5.85427 48.9271 6.27718 48.9271 6.77137C48.9271 7.25606 49.0268 7.67897 49.2264 8.04011C49.4355 8.40125 49.7064 8.67686 50.039 8.86693C50.3811 9.05701 50.766 9.15204 51.1937 9.15204ZM53.5031 10.5776V8.7814L53.5744 6.75712L53.4318 4.73283V0H55.1995V10.5776H53.5031Z" fill="#8E8E93" />
+<path d="M42.2761 10.6772C41.4968 10.6772 40.803 10.5108 40.1948 10.1782C39.5866 9.83609 39.1066 9.37041 38.755 8.78118C38.4034 8.19195 38.2275 7.52194 38.2275 6.77115C38.2275 6.01086 38.4034 5.34085 38.755 4.76112C39.1066 4.1719 39.5866 3.71097 40.1948 3.37834C40.803 3.04571 41.4968 2.87939 42.2761 2.87939C43.0649 2.87939 43.7634 3.04571 44.3717 3.37834C44.9894 3.71097 45.4693 4.16714 45.8115 4.74687C46.1631 5.32659 46.3389 6.00135 46.3389 6.77115C46.3389 7.52194 46.1631 8.19195 45.8115 8.78118C45.4693 9.37041 44.9894 9.83609 44.3717 10.1782C43.7634 10.5108 43.0649 10.6772 42.2761 10.6772ZM42.2761 9.15182C42.7133 9.15182 43.1029 9.05679 43.4451 8.86671C43.7872 8.67664 44.0533 8.40103 44.2434 8.03989C44.4429 7.67875 44.5427 7.25584 44.5427 6.77115C44.5427 6.27696 44.4429 5.85405 44.2434 5.50241C44.0533 5.14127 43.7872 4.86566 43.4451 4.67559C43.1029 4.48552 42.718 4.39048 42.2904 4.39048C41.8532 4.39048 41.4635 4.48552 41.1214 4.67559C40.7888 4.86566 40.5227 5.14127 40.3231 5.50241C40.1235 5.85405 40.0237 6.27696 40.0237 6.77115C40.0237 7.25584 40.1235 7.67875 40.3231 8.03989C40.5227 8.40103 40.7888 8.67664 41.1214 8.86671C41.4635 9.05679 41.8484 9.15182 42.2761 9.15182Z" fill="#8E8E93" />
+<path d="M33.293 10.5774V2.96493H34.9894V5.06049L34.7898 4.4475C35.0179 3.9343 35.3743 3.54465 35.859 3.27855C36.3532 3.01245 36.9661 2.87939 37.6979 2.87939V4.5758C37.6219 4.55679 37.5506 4.54729 37.4841 4.54729C37.4176 4.53779 37.351 4.53303 37.2845 4.53303C36.6098 4.53303 36.0728 4.73261 35.6736 5.13177C35.2745 5.52142 35.0749 6.10589 35.0749 6.8852V10.5774H33.293Z" fill="#8E8E93" />
+<path d="M23.6143 10.5775V0.598633H27.7198C28.6037 0.598633 29.3592 0.741188 29.9865 1.0263C30.6232 1.31141 31.1127 1.72007 31.4548 2.25227C31.7969 2.78448 31.968 3.41647 31.968 4.14826C31.968 4.88004 31.7969 5.51204 31.4548 6.04424C31.1127 6.57645 30.6232 6.98511 29.9865 7.27022C29.3592 7.55533 28.6037 7.69788 27.7198 7.69788H24.6407L25.4675 6.8283V10.5775H23.6143ZM25.4675 7.02787L24.6407 6.12977H27.6343C28.4516 6.12977 29.0646 5.95871 29.4733 5.61658C29.8914 5.26494 30.1005 4.7755 30.1005 4.14826C30.1005 3.51151 29.8914 3.02207 29.4733 2.67994C29.0646 2.33781 28.4516 2.16674 27.6343 2.16674H24.6407L25.4675 1.25439V7.02787Z" fill="#8E8E93" />
+</svg>
+              </div>
+            </div>
+            <div class="scr_company_art6__intro">
+              <div class="scr_company_art6__title__block index_page__title_block hidescrollbar">
+                <div class="container">
+                  <h2 class="scr_company_art6__title index_page_title">Команда стратегов и мечтателей</h2>
+                </div>
+              </div>
+              <div class="container">
+                <p class="scr_company_art6__subtitle">Эффективная команда = эффективные  решения</p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <h2 class="scr_company_art6__title-sm index_page_title-sm">Команда стратегов и мечтателей</h2>
+            <p class="scr_company_art6__subtitle-sm">Эффективная команда = <br>эффективные  решения</p>
+            <div class="scr_company_art6__about">
+              <p>Мы помогаем компаниям эффективно решать комплексные маркетинговые задачи: разработка стратегий, аналитика, performance-маркетинг.</p>
+              <p>Достигаем высоких результатов и обеспечиваем стабильный рост за счет многоканальности: разработка сайтов, SEO-продвижение, контекстная, таргетированная и медийная реклама, SERM, CRO, контент-маркетинг.</p>
+            </div>
+            <section class="scr_company_art6__info">
+              <h3 class="scr_company_art6__info__heading">Наша гордость</h3>
+              <div class="scr_company_art6__list"> 
+                <div class="scr_company_art6__item">
+                  <p class="scr_company_art6__amount">10</p><span class="scr_company_art6__descr">Лет безукоризненно <br>работаем в digital-маркетинге</span>
+                </div>
+                <div class="scr_company_art6__item">
+                  <p class="scr_company_art6__amount">200+</p><span class="scr_company_art6__descr">Постоянных клиентов из <br>37 регионов России</span>
+                </div>
+                <div class="scr_company_art6__item">
+                  <p class="scr_company_art6__amount">ТОП-4</p><span class="scr_company_art6__descr">Рейтинга Рунета в категории <br>интернет-маркетинга</span>
+                </div>
+                <div class="scr_company_art6__item">
+                  <p class="scr_company_art6__amount">∞</p><span class="scr_company_art6__descr">Комплексный индивидуальный <br>подход к задачам клиента</span>
+                </div>
+                <div class="scr_company_art6__item">
+                  <p class="scr_company_art6__amount">20</p><span class="scr_company_art6__descr">Крутых профессионалов <br>в эффективной команде</span>
+                </div>
+                <div class="scr_company_art6__item">
+                  <p class="scr_company_art6__amount">15+</p><span class="scr_company_art6__descr">Сфер бизнеса мы досканально <br>изучили и продвинули</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+        <div class="scr_komanda_art6">
+          <div class="container"> 
+            <h2 class="scr_komanda_art6__title">Команда</h2>
+            <div class="scr_komanda_art6__slider glide">
+              <div class="scr_komanda_art6__track glide__track" data-glide-el="track">
+                <ul class="scr_komanda_art6__list glide__slides">
+                  <li class="scr_komanda_art6__slide glide__slide">
+                    <div class="scr_komanda_art6__img"><img src="./images/scr_komanda_art6/slide_1_blur.webp" alt="Дружко Игорь, директор"><img src="./images/scr_komanda_art6/slide_1.webp" alt="Дружко Игорь, директор"></div>
+                    <h3 class="scr_komanda_art6__name"><span>Джурко Игорь</span></h3>
+                    <p class="scr_komanda_art6__post">Директор</p>
+                  </li>
+                  <li class="scr_komanda_art6__slide glide__slide">
+                    <div class="scr_komanda_art6__img"><img src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор"><img src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор"></div>
+                    <h3 class="scr_komanda_art6__name"><span>Джурко Игорь</span></h3>
+                    <p class="scr_komanda_art6__post">Руководитель SEO-отдела</p>
+                  </li>
+                  <li class="scr_komanda_art6__slide glide__slide">
+                    <div class="scr_komanda_art6__img"><img src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор"><img src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор"></div>
+                    <h3 class="scr_komanda_art6__name"><span>Джурко Игорь</span></h3>
+                    <p class="scr_komanda_art6__post">Системный админестратор</p>
+                  </li>
+                  <li class="scr_komanda_art6__slide glide__slide">
+                    <div class="scr_komanda_art6__img"><img src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор"><img src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор"></div>
+                    <h3 class="scr_komanda_art6__name"><span>Джурко Игорь</span></h3>
+                    <p class="scr_komanda_art6__post">Програмист</p>
+                  </li>
+                  <li class="scr_komanda_art6__slide glide__slide">
+                    <div class="scr_komanda_art6__img"><img src="./images/scr_komanda_art6/slide_3_blur.webp" alt="Дружко Игорь, директор"><img src="./images/scr_komanda_art6/slide_3.webp" alt="Дружко Игорь, директор"></div>
+                    <h3 class="scr_komanda_art6__name"><span>Джурко Игорь</span></h3>
+                    <p class="scr_komanda_art6__post">Програмист</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="scr_komanda_art6__nav">
+                <button class="scr_komanda_art6__prev" type="button" aria-label="Показать предыдущий слайд"></button>
+                <button class="scr_komanda_art6__next" type="button" aria-label="Показать следующий слайд"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="scr_dostizheniya_art6">
+          <div class="container"> 
+            <h2 class="scr_dostizheniya_art6__title">Достижения</h2>
+            <div class="scr_dostizheniya_art6__list"> 
+              <article class="scr_dostizheniya_art6__item">
+                <p class="scr_dostizheniya_art6__amount">2</p>
+                <p class="scr_dostizheniya_art6__descr">Рейтинг Рунета в регионе 2023</p>
+                <h3 class="scr_dostizheniya_art6__heading">E-commerce<br> (низ. ценовой сегмент)</h3>
+              </article>
+              <article class="scr_dostizheniya_art6__item">
+                <p class="scr_dostizheniya_art6__amount">3</p>
+                <p class="scr_dostizheniya_art6__descr">Рейтинг Рунета в регионе 2023</p>
+                <h3 class="scr_dostizheniya_art6__heading">Разработка<br> и продвижение сайтов</h3>
+              </article>
+              <article class="scr_dostizheniya_art6__item">
+                <p class="scr_dostizheniya_art6__amount">4</p>
+                <p class="scr_dostizheniya_art6__descr">Рейтинг Рунета в регионе 2023</p>
+                <h3 class="scr_dostizheniya_art6__heading">Интернет-маркетинг</h3>
+              </article>
+              <article class="scr_dostizheniya_art6__item">
+                <p class="scr_dostizheniya_art6__amount">5</p>
+                <p class="scr_dostizheniya_art6__descr">Рейтинг Рунета в регионе 2023</p>
+                <h3 class="scr_dostizheniya_art6__heading">SEO-продвижение</h3>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class="scr_sertif_partnery_art6">
+          <div class="container"> 
+            <h2 class="scr_sertif_partnery_art6__title">Сертифицированные партнеры</h2>
+            <ul class="scr_sertif_partnery_art6__list"> 
+              <li class="scr_sertif_partnery_art6__item">
+                <div class="scr_sertif_partnery_art6__img"><img src="./images/scr_sertif_partnery_art6/p-1.svg" alt=""></div>
+              </li>
+              <li class="scr_sertif_partnery_art6__item">
+                <div class="scr_sertif_partnery_art6__img"><img src="./images/scr_sertif_partnery_art6/p-2.svg" alt=""></div>
+              </li>
+              <li class="scr_sertif_partnery_art6__item">
+                <div class="scr_sertif_partnery_art6__img"><img src="./images/scr_sertif_partnery_art6/p-3.svg" alt=""></div>
+              </li>
+              <li class="scr_sertif_partnery_art6__item">
+                <div class="scr_sertif_partnery_art6__img"><img src="./images/scr_sertif_partnery_art6/p-4.svg" alt=""></div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="scr_klienty_onas_art6">
+          <div class="container"> 
+            <h2 class="scr_klienty_onas_art6__title">Клиенты о нас</h2>
+            <p class="scr_klienty_onas_art6__subtitle">Более <span>250</span> довольных постоянных клиентов</p>
+            <ul class="scr_klienty_onas_art6__list"> 
+              <li class="scr_klienty_onas_art6__item">
+                <div class="scr_klienty_onas_art6__text">
+                  <p>Выражаю благодарность компании Only за успешную реализацию проектов по созданию корпоративного сайта Северстали и цифрового брендбука компании.</p>
+                  <p>Отдельно хотелось бы отметить высокий уровень компетенций компании Only в дизайне сайтов и разработке на 1С-Битрикс</p>
+                </div>
+                <div class="scr_klienty_onas_art6__detail"> 
+                  <div class="scr_klienty_onas_art6__info">
+                    <p class="scr_klienty_onas_art6__company">Акватим</p>
+                    <p class="scr_klienty_onas_art6__person">Начальник управления по КСО и бренду  Д.Ю.Поярков</p>
+                  </div>
+                  <button class="scr_klienty_onas_art6__pdf" type="button" aria-label="Открыть файл"><span>PDF</span>
+                    <svg width="72" height="63" viewBox="0 0 72 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M72 63V0H32.8666L0 43.8794L15.0154 63H72Z" fill="#1C1C20"></path>
+                    </svg>
+                  </button>
+                </div>
+              </li>
+              <li class="scr_klienty_onas_art6__item">
+                <div class="scr_klienty_onas_art6__text">
+                  <p>Выражаю благодарность компании Only за успешную реализацию проектов по созданию корпоративного сайта Северстали и цифрового брендбука компании.</p>
+                  <p>Отдельно хотелось бы отметить высокий уровень компетенций компании Only в дизайне сайтов и разработке на 1С-Битрикс</p>
+                </div>
+                <div class="scr_klienty_onas_art6__detail"> 
+                  <div class="scr_klienty_onas_art6__info">
+                    <p class="scr_klienty_onas_art6__company">Акватим</p>
+                    <p class="scr_klienty_onas_art6__person">Начальник управления по КСО и бренду  Д.Ю.Поярков</p>
+                  </div>
+                  <button class="scr_klienty_onas_art6__pdf" type="button"><span>PDF</span>
+                    <svg width="72" height="63" viewBox="0 0 72 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M72 63V0H32.8666L0 43.8794L15.0154 63H72Z" fill="#1C1C20"></path>
+                    </svg>
+                  </button>
+                </div>
+              </li>
+              <li class="scr_klienty_onas_art6__item">
+                <div class="scr_klienty_onas_art6__text">
+                  <p>Выражаю благодарность компании Only за успешную реализацию проектов по созданию корпоративного сайта Северстали и цифрового брендбука компании.</p>
+                  <p>Отдельно хотелось бы отметить высокий уровень компетенций компании Only в дизайне сайтов и разработке на 1С-Битрикс</p>
+                </div>
+                <div class="scr_klienty_onas_art6__detail"> 
+                  <div class="scr_klienty_onas_art6__info">
+                    <p class="scr_klienty_onas_art6__company">Акватим</p>
+                    <p class="scr_klienty_onas_art6__person">Начальник управления по КСО и бренду  Д.Ю.Поярков</p>
+                  </div>
+                  <button class="scr_klienty_onas_art6__pdf" type="button"><span>PDF</span>
+                    <svg width="72" height="63" viewBox="0 0 72 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M72 63V0H32.8666L0 43.8794L15.0154 63H72Z" fill="#1C1C20"></path>
+                    </svg>
+                  </button>
+                </div>
+              </li>
+            </ul>
+            <button class="scr_klienty_onas_art6__more" type="button">Показать больше</button>
+          </div>
+        </section>
+        <section class="scr_voprosy_art6">
+          <div class="container"> 
+            <h2 class="scr_voprosy_art6__title">Частые вопросы</h2>
+            <div class="scr_voprosy_art6__wrapper">
+              <div class="scr_voprosy_art6__question">
+                <h3 class="scr_voprosy_art6__heading">Как можно ознакомиться с планом продвижения? <span></span></h3>
+                <div class="scr_voprosy_art6__text">
+                  <p>Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения. Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.</p>
+                </div>
+              </div>
+              <div class="scr_voprosy_art6__question">
+                <h3 class="scr_voprosy_art6__heading">Как можно ознакомиться с планом продвижения? <span></span></h3>
+                <div class="scr_voprosy_art6__text">
+                  <p>Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения. Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.</p>
+                </div>
+              </div>
+              <div class="scr_voprosy_art6__question">
+                <h3 class="scr_voprosy_art6__heading">Как можно ознакомиться с планом продвижения? <span></span></h3>
+                <div class="scr_voprosy_art6__text">
+                  <p>Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения. Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.</p>
+                </div>
+              </div>
+              <div class="scr_voprosy_art6__question">
+                <h3 class="scr_voprosy_art6__heading">Как можно ознакомиться с планом продвижения? <span></span></h3>
+                <div class="scr_voprosy_art6__text">
+                  <p>Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения. Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.</p>
+                </div>
+              </div>
+            </div>
+            <button class="scr_voprosy_art6__more" type="button">Показать больше</button>
+          </div>
+        </section>
+        <section class="scr_forma_footer_art6">
+          <div class="container">
+            <h2 class="scr_forma_footer_art6__title">Расскажите о вашей задаче</h2>
+            <p class="scr_forma_footer_art6__subtitle">Исследуем, создадим, продвинем – достигнем высочайших результатов</p>
+            <form class="scr_forma_footer_art6__form" action="#" novalidate>
+              <div class="scr_forma_footer_art6__fields">
+                <div class="scr_forma_footer_art6__client"> 
+                  <div class="scr_forma_footer_art6__name">
+                    <input class="scr_forma_footer_art6__input required" type="text" placeholder="Имя*" name="client_name" required>
+                  </div>
+                  <div class="scr_forma_footer_art6__contact">
+                    <input class="scr_forma_footer_art6__input required" type="text" placeholder="Телефон/мессенджер*" name="client_contact" required>
+                  </div>
+                </div>
+                <textarea class="scr_forma_footer_art6__descr" placeholder="Расскажите немного о проекте" cols="30" rows="1"></textarea>
+                <button class="scr_forma_footer_art6__submit" type="submit">Отправить</button>
+                <p class="scr_forma_footer_art6__confirm">Нажав на кнопку, вы даете согласие на обработку <a href="./index.html">персональных данных</a></p>
+              </div>
+              <ul class="scr_forma_footer_art6__list">
+                <li>
+                  <input class="scr_forma_footer_art6__check" type="checkbox" id="strategy">
+                  <label class="scr_forma_footer_art6__subject" for="strategy">Стратегия</label>
+                </li>
+                <li>
+                  <input class="scr_forma_footer_art6__check" type="checkbox" id="dev">
+                  <label class="scr_forma_footer_art6__subject" for="dev">Разработка</label>
+                </li>
+                <li>
+                  <input class="scr_forma_footer_art6__check" type="checkbox" id="seo">
+                  <label class="scr_forma_footer_art6__subject" for="seo">Продвижение</label>
+                </li>
+                <li>
+                  <input class="scr_forma_footer_art6__check" type="checkbox" id="adw">
+                  <label class="scr_forma_footer_art6__subject" for="adw">Реклама</label>
+                </li>
+                <li>
+                  <input class="scr_forma_footer_art6__check" type="checkbox" id="marketing">
+                  <label class="scr_forma_footer_art6__subject" for="marketing">Маркетинг</label>
+                </li>
+                <li>
+                  <input class="scr_forma_footer_art6__check" type="checkbox" id="lids">
+                  <label class="scr_forma_footer_art6__subject" for="lids">Лидогенерация</label>
+                </li>
+                <li>
+                  <input class="scr_forma_footer_art6__check" type="checkbox" id="analitics">
+                  <label class="scr_forma_footer_art6__subject" for="analitics">Аналитика</label>
+                </li>
+                <li>
+                  <input class="scr_forma_footer_art6__check" type="checkbox" id="support">
+                  <label class="scr_forma_footer_art6__subject" for="support">Поддержка</label>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </section>
+      </main>
+      <footer class="scr_footer_art6">
+        <div class="container scr_footer_art6__container">
+          <div class="scr_footer_art6__main">
+            <div class="scr_footer_art6__logo"> 
+              <div class="scr_footer_art6__icon"> <img src="./images/scr_footer_art6/footer_logo.svg" alt="logo"></div>
+              <p class="scr_footer_art6__text">Комплестный digital-маркетинг</p>
+            </div>
+            <div class="scr_footer_art6__contacts">
+              <p class="scr_footer_art6__adress">Краснодар, Северная, 452, 3 этаж</p><a class="scr_footer_art6__phone" href="tel:+78003505590">+7 800 350-55-90</a><a class="scr_footer_art6__email" href="mailto:sale@art6.ru">sale@art6.ru</a>
+            </div>
+          </div>
+          <div class="scr_footer_art6__info"> 
+            <button class="scr_footer_art6__offices">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.7892 0.685057L0.00495089 5.3031L8.42189 7.75364L9.19922 16.1082L16.7892 0.685057Z" fill="#87878E"></path>
+              </svg><span>Краснодар</span>
+            </button><a class="scr_footer_art6__policy" href="./index.html">Политика конфиденциальности</a><a class="scr_footer_art6__payment" href="./index.html">Оплата услуг</a>
+            <div class="scr_footer_art6__copyright"> <span>© Digital-агентство ART6, 2013-2023. </span><span>Все права защищены. Перепечатка и любое использование материалов возможно только при наличии ссылки на первоисточник.</span></div>
+          </div>
+          <div class="scr_footer_art6__links">
+            <div class="scr_footer_art6__block">
+              <div class="scr_footer_art6__group scr_footer_art6__group-submenu">
+                <h3 class="scr_footer_art6__heading">Услуги и цены <span></span></h3>
+                <ul class="scr_footer_art6__list">
+                  <li><a href="./index.html"> Создание сайтов</a></li>
+                  <li><a href="./index.html"> SEO-продвижение сайтов</a></li>
+                  <li><a href="./index.html"> Контекстная реклама</a></li>
+                  <li><a href="./index.html"> Маркетинг</a></li>
+                  <li><a href="./index.html"> Аналитика</a></li>
+                  <li><a href="./index.html"> Аудит</a></li>
+                  <li><a href="./index.html"> Интернет-реклама</a></li>
+                  <li><a href="./index.html"> Лидогенерация</a></li>
+                  <li><a href="./index.html"> Аренда сайтов</a></li>
+                  <li><a href="./index.html"> Поддержка сайтов</a></li>
+                  <li><a href="./index.html"> Комплексные предложения</a></li>
+                  <li><a href="./index.html"> Акции</a></li>
+                  <li><a href="./index.html"> Цены</a></li>
+                  <li><a href="./index.html"> Полный список услуг</a></li>
+                </ul>
+              </div>
+              <div class="scr_footer_art6__group">
+                <h3 class="scr_footer_art6__heading"><a href="./index.html">Отзывы</a></h3>
+              </div>
+            </div>
+            <div class="scr_footer_art6__block">
+              <div class="scr_footer_art6__group scr_footer_art6__group-submenu">
+                <h3 class="scr_footer_art6__heading">Компания <span></span></h3>
+                <ul class="scr_footer_art6__list">
+                  <li><a href="./index.html"> О компании</a></li>
+                  <li><a href="./index.html"> История</a></li>
+                  <li><a href="./index.html"> Достижения</a></li>
+                  <li><a href="./index.html"> Культура</a></li>
+                  <li><a href="./index.html"> Карьера</a></li>
+                  <li><a href="./index.html"> Блог</a></li>
+                </ul>
+              </div>
+              <div class="scr_footer_art6__group scr_footer_art6__group-submenu">
+                <h3 class="scr_footer_art6__heading">Партнёрам <span></span></h3>
+                <ul class="scr_footer_art6__list">
+                  <li><a href="./index.html"> Партнерская программа</a></li>
+                  <li><a href="./index.html"> Подрядчикам</a></li>
+                  <li><a href="./index.html"> Представителям сервисов</a></li>
+                </ul>
+              </div>
+              <div class="scr_footer_art6__group">
+                <h3 class="scr_footer_art6__heading"><a href="./index.html">Кейсы</a></h3>
+              </div>
+              <div class="scr_footer_art6__group">
+                <h3 class="scr_footer_art6__heading"><a href="./index.html">Отрасли</a></h3>
+              </div>
+              <div class="scr_footer_art6__group">
+                <h3 class="scr_footer_art6__heading"><a href="./index.html">Контакты</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <section class="scr_b_client_art6 modal_w">
+      <div class="scr_b_client_art6__overlay"></div>
+      <div class="scr_b_client_art6__wrapper">
+        <div class="scr_b_client_art6__top">
+          <h2 class="scr_b_client_art6__title">Стать клиентом</h2>
+          <button class="scr_b_client_art6__btn" type="button" aria-label="Закрыть окно">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25.3327 8.54602L23.4527 6.66602L15.9993 14.1193L8.54602 6.66602L6.66602 8.54602L14.1193 15.9993L6.66602 23.4527L8.54602 25.3327L15.9993 17.8793L23.4527 25.3327L25.3327 23.4527L17.8793 15.9993L25.3327 8.54602Z" fill="#1C1C20"></path>
+            </svg>
+          </button>
+        </div>
+        <p class="scr_b_client_art6__instruction">Введите ваше имя и номер телефона</p>
+        <form class="scr_b_client_art6__form" action="#" novalidate>
+          <div class="scr_b_client_art6__item">
+            <input class="scr_b_client_art6__input required" type="text" placeholder="Имя" name="client_name">
+          </div>
+          <div class="scr_b_client_art6__item">
+            <input class="scr_b_client_art6__input required" type="text" placeholder="Телефон*" name="client_contact" required>
+          </div>
+          <button class="scr_b_client_art6__submit" type="submit">Перезвоните мне</button>
+          <p class="scr_b_client_art6__confirm">Нажав на кнопку, вы даете согласие на обработку <a href="./index.html">персональных данных</a></p>
+        </form>
+      </div>
+    </section>
+    <section class="scr_success_msg_art6">
+      <div class="scr_success_msg_art6__overlay"></div>
+      <div class="scr_success_msg_art6__wrapper">
+        <h2 class="scr_success_msg_art6__title">Ваше сообщение успешно отправлено!</h2>
+        <button class="scr_success_msg_art6__btn" type="button" aria-label="Закрыть окно">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.3327 8.54602L23.4527 6.66602L15.9993 14.1193L8.54602 6.66602L6.66602 8.54602L14.1193 15.9993L6.66602 23.4527L8.54602 25.3327L15.9993 17.8793L23.4527 25.3327L25.3327 23.4527L17.8793 15.9993L25.3327 8.54602Z" fill="#1C1C20"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+    <section class="scr_cities_art6">
+      <div class="scr_cities_art6__overlay"></div>
+      <div class="scr_cities_art6__wrapper">
+        <div class="scr_cities_art6__top">
+          <h2 class="scr_cities_art6__title">Выберите город</h2>
+          <button class="scr_cities_art6__btn" type="button" aria-label="Закрыть окно">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25.3327 8.54602L23.4527 6.66602L15.9993 14.1193L8.54602 6.66602L6.66602 8.54602L14.1193 15.9993L6.66602 23.4527L8.54602 25.3327L15.9993 17.8793L23.4527 25.3327L25.3327 23.4527L17.8793 15.9993L25.3327 8.54602Z" fill="#1C1C20"></path>
+            </svg>
+          </button>
+        </div>
+        <input class="scr_cities_art6__search" type="text" placeholder="Поиск">
+        <ul class="scr_cities_art6__list"> 
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Краснодар">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Ростов-на-Дону">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Пермь">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Воронеж">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Нижний Новгород">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Челябинск">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Екатеринбург">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Саратов">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Оренбург">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Электросталь">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Москва">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Омск">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Уфа">
+          </li>
+          <li>
+            <input class="scr_cities_art6__input" type="button" value="Санкт-Петербург">
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
