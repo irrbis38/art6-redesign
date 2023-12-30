@@ -869,7 +869,8 @@ button.header_art6__more {
 .main {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
-  flex-grow: 1
+  flex-grow: 1;
+  overflow-x: hidden
 }
 .index_page__title_block {
   min-height: 244px;
@@ -899,7 +900,8 @@ button.header_art6__more {
 .index_page_title span {
   display: inline-block;
   width: 200px;
-  height: 1px
+  height: 1px;
+  display: none
 }
 .index_page_title::before {
   content: "";
@@ -2001,7 +2003,7 @@ button.header_art6__more {
   }
 }
 .scr_scrolling_right_art6__offset {
-  min-width: 420px;
+  min-width: 200px;
   height: 1px
 }
 .scr_scrolling_right_art6__wrapper-sm {
@@ -3767,9 +3769,6 @@ button.header_art6__more {
     display: none
   }
 }
-.scr_tematiki_art6__wrapper {
-  margin-top: 367px
-}
 .scr_tematiki_art6__wrapper .container {
   position: relative;
   z-index: 1;
@@ -3803,9 +3802,6 @@ button.header_art6__more {
   }
 }
 @media (max-width:1600px) {
-  .scr_tematiki_art6__wrapper {
-    margin-top: 220px
-  }
   .scr_tematiki_art6__wrapper .container {
     padding-top: 95px;
     -webkit-column-gap: 120px;
@@ -3814,9 +3810,6 @@ button.header_art6__more {
   }
 }
 @media (max-width:1300px) {
-  .scr_tematiki_art6__wrapper {
-    margin-top: 183px
-  }
   .scr_tematiki_art6__wrapper .container {
     padding-top: 74px;
     -webkit-column-count: unset;
@@ -3825,9 +3818,6 @@ button.header_art6__more {
   }
 }
 @media (max-width:991px) {
-  .scr_tematiki_art6__wrapper {
-    margin-top: 154px
-  }
   .scr_tematiki_art6__wrapper .container {
     padding-top: 0
   }

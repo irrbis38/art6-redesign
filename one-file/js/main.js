@@ -448,33 +448,80 @@ var changeCity = () => {
 // ===== АНИМАЦИЯ ПО СКРОЛЛУ
 
 var startScrollingBlockAnimation = () => {
-  var scrolledBlock = document.querySelector(
-    ".scr_scrolling_right_art6__scroll"
+  var initScrollAnimation = (scroll, wrapper, containerName, startPosition) => {
+    var scrolledBlock = document.querySelector(scroll);
+    var container = document.querySelector(containerName);
+
+    function getScrollAmount() {
+      var scrolledBlockWidth = scrolledBlock.scrollWidth;
+      return -(scrolledBlockWidth - Number(container.clientWidth));
+    }
+
+    const tween = gsap.to(scrolledBlock, {
+      x: getScrollAmount,
+      duration: 3,
+      ease: "none",
+    });
+
+    ScrollTrigger.create({
+      trigger: wrapper,
+      start: startPosition,
+      end: () => `+=${getScrollAmount() * -1}`,
+      // pin: true,
+      // anticipatePin: 1,
+      scrub: 1,
+      pin: true,
+      // anticipatePin: 1,
+      // pinType: "fixed",
+      // pinSpacing: true,
+      animation: tween,
+      invalidateOnRefresh: true,
+      markers: true,
+      toggleActions: "play none none reverse",
+    });
+  };
+
+  initScrollAnimation(
+    ".scr_scrolling_right_art6__scroll",
+    ".scr_scrolling_right_art6",
+    ".scr_scrolling_right_art6 .container",
+    "top 10%"
   );
 
-  function getScrollAmount() {
-    let scrolledBlockWidth = scrolledBlock.scrollWidth;
-    return -(scrolledBlockWidth - window.innerWidth);
-  }
+  initScrollAnimation(
+    ".scr_uslugi_art6__title",
+    ".scr_uslugi_art6",
+    ".scr_uslugi_art6 .container",
+    "top 30%"
+  );
 
-  console.log(getScrollAmount());
+  initScrollAnimation(
+    ".scr_keysy_art6__title",
+    ".scr_keysy_art6",
+    ".scr_keysy_art6 .container",
+    "top 30%"
+  );
 
-  const tween = gsap.to(scrolledBlock, {
-    x: getScrollAmount,
-    duration: 3,
-    ease: "none",
-  });
+  initScrollAnimation(
+    ".scr_text_director_art6__title",
+    ".scr_text_director_art6",
+    ".first_scr_main_art6 .container",
+    "top -10%"
+  );
 
-  ScrollTrigger.create({
-    trigger: ".scr_scrolling_right_art6__wrapper",
-    start: "top 10%",
-    end: () => `+=${getScrollAmount() * -1}`,
-    pin: true,
-    animation: tween,
-    scrub: 1,
-    invalidateOnRefresh: true,
-    markers: true,
-  });
+  initScrollAnimation(
+    ".scr_tematiki_art6__title",
+    ".scr_tematiki_art6__title__block",
+    ".scr_tematiki_art6 .container",
+    "top 30%"
+  );
+
+  initScrollAnimation(
+    ".scr_company_art6__title",
+    ".scr_company_art6",
+    ".first_scr_main_art6 .container",
+    "top top"
+  );
 };
 
 // =============================================
@@ -497,8 +544,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var index_page = document.querySelector(".index");
 
   if (index_page) {
-    // init GSAP ScrollTrigger
-    // gsap.registerPlugin(ScrollTrigger);
     // init slider
     initTeamSlider();
     // init accordions
@@ -513,7 +558,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
     checkRequiredInputs();
     formValidation();
     handleSuccessMsgModal();
-    // startScrollingBlockAnimation();
+
+    if (window.innerWidth > 991) {
+      // init GSAP ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+      startScrollingBlockAnimation();
+    }
+
+    // toggle header handlers by resize
+    var mq991 = window.matchMedia("(max-width: 991px)");
+
+    var handleMQ = (e) => {
+      if (!e.matches) {
+        // init GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+        startScrollingBlockAnimation();
+        console.log("change");
+      }
+    };
+
+    mq991.addEventListener("change", handleMQ);
   }
   //=== END INDEX PAGE
 });
