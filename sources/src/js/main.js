@@ -170,7 +170,7 @@ var initQuestionsAccordion = () => {
   var firstBlock = questions[0];
   var firstText = firstBlock.children[1];
   firstBlock.classList.add("active");
-  firstText.style.maxHeight = firstText.scrollHeight + "px";
+  firstText.style.maxHeight = firstText.scrollHeight + 25 + "px";
 
   var activeText = firstText;
 
@@ -246,7 +246,7 @@ var initAccordion = (group_class, heading_class) => {
   var toggleAccordionByMatchMedia = () => {
     var handleMQ = (e) => {
       if (e.matches) {
-        groups[0].classList.add("active");
+        // groups[0].classList.add("active");
         groups.forEach((group) => {
           group.addEventListener("click", accordionHandle);
           window.addEventListener("resize", handleWindowResize);
@@ -454,30 +454,63 @@ var startScrollingBlockAnimation = () => {
 
     function getScrollAmount() {
       var scrolledBlockWidth = scrolledBlock.scrollWidth;
-      return -(scrolledBlockWidth - Number(container.clientWidth));
+      var value = 0;
+      if (window.innerWidth < 1280) {
+        value = -(scrolledBlockWidth - Number(container.clientWidth - 80));
+      } else {
+        value = -(scrolledBlockWidth - Number(container.clientWidth) + 80);
+      }
+
+      return value;
     }
 
-    const tween = gsap.to(scrolledBlock, {
-      x: getScrollAmount,
-      duration: 3,
-      ease: "none",
-    });
+    // const tween = gsap.to(scrolledBlock, {
+    //   x: getScrollAmount,
+    //   duration: 3,
+    //   ease: "none",
+    // });
 
-    ScrollTrigger.create({
-      trigger: wrapper,
-      start: startPosition,
-      end: () => `+=${getScrollAmount() * -1}`,
-      // pin: true,
-      // anticipatePin: 1,
-      scrub: 1,
-      pin: true,
-      // anticipatePin: 1,
-      // pinType: "fixed",
-      // pinSpacing: true,
-      animation: tween,
-      invalidateOnRefresh: true,
-      markers: true,
-      toggleActions: "play none none reverse",
+    // ScrollTrigger.create({
+    //   trigger: wrapper,
+    //   start: startPosition,
+    //   end: () => `+=${getScrollAmount() * -1}`,
+    //   // pin: true,
+    //   // anticipatePin: 1,
+    //   scrub: 1,
+    //   pin: true,
+    //   // anticipatePin: 1,
+    //   // pinType: "fixed",
+    //   // pinSpacing: true,
+    //   animation: tween,
+    //   invalidateOnRefresh: true,
+    //   // markers: true,
+    //   toggleActions: "play none none reverse",
+    // });
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 992px)", () => {
+      gsap.to(scrolledBlock, {
+        x: getScrollAmount,
+        duration: 3,
+        ease: "none",
+        scrollTrigger: {
+          trigger: wrapper,
+          start: startPosition,
+          end: () => `+=${getScrollAmount() * -1}`,
+          // pin: true,
+          // anticipatePin: 1,
+          scrub: 1,
+          pin: true,
+          // anticipatePin: 1,
+          // pinType: "fixed",
+          // pinSpacing: true,
+          // animation: tween,
+          invalidateOnRefresh: true,
+          // markers: true,
+          toggleActions: "play none none reverse",
+        },
+      });
     });
   };
 
@@ -511,7 +544,7 @@ var startScrollingBlockAnimation = () => {
 
   initScrollAnimation(
     ".scr_tematiki_art6__title",
-    ".scr_tematiki_art6__title__block",
+    ".scr_tematiki_art6__inner",
     ".scr_tematiki_art6 .container",
     "top 30%"
   );
@@ -559,21 +592,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
     formValidation();
     handleSuccessMsgModal();
 
+    var isScrollTriggerInit = false;
     if (window.innerWidth > 991) {
       // init GSAP ScrollTrigger
       gsap.registerPlugin(ScrollTrigger);
       startScrollingBlockAnimation();
+      isScrollTriggerInit = true;
     }
 
     // toggle header handlers by resize
     var mq991 = window.matchMedia("(max-width: 991px)");
 
     var handleMQ = (e) => {
-      if (!e.matches) {
+      if (!e.matches && !isScrollTriggerInit) {
         // init GSAP ScrollTrigger
         gsap.registerPlugin(ScrollTrigger);
         startScrollingBlockAnimation();
-        console.log("change");
       }
     };
 
