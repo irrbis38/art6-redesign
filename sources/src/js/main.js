@@ -218,6 +218,7 @@ var initAccordion = (group_class, heading_class) => {
 
     if (heading) {
       var group = heading.parentElement;
+      var isOnePerView = group.classList.contains("one-per-view");
       var list = heading.nextElementSibling;
 
       if (group.classList.contains("active")) {
@@ -225,13 +226,16 @@ var initAccordion = (group_class, heading_class) => {
         list.style.maxHeight = null;
         activeList = null;
       } else {
-        groups.forEach((g) => {
-          // remove class 'active' for every group element
-          g.classList.remove("active");
+        if (isOnePerView) {
+          groups.forEach((g) => {
+            // remove class 'active' for every group element
+            g.classList.remove("active");
 
-          // set maxHeight property to 'null' for every description list
-          g.children[1].style.maxHeight = null;
-        });
+            // set maxHeight property to 'null' for every description list
+            g.children[1].style.maxHeight = null;
+          });
+        }
+
         // add class 'active' to current group and maxHeight to  curret description list
         group.classList.add("active");
         list.style.maxHeight = list.scrollHeight + "px";
@@ -270,24 +274,19 @@ var initAccordion = (group_class, heading_class) => {
   // set init state
   if (window.innerWidth <= 991) {
     groups.forEach((group) => group.addEventListener("click", accordionHandle));
-    groups[0].classList.add("active");
-    activeList = groups[0].children[1];
-    groups[0].children[1].style.maxHeight =
-      groups[0].children[1].scrollHeight + "px";
+    // groups[0].classList.add("active");
+    // activeList = groups[0].children[1];
+    // groups[0].children[1].style.maxHeight =
+    //   groups[0].children[1].scrollHeight + "px";
     window.addEventListener("resize", handleWindowResize);
   }
 };
 
-// ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "СТАТЬ КЛИЕНТОМ"
-var toggleBecomeClient = () => {
-  var btn = document.querySelector(".header_art6__cta"),
-    btn_mobile = document.querySelector(".header_art6__mobile-cta"),
-    client_modal = document.querySelector(".scr_b_client_art6"),
-    body = document.body,
-    close_btn = document.querySelector(".scr_b_client_art6__btn"),
-    overlay = document.querySelector(".scr_b_client_art6__overlay");
+var toggleModal = (elements) => {
+  const { buttons_open, client_modal, body, header, close_btn, overlay } =
+    elements;
 
-  [btn, btn_mobile].forEach((btn) =>
+  buttons_open.forEach((btn) =>
     btn.addEventListener("click", () => {
       client_modal.classList.add("active");
       body.classList.add("lock");
@@ -297,16 +296,121 @@ var toggleBecomeClient = () => {
   [close_btn, overlay].forEach((el) =>
     el.addEventListener("click", () => {
       client_modal.classList.remove("active");
-      body.classList.remove("lock");
+      // if mobile menu is non-open than unlock body
+      !header.classList.contains("mobile-menu-open") &&
+        body.classList.remove("lock");
     })
   );
 
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       client_modal.classList.remove("active");
-      body.classList.remove("lock");
+      // if mobile menu is non-open than unlock body
+      if (!header.classList.contains("mobile-menu-open")) {
+        body.classList.remove("lock");
+      }
     }
   });
+};
+
+// ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "СТАТЬ КЛИЕНТОМ"
+var toggleBecomeClient = () => {
+  var btn = document.querySelector(".header_art6__cta"),
+    btn_mobile = document.querySelector(".header_art6__mobile-cta"),
+    client_modal = document.querySelector(".scr_b_client_art6"),
+    body = document.body,
+    close_btn = document.querySelector(".scr_b_client_art6__btn"),
+    overlay = document.querySelector(".scr_b_client_art6__overlay"),
+    header = document.querySelector(".header_art6");
+
+  var elements = {
+    buttons_open: [btn, btn_mobile],
+    client_modal,
+    body,
+    header,
+    close_btn,
+    overlay,
+  };
+
+  toggleModal(elements);
+
+  // [btn, btn_mobile].forEach((btn) =>
+  //   btn.addEventListener("click", () => {
+  //     client_modal.classList.add("active");
+  //     body.classList.add("lock");
+  //   })
+  // );
+
+  // [close_btn, overlay].forEach((el) =>
+  //   el.addEventListener("click", () => {
+  //     client_modal.classList.remove("active");
+  //     // if mobile menu is non-open than unlock body
+  //     !header.classList.contains("mobile-menu-open") &&
+  //       body.classList.remove("lock");
+  //   })
+  // );
+
+  // window.addEventListener("keydown", (e) => {
+  //   if (e.key === "Escape") {
+  //     client_modal.classList.remove("active");
+  //     // if mobile menu is non-open than unlock body
+  //     if (!header.classList.contains("mobile-menu-open")) {
+  //       console.log("here");
+  //       body.classList.remove("lock");
+  //     }
+  //   }
+  // });
+};
+
+// ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "СТАТЬ КЛИЕНТОМ"
+var toggleBecomeClient = () => {
+  var btn = document.querySelector(".scr_text_director_art6__consultation"),
+    client_modal = document.querySelector(".scr_b_consultation_art6"),
+    body = document.body,
+    close_btn = document.querySelector(".scr_b_consultation_art6__btn"),
+    overlay = document.querySelector(".scr_b_consultation_art6__overlay"),
+    header = document.querySelector(".header_art6");
+
+  var elements = {
+    buttons_open: [btn],
+    client_modal,
+    body,
+    header,
+    close_btn,
+    overlay,
+  };
+
+  toggleModal(elements);
+};
+
+// ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "ОТЗЫВОВ"
+var handleShowReviewButtons = () => {
+  var buttons = Array.from(
+    document.querySelectorAll(".scr_klienty_onas_art6__pdf")
+  );
+  (client_modal = document.querySelector(".scr_review_modal")),
+    (body = document.body),
+    (close_btn = document.querySelector(".scr_review_modal__btn")),
+    (overlay = document.querySelector(".scr_review_modal__overlay")),
+    (header = document.querySelector(".header_art6")),
+    (image = document.querySelector(".scr_review_modal__image img"));
+
+  buttons.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      image.src = btn.dataset.src;
+    })
+  );
+
+  var elements = {
+    buttons_open: buttons,
+    client_modal,
+    body,
+    header,
+    close_btn,
+    overlay,
+  };
+
+  toggleModal(elements);
 };
 
 // ===== ВАЛИДАЦИЯ ФОРМ
@@ -371,7 +475,8 @@ var handleSuccessMsgModal = () => {
   var modal = document.querySelector(".scr_success_msg_art6"),
     body = document.body,
     close_btn = document.querySelector(".scr_success_msg_art6__btn"),
-    overlay = document.querySelector(".scr_success_msg_art6__overlay");
+    overlay = document.querySelector(".scr_success_msg_art6__overlay"),
+    header = document.querySelector(".header_art6");
 
   [close_btn, overlay].forEach((el) =>
     el.addEventListener("click", () => {
@@ -383,7 +488,10 @@ var handleSuccessMsgModal = () => {
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       modal.classList.remove("active");
-      body.classList.remove("lock");
+      // if mobile menu is non-open than unlock body
+      if (!header.classList.contains("mobile-menu-open")) {
+        body.classList.remove("lock");
+      }
     }
   });
 };
@@ -416,7 +524,10 @@ var changeCity = () => {
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       modal.classList.remove("active");
-      body.classList.remove("lock");
+      // if mobile menu is non-open than unlock body
+      if (!header.classList.contains("mobile-menu-open")) {
+        body.classList.remove("lock");
+      }
       search.value = "";
       inputs.forEach((i) => i.classList.remove("hidden"));
     }
@@ -521,12 +632,12 @@ var startScrollingBlockAnimation = () => {
     "top 10%"
   );
 
-  initScrollAnimation(
-    ".scr_uslugi_art6__title",
-    ".scr_uslugi_art6",
-    ".scr_uslugi_art6 .container",
-    "top 30%"
-  );
+  // initScrollAnimation(
+  //   ".scr_uslugi_art6__title",
+  //   ".scr_uslugi_art6",
+  //   ".scr_uslugi_art6 .container",
+  //   "top 30%"
+  // );
 
   initScrollAnimation(
     ".scr_keysy_art6__title",
@@ -583,31 +694,31 @@ var initAnimation = () => {
   });
 };
 
-var initTematikiAnimation = () => {
-  var el = document.querySelector(".scr_tematiki_art6__wrapper");
+// var initTematikiAnimation = () => {
+//   var el = document.querySelector(".scr_tematiki_art6__wrapper");
 
-  var mm = gsap.matchMedia();
+//   var mm = gsap.matchMedia();
 
-  mm.add("(min-width: 992px)", () => {
-    gsap.set(el, { y: 150 });
+//   mm.add("(min-width: 992px)", () => {
+//     gsap.set(el, { y: 150 });
 
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".scr_tematiki_art6__inner",
-        start: "center center",
-        end: "bottom center",
-        scrub: 1,
-        pin: false,
-        invalidateOnRefresh: true,
-        duration: 3,
-      },
-    });
+//     var tl = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: ".scr_tematiki_art6__inner",
+//         start: "center center",
+//         end: "bottom center",
+//         scrub: 1,
+//         pin: false,
+//         invalidateOnRefresh: true,
+//         duration: 3,
+//       },
+//     });
 
-    tl.to(el, {
-      y: 0,
-    });
-  });
-};
+//     tl.to(el, {
+//       y: 0,
+//     });
+//   });
+// };
 
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
@@ -639,6 +750,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
       ".scr_footer_art6__heading"
     );
 
+    // init reviews
+    handleShowReviewButtons();
+
     // init forms validation
     checkRequiredInputs();
     formValidation();
@@ -651,7 +765,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       startScrollingBlockAnimation();
       isScrollTriggerInit = true;
       initAnimation();
-      initTematikiAnimation();
+      // initTematikiAnimation();
     }
 
     // toggle header handlers by resize
@@ -663,7 +777,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         gsap.registerPlugin(ScrollTrigger);
         startScrollingBlockAnimation();
         initAnimation();
-        initTematikiAnimation();
+        // initTematikiAnimation();
       }
     };
 

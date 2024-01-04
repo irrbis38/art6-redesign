@@ -325,6 +325,58 @@
   }
 }
 
+// reorders for screen less than 992px
+
+.scr_footer_art6__block {
+  &:last-child {
+    @include sm {
+      display: grid;
+    }
+  }
+}
+
+.scr_footer_art6__group-non-sm {
+  @include sm {
+    display: none;
+  }
+}
+
+.scr_footer_art6__group-sm {
+  display: none;
+
+  @include sm {
+    display: block;
+  }
+}
+
+@include sm {
+  .scr_footer_art6__group-company {
+    order: 5;
+  }
+
+  .scr_footer_art6__group-partners {
+    order: 3;
+  }
+
+  .scr_footer_art6__group-cases {
+    order: 1;
+  }
+
+  .scr_footer_art6__group-industries {
+    order: 2;
+  }
+
+  .scr_footer_art6__group-contacts {
+    order: 6;
+  }
+
+  .scr_footer_art6__group-reviews {
+    order: 4;
+  }
+}
+
+// end of reorders for screen less than 992px
+
 @include sm {
   .scr_footer_art6__group-submenu {
     .scr_footer_art6__heading {

@@ -1,0 +1,83 @@
+.scr_review_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
+.scr_review_modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.scr_review_modal__wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 92%;
+  max-width: 1200px;
+  min-width: 295px;
+  height: 94%;
+  max-height: 980px;
+  padding: 40px 20px;
+  background-color: $color_white;
+
+  @include xxs {
+    max-height: 600px;
+    padding: 20px 10px;
+  }
+}
+
+.scr_review_modal__inner {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.scr_review_modal__image {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.scr_review_modal__btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+
+  path {
+    transition: all 0.2s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      path {
+        fill: $color_grey;
+      }
+    }
+  }
+}
