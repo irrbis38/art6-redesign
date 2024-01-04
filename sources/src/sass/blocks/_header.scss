@@ -7,6 +7,9 @@
   z-index: 10;
   width: 100%;
   transition-delay: 0.3s;
+  transition: transform 0.3s ease-out;
+  background-color: $color_white;
+  border-bottom: 1px solid $color_grey_light;
 
   @include sm {
     &::after,
@@ -27,6 +30,10 @@
       transition: opacity 0.2s ease-out;
       transition-delay: 0.3s;
     }
+  }
+
+  &.hide {
+    transform: translateY(-100%);
   }
 }
 
@@ -60,16 +67,16 @@
     gap: 0 10px;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    z-index: 2;
-    width: 100%;
-    height: 1px;
-    background-color: $color_grey_light;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   bottom: -1px;
+  //   z-index: 2;
+  //   width: 100%;
+  //   height: 1px;
+  //   background-color: $color_grey_light;
+  // }
 }
 
 .header_art6__wide-menu {
