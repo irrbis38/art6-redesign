@@ -36,6 +36,10 @@
 .scr_keysy_art6__title {
   margin-bottom: 25px;
 
+  span:last-child {
+    display: none;
+  }
+
   @include xl {
     margin-bottom: 15px;
   }
@@ -43,11 +47,17 @@
   @include lg {
     margin-bottom: 9px;
   }
-}
 
-.scr_keysy_art6__title-sm {
   @include sm {
     margin-bottom: 23px;
+
+    span:first-child {
+      display: none;
+    }
+
+    span:last-child {
+      display: inline;
+    }
   }
 
   @include xs {

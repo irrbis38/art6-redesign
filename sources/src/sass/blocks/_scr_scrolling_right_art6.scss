@@ -3,9 +3,6 @@
 }
 
 .scr_scrolling_right_art6__wrapper {
-  // display: flex;
-  // justify-content: flex-start;
-  // align-items: center;
   padding: 331px 0 330px;
 
   @include xl {
@@ -17,7 +14,11 @@
   }
 
   @include sm {
-    display: none;
+    padding: 96px 0 0;
+  }
+
+  @include xs {
+    padding-top: 143px;
   }
 }
 
@@ -25,6 +26,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  @include sm {
+    display: block;
+  }
 }
 
 /*=== TITLE ===*/
@@ -62,6 +67,17 @@
     font-size: 55px;
   }
 
+  @include sm {
+    max-width: 500px;
+    margin-right: 0;
+    margin-bottom: 19px;
+    white-space: initial;
+
+    &::after {
+      display: none;
+    }
+  }
+
   // first word with blue bg
 
   .first_word {
@@ -90,6 +106,14 @@
       }
     }
 
+    @include sm {
+      margin-right: 0;
+
+      &::after {
+        height: 40px;
+      }
+    }
+
     .designer,
     .proger,
     .support,
@@ -97,6 +121,10 @@
     .adw {
       position: absolute;
       z-index: 2;
+
+      @include sm {
+        display: none;
+      }
     }
 
     .designer {
@@ -228,7 +256,8 @@
   .letter {
     position: absolute;
     top: -100%;
-    left: 97%;
+    top: unset;
+    left: 96.5%;
 
     &::after {
       content: "";
@@ -254,7 +283,7 @@
     }
 
     @include xl {
-      top: -122%;
+      // top: -122%;
       left: 95.4%;
 
       &::after {
@@ -273,7 +302,7 @@
     }
 
     @include lg {
-      top: -136%;
+      // top: -136%;
 
       .manager {
         top: -16px;
@@ -284,6 +313,31 @@
           center / contain no-repeat;
       }
     }
+
+    @include sm {
+      position: relative;
+      top: unset;
+      left: unset;
+
+      &::after {
+        height: 40px;
+      }
+
+      .manager {
+        display: none;
+      }
+    }
+  }
+
+  // less than 992px
+  @include sm {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  @include xs {
+    font-size: 32px;
+    line-height: 40px;
   }
 }
 /*=== END of TITLE ===*/
@@ -304,6 +358,10 @@
 
   @include lg {
     font-size: 55px;
+  }
+
+  @include sm {
+    display: none;
   }
 
   // first pink figure
@@ -494,8 +552,6 @@
     position: relative;
     margin-left: 37px;
     margin-right: 49px;
-    // margin-left: 20px;
-    // margin-right: 28px;
     font-size: 120px;
 
     &::after {
@@ -549,8 +605,6 @@
   .clients_lines {
     &::before {
       width: 153px;
-      // top: -184px;
-      // left: -402px;
       top: -145px;
       left: -373px;
       transform: rotate(-62deg);
@@ -558,8 +612,6 @@
 
     &::after {
       width: 271px;
-      // top: 246px;
-      // left: -60px;
       top: 284px;
       left: -32px;
       transform: rotate(-20deg);
@@ -753,63 +805,18 @@
 
 // == For small screen (less then 992px)
 
-.scr_scrolling_right_art6__wrapper-sm {
-  display: none;
-
-  @include sm {
-    display: block;
-    padding: 96px 0 0 0;
-  }
-
-  @include xs {
-    padding-top: 143px;
-  }
-}
-
-.scr_scrolling_right_art6__title-sm {
-  margin-bottom: 19px;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  color: $color_dark;
-
-  span {
-    position: relative;
-    color: $color_white;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 6px;
-      left: 0;
-      z-index: -1;
-      width: 101%;
-      height: 80%;
-      background-color: $color_blue;
-    }
-  }
-
-  @include xs {
-    font-size: 32px;
-    line-height: 125%;
-
-    span {
-      &::after {
-        top: 2px;
-        height: 92%;
-      }
-    }
-  }
-}
-
 .scr_scrolling_right_art6__subtitle-sm {
+  display: none;
   max-width: 569px;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.03em;
   color: $color_grey;
+
+  @include sm {
+    display: block;
+  }
 
   @include xxs {
     max-width: 360px;

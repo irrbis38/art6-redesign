@@ -37,18 +37,21 @@
   }
 
   @include sm {
-    height: 382px;
+    // height: 382px;
+    height: auto;
+    display: block;
     margin-bottom: 30px;
+    background-color: transparent;
   }
 
   @include xs {
-    height: 300px;
+    // height: 300px;
     margin-bottom: 38px;
   }
 
-  @include xxs {
-    height: 240px;
-  }
+  // @include xxs {
+  //   height: 240px;
+  // }
 }
 
 .scr_text_director_art6__director {
@@ -67,8 +70,10 @@
   }
 
   @include sm {
-    top: 114px;
-    right: -43px;
+    // top: 114px;
+    // right: -43px;
+    top: 116px;
+    right: 38px;
   }
 
   @include xs {
@@ -185,13 +190,32 @@
   }
 
   @include sm {
-    max-width: 670px;
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: translate(0, 0);
+    // max-width: 670px;
+    max-width: 100%;
+    height: 382px;
+    margin-bottom: 30px;
     padding: 0 50px;
+    background-color: $color_dark_bg;
+
+    img {
+      max-width: 569px;
+      margin: 0 auto;
+    }
   }
 
   @include xs {
+    height: 300px;
     max-width: 100%;
+    margin-bottom: 37px;
     padding: 0;
+  }
+
+  @include xxs {
+    min-height: 240px;
   }
 
   img {
@@ -213,21 +237,25 @@
   @include xl {
     top: 46px;
   }
+
+  @include sm {
+    top: 0;
+  }
 }
 
 .scr_text_director_art6__title {
   color: $color_white;
-}
-
-.scr_text_director_art6__title-sm {
-  line-height: 117%;
 
   @include sm {
-    margin-bottom: 58px;
+    line-height: 117%;
+    // margin-bottom: 58px;
+    margin-bottom: 4px;
+    color: $color_dark;
   }
 
   @include xs {
-    margin-bottom: 81px;
+    // margin-bottom: 81px;
+    margin-bottom: 18px;
     font-size: 40px;
     line-height: 120%;
   }
@@ -236,6 +264,24 @@
     font-size: 34px;
   }
 }
+
+// .scr_text_director_art6__title-sm {
+
+//   @include sm {
+//     line-height: 117%;
+//     margin-bottom: 58px;
+//   }
+
+//   @include xs {
+//     margin-bottom: 81px;
+//     font-size: 40px;
+//     line-height: 120%;
+//   }
+
+//   @include r(360px) {
+//     font-size: 34px;
+//   }
+// }
 
 .scr_text_director_art6__info {
   max-width: 740px;

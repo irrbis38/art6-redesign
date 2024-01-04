@@ -500,7 +500,7 @@ var startScrollingBlockAnimation = () => {
           end: () => `+=${getScrollAmount() * -1}`,
           // pin: true,
           // anticipatePin: 1,
-          scrub: 1,
+          scrub: 1.5,
           pin: true,
           // anticipatePin: 1,
           // pinType: "fixed",
@@ -542,12 +542,12 @@ var startScrollingBlockAnimation = () => {
     "top -10%"
   );
 
-  initScrollAnimation(
-    ".scr_tematiki_art6__title",
-    ".scr_tematiki_art6__inner",
-    ".scr_tematiki_art6 .container",
-    "top 30%"
-  );
+  // initScrollAnimation(
+  //   ".scr_tematiki_art6__title",
+  //   ".scr_tematiki_art6__inner",
+  //   ".scr_tematiki_art6 .container",
+  //   "top 30%"
+  // );
 
   initScrollAnimation(
     ".scr_company_art6__title",
@@ -555,6 +555,58 @@ var startScrollingBlockAnimation = () => {
     ".first_scr_main_art6 .container",
     "top top"
   );
+};
+
+var initAnimation = () => {
+  var letter = document.querySelector(".first_word .letter");
+
+  var mm = gsap.matchMedia();
+
+  mm.add("(min-width: 992px)", () => {
+    gsap.set(letter, { y: "-54%" });
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".scr_scrolling_right_art6",
+        start: "45% center",
+        end: "60% center",
+        scrub: 1,
+        pin: false,
+        invalidateOnRefresh: true,
+        duration: 3,
+      },
+    });
+
+    tl.to(letter, {
+      y: -0.3,
+    });
+  });
+};
+
+var initTematikiAnimation = () => {
+  var el = document.querySelector(".scr_tematiki_art6__wrapper");
+
+  var mm = gsap.matchMedia();
+
+  mm.add("(min-width: 992px)", () => {
+    gsap.set(el, { y: 150 });
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".scr_tematiki_art6__inner",
+        start: "center center",
+        end: "bottom center",
+        scrub: 1,
+        pin: false,
+        invalidateOnRefresh: true,
+        duration: 3,
+      },
+    });
+
+    tl.to(el, {
+      y: 0,
+    });
+  });
 };
 
 // =============================================
@@ -598,6 +650,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
       gsap.registerPlugin(ScrollTrigger);
       startScrollingBlockAnimation();
       isScrollTriggerInit = true;
+      initAnimation();
+      initTematikiAnimation();
     }
 
     // toggle header handlers by resize
@@ -608,6 +662,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         // init GSAP ScrollTrigger
         gsap.registerPlugin(ScrollTrigger);
         startScrollingBlockAnimation();
+        initAnimation();
+        initTematikiAnimation();
       }
     };
 

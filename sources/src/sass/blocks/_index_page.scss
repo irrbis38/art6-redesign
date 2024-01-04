@@ -22,13 +22,6 @@
   color: $color_dark;
   white-space: nowrap;
 
-  span {
-    display: inline-block;
-    width: 200px;
-    height: 1px;
-    display: none;
-  }
-
   &::before {
     content: "";
     position: absolute;
@@ -67,7 +60,6 @@
   }
 
   @include sm {
-    display: none;
     padding-top: 0;
     font-size: 60px;
     line-height: 83%;
@@ -77,29 +69,20 @@
       display: none;
     }
 
-    span {
-      display: none;
+    @include sm {
+      font-size: 60px;
+      line-height: 83%;
+      font-weight: 600;
+      letter-spacing: -0.02em;
     }
-  }
-}
 
-.index_page_title-sm {
-  display: none;
+    @include xs {
+      font-size: 50px;
+      line-height: 120%;
+    }
 
-  @include sm {
-    display: block;
-    font-size: 60px;
-    line-height: 83%;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-
-  @include xs {
-    font-size: 50px;
-    line-height: 120%;
-  }
-
-  @include r(359px) {
-    font-size: 38px;
+    @include r(359px) {
+      font-size: 38px;
+    }
   }
 }

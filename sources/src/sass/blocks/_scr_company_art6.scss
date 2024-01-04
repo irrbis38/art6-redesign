@@ -66,6 +66,8 @@
   }
 
   @include sm {
+    margin-bottom: 37px;
+
     &::after {
       // padding-top: 43.39%;
       padding-top: 47.89%;
@@ -203,6 +205,12 @@
   left: 0;
   z-index: 2;
   width: 100%;
+
+  @include sm {
+    position: relative;
+    bottom: unset;
+    left: unset;
+  }
 }
 
 .scr_company_art6__title__block {
@@ -219,6 +227,10 @@
 
   @include lg {
     min-height: 154px;
+  }
+
+  @include sm {
+    min-height: auto;
   }
 }
 

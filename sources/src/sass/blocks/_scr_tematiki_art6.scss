@@ -22,13 +22,69 @@
   position: relative;
 }
 
-.scr_tematiki_art6__title-sm {
-  @include sm {
-    font-size: 60px;
-    line-height: 117%;
+// .scr_tematiki_art6__title-sm {
+//   @include sm {
+//     font-size: 60px;
+//     line-height: 117%;
+//   }
+
+//   @include xs {
+//     font-size: 40px;
+//     line-height: 120%;
+//   }
+
+//   @media (max-width: 360px) {
+//     font-size: 34px;
+//   }
+// }
+
+.scr_tematiki_art6__title {
+  position: relative;
+  margin-bottom: 25px;
+  padding-top: 124px;
+  font-weight: 600;
+  font-size: 120px;
+  line-height: 83%;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+  // white-space: nowrap;
+
+  @include xl {
+    margin-bottom: 15px;
+    padding-top: 92px;
+    font-size: 90px;
+    line-height: 111%;
   }
 
+  @include lg {
+    margin-bottom: 30px;
+    padding-top: 53px;
+    font-size: 80px;
+    line-height: 100%;
+  }
+
+  @include sm {
+    // display: none;
+    margin-bottom: 23px;
+    padding-top: 0;
+    // font-size: 60px;
+    // line-height: 83%;
+    font-size: 60px;
+    line-height: 117%;
+    white-space: unset;
+
+    // span {
+    //   display: none;
+    // }
+  }
+
+  // @include sm {
+  //   font-size: 60px;
+  //   line-height: 117%;
+  // }
+
   @include xs {
+    margin-bottom: 16px;
     font-size: 40px;
     line-height: 120%;
   }
@@ -38,44 +94,39 @@
   }
 }
 
-.scr_tematiki_art6__title {
-  position: relative;
-  padding-top: 124px;
-  font-weight: 600;
-  font-size: 120px;
-  line-height: 83%;
+.scr_tematiki_art6__subtitle {
+  margin-bottom: 71px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 215%;
   letter-spacing: -0.02em;
   color: $color_dark;
-  white-space: nowrap;
 
   span {
-    display: inline-block;
-    width: 200px;
-    height: 1px;
+    border-bottom: 4px solid $color-blue;
   }
 
   @include xl {
-    padding-top: 92px;
-    font-size: 90px;
-    line-height: 111%;
+    font-size: 35px;
+    line-height: 246%;
   }
 
   @include lg {
-    padding-top: 53px;
-    font-size: 80px;
-    line-height: 100%;
+    margin-bottom: 61px;
+    font-size: 30px;
+    // line-height: 287%;
+    line-height: 140%;
   }
 
   @include sm {
-    display: none;
-    padding-top: 0;
-    font-size: 60px;
-    line-height: 83%;
-    white-space: unset;
+    margin-bottom: 63px;
+    font-size: 20px;
+    line-height: 150%;
+  }
 
-    span {
-      display: none;
-    }
+  @include xs {
+    max-width: 340px;
+    margin-bottom: 42px;
   }
 }
 
@@ -91,12 +142,13 @@
   height: 2px;
   max-width: 1500px;
   min-width: 320px;
-  margin: 100px auto 0;
+  // margin: 100px auto 0;
+  margin: 0 auto;
   background-color: #f00;
 
   @include xl {
     max-width: 1280px;
-    margin-top: 26px;
+    // margin-top: 26px;
   }
 
   @include lg {
@@ -106,7 +158,7 @@
 
   @include sm {
     max-width: 768px;
-    margin-top: 50px;
+    // margin-top: 50px;
   }
 
   @include xs {
