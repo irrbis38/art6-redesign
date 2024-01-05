@@ -409,8 +409,8 @@ var toggleBecomeClient = () => {
   // });
 };
 
-// ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "СТАТЬ КЛИЕНТОМ"
-var toggleBecomeClient = () => {
+// ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ"
+var toggleConsultationModal = () => {
   var btn = document.querySelector(".scr_text_director_art6__consultation"),
     client_modal = document.querySelector(".scr_b_consultation_art6"),
     body = document.body,
@@ -778,6 +778,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // init header logic
   initHeader();
   toggleBecomeClient();
+  toggleConsultationModal();
 
   // init footer logic
   changeCity();
