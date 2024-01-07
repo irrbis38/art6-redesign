@@ -528,7 +528,10 @@ var handleSuccessMsgModal = () => {
   [close_btn, overlay].forEach((el) =>
     el.addEventListener("click", () => {
       modal.classList.remove("active");
-      body.classList.remove("lock");
+      // if mobile menu is non-open than unlock body
+      if (!header.classList.contains("mobile-menu-open")) {
+        body.classList.remove("lock");
+      }
     })
   );
 
