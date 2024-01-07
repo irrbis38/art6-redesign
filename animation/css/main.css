@@ -944,7 +944,7 @@ button.header_art6__more {
     display: none
   }
 }
-@media (max-width:991px) and (max-width:991px) {
+@media (max-width:991px) {
   .index_page_title {
     font-size: 60px;
     line-height: 83%;
@@ -952,13 +952,13 @@ button.header_art6__more {
     letter-spacing: -.02em
   }
 }
-@media (max-width:991px) and (max-width:767px) {
+@media (max-width:767px) {
   .index_page_title {
     font-size: 50px;
     line-height: 120%
   }
 }
-@media only screen and (max-width:991px) and (max-width:359px) {
+@media only screen and (max-width:359px) {
   .index_page_title {
     font-size: 38px
   }
@@ -1432,6 +1432,7 @@ button.header_art6__more {
 .scr_scrolling_right_art6__title .first_word::after {
   content: "";
   position: absolute;
+  display: block;
   top: 50%;
   left: 0;
   z-index: -1;
@@ -1439,7 +1440,8 @@ button.header_art6__more {
   height: 76px;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  background-color: #166ff5
+  background-color: #166ff5;
+  color: #000
 }
 @media (max-width:1600px) {
   .scr_scrolling_right_art6__title .first_word {
@@ -2026,7 +2028,7 @@ button.header_art6__more {
     margin-right: 81px
   }
   .scr_scrolling_right_art6__subtitle .color_blocks .manager {
-    top: -60px
+    top: -52px
   }
   .scr_scrolling_right_art6__subtitle .color_blocks .advertise {
     top: 33%
@@ -3768,6 +3770,38 @@ button.header_art6__more {
     font-size: 34px
   }
 }
+.scr_tematiki_art6__title::before {
+  content: "";
+  position: absolute;
+  top: 54px;
+  left: 2px;
+  width: 0;
+  height: 0;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 24px solid #166ff5;
+  -webkit-transform: rotate(-14deg);
+  transform: rotate(-14deg)
+}
+@media (max-width:1600px) {
+  .scr_tematiki_art6__title::before {
+    top: 54px;
+    left: 9px;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 19px solid #166ff5
+  }
+}
+@media (max-width:1300px) {
+  .scr_tematiki_art6__title::before {
+    top: 22px
+  }
+}
+@media (max-width:991px) {
+  .scr_tematiki_art6__title::before {
+    display: none
+  }
+}
 .scr_tematiki_art6__subtitle {
   margin-bottom: 71px;
   font-weight: 500;
@@ -4112,44 +4146,60 @@ button.header_art6__more {
     padding-top: 51.69%
   }
 }
-.scr_company_art6__person {
+.scr_company_art6__person--arrow_right {
   position: absolute;
   top: 61.1%;
   left: 25.6%;
-  z-index: 2;
+  z-index: 3;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
-  gap: 3px;
+  gap: 23px;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: -.02em;
-  color: #fff
+  color: #8e8e93;
+  transition: color .2s ease-out
+}
+@media (hover:hover) {
+  .scr_company_art6__person--arrow_right:hover {
+    color: #fff
+  }
+  .scr_company_art6__person--arrow_right:hover .scr_company_art6__post path {
+    fill: #fff
+  }
+  .scr_company_art6__person--arrow_right:hover .scr_company_art6__name {
+    opacity: 1;
+    visibility: visible
+  }
 }
 @media (max-width:1600px) {
-  .scr_company_art6__person {
+  .scr_company_art6__person--arrow_right {
     top: 60%;
     left: 21.3%
   }
 }
 @media (max-width:991px) {
-  .scr_company_art6__person {
+  .scr_company_art6__person--arrow_right {
     top: 68.2%;
     left: 9.5%
   }
 }
 @media (max-width:767px) {
-  .scr_company_art6__person {
+  .scr_company_art6__person--arrow_right {
     display: none
   }
 }
-.scr_company_art6__name {
-  position: relative
+.scr_company_art6__person--arrow_right .scr_company_art6__name {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease-out,visibility .2s ease-out
 }
-.scr_company_art6__name::before {
+.scr_company_art6__person--arrow_right .scr_company_art6__name::before {
   content: "";
   position: absolute;
   top: 0;
@@ -4159,7 +4209,7 @@ button.header_art6__more {
   z-index: -1;
   background-color: #166ff5
 }
-.scr_company_art6__name::after {
+.scr_company_art6__person--arrow_right .scr_company_art6__name::after {
   content: "";
   position: absolute;
   width: 6px;
@@ -4169,64 +4219,139 @@ button.header_art6__more {
   z-index: 1;
   background-color: #fff
 }
-.scr_company_art6__post {
+.scr_company_art6__person--arrow_right .scr_company_art6__post {
   position: relative;
-  max-width: 80px;
   text-align: right
 }
-.scr_company_art6__post::after {
-  content: "";
+.scr_company_art6__person--arrow_right .scr_company_art6__post span {
   position: absolute;
   right: -25px;
   bottom: -15px;
   z-index: 1;
   width: 24px;
-  height: 26px;
-  background: url(../images/scr_company_art6/arrow-person.svg) center/contain no-repeat
+  height: 26px
 }
 @media (max-width:991px) {
-  .scr_company_art6__post::after {
+  .scr_company_art6__person--arrow_right .scr_company_art6__post span {
     right: -20px;
     bottom: 20px;
     -webkit-transform: rotate(-84deg);
     transform: rotate(-84deg)
   }
 }
-.scr_company_art6__manager {
-  position: absolute;
-  top: 57%;
-  left: 84.4%;
-  width: 86px;
-  height: 50px;
-  z-index: 2
-}
-.scr_company_art6__manager svg {
+.scr_company_art6__person--arrow_right .scr_company_art6__post span svg {
   display: block;
   width: 100%;
   height: auto
 }
-@media (max-width:1600px) {
-  .scr_company_art6__manager {
-    top: 55.3%;
-    left: 84.1%
+.scr_company_art6__person--arrow_right .scr_company_art6__post span path {
+  transition: all .2s ease-out
+}
+.scr_company_art6__person--arrow_left {
+  position: absolute;
+  top: 57.7%;
+  left: 85.6%;
+  z-index: 3;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  gap: 23px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -.02em;
+  color: #8e8e93;
+  transition: color .2s ease-out
+}
+@media (hover:hover) {
+  .scr_company_art6__person--arrow_left:hover {
+    color: #fff
+  }
+  .scr_company_art6__person--arrow_left:hover .scr_company_art6__post path {
+    fill: #fff
+  }
+  .scr_company_art6__person--arrow_left:hover .scr_company_art6__name {
+    opacity: 1;
+    visibility: visible
   }
 }
-@media (max-width:1300px) {
-  .scr_company_art6__manager {
-    top: 57.8%;
-    left: 84.2%
+@media (max-width:1600px) {
+  .scr_company_art6__person--arrow_left {
+    top: 57.7%;
+    left: 85.6%
   }
 }
 @media (max-width:991px) {
-  .scr_company_art6__manager {
-    top: 31.4%;
-    left: 80.4%
+  .scr_company_art6__person--arrow_left {
+    top: 65%;
+    left: 85.6%
   }
 }
 @media (max-width:767px) {
-  .scr_company_art6__manager {
+  .scr_company_art6__person--arrow_left {
     display: none
   }
+}
+.scr_company_art6__person--arrow_left .scr_company_art6__name {
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease-out,visibility .2s ease-out
+}
+.scr_company_art6__person--arrow_left .scr_company_art6__name::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: #166ff5
+}
+.scr_company_art6__person--arrow_left .scr_company_art6__name::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 5px;
+  left: -13px;
+  z-index: 1;
+  background-color: #fff
+}
+.scr_company_art6__person--arrow_left .scr_company_art6__post {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  position: relative
+}
+.scr_company_art6__person--arrow_left .scr_company_art6__post span {
+  position: absolute;
+  left: -25px;
+  bottom: -15px;
+  z-index: 1;
+  width: 24px;
+  height: 26px
+}
+@media (max-width:991px) {
+  .scr_company_art6__person--arrow_left .scr_company_art6__post span {
+    right: -20px;
+    bottom: 20px;
+    -webkit-transform: rotate(84deg);
+    transform: rotate(84deg)
+  }
+}
+.scr_company_art6__person--arrow_left .scr_company_art6__post span svg {
+  display: block;
+  width: 100%;
+  height: auto
+}
+.scr_company_art6__person--arrow_left .scr_company_art6__post span path {
+  transition: all .2s ease-out
 }
 .scr_company_art6__intro {
   position: absolute;
@@ -7343,6 +7468,14 @@ button.header_art6__more {
 }
 @media (max-width:991px) {
   .scr_footer_art6__group-sm {
+    display: block
+  }
+}
+.scr_footer_art6__group-reviews {
+  display: none
+}
+@media (max-width:991px) {
+  .scr_footer_art6__group-reviews {
     display: block
   }
 }

@@ -134,8 +134,10 @@ var initHeader = () => {
 
     var toggleHeader = (direction, curScroll) => {
       if (direction === 2 && curScroll > 100) {
-        header.classList.add("hide");
-        prevDirection = direction;
+        if (!header.classList.contains("mobile-menu-open")) {
+          header.classList.add("hide");
+          prevDirection = direction;
+        }
       } else if (direction === 1) {
         header.classList.remove("hide");
         prevDirection = direction;
@@ -349,15 +351,15 @@ var toggleModal = (elements) => {
     })
   );
 
-  // window.addEventListener("keydown", (e) => {
-  //   if (e.key === "Escape") {
-  //     client_modal.classList.remove("active");
-  //     // if mobile menu is non-open than unlock body
-  //     if (!header.classList.contains("mobile-menu-open")) {
-  //       body.classList.remove("lock");
-  //     }
-  //   }
-  // });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      client_modal.classList.remove("active");
+      // if mobile menu is non-open than unlock body
+      if (!header.classList.contains("mobile-menu-open")) {
+        body.classList.remove("lock");
+      }
+    }
+  });
 };
 
 // ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "СТАТЬ КЛИЕНТОМ"
@@ -528,22 +530,19 @@ var handleSuccessMsgModal = () => {
   [close_btn, overlay].forEach((el) =>
     el.addEventListener("click", () => {
       modal.classList.remove("active");
+      body.classList.remove("lock");
+    })
+  );
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
       // if mobile menu is non-open than unlock body
       if (!header.classList.contains("mobile-menu-open")) {
         body.classList.remove("lock");
       }
-    })
-  );
-
-  // window.addEventListener("keydown", (e) => {
-  //   if (e.key === "Escape") {
-  //     modal.classList.remove("active");
-  //     // if mobile menu is non-open than unlock body
-  //     if (!header.classList.contains("mobile-menu-open")) {
-  //       body.classList.remove("lock");
-  //     }
-  //   }
-  // });
+    }
+  });
 };
 
 // ===== ВЫБОР ГОРОДА
@@ -571,17 +570,17 @@ var changeCity = () => {
     })
   );
 
-  // window.addEventListener("keydown", (e) => {
-  //   if (e.key === "Escape") {
-  //     modal.classList.remove("active");
-  //     // if mobile menu is non-open than unlock body
-  //     if (!header.classList.contains("mobile-menu-open")) {
-  //       body.classList.remove("lock");
-  //     }
-  //     search.value = "";
-  //     inputs.forEach((i) => i.classList.remove("hidden"));
-  //   }
-  // });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
+      // if mobile menu is non-open than unlock body
+      if (!header.classList.contains("mobile-menu-open")) {
+        body.classList.remove("lock");
+      }
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    }
+  });
 
   // handle city inputs
   inputs.forEach((i) =>
