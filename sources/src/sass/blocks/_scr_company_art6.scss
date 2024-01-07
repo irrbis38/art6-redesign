@@ -81,31 +81,43 @@
   }
 }
 
-.scr_company_art6__person {
+.scr_company_art6__person--arrow_right {
   position: absolute;
-  // top: 540px;
-  // left: 491px;
   top: 61.1%;
   left: 25.6%;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: flex-end;
-  gap: 3px;
+  gap: 23px;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: $color_white;
+  color: $color_grey;
+  transition: color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color_white;
+
+      .scr_company_art6__post {
+        path {
+          fill: $color_white;
+        }
+      }
+
+      .scr_company_art6__name {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
 
   @include xl {
-    // top: 375px;
-    // left: 291px;
     top: 60%;
     left: 21.3%;
   }
 
   @include sm {
-    // top: 272px;
-    // left: 80px;
     top: 68.2%;
     left: 9.5%;
   }
@@ -113,91 +125,207 @@
   @include xs {
     display: none;
   }
-}
 
-.scr_company_art6__name {
-  position: relative;
+  .scr_company_art6__name {
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-color: $color_blue;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-color: $color_blue;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      top: 5px;
+      right: -13px;
+      z-index: 1;
+      background-color: $color_white;
+    }
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    top: 5px;
-    right: -13px;
-    z-index: 1;
-    background-color: $color_white;
-  }
-}
+  .scr_company_art6__post {
+    position: relative;
+    // max-width: 80px;
+    text-align: right;
 
-.scr_company_art6__post {
-  position: relative;
-  max-width: 80px;
-  text-align: right;
+    span {
+      position: absolute;
+      right: -25px;
+      bottom: -15px;
+      z-index: 1;
+      width: 24px;
+      height: 26px;
 
-  &::after {
-    content: "";
-    position: absolute;
-    right: -25px;
-    bottom: -15px;
-    z-index: 1;
-    width: 24px;
-    height: 26px;
-    background: url("../images/scr_company_art6/arrow-person.svg") center /
-      contain no-repeat;
+      @include sm {
+        right: -20px;
+        bottom: 20px;
+        transform: rotate(-84deg);
+      }
 
-    @include sm {
-      right: -20px;
-      bottom: 20px;
-      transform: rotate(-84deg);
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      path {
+        transition: all 0.2s ease-out;
+      }
     }
   }
 }
 
-.scr_company_art6__manager {
+.scr_company_art6__person--arrow_left {
   position: absolute;
-  top: 57%;
-  left: 84.4%;
-  width: 86px;
-  height: 50px;
-  z-index: 2;
+  top: 57.7%;
+  left: 85.6%;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  gap: 23px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: $color_grey;
+  transition: color 0.2s ease-out;
 
-  svg {
-    display: block;
-    width: 100%;
-    height: auto;
+  @media (hover: hover) {
+    &:hover {
+      color: $color_white;
+
+      .scr_company_art6__post {
+        path {
+          fill: $color_white;
+        }
+      }
+
+      .scr_company_art6__name {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   @include xl {
-    top: 55.3%;
-    left: 84.1%;
-  }
-
-  @include lg {
-    top: 57.8%;
-    left: 84.2%;
+    top: 57.7%;
+    left: 85.6%;
   }
 
   @include sm {
-    top: 31.4%;
-    left: 80.4%;
+    top: 65%;
+    left: 85.6%;
   }
 
   @include xs {
     display: none;
   }
+
+  .scr_company_art6__name {
+    order: 2;
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-color: $color_blue;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      top: 5px;
+      left: -13px;
+      z-index: 1;
+      background-color: $color_white;
+    }
+  }
+
+  .scr_company_art6__post {
+    order: 1;
+    position: relative;
+
+    span {
+      position: absolute;
+      left: -25px;
+      bottom: -15px;
+      z-index: 1;
+      width: 24px;
+      height: 26px;
+
+      @include sm {
+        right: -20px;
+        bottom: 20px;
+        transform: rotate(84deg);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      path {
+        transition: all 0.2s ease-out;
+      }
+    }
+  }
 }
+
+// .scr_company_art6__manager {
+//   position: absolute;
+//   top: 57%;
+//   left: 84.4%;
+//   width: 86px;
+//   height: 50px;
+//   z-index: 2;
+
+//   svg {
+//     display: block;
+//     width: 100%;
+//     height: auto;
+//   }
+
+//   @include xl {
+//     top: 55.3%;
+//     left: 84.1%;
+//   }
+
+//   @include lg {
+//     top: 57.8%;
+//     left: 84.2%;
+//   }
+
+//   @include sm {
+//     top: 31.4%;
+//     left: 80.4%;
+//   }
+
+//   @include xs {
+//     display: none;
+//   }
+// }
 
 .scr_company_art6__intro {
   position: absolute;

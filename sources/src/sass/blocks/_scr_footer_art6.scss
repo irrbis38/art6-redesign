@@ -349,6 +349,14 @@
   }
 }
 
+.scr_footer_art6__group-reviews {
+  display: none;
+
+  @include sm {
+    display: block;
+  }
+}
+
 @include sm {
   .scr_footer_art6__group-company {
     order: 5;
