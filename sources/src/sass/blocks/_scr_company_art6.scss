@@ -81,11 +81,7 @@
   }
 }
 
-.scr_company_art6__person--arrow_right {
-  position: absolute;
-  top: 61.1%;
-  left: 25.6%;
-  z-index: 3;
+.scr_company_art6__person {
   display: flex;
   align-items: flex-end;
   gap: 23px;
@@ -93,39 +89,32 @@
   font-size: 14px;
   letter-spacing: -0.02em;
   color: $color_grey;
-  transition: color 0.2s ease-out;
+  transition: all 0.2s ease-out;
 
-  @media (hover: hover) {
-    &:hover {
-      color: $color_white;
+  &.active {
+    color: $color_white;
 
-      .scr_company_art6__post {
-        path {
-          fill: $color_white;
-        }
+    .scr_company_art6__post {
+      path {
+        fill: $color_white;
       }
+    }
 
-      .scr_company_art6__name {
-        opacity: 1;
-        visibility: visible;
-      }
+    .scr_company_art6__name {
+      opacity: 1;
+      visibility: visible;
     }
   }
 
-  @include xl {
-    top: 60%;
-    left: 21.3%;
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
   }
+}
 
-  @include sm {
-    top: 68.2%;
-    left: 9.5%;
-  }
+// arrow right
 
-  @include xs {
-    display: none;
-  }
-
+.scr_company_art6__person--arrow_right {
   .scr_company_art6__name {
     position: relative;
     opacity: 0;
@@ -157,7 +146,6 @@
 
   .scr_company_art6__post {
     position: relative;
-    // max-width: 80px;
     text-align: right;
 
     span {
@@ -187,51 +175,9 @@
   }
 }
 
+// arrow left
+
 .scr_company_art6__person--arrow_left {
-  position: absolute;
-  top: 57.7%;
-  left: 85.6%;
-  z-index: 3;
-  display: flex;
-  align-items: flex-end;
-  gap: 23px;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: -0.02em;
-  color: $color_grey;
-  transition: color 0.2s ease-out;
-
-  @media (hover: hover) {
-    &:hover {
-      color: $color_white;
-
-      .scr_company_art6__post {
-        path {
-          fill: $color_white;
-        }
-      }
-
-      .scr_company_art6__name {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
-
-  @include xl {
-    top: 57.7%;
-    left: 85.6%;
-  }
-
-  @include sm {
-    top: 65%;
-    left: 85.6%;
-  }
-
-  @include xs {
-    display: none;
-  }
-
   .scr_company_art6__name {
     order: 2;
     position: relative;
@@ -293,39 +239,75 @@
   }
 }
 
-// .scr_company_art6__manager {
-//   position: absolute;
-//   top: 57%;
-//   left: 84.4%;
-//   width: 86px;
-//   height: 50px;
-//   z-index: 2;
+// positions of labels
 
-//   svg {
-//     display: block;
-//     width: 100%;
-//     height: auto;
-//   }
+.scr_company_art6__manager1 {
+  position: absolute;
+  top: 61.1%;
+  left: 25.6%;
+  z-index: 3;
 
-//   @include xl {
-//     top: 55.3%;
-//     left: 84.1%;
-//   }
+  @include xl {
+    top: 60%;
+    left: 21.3%;
+  }
 
-//   @include lg {
-//     top: 57.8%;
-//     left: 84.2%;
-//   }
+  @include sm {
+    top: 68.2%;
+    left: 9.5%;
+  }
 
-//   @include sm {
-//     top: 31.4%;
-//     left: 80.4%;
-//   }
+  @include xs {
+    display: none;
+  }
+}
 
-//   @include xs {
-//     display: none;
-//   }
-// }
+.scr_company_art6__manager2 {
+  position: absolute;
+  top: 57.7%;
+  left: 85.6%;
+  z-index: 3;
+
+  @include xl {
+    top: 57.7%;
+    left: 85.6%;
+  }
+
+  @include lg {
+    top: 60%;
+    left: 80%;
+  }
+
+  @include sm {
+    top: 60%;
+    left: 80%;
+  }
+
+  @include xs {
+    display: none;
+  }
+}
+
+.scr_company_art6__manager3 {
+  position: absolute;
+  top: 30%;
+  left: 65%;
+  z-index: 3;
+
+  @include xl {
+    top: 30%;
+    left: 59%;
+  }
+
+  @include lg {
+    top: 30%;
+    left: 54%;
+  }
+
+  @include xs {
+    display: none;
+  }
+}
 
 .scr_company_art6__intro {
   position: absolute;
