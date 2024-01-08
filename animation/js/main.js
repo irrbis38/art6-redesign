@@ -769,6 +769,31 @@ var initAnimation = () => {
 //   });
 // };
 
+var initCompanyPersonsAnimation = () => {
+  var persons = Array.from(
+    document.querySelectorAll(".scr_company_art6__person")
+  );
+
+  persons[0].classList.add("active");
+  // persons[1].classList.add("active");
+  persons[0].classList.remove("hidden");
+  persons[1].classList.remove("hidden");
+
+  var counter = 0;
+  var len = persons.length;
+
+  setInterval(() => {
+    var hiddenIdx = counter % len;
+    var activeIdx = (counter + 1) % len;
+    var nextIdx = (counter + 2) % len;
+    persons[hiddenIdx].classList.add("hidden");
+    persons[hiddenIdx].classList.remove("active");
+    persons[activeIdx].classList.add("active");
+    persons[nextIdx].classList.remove("hidden");
+    counter++;
+  }, 3000);
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
@@ -799,6 +824,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
       ".scr_footer_art6__group-submenu",
       ".scr_footer_art6__heading"
     );
+
+    // init company persons
+    initCompanyPersonsAnimation();
 
     // init reviews
     handleShowReviewButtons();

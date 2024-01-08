@@ -4146,11 +4146,7 @@ button.header_art6__more {
     padding-top: 51.69%
   }
 }
-.scr_company_art6__person--arrow_right {
-  position: absolute;
-  top: 61.1%;
-  left: 25.6%;
-  z-index: 3;
+.scr_company_art6__person {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -4162,36 +4158,21 @@ button.header_art6__more {
   font-size: 14px;
   letter-spacing: -.02em;
   color: #8e8e93;
-  transition: color .2s ease-out
+  transition: all .2s ease-out
 }
-@media (hover:hover) {
-  .scr_company_art6__person--arrow_right:hover {
-    color: #fff
-  }
-  .scr_company_art6__person--arrow_right:hover .scr_company_art6__post path {
-    fill: #fff
-  }
-  .scr_company_art6__person--arrow_right:hover .scr_company_art6__name {
-    opacity: 1;
-    visibility: visible
-  }
+.scr_company_art6__person.active {
+  color: #fff
 }
-@media (max-width:1600px) {
-  .scr_company_art6__person--arrow_right {
-    top: 60%;
-    left: 21.3%
-  }
+.scr_company_art6__person.active .scr_company_art6__post path {
+  fill: #fff
 }
-@media (max-width:991px) {
-  .scr_company_art6__person--arrow_right {
-    top: 68.2%;
-    left: 9.5%
-  }
+.scr_company_art6__person.active .scr_company_art6__name {
+  opacity: 1;
+  visibility: visible
 }
-@media (max-width:767px) {
-  .scr_company_art6__person--arrow_right {
-    display: none
-  }
+.scr_company_art6__person.hidden {
+  opacity: 0;
+  visibility: hidden
 }
 .scr_company_art6__person--arrow_right .scr_company_art6__name {
   position: relative;
@@ -4246,53 +4227,6 @@ button.header_art6__more {
 }
 .scr_company_art6__person--arrow_right .scr_company_art6__post span path {
   transition: all .2s ease-out
-}
-.scr_company_art6__person--arrow_left {
-  position: absolute;
-  top: 57.7%;
-  left: 85.6%;
-  z-index: 3;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  gap: 23px;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: -.02em;
-  color: #8e8e93;
-  transition: color .2s ease-out
-}
-@media (hover:hover) {
-  .scr_company_art6__person--arrow_left:hover {
-    color: #fff
-  }
-  .scr_company_art6__person--arrow_left:hover .scr_company_art6__post path {
-    fill: #fff
-  }
-  .scr_company_art6__person--arrow_left:hover .scr_company_art6__name {
-    opacity: 1;
-    visibility: visible
-  }
-}
-@media (max-width:1600px) {
-  .scr_company_art6__person--arrow_left {
-    top: 57.7%;
-    left: 85.6%
-  }
-}
-@media (max-width:991px) {
-  .scr_company_art6__person--arrow_left {
-    top: 65%;
-    left: 85.6%
-  }
-}
-@media (max-width:767px) {
-  .scr_company_art6__person--arrow_left {
-    display: none
-  }
 }
 .scr_company_art6__person--arrow_left .scr_company_art6__name {
   -webkit-order: 2;
@@ -4352,6 +4286,81 @@ button.header_art6__more {
 }
 .scr_company_art6__person--arrow_left .scr_company_art6__post span path {
   transition: all .2s ease-out
+}
+.scr_company_art6__manager1 {
+  position: absolute;
+  top: 61.1%;
+  left: 25.6%;
+  z-index: 3
+}
+@media (max-width:1600px) {
+  .scr_company_art6__manager1 {
+    top: 60%;
+    left: 21.3%
+  }
+}
+@media (max-width:991px) {
+  .scr_company_art6__manager1 {
+    top: 68.2%;
+    left: 9.5%
+  }
+}
+@media (max-width:767px) {
+  .scr_company_art6__manager1 {
+    display: none
+  }
+}
+.scr_company_art6__manager2 {
+  position: absolute;
+  top: 57.7%;
+  left: 85.6%;
+  z-index: 3
+}
+@media (max-width:1600px) {
+  .scr_company_art6__manager2 {
+    top: 57.7%;
+    left: 85.6%
+  }
+}
+@media (max-width:1300px) {
+  .scr_company_art6__manager2 {
+    top: 60%;
+    left: 80%
+  }
+}
+@media (max-width:991px) {
+  .scr_company_art6__manager2 {
+    top: 60%;
+    left: 80%
+  }
+}
+@media (max-width:767px) {
+  .scr_company_art6__manager2 {
+    display: none
+  }
+}
+.scr_company_art6__manager3 {
+  position: absolute;
+  top: 30%;
+  left: 65%;
+  z-index: 3
+}
+@media (max-width:1600px) {
+  .scr_company_art6__manager3 {
+    top: 30%;
+    left: 59%
+  }
+}
+@media (max-width:1300px) {
+  .scr_company_art6__manager3 {
+    top: 30%;
+    left: 54%
+  }
+}
+@media (max-width:767px) {
+  .scr_company_art6__manager3 {
+    display: none
+  }
 }
 .scr_company_art6__intro {
   position: absolute;
