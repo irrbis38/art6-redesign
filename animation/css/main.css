@@ -4158,7 +4158,7 @@ button.header_art6__more {
   font-size: 14px;
   letter-spacing: -.02em;
   color: #8e8e93;
-  transition: all .2s ease-out
+  transition: all 1s ease-out
 }
 .scr_company_art6__person.active {
   color: #fff
@@ -4178,7 +4178,7 @@ button.header_art6__more {
   position: relative;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .2s ease-out,visibility .2s ease-out
+  transition: opacity 1s ease-out,visibility 1s ease-out
 }
 .scr_company_art6__person--arrow_right .scr_company_art6__name::before {
   content: "";
@@ -4226,7 +4226,7 @@ button.header_art6__more {
   height: auto
 }
 .scr_company_art6__person--arrow_right .scr_company_art6__post span path {
-  transition: all .2s ease-out
+  transition: all 1s ease-out
 }
 .scr_company_art6__person--arrow_left .scr_company_art6__name {
   -webkit-order: 2;
@@ -4235,7 +4235,7 @@ button.header_art6__more {
   position: relative;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .2s ease-out,visibility .2s ease-out
+  transition: opacity 1s ease-out,visibility 1s ease-out
 }
 .scr_company_art6__person--arrow_left .scr_company_art6__name::before {
   content: "";
@@ -4285,7 +4285,7 @@ button.header_art6__more {
   height: auto
 }
 .scr_company_art6__person--arrow_left .scr_company_art6__post span path {
-  transition: all .2s ease-out
+  transition: all 1s ease-out
 }
 .scr_company_art6__manager1 {
   position: absolute;

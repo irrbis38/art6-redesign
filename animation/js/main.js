@@ -791,7 +791,7 @@ var initCompanyPersonsAnimation = () => {
     persons[activeIdx].classList.add("active");
     persons[nextIdx].classList.remove("hidden");
     counter++;
-  }, 3000);
+  }, 5000);
 };
 
 // =============================================
