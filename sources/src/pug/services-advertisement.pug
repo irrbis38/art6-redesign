@@ -1,0 +1,691 @@
+extends base/_layout
+block vars
+    - var pageName = 'services-advertisement scrolling-titles-exist'
+block head
+    title ART6 услуги - контекстная реклама
+block page
+
+    section.first_scr_main_art6
+        .container
+
+            h1.first_scr_main_art6__title
+                span
+                    .
+                        Контекстная
+                    button.first_scr_main_art6__help(type='button' aria-label="Показать справку") [ i ]
+                span реклама
+            p.first_scr_main_art6__subtitle #[span Получайте целевых клиентов из рекламы на 50% больше и дешевле с ART6]
+
+            ul.first_scr_main_art6__list 
+                li.first_scr_main_art6__item Получите детальную рекламную стратегию на 3 месяца
+                li.first_scr_main_art6__item Получайте теплых целевых клиентов уже через 1 неделю с начала сотрудничества
+                li.first_scr_main_art6__item Сотрудничайте с надежным сертифицирован&shy;ным агентством ART6
+                li.first_scr_main_art6__item Инвестируйте в контекстную рекламу эффективно с гарантиями результата
+
+    include ./blocks/modal_info.pug
+
+
+    section.scr_opisanie_uslugi_art6
+        .container
+
+            h2.scr_opisanie_uslugi_art6__title Контекстная реклама от лидера отрасли
+
+            p.scr_opisanie_uslugi_art6__subtitle С 2013 года digital-агентство ART6 разработало и провело более 1&nbsp;500 рекламных кампаний в Яндекс.Директ и Google.Ads для более чем 300 клиентов в 38 регионах России. С большей частью из них компания плодотворно сотрудничает по направлению контекстной рекламы на протяжении 5-8 лет.
+
+
+    .scr_preimushestva_uslugi_art6
+        .container
+
+            ul.scr_preimushestva_uslugi_art6__list
+
+                -
+                    var uslugi_list = [
+                        {
+                            name: 'Грамотная стратегия',
+                            text: 'Погружаемся в бизнес клиента, анализируем и разрабатываем рекламную стратегию, которая эффективно решит поставленные задачи.',
+                            imgNum: 1
+                        },
+                        {
+                            name: 'Контекстная реклама под ключ',
+                            text: 'Все работы мы проводим “под ключ”: маркетинговое исследование, настройка, оптимизация рекламы, разработка креативов, аналитика.',
+                            imgNum: 2
+                        },
+                        {
+                            name: 'Работа на результат',
+                            text: 'На старте сотрудничества определяем цели, задачи, KPI. Стремимся не просто достичь необходимого результата, а превзойти ожидания.',
+                            imgNum: 3
+                        },
+                        {
+                            name: 'Ключевые фразы',
+                            text: 'Рекламируем по неограниченному количеству ключевых фраз, обычно их в 2-3 раза больше чем у конкурентов.',
+                            imgNum: 4
+                        },
+                        {
+                            name: 'Сегментирование',
+                            text: 'Разделяем ключевые фразы на сегменты, под каждый из которых формируем объявления и посадочные с подменой контента.',
+                            imgNum: 1
+                        },
+                        {
+                            name: 'Эффективность',
+                            text: 'Ежемесячно мы проводим полный анализ рекламных компаний, регулярно ищем и внедряем точки роста.',
+                            imgNum: 2
+                        },
+                        {
+                            name: '20 специалистов в штате',
+                            text: 'Над вашей рекламой будут работать контекстолог, маркетолог, копирайтер, дизайнер, а также по необходимости разработчик и другие.',
+                            imgNum: 3
+                        },
+                        {
+                            name: 'Повышение конверсии',
+                            text: 'Мы делаем не просто рекламу, а работаем комплексно с сайтом и посадочными, повышая их конверсию.',
+                            imgNum: 4
+                        }
+                    ]
+
+                each item in uslugi_list
+
+                    li.scr_preimushestva_uslugi_art6__item
+
+                        .scr_preimushestva_uslugi_art6__icon
+                            img(src= "./images/scr_preimushestva_uslugi_art6/uslugi_art6_icon_" + item.imgNum + ".svg" alt="")
+
+                        p.scr_preimushestva_uslugi_art6__name= item.name
+
+                        p.scr_preimushestva_uslugi_art6__text= item.text
+
+
+
+    section.scr_tseni_uslugi_art6
+        .container 
+
+            h2.scr_tseni_uslugi_art6__title Цены на контекстную рекламу в Краснодаре
+
+            ul.scr_tseni_uslugi_art6__list
+
+                li.scr_tseni_uslugi_art6__benefit.scr_tseni_uslugi_art6__benefit--blue
+                    span Работа с контекстной рекламой – от 7 000₽/мес.
+
+                li.scr_tseni_uslugi_art6__benefit.scr_tseni_uslugi_art6__benefit--pink
+                    span Бюджет контекстной рекламы – от 14 000₽/мес.
+
+                li.scr_tseni_uslugi_art6__benefit.scr_tseni_uslugi_art6__benefit--green
+                    span Ставка 1 часа работы специалиста – 1 500₽
+
+            p.scr_tseni_uslugi_art6__descr Стоимость продвижения зависит от множества факторов, но преимущественно от конкуренции в отрасли в поисковых системах Яндекс и Google. Также отметим высокую корреляцию цены и размера (численности населения) города.
+
+
+            .scr_tseni_uslugi_art6__wrapper
+
+                -
+                    var tseni_uslugi_cards = [
+                        {
+                            heading: 'Реклама в небольшом городе',
+                            name1: 'Население',
+                            value1: 'до 500К',
+                            name2: 'Первые результаты',
+                            value2: '1 неделя',
+                            name3: 'Высокие результаты',
+                            value3: '2-3 мес',
+                            name4: 'Средняя ежемесячная цена работы',
+                            value4: '8.000-10.000₽',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '15.000-40.000₽',
+                            name6: 'Ежемесячная стоймость работы',
+                            value6: 'от 7.000₽',
+                            name7: 'Ежемесячный бюджет работ',
+                            value7: 'от 14.000₽',
+                        },
+                        {
+                            heading: 'Реклама в крупном городе',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Первые результаты',
+                            value2: '1-2 недели',
+                            name3: 'Высокие результаты',
+                            value3: '2-4 мес',
+                            name4: 'Средняя ежемесячная цена работы',
+                            value4: '12.000-18.000₽',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Ежемесячная стоймость работы',
+                            value6: 'от 9.000₽',
+                            name7: 'Ежемесячный бюджет работ',
+                            value7: 'от 20.000₽',
+                        },
+                        {
+                            heading: 'Реклама по нескольким городам',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Первые результаты',
+                            value2: '1-2 недели',
+                            name3: 'Высокие результаты',
+                            value3: '2-4 мес',
+                            name4: 'Средняя ежемесячная цена работы',
+                            value4: '12.000-18.000₽',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Ежемесячная стоймость работы',
+                            value6: 'от 9.000₽',
+                            name7: 'Ежемесячный бюджет работ',
+                            value7: 'от 20.000₽',
+                        },
+                        {
+                            heading: 'Реклама в мегаполисе (Мск, Спб)',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Первые результаты',
+                            value2: '1-2 недели',
+                            name3: 'Высокие результаты',
+                            value3: '2-4 мес',
+                            name4: 'Средняя ежемесячная цена работы',
+                            value4: '12.000-18.000₽',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Ежемесячная стоймость работы',
+                            value6: 'от 9.000₽',
+                            name7: 'Ежемесячный бюджет работ',
+                            value7: 'от 20.000₽',
+                        },
+                        {
+                            heading: 'Реклама по нескольким городам',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Первые результаты',
+                            value2: '1-2 недели',
+                            name3: 'Высокие результаты',
+                            value3: '2-4 мес',
+                            name4: 'Средняя ежемесячная цена работы',
+                            value4: '12.000-18.000₽',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Ежемесячная стоймость работы',
+                            value6: 'от 9.000₽',
+                            name7: 'Ежемесячный бюджет работ',
+                            value7: 'от 20.000₽',
+                        },
+                        {
+                            heading: 'Реклама в мегаполисе (Мск, Спб)',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Первые результаты',
+                            value2: '1-2 недели',
+                            name3: 'Высокие результаты',
+                            value3: '2-4 мес',
+                            name4: 'Средняя ежемесячная цена работы',
+                            value4: '12.000-18.000₽',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Ежемесячная стоймость работы',
+                            value6: 'от 9.000₽',
+                            name7: 'Ежемесячный бюджет работ',
+                            value7: 'от 20.000₽',
+                        }
+                    ]
+
+                each item in tseni_uslugi_cards
+
+                    .scr_tseni_uslugi_art6__item
+
+                        p.scr_tseni_uslugi_art6__heading= item.heading
+
+                        .scr_tseni_uslugi_art6__group.scr_tseni_uslugi_art6__group--wide
+                            p.scr_tseni_uslugi_art6__name= item.name1
+                            p.scr_tseni_uslugi_art6__value= item.value1
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name2
+                            p.scr_tseni_uslugi_art6__value= item.value2
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name3
+                            p.scr_tseni_uslugi_art6__value= item.value3
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name4
+                            p.scr_tseni_uslugi_art6__value.scr_tseni_uslugi_art6__value--sm= item.value4
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name5
+                            p.scr_tseni_uslugi_art6__value.scr_tseni_uslugi_art6__value--sm= item.value5
+
+                        .scr_tseni_uslugi_art6__group.scr_tseni_uslugi_art6__group--main
+                            p.scr_tseni_uslugi_art6__name= item.name6
+                            p.scr_tseni_uslugi_art6__value
+                                span= item.value6
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name7
+                            p.scr_tseni_uslugi_art6__value= item.value7
+
+            button.scr_keysy_art6__more.btn_more_arrow(type="button") Узнать стоимость
+
+
+    include ./blocks/_scr_keysy_art6
+
+
+    section.scr_elemsotrudn_uslugi_art6
+        .container 
+
+            h2.scr_elemsotrudn_uslugi_art6__title Элементы сотрудничества
+
+            .scr_elemsotrudn_uslugi_art6__wrapper
+
+                .scr_elemsotrudn_uslugi_art6__item
+
+                    .scr_elemsotrudn_uslugi_art6__name Планирование
+
+                    .scr_elemsotrudn_uslugi_art6__text
+                        p Перед началом работы с контекстной рекламой, мы разрабатываем индивидуальную маркетинговую стратегию для бизнеса клиента.#[br]Маркетинговая стратегия – это плотная работа двух команд: нашей и клиента.
+
+
+                .scr_elemsotrudn_uslugi_art6__item
+
+                    .scr_elemsotrudn_uslugi_art6__name Работа
+
+                    .scr_elemsotrudn_uslugi_art6__text
+
+                        p Основной элемент вашего с нами сотрудничества – это непосредственно наша работа, а именно настройка и ведение контекстной рекламы. Также правильно называть работу с контекстной рекламой словом оптимизация. Наша задача регулярно работать с рекламными компаниями и повышать их эффективность
+
+                        p Над вашей рекламной компанией работает контекстолог, креативы разрабатывает графический дизайнер, а определяет всю стратегию маркетолог. Ставит задачи и контролирует их выполнение, то есть курирует весь процесс – проект-менеджер
+
+
+
+                .scr_elemsotrudn_uslugi_art6__item
+
+                    .scr_elemsotrudn_uslugi_art6__name Коммуникации
+
+                    ul.scr_elemsotrudn_uslugi_art6__list
+
+                        li Постоянный проектный менеджер для вашей компании, который организовывает работу команды над вашим проектом;
+
+                        li Любые каналы связи с проектным менеджером: Whatsapp, Telegram, телефон, почта;
+
+                        li Возможность постановки задач 24/7, выполнение их от нескольких минут, до нескольких дней в зависимости от типа задачи;
+
+                        li Регулярная отчетность от 1 раза в месяц до 1 раза в неделю в зависимости от бюджета проекта и договоренностей.
+
+
+                .scr_elemsotrudn_uslugi_art6__item
+
+                    .scr_elemsotrudn_uslugi_art6__name Отчеты
+
+                    .scr_elemsotrudn_uslugi_art6__text
+                        p Чаще всего мы используем отчеты в CallTouch. Сервис собирает сведения с разных рекламных каналов и CRM-систем, объединяет их с данными вашего сайта о продажах, входящих заявках и обращениях, формирует удобные отчеты. Они содержат расходы на контекстную рекламу, лиды с записью разговоров, источники лидов, информацию по сделкам, выручке и другие важные показатели.
+
+                        p Если инвестиции в рекламу небольшие, то используем бюджетный коллтрекинг Гудок, отчеты регулярно формируем вручную. В этом случае они содержат всю основную информацию по показателям контекстной рекламы: расход бюджета, количество показов, кликов, CPM, CTR, CPC, количество лидов. Если же наоборот, инвестиции в рекламу большие, то настраиваем максимально подробные отчеты Power BI. 
+
+                        p Проектный менеджер по договоренности с вами от 1 раза в месяц до 1 раза в неделю отправляет отчеты и созванивается для их обсуждения с вами.
+
+
+                .scr_elemsotrudn_uslugi_art6__item
+
+                    .scr_elemsotrudn_uslugi_art6__name Результат и оплата
+
+                    .scr_elemsotrudn_uslugi_art6__text
+                        p В каждом проекте мы работаем на результат. Наша задача – достичь запланированных показателей, а сверхзадача – с лихвой их превзойти. 
+
+                        p В сферах, в которых у нас наиболее сильная экспертиза, например, медицина мы готовы работать по KPI с оплатой за результат
+
+
+    section.scr_raboti_uslugi_art6
+        .container
+
+            h2.scr_raboti_uslugi_art6__title Работы по контекстной рекламе
+
+            p.scr_raboti_uslugi_art6__subtitle Все работы мы выполняем “под ключ” – вам не требуется обращаться в другие компании
+
+            .scr_raboti_uslugi_art6__wrapper 
+
+                .scr_raboti_uslugi_art6__item.item__48
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Стратегические работы
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Детальный брифинг клиента, фиксация всех данных.
+                            li Проведение комплексного маркетингового исследования: анализ рынка, изучение продуктов, выявление сильных и слабых сторон, анализ конкурентов и отстройка от них, генерация идей.
+                            li Определение стратегии продвижения, выбор каналов и инструментов для привлечения клиентов.
+                            li Согласование данных по исследованию и стратегии с клиентом, переход к действиям по реализации стратегии.
+
+                .scr_raboti_uslugi_art6__item.item__59
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Подготовительные работы
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Разработка и/или доработка сайта и/или посадочных страниц под контекстную рекламу
+                            li Настройка и проверка работоспособности всех размещенных способов связи (телефон, почта, формы).
+                            li Проведение необходимых технических работ с посадочными страницами (установка SSL-сертификата, перевод сайта на защищенный протокол HTTPS, установка Google reCAPTCHA v3 и другие).
+                            li Проведение работ по индексированию сайта в поисковых системах
+
+                    .scr_raboti_uslugi_art6__more
+                        .scr_raboti_uslugi_art6__inner
+                            span И более 10 других важных работ по подготовке
+
+                .scr_raboti_uslugi_art6__item.item__71
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Работа с рекламными компаниями на поиске
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Анализ семантики в сочетании с бюджетом конкурентов в контекстной рекламе на поиске (аудит ключевых слов и цены клика, проверка упущенных ключевых слов конкурентами, анализ бюджета конкурентов)
+                            li Сбор семантики для рекламы на поиске (сбор семантики по базисам, кросс-минусовка запросов, сегментация семантики для повышения релевантности объявлений поисковым запросам)
+                            li Парсинг и анализ объявлений конкурентов
+                            li Настройка поисковых рекламных кампаний (создание объявлений, настройка целевой аудитории, настройка способов и времени показа, установка бюджета и другие работы)
+
+                    .scr_raboti_uslugi_art6__more
+                        .scr_raboti_uslugi_art6__inner
+                            span И более 15 других работ по контекстной рекламе
+
+                .scr_raboti_uslugi_art6__item.item__77
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Работа с рекламными компаниями в сетях
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Анализ ЦА и семантики в сочетании с бюджетом конкурентов в контекстной рекламе в сетях (анализ сегментов ЦА, аудит ключевых слов и цены клика, проверка упущенных ключевых слов конкурентами, анализ бюджета конкурентов)
+                            li Сбор семантики для рекламы в сетях (сбор семантики по базисам, кросс-минусовка запросов, сегментация семантики для повышения релевантности объявлений поисковым запросам)
+                            li Парсинг и анализ объявлений конкурентов
+                            li Разработка креативов для объявлений
+                            li Настройка рекламных кампаний в сетях (создание объявлений, настройка целевой аудитории, настройка способов и времени показа, установка бюджета и другие работы)
+
+                    .scr_raboti_uslugi_art6__more
+                        .scr_raboti_uslugi_art6__inner
+                            span И более 15 других работ по рекламе в сетях
+
+                .scr_raboti_uslugi_art6__item.item__110
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Маркетинговая проработка сайта и посадочных для повышения конверсии
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Проработка на сайте фирменных элементов компании
+                            li Работа с предложениями (офферами) на сайте: разработка офферов, отрисовка баннеров к ним, внедрение функционала на сайт для размещения продающих офферов
+                            li Работа с формами обратной связи для сбора контактов: формирование, отрисовка и внедрение их на сайт.
+                            li Работа с информацией о компании для повышения ее привлекательности и доверия со стороны посетителей: подготовка текстовой составляющей, отрисовка блоков и внедрение их на сайт
+                            li Работа с продукцией и услугами предлагаемыми клиентом: подготовка полной конверсионной информации о них (описание, характеристики, преимущества, основные выгоды для покупателя, цены, сроки и так далее), отрисовка блоков и внедрение их на сайт
+                            li Работа с информацией о специалистах и оборудовании компании: формирование представления, отрисовка блоков и внедрение их на сайт
+                            li Работа с реализованными работами (фото, видео, кейсы): представление выполненных работ (опыта компании) в наиболее выгодном свете для посетителей сайта
+
+                    .scr_raboti_uslugi_art6__more
+                        .scr_raboti_uslugi_art6__inner
+                            span И более 60 других работ для повышения конверсии сайта
+
+
+            .scr_raboti_uslugi_art6__attention
+
+                p.scr_raboti_uslugi_art6__heading Внимание!
+
+                p.scr_raboti_uslugi_art6__text Мы представили часть основных работ по контекстной рекламе. #[br] Полный же пул насчитывает более 200 различных работ из области рекламы, маркетинга, дизайна, контента, копирайтинга и аналитики – и все эти работы мы делаем в процессе работы с контекстной рекламой
+
+
+    include ./blocks/_scr_text_director_art6
+
+
+    include ./blocks/_scr_tematiki_art6
+
+
+    section.scr_instrumtech_art6
+
+        .container
+
+            h3.scr_instrumtech_art6__title Инструменты и технологии
+
+            .scr_instrumtech_art6__slider.glide
+
+                .scr_instrumtech_art6__track.glide__track(data-glide-el="track")
+
+                    ul.scr_instrumtech_art6__list.glide__slides
+
+                        li.scr_instrumtech_art6__slide.glide__slide
+                            img(src="./images/scr_instrumtech_art6/tools-logo-1.svg" alt="" width="265" height="120")
+
+                        li.scr_instrumtech_art6__slide.glide__slide
+                            img(src="./images/scr_instrumtech_art6/tools-logo-2.svg" alt="" width="265" height="120")
+
+
+                        li.scr_instrumtech_art6__slide.glide__slide
+                            img(src="./images/scr_instrumtech_art6/tools-logo-3.svg" alt="" width="265" height="120")
+
+                        li.scr_instrumtech_art6__slide.glide__slide
+                            img(src="./images/scr_instrumtech_art6/tools-logo-4.svg" alt="" width="256" height="117")
+
+                        li.scr_instrumtech_art6__slide.glide__slide
+                            img(src="./images/scr_instrumtech_art6/tools-logo-1.svg" alt="" width="265" height="120")
+
+                        li.scr_instrumtech_art6__slide.glide__slide
+                            img(src="./images/scr_instrumtech_art6/tools-logo-2.svg" alt="" width="265" height="120")
+
+
+                        li.scr_instrumtech_art6__slide.glide__slide
+                            img(src="./images/scr_instrumtech_art6/tools-logo-3.svg" alt="" width="265" height="120")
+
+                        li.scr_instrumtech_art6__slide.glide__slide
+                            img(src="./images/scr_instrumtech_art6/tools-logo-4.svg" alt="" width="256" height="117")
+
+
+                .scr_instrumtech_art6__nav
+                    button.scr_instrumtech_art6__prev(type="button" aria-label="Показать предыдущий слайд")
+                    button.scr_instrumtech_art6__next(type="button" aria-label="Показать следующий слайд")
+
+
+
+    .scr_forma_audit_art6
+        .container
+            p.scr_forma_audit_art6__title Бесплатный аудит контекстной рекламы
+            p.scr_forma_audit_art6__subtitle Проведем аудит ваших рекламных кампаний в #[span Яндекс.Директ] и #[span Google.Ads]
+            p.scr_forma_audit_art6__subtitle Сделаем #[span экспресс-аудит] вашего сайта и посадочных страниц на конверсионность
+            p.scr_forma_audit_art6__subtitle Ответим на все ваши вопросы и подготовим КП по работе с контекстной рекламой
+
+
+
+            form.scr_forma_audit_art6__form(action="#" novalidate)
+
+                .scr_forma_audit_art6__fields
+                    .scr_forma_audit_art6__client 
+                        .scr_forma_audit_art6__name
+                            input.scr_forma_audit_art6__input.required(type="text" placeholder="Имя*" name="client_name" required)
+
+                        .scr_forma_audit_art6__contact
+                            input.scr_forma_audit_art6__input.required(type="text" placeholder="Телефон/мессенджер*" name="client_contact" required)
+
+                    button.scr_forma_audit_art6__submit(type="submit") Отправить
+
+                    p.scr_forma_audit_art6__confirm Нажав на кнопку, вы даете согласие на обработку #[a(href="./index.html") персональных данных]
+
+
+
+    include ./blocks/_scr_company_art6
+
+
+    include ./blocks/_scr_komanda_art6
+
+
+    include ./blocks/_scr_dostizheniya_art6
+
+
+    include ./blocks/_scr_sertif_partnery_art6
+
+
+    include ./blocks/_scr_klienty_onas_art6
+
+
+    include ./blocks/_scr_voprosy_art6
+
+
+    .scr_polezn_material_art6
+        .container 
+
+            h3.scr_polezn_material_art6__title Бесплатный полезный материал от экспертов ART6
+
+            .scr_polezn_material_art6__wrapper
+
+                .scr_polezn_material_art6__descr
+
+                    p.scr_polezn_material_art6__name Как повысить конверсию продвигаемого сайта в 2 раза без увеличения бюджета?
+
+                    .scr_polezn_material_art6__text
+                        p Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения.
+                        p Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.
+                        p Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения.
+                        p Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.
+
+                    button.scr_polezn_material_art6__btn(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                    button.scr_polezn_material_art6__download
+                        span Скачать чек-ап по повышению конверсии корпоративного сайта
+                        span Скачать чек-ап 
+                        svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M4.16536 5.34297L5.34036 4.16797L14.1654 12.993L14.1654 7.5013H15.832L15.832 15.8346L7.4987 15.8346V14.168L12.9904 14.168L4.16536 5.34297Z" fill="#166FF5")
+
+                .scr_polezn_material_art6__evaluation
+
+                    label.scr_polezn_material_art6__label.label_interesting
+                        input(type="radio" name="material_evaluation" value="interesting")
+                        span Интересно
+
+                    label.scr_polezn_material_art6__label.label_noninteresting
+                        input(type="radio" name="material_evaluation" value="non_interesting")
+                        span Не интересно
+
+
+
+    section.scr_sm_takzhe_art6
+        .container 
+
+            h4.scr_sm_takzhe_art6__title Смотрите также
+
+            .scr_sm_takzhe_art6__wrapper
+
+                -
+                    var seo_list = [
+                        'SEO-аудит сайтов',
+                        'SEO-оптимизация сайтов',
+                        'Продвижение сайтов в Яндекс',
+                        'SEO-аудит сайтов',
+                        'SEO-оптимизация сайтов',
+                    ]
+
+                    var promotion_list = [
+                        'Интернет-магазины',
+                        'Одностраничные сайты',
+                        'Сайты-визитки',
+                        'Интернет-магазины',
+                        'Одностраничные сайты',
+                        'Сайты-визитки',
+                    ]
+
+                    var promotion_cms_list = [
+                        '1С-Битрикс',
+                        'Tilda',
+                        'WordPress',
+                        '1С-Битрикс',
+                        'Tilda',
+                        'WordPress'
+                    ]
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Услуги по SEO-продвижению:
+
+                    ul.scr_sm_takzhe_art6__list
+
+                        each item in seo_list
+                            li.scr_sm_takzhe_art6__item
+                                a(href="#").scr_sm_takzhe_art6__link
+                                    span= item
+                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Продвижение по виду сайта:
+
+                    ul.scr_sm_takzhe_art6__list
+
+                        each item in promotion_list
+                            li.scr_sm_takzhe_art6__item
+                                a(href="#").scr_sm_takzhe_art6__link
+                                    span= item
+                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Услуги по SEO-продвижению:
+
+                    ul.scr_sm_takzhe_art6__list
+
+                        each item in promotion_cms_list
+                            li.scr_sm_takzhe_art6__item
+                                a(href="#").scr_sm_takzhe_art6__link
+                                    span= item
+                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Продвижение по виду сайта:
+
+                    ul.scr_sm_takzhe_art6__list
+
+                        each item in promotion_list
+                            li.scr_sm_takzhe_art6__item
+                                a(href="#").scr_sm_takzhe_art6__link
+                                    span= item
+                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+            button.scr_sm_takzhe_art6__more(type="button") Показать больше
+
+
+
+
+
+
+
+    include ./blocks/_scr_forma_footer_art6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

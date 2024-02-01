@@ -52,6 +52,18 @@
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  scrollbar-color: $color_dark #d9d9d9;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color_dark;
+  }
+  &::-webkit-scrollbar-track {
+    background: #d9d9d9;
+  }
 }
 
 .scr_review_modal__image {

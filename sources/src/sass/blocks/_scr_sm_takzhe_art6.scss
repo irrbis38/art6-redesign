@@ -1,0 +1,296 @@
+.scr_sm_takzhe_art6 {
+  margin-bottom: 128px;
+
+  @include xl {
+    margin-bottom: 100px;
+  }
+
+  @include sm {
+    margin-bottom: 80px;
+  }
+}
+
+.scr_sm_takzhe_art6__title {
+  margin-bottom: 52px;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+
+  @include xl {
+    margin-bottom: 38px;
+    font-size: 35px;
+  }
+
+  @include lg {
+    margin-bottom: 43px;
+    font-size: 30px;
+  }
+
+  @include sm {
+    margin-bottom: 56px;
+  }
+
+  @include xs {
+    margin-bottom: 32px;
+    font-size: 32px;
+  }
+
+  @include r(360px) {
+    font-size: 26px;
+  }
+}
+
+.scr_sm_takzhe_art6__wrapper {
+  position: relative;
+  height: 182px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0px 20px;
+  margin-bottom: 40px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 82px;
+    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    transform: rotate(180deg);
+    pointer-events: none;
+  }
+
+  @include xl {
+    margin-bottom: 38px;
+  }
+
+  @include lg {
+    margin-bottom: 33px;
+  }
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 56px 20px;
+    height: auto;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include xs {
+    grid-template-columns: 1fr;
+    gap: 45px 0;
+  }
+
+  &.active {
+    height: auto;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+// .scr_sm_takzhe_art6__category {
+//   flex: 1 1 25%;
+// }
+
+.scr_sm_takzhe_art6__name {
+  margin-bottom: 29px;
+  text-wrap: nowrap;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: $color_grey;
+
+  @include lg {
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+  }
+
+  @include sm {
+    margin-bottom: 19px;
+    font-size: 16px;
+  }
+}
+
+.scr_sm_takzhe_art6__list {
+  @include sm {
+    position: relative;
+    height: 135px;
+    overflow: hidden;
+    margin-bottom: 26px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 82px;
+      background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+      transform: rotate(180deg);
+      pointer-events: none;
+    }
+
+    @include sm {
+      &.active {
+        height: auto;
+
+        &::after {
+          opacity: 0;
+        }
+
+        & + .scr_sm_takzhe_art6__toggle svg {
+          transform: scaleY(-1);
+        }
+      }
+    }
+  }
+}
+
+.scr_sm_takzhe_art6__item {
+  &:not(:last-child) {
+    margin-bottom: 26px;
+  }
+}
+
+.scr_sm_takzhe_art6__link {
+  position: relative;
+  width: max-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0 6px;
+  // padding: 5px 0;
+  // text-wrap: nowrap;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: -0.02em;
+  color: $color_grey;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+  border-bottom: 2px solid $color_blue;
+
+  @include lg {
+    font-size: 14px;
+  }
+
+  @include sm {
+    font-size: 16px;
+  }
+
+  svg {
+    flex: 0 0 17px;
+    transform: translateY(4px);
+  }
+
+  path {
+    transition: fill 0.2s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color_white;
+      background-color: $color_blue;
+
+      path {
+        fill: $color_white;
+      }
+    }
+  }
+}
+
+.scr_sm_takzhe_art6__toggle {
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0 24px;
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 200%;
+  letter-spacing: -0.02em;
+  color: $color_grey;
+  transition: color 0.2s ease-out;
+
+  svg {
+    transition: all 0.2s linear;
+  }
+
+  path {
+    transition: all 0.2s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color_dark;
+
+      path {
+        fill: $color_dark;
+      }
+    }
+  }
+
+  @include sm {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  @include xs {
+    margin-bottom: 28px;
+  }
+}
+
+.scr_sm_takzhe_art6__more {
+  position: relative;
+  display: inline-block;
+  padding-left: 60px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: url("../images/scr_klienty_onas_art6/plus.svg") center / contain
+      no-repeat;
+    transition: transform 0.2s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      transform: rotate(90deg);
+    }
+  }
+
+  @include xl {
+    font-size: 24px;
+    line-height: 133%;
+  }
+
+  @include lg {
+    font-size: 20px;
+    line-height: 160%;
+
+    &::before {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  @include sm {
+    display: none;
+  }
+}

@@ -1,0 +1,64 @@
+.scr_opisanie_uslugi_art6 {
+  margin-bottom: 106px;
+
+  @include xl {
+    margin-bottom: 68px;
+  }
+
+  @include lg {
+    margin-bottom: 68px;
+  }
+
+  @include sm {
+    margin-bottom: 66px;
+  }
+
+  @include xs {
+    margin-bottom: 42px;
+  }
+}
+
+.scr_opisanie_uslugi_art6__title {
+  max-width: 980px;
+  margin-bottom: 33px;
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 90px;
+  letter-spacing: -0.02em;
+
+  @include xl {
+    max-width: 850px;
+    margin-bottom: 20px;
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  @include lg {
+    max-width: 680px;
+    font-size: 55px;
+    line-height: 60px;
+  }
+
+  @include sm {
+    max-width: 515px;
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  @include xs {
+    max-width: 360px;
+    margin-bottom: 17px;
+    font-size: 38px;
+    line-height: 46px;
+  }
+}
+
+.scr_opisanie_uslugi_art6__subtitle {
+  max-width: 731px;
+  margin: 0 10px 0 auto;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+}

@@ -49,7 +49,7 @@
   }
 }
 
-.scr_komanda_art6__splide {
+.scr_komanda_art6__slider {
   position: relative;
 }
 
@@ -142,19 +142,19 @@
 }
 
 .scr_komanda_art6__slide:hover {
-  .scr_komanda_art6__img {
-    img {
-      &:first-child {
-        visibility: hidden;
-        opacity: 0;
-      }
+  // .scr_komanda_art6__img {
+  //   img {
+  //     &:first-child {
+  //       visibility: hidden;
+  //       opacity: 0;
+  //     }
 
-      &:last-child {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-  }
+  //     &:last-child {
+  //       visibility: visible;
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 
   .scr_komanda_art6__name {
     padding-left: 24px;
@@ -195,10 +195,10 @@
     object-fit: cover;
     transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
 
-    &:last-child {
-      opacity: 0;
-      visibility: hidden;
-    }
+    // &:last-child {
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
   }
 
   @include xl {

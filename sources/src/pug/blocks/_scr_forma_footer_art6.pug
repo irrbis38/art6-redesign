@@ -1,0 +1,47 @@
+.scr_forma_footer_art6
+    .container
+        p.scr_forma_footer_art6__title Расскажите о вашей задаче
+        p.scr_forma_footer_art6__subtitle Исследуем, создадим, продвинем – достигнем высочайших результатов
+
+
+        form.scr_forma_footer_art6__form(action="#" novalidate)
+
+            .scr_forma_footer_art6__fields
+                .scr_forma_footer_art6__client 
+                    .scr_forma_footer_art6__name
+                        input.scr_forma_footer_art6__input.required(type="text" placeholder="Имя*" name="client_name" required)
+
+                    .scr_forma_footer_art6__contact
+                        input.scr_forma_footer_art6__input.required(type="text" placeholder="Телефон/мессенджер*" name="client_contact" required)
+
+                textarea.scr_forma_footer_art6__descr(placeholder="Расскажите немного о проекте" cols="30" rows="1")
+
+                button.scr_forma_footer_art6__submit(type="submit") Отправить
+
+                p.scr_forma_footer_art6__confirm Нажав на кнопку, вы даете согласие на обработку #[a(href="./index.html") персональных данных]
+
+            ul.scr_forma_footer_art6__list
+                li
+                    input.scr_forma_footer_art6__check(type="checkbox" id="strategy")
+                    label.scr_forma_footer_art6__subject(for="strategy") Стратегия
+                li
+                    input.scr_forma_footer_art6__check(type="checkbox" id="dev")
+                    label.scr_forma_footer_art6__subject(for="dev") Разработка
+                li
+                    input.scr_forma_footer_art6__check(type="checkbox" id="seo")
+                    label.scr_forma_footer_art6__subject(for="seo") Продвижение
+                li
+                    input.scr_forma_footer_art6__check(type="checkbox" id="adw")
+                    label.scr_forma_footer_art6__subject(for="adw") Реклама
+                li
+                    input.scr_forma_footer_art6__check(type="checkbox" id="marketing")
+                    label.scr_forma_footer_art6__subject(for="marketing") Маркетинг
+                li
+                    input.scr_forma_footer_art6__check(type="checkbox" id="lids")
+                    label.scr_forma_footer_art6__subject(for="lids") Лидогенерация
+                li
+                    input.scr_forma_footer_art6__check(type="checkbox" id="analitics")
+                    label.scr_forma_footer_art6__subject(for="analitics") Аналитика
+                li
+                    input.scr_forma_footer_art6__check(type="checkbox" id="support")
+                    label.scr_forma_footer_art6__subject(for="support") Поддержка

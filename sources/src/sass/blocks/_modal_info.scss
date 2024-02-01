@@ -1,0 +1,121 @@
+.scr_info_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
+.scr_info_modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.scr_info_modal__wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 566px;
+  height: 100%;
+  max-height: 759px;
+  background-color: $color_white;
+}
+
+.scr_info_modal__inner {
+  width: 100%;
+  height: 100%;
+  padding: 54px 18px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scr_info_modal__top {
+  flex-shrink: 0;
+  padding-bottom: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.scr_info_modal__name {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+
+  span:first-child {
+    margin-right: 8px;
+    color: $color_blue;
+  }
+
+  span:last-child {
+    color: $color_dark;
+  }
+}
+
+.scr_info_modal__btn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+
+  path {
+    transition: all 0.2s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      path {
+        fill: $color_grey;
+      }
+    }
+  }
+}
+
+.scr_info_modal__content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  scrollbar-color: $color_dark #d9d9d9;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color_dark;
+  }
+  &::-webkit-scrollbar-track {
+    background: #d9d9d9;
+  }
+  scrollbar-width: thin;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  color: $color_grey_2;
+}
+
+.scr_info_modal__descr {
+  padding-right: 48px;
+
+  p:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

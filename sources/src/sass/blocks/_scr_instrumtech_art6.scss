@@ -1,0 +1,170 @@
+.scr_instrumtech_art6 {
+  margin-bottom: 128px;
+
+  @include xl {
+    margin-bottom: 95px;
+  }
+
+  @include lg {
+    margin-bottom: 95px;
+  }
+
+  @include sm {
+    margin-bottom: 95px;
+  }
+
+  @include xs {
+    margin-bottom: 95px;
+  }
+}
+
+.scr_instrumtech_art6__title {
+  margin-bottom: 57px;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+
+  @include xl {
+    margin-bottom: 55px;
+    font-size: 35px;
+  }
+
+  @include lg {
+    margin-bottom: 46px;
+    font-size: 30px;
+  }
+
+  @include sm {
+    margin-bottom: 27px;
+  }
+
+  @include xs {
+    margin-bottom: 25px;
+    font-size: 32px;
+  }
+
+  @include r(360px) {
+    font-size: 26px;
+  }
+}
+
+.scr_instrumtech_art6__slider {
+  position: relative;
+}
+
+.scr_instrumtech_art6__list {
+  @include sm {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 29px;
+  }
+
+  @include xs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+  }
+}
+
+.scr_instrumtech_art6__slide {
+  min-height: 168px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid $color_grey_light;
+  transition: border-color 0.2s ease-out;
+
+  &:hover {
+    border-left-color: $color_dark;
+
+    img {
+      opacity: 1;
+    }
+  }
+
+  @include xl {
+    min-height: 143px;
+  }
+
+  @include lg {
+    min-height: 115px;
+  }
+
+  @include sm {
+    min-height: 100px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: opacity 0.2s ease-out;
+  }
+}
+
+.scr_instrumtech_art6__nav {
+  position: absolute;
+  left: 0;
+  top: 35.41%;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+
+  @include sm {
+    display: none;
+  }
+}
+
+.scr_instrumtech_art6__prev,
+.scr_instrumtech_art6__next {
+  display: block;
+  width: 44px;
+  height: 44px;
+  background-color: $color_dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color_blue;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  @include xxs {
+    width: 44px;
+    height: 44px;
+
+    &::after {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.scr_instrumtech_art6__prev {
+  &::after {
+    background: url("../images/scr_komanda_art6/arrow_prev.svg") center /
+      contain no-repeat;
+  }
+}
+
+.scr_instrumtech_art6__next {
+  &::after {
+    background: url("../images/scr_komanda_art6/arrow_next.svg") center /
+      contain no-repeat;
+  }
+}

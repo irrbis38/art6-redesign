@@ -186,6 +186,7 @@
 
   @include r(359px) {
     font-size: 46px;
+    line-height: 115%;
   }
 }
 
@@ -272,6 +273,12 @@
 
     span {
       padding: 0;
+
+      &:nth-child(1) {
+        display: inline;
+        width: unset;
+        padding: 5px 0;
+      }
 
       &:nth-child(3) {
         padding-right: 3px;
@@ -404,5 +411,275 @@
       width: 32px;
       height: 32px;
     }
+  }
+
+  @include r(359px) {
+    font-size: 14px;
+  }
+}
+
+// START services-advertisement page style
+.services-advertisement {
+  .first_scr_main_art6 {
+    margin-bottom: 347px;
+
+    @include xl {
+      margin-bottom: 220px;
+    }
+
+    @include lg {
+      margin-bottom: 182px;
+    }
+
+    @include sm {
+      margin-bottom: 153px;
+    }
+
+    @include xs {
+      margin-bottom: 183px;
+    }
+
+    .container {
+      &::after {
+        background-image: url("./../images/first_scr_main_art6/services-advertisement-first-bg.svg");
+      }
+
+      @include xs {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .first_scr_main_art6__title {
+    @include r(359px) {
+      font-size: 44px;
+    }
+  }
+
+  .first_scr_main_art6__subtitle {
+    max-width: 900px;
+    padding: 0;
+    background-color: transparent;
+
+    span {
+      background-color: $color_blue;
+      display: inline;
+      padding: 6px 5px;
+    }
+
+    @include lg {
+      max-width: 700px;
+    }
+
+    @include sm {
+      max-width: 650px;
+    }
+
+    @include xs {
+      max-width: 460px;
+
+      & span:nth-child(1) {
+        width: auto;
+      }
+    }
+
+    @include xxs {
+      span {
+        display: inline;
+        padding: 5px 5px;
+      }
+    }
+  }
+
+  .first_scr_main_art6__item {
+    &:nth-child(n) {
+      max-width: 280px;
+    }
+
+    @include r(359px) {
+      font-size: 14px;
+    }
+  }
+}
+
+// END services-advertisement page style
+
+// START services-advertisement page style
+.services-website-creation {
+  .first_scr_main_art6 {
+    margin-bottom: 347px;
+
+    @include xl {
+      margin-bottom: 220px;
+    }
+
+    @include lg {
+      margin-bottom: 182px;
+    }
+
+    @include sm {
+      margin-bottom: 153px;
+    }
+
+    @include xs {
+      margin-bottom: 183px;
+    }
+
+    .container {
+      &::after {
+        background-image: url("./../images/first_scr_main_art6/services-website-creation-first-bg.svg");
+      }
+
+      @include xs {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .first_scr_main_art6__title {
+    @include r(359px) {
+      font-size: 44px;
+    }
+  }
+
+  .first_scr_main_art6__item {
+    &:nth-child(n) {
+      max-width: 280px;
+    }
+  }
+}
+// END services-advertisement page style
+
+// END services-advertisement page style
+
+.services-promotion {
+  .first_scr_main_art6 {
+    margin-bottom: 347px;
+
+    @include xl {
+      margin-bottom: 220px;
+    }
+
+    @include lg {
+      margin-bottom: 182px;
+    }
+
+    @include sm {
+      margin-bottom: 153px;
+    }
+
+    @include xs {
+      margin-bottom: 183px;
+    }
+
+    .container {
+      &::after {
+        background-image: url("./../images/first_scr_main_art6/services-promotion-first-bg.svg");
+      }
+
+      @include xs {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+// END services-advertisement page style
+
+// START industries page style
+.industries {
+  .first_scr_main_art6 {
+    margin-bottom: 121px;
+
+    @include xl {
+      margin-bottom: 100px;
+    }
+
+    @include lg {
+      margin-bottom: 80px;
+    }
+
+    @include sm {
+      margin-bottom: 50px;
+    }
+
+    @include xs {
+      margin-bottom: 25px;
+    }
+
+    .container {
+      padding-bottom: 183px;
+      border-bottom: 2px solid $color_grey_light;
+
+      &::after {
+        background-image: url("./../images/first_scr_main_art6/industries-first-bg.svg");
+      }
+
+      @include xl {
+        padding-bottom: 150px;
+      }
+
+      @include lg {
+        padding-bottom: 100px;
+      }
+
+      @include sm {
+        padding-bottom: 70px;
+      }
+
+      @include xs {
+        padding-bottom: 48px;
+      }
+
+      @include xs {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .first_scr_main_art6__subtitle {
+    max-width: 100%;
+    margin-bottom: 0;
+    color: $color_dark;
+    background-color: transparent;
+
+    span {
+      display: inline;
+      border-bottom: 4px solid $color_blue;
+      background-color: transparent;
+    }
+  }
+}
+// END industries page style
+
+.services-advertisement,
+.services-promotion,
+.services-website-creation {
+  .first_scr_main_art6__title {
+    span {
+      width: 100%;
+    }
+    span:first-child {
+      width: max-content;
+      position: relative;
+    }
+  }
+
+  .first_scr_main_art6__help {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 186%;
+    letter-spacing: -0.02em;
+    color: $color_blue;
   }
 }

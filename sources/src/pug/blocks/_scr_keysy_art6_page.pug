@@ -1,0 +1,44 @@
+section.scr_keysy_art6
+    .scr_keysy_art6__title__block.index_page__title_block.hidescrollbar
+        .container
+            h2.scr_keysy_art6__title.index_page_title
+                span Ооогромное количество проектов
+                span Наши проекты
+
+
+    .container
+
+        .scr_keysy_art6__wrapper
+
+            p.scr_keysy_art6__subtitle Более #[span 1 000] проектов в digital-маркетинге с #[span 2013] года
+
+            ul.scr_keysy_art6__filters 
+                li: input.scr_keysy_art6__filter(type="button" value="Все работы")
+                li: input.scr_keysy_art6__filter(type="button" value="Создание сайтов")
+                li: input.scr_keysy_art6__filter(type="button" value="SEO-продвижение")
+                li: input.scr_keysy_art6__filter(type="button" value="Реклама")
+                li: input.scr_keysy_art6__filter(type="button" value="Маркетинг")
+
+            .scr_keysy_art6__cases
+
+                include ./scr_keysy_art6__item--purple
+
+                include ./scr_keysy_art6__item--violet
+
+                include ./scr_keysy_art6__item--blue
+
+                include ./scr_keysy_art6__item--green
+
+                include ./scr_keysy_art6__item--black
+
+                include ./scr_keysy_art6__item--red
+
+        ul.scr_keysy_art6__pagination(role="nav" aria-label="Переход по страницам")
+
+            li.current_page: a(href="#" aria-label="Страница 1") 1
+            li: a(href="#" aria-label="Страница 2") 2
+            li: a(href="#" aria-label="Страница 3") 3
+            li: a(href="#" aria-label="Страница 4") 4
+            li: a(href="#" aria-label="Страница 5") 5
+            li ...
+            li: a(href="#" aria-label="Страница 10") 10

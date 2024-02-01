@@ -1,0 +1,180 @@
+.scr_rezultat_keysa_art6 {
+  margin-bottom: 381px;
+
+  @include xl {
+    margin-bottom: 300px;
+  }
+
+  @include lg {
+    margin-bottom: 250px;
+  }
+
+  @include xs {
+    margin-bottom: 198px;
+  }
+}
+
+.scr_rezultat_keysa_art6__title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+
+  @include xl {
+    font-size: 60px;
+  }
+
+  @include xs {
+    margin-bottom: 16px;
+    font-size: 38px;
+  }
+}
+
+.scr_rezultat_keysa_art6__text {
+  max-width: 1120px;
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 156%;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+
+  @include sm {
+    margin-bottom: 55px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+
+.scr_rezultat_keysa_art6__achievements {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px 30px;
+  margin-bottom: 53px;
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include xs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+.scr_rezultat_keysa_art6__value {
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: $color_blue;
+
+  @include xl {
+    font-size: 35px;
+  }
+
+  @include xs {
+    font-size: 28px;
+  }
+}
+
+.scr_rezultat_keysa_art6__descr {
+  max-width: 230px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+
+  @include sm {
+    font-size: 16px;
+    line-height: 137%;
+  }
+
+  @include r(359px) {
+    font-size: 14px;
+  }
+}
+
+.scr_rezultat_keysa_art6__list {
+  margin-bottom: 121px;
+  padding-bottom: 56px;
+  border-bottom: 2px solid $color_grey_light;
+
+  @include xs {
+    margin-bottom: 60px;
+  }
+
+  li {
+    position: relative;
+    padding-left: 28px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: -0.03em;
+    color: $color_dark;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      display: block;
+      width: 8px;
+      height: 8px;
+      background-color: $color_blue;
+    }
+
+    @include sm {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}
+
+.scr_rezultat_keysa_art6__subtitle {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 102%;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+
+  @include lg {
+    margin-top: 80px;
+  }
+
+  @include xs {
+    margin-top: 60px;
+    margin-bottom: 19px;
+    font-size: 28px;
+    line-height: 107%;
+  }
+}
+
+.scr_rezultat_keysa_art6__img {
+  width: 100%;
+  max-width: 487px;
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @include xs {
+    margin: 0 auto;
+  }
+
+  @include xxs {
+    max-width: 100%;
+  }
+}

@@ -18,6 +18,12 @@
   }
 }
 
+.services-website-creation {
+  .scr_tematiki_art6 {
+    margin-bottom: 200px;
+  }
+}
+
 .scr_tematiki_art6__title__block {
   position: relative;
 }
@@ -426,7 +432,7 @@
   @include sm {
     position: relative;
     max-height: 0;
-    gap: 8px;
+    gap: 12px 8px;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 
@@ -478,5 +484,33 @@
 
   @include sm {
     padding: 4px 18px;
+  }
+
+  @include xs {
+    padding: 3px 18px;
+  }
+}
+
+// industies page
+
+.industries {
+  .scr_tematiki_art6 {
+    margin-bottom: 304px;
+
+    @include xl {
+      margin-bottom: 200px;
+    }
+
+    @include lg {
+      margin-bottom: 150px;
+    }
+
+    @include sm {
+      margin-bottom: 100px;
+    }
+
+    @include xs {
+      margin-bottom: 79px;
+    }
   }
 }

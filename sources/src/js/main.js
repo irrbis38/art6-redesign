@@ -404,7 +404,6 @@ var toggleBecomeClient = () => {
   //     client_modal.classList.remove("active");
   //     // if mobile menu is non-open than unlock body
   //     if (!header.classList.contains("mobile-menu-open")) {
-  //       console.log("here");
   //       body.classList.remove("lock");
   //     }
   //   }
@@ -434,24 +433,53 @@ var toggleConsultationModal = () => {
 
 // ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "ОТЗЫВОВ"
 var handleShowReviewButtons = () => {
-  var buttons = Array.from(
+  var buttons_open = Array.from(
     document.querySelectorAll(".scr_klienty_onas_art6__pdf")
   );
-  (client_modal = document.querySelector(".scr_review_modal")),
-    (body = document.body),
-    (close_btn = document.querySelector(".scr_review_modal__btn")),
-    (overlay = document.querySelector(".scr_review_modal__overlay")),
-    (header = document.querySelector(".header_art6")),
-    (image = document.querySelector(".scr_review_modal__image img"));
+  var client_modal = document.querySelector(".scr_review_modal"),
+    body = document.body,
+    close_btn = document.querySelector(".scr_review_modal__btn"),
+    overlay = document.querySelector(".scr_review_modal__overlay"),
+    header = document.querySelector(".header_art6"),
+    image = document.querySelector(".scr_review_modal__image img");
 
-  buttons.forEach((btn) =>
+  buttons_open.forEach((btn) =>
     btn.addEventListener("click", () => {
       image.src = btn.dataset.src;
     })
   );
 
   var elements = {
-    buttons_open: buttons,
+    buttons_open,
+    client_modal,
+    body,
+    header,
+    close_btn,
+    overlay,
+  };
+
+  toggleModal(elements);
+};
+
+var showReviewOnProjectPage = () => {
+  var buttons_open = Array.from(
+    document.querySelectorAll(".scr_rezultat_keysa_art6__img")
+  );
+  var client_modal = document.querySelector(".scr_review_modal"),
+    body = document.body,
+    close_btn = document.querySelector(".scr_review_modal__btn"),
+    overlay = document.querySelector(".scr_review_modal__overlay"),
+    header = document.querySelector(".header_art6"),
+    image = document.querySelector(".scr_review_modal__image img");
+
+  // buttons_open.forEach((btn) =>
+  //   btn.addEventListener("click", () => {
+  //     image.src = btn.dataset.src;
+  //   })
+  // );
+
+  var elements = {
+    buttons_open,
     client_modal,
     body,
     header,
@@ -624,29 +652,6 @@ var startScrollingBlockAnimation = () => {
       return value;
     }
 
-    // const tween = gsap.to(scrolledBlock, {
-    //   x: getScrollAmount,
-    //   duration: 3,
-    //   ease: "none",
-    // });
-
-    // ScrollTrigger.create({
-    //   trigger: wrapper,
-    //   start: startPosition,
-    //   end: () => `+=${getScrollAmount() * -1}`,
-    //   // pin: true,
-    //   // anticipatePin: 1,
-    //   scrub: 1,
-    //   pin: true,
-    //   // anticipatePin: 1,
-    //   // pinType: "fixed",
-    //   // pinSpacing: true,
-    //   animation: tween,
-    //   invalidateOnRefresh: true,
-    //   // markers: true,
-    //   toggleActions: "play none none reverse",
-    // });
-
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 992px)", () => {
@@ -658,63 +663,69 @@ var startScrollingBlockAnimation = () => {
           trigger: wrapper,
           start: startPosition,
           end: () => `+=${getScrollAmount() * -1}`,
-          // pin: true,
-          // anticipatePin: 1,
           scrub: 1.5,
           pin: true,
-          // anticipatePin: 1,
-          // pinType: "fixed",
-          // pinSpacing: true,
-          // animation: tween,
           invalidateOnRefresh: true,
-          // markers: true,
           toggleActions: "play none none reverse",
         },
       });
     });
   };
 
-  initScrollAnimation(
-    ".scr_scrolling_right_art6__scroll",
-    ".scr_scrolling_right_art6",
-    ".scr_scrolling_right_art6 .container",
-    "top 10%"
+  var scr_scrolling_right_art6 = document.querySelector(
+    ".scr_scrolling_right_art6"
   );
 
-  // initScrollAnimation(
-  //   ".scr_uslugi_art6__title",
-  //   ".scr_uslugi_art6",
-  //   ".scr_uslugi_art6 .container",
-  //   "top 30%"
-  // );
+  scr_scrolling_right_art6 &&
+    initScrollAnimation(
+      ".scr_scrolling_right_art6__scroll",
+      ".scr_scrolling_right_art6",
+      ".scr_scrolling_right_art6 .container",
+      "top 10%"
+    );
 
-  initScrollAnimation(
-    ".scr_keysy_art6__title",
-    ".scr_keysy_art6",
-    ".scr_keysy_art6 .container",
-    "top 30%"
+  var scr_keysy_art6 = document.querySelector(".scr_keysy_art6");
+  var our_projects = document.querySelector(".our-projects");
+
+  if (scr_keysy_art6) {
+    if (our_projects) {
+      initScrollAnimation(
+        ".scr_keysy_art6__title",
+        ".scr_keysy_art6",
+        ".scr_keysy_art6 .container",
+        "top top"
+      );
+    } else {
+      initScrollAnimation(
+        ".scr_keysy_art6__title",
+        ".scr_keysy_art6",
+        ".scr_keysy_art6 .container",
+        "top 30%"
+      );
+    }
+  }
+
+  var scr_text_director_art6 = document.querySelector(
+    ".scr_text_director_art6"
   );
 
-  initScrollAnimation(
-    ".scr_text_director_art6__title",
-    ".scr_text_director_art6",
-    ".first_scr_main_art6 .container",
-    "top -10%"
-  );
+  scr_text_director_art6 &&
+    initScrollAnimation(
+      ".scr_text_director_art6__title",
+      ".scr_text_director_art6",
+      ".first_scr_main_art6 .container",
+      "top -10%"
+    );
 
-  // initScrollAnimation(
-  //   ".scr_tematiki_art6__title",
-  //   ".scr_tematiki_art6__inner",
-  //   ".scr_tematiki_art6 .container",
-  //   "top 30%"
-  // );
+  var scr_company_art6 = document.querySelector(".scr_company_art6");
 
-  initScrollAnimation(
-    ".scr_company_art6__title",
-    ".scr_company_art6",
-    ".first_scr_main_art6 .container",
-    "top top"
-  );
+  scr_company_art6 &&
+    initScrollAnimation(
+      ".scr_company_art6__title",
+      ".scr_company_art6",
+      ".first_scr_main_art6 .container",
+      "top top"
+    );
 };
 
 var initAnimation = () => {
@@ -743,32 +754,6 @@ var initAnimation = () => {
   });
 };
 
-// var initTematikiAnimation = () => {
-//   var el = document.querySelector(".scr_tematiki_art6__wrapper");
-
-//   var mm = gsap.matchMedia();
-
-//   mm.add("(min-width: 992px)", () => {
-//     gsap.set(el, { y: 150 });
-
-//     var tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: ".scr_tematiki_art6__inner",
-//         start: "center center",
-//         end: "bottom center",
-//         scrub: 1,
-//         pin: false,
-//         invalidateOnRefresh: true,
-//         duration: 3,
-//       },
-//     });
-
-//     tl.to(el, {
-//       y: 0,
-//     });
-//   });
-// };
-
 var initCompanyPersonsAnimation = () => {
   var persons = Array.from(
     document.querySelectorAll(".scr_company_art6__person")
@@ -794,83 +779,255 @@ var initCompanyPersonsAnimation = () => {
   }, 5000);
 };
 
+// ===== INIT SLIDER ON SERVICES PAGE
+var initScrInstrumtechSlider = () => {
+  var glide = new Glide(".scr_instrumtech_art6__slider", {
+    type: "carousel",
+    gap: 20,
+    perView: 4,
+    breakpoints: {
+      1600: {
+        gap: 17,
+      },
+      1300: {
+        gap: 13,
+      },
+    },
+  });
+
+  var btnPrev = document.querySelector(".scr_instrumtech_art6__prev");
+  var btnNext = document.querySelector(".scr_instrumtech_art6__next");
+
+  btnNext.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    glide.go(">");
+  });
+
+  btnPrev.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    glide.go("<");
+  });
+
+  window.innerWidth > 991 && glide.mount();
+  var handleMQ = (e) => {
+    if (e.matches) {
+      glide.destroy();
+    } else {
+      glide.mount();
+    }
+  };
+
+  var mq991 = window.matchMedia("(max-width: 991px)");
+
+  mq991.addEventListener("change", handleMQ);
+};
+
+var initUsefulMaterialAccordion = () => {
+  var text = document.querySelector(".scr_polezn_material_art6__text");
+  var toggleBtn = document.querySelector(".scr_polezn_material_art6__btn");
+
+  toggleBtn.addEventListener("click", () => {
+    text.classList.toggle("active");
+  });
+};
+
+var initSmTakzheAccordion = () => {
+  var wrapper = document.querySelector(".scr_sm_takzhe_art6__wrapper");
+  var toggleBtn = document.querySelector(".scr_sm_takzhe_art6__more");
+
+  toggleBtn.addEventListener("click", () => {
+    if (wrapper.classList.contains("active")) {
+      wrapper.classList.remove("active");
+      toggleBtn.textContent = "Показать больше";
+    } else {
+      wrapper.classList.add("active");
+      toggleBtn.textContent = "Скрыть";
+    }
+  });
+};
+
+var initWatchAlsoAccordion = () => {
+  var toggleButtons = document.querySelectorAll(".watch_more_toggle_button");
+
+  toggleButtons.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      var container = btn.previousElementSibling;
+      var isContainerActive = container.classList.contains("active");
+
+      if (isContainerActive) {
+        container.classList.remove("active");
+        btn.firstChild.textContent = "Показать все";
+      } else {
+        container.classList.add("active");
+        btn.firstChild.textContent = "Скрыть";
+      }
+    })
+  );
+};
+
+// ===== TOGGLE INFO MODAL ON FIRST SCREEN
+var initModalInfo = () => {
+  var buttons_open = Array.from(
+    document.querySelectorAll(".first_scr_main_art6__help")
+  );
+  var client_modal = document.querySelector(".scr_info_modal");
+  var body = document.body;
+  var header = document.querySelector(".header_art6");
+  var close_btn = document.querySelector(".scr_info_modal__btn");
+  var overlay = document.querySelector(".scr_info_modal__overlay");
+
+  var elements = {
+    buttons_open,
+    client_modal,
+    body,
+    header,
+    close_btn,
+    overlay,
+  };
+
+  toggleModal(elements);
+};
+
+var initPinProjectImage = () => {
+  ScrollTrigger.matchMedia({
+    "(min-width: 768px)": function () {
+      ScrollTrigger.create({
+        trigger: ".scr_perv_keys_art6__wrapper",
+        start: "-=5% top",
+        endTrigger: ".scr_perv_keys_art6__descr",
+        end: "bottom bottom",
+        pin: ".scr_perv_keys_art6__img",
+        pinSpacing: false,
+      });
+    },
+  });
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
 document.addEventListener("DOMContentLoaded", function (event) {
   //===== ADD BASIC LOGIC FOR ALL PAGE
-  // init luxy library
-  // initSmothScroll();
-
-  // init header logic
+  // header
   initHeader();
   toggleBecomeClient();
-  toggleConsultationModal();
 
-  // init footer logic
+  var scr_text_director_art6_consultation = document.querySelector(
+    ".scr_text_director_art6__consultation"
+  );
+  scr_text_director_art6_consultation && toggleConsultationModal();
+
+  // footer
   changeCity();
 
-  //===== LOGIC FOR DIFFERENT PAGES
-  //=== START INDEX PAGE
-  var index_page = document.querySelector(".index");
+  // sliders
+  var teamSlider = document.querySelector(".scr_komanda_art6__slider");
+  teamSlider && initTeamSlider();
 
-  if (index_page) {
-    // init slider
-    initTeamSlider();
-    // init accordions
-    initQuestionsAccordion();
+  // accordions
+  var scr_voprosy_art6__question = document.querySelector(
+    ".scr_voprosy_art6__question"
+  );
+  scr_voprosy_art6__question && initQuestionsAccordion();
+
+  var scr_tematiki_art6__group = document.querySelector(
+    ".scr_tematiki_art6__group"
+  );
+  scr_tematiki_art6__group &&
     initAccordion(".scr_tematiki_art6__group", ".scr_tematiki_art6__heading");
-    initAccordion(
-      ".scr_footer_art6__group-submenu",
-      ".scr_footer_art6__heading"
+
+  initAccordion(".scr_footer_art6__group-submenu", ".scr_footer_art6__heading");
+
+  // company persons
+  var scr_company_art6__person = document.querySelector(
+    ".scr_company_art6__person"
+  );
+  scr_company_art6__person && initCompanyPersonsAnimation();
+
+  // init reviews
+  var scr_klienty_onas_art6__pdf = document.querySelector(
+    ".scr_klienty_onas_art6__pdf"
+  );
+
+  scr_klienty_onas_art6__pdf && handleShowReviewButtons();
+
+  var scr_rezultat_keysa_art6__img = document.querySelector(
+    ".scr_rezultat_keysa_art6__img"
+  );
+  scr_rezultat_keysa_art6__img && showReviewOnProjectPage();
+
+  // forms
+  var required_input = document.querySelector(".required");
+  required_input && checkRequiredInputs();
+
+  document.forms.length > 0 && formValidation();
+
+  var scr_success_msg_art6 = document.querySelector(".scr_success_msg_art6");
+  scr_success_msg_art6 && handleSuccessMsgModal();
+
+  var inner_width = 0;
+  var project_page = document.querySelector(".project");
+
+  project_page ? (inner_width = 767) : (inner_width = 991);
+
+  var isScrollTriggerInit = false;
+  if (window.innerWidth > inner_width) {
+    // init GSAP ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    var scrolling_titles_exist = document.body.classList.contains(
+      "scrolling-titles-exist"
     );
+    scrolling_titles_exist && startScrollingBlockAnimation();
 
-    // init company persons
-    initCompanyPersonsAnimation();
+    isScrollTriggerInit = true;
 
-    // init reviews
-    handleShowReviewButtons();
+    var index_page = document.querySelector(".index");
+    index_page && initAnimation();
 
-    // init forms validation
-    checkRequiredInputs();
-    formValidation();
-    handleSuccessMsgModal();
+    // start animation if project page
+    project_page && initPinProjectImage();
+  }
 
-    var isScrollTriggerInit = false;
-    if (window.innerWidth > 991) {
+  // toggle header handlers by resize
+  var mq_inner_width = window.matchMedia(`(max-width: ${inner_width}px)`);
+
+  var handleMQ = (e) => {
+    if (!e.matches && !isScrollTriggerInit) {
       // init GSAP ScrollTrigger
       gsap.registerPlugin(ScrollTrigger);
-      startScrollingBlockAnimation();
-      isScrollTriggerInit = true;
-      initAnimation();
-      // initTematikiAnimation();
+
+      var scrolling_titles_exist = document.body.classList.contains(
+        "scrolling-titles-exist"
+      );
+      scrolling_titles_exist && startScrollingBlockAnimation();
+
+      var index_page = document.querySelector(".index");
+      index_page && initAnimation();
+
+      // start animation if project page
+      project_page && initPinProjectImage();
     }
+  };
 
-    // toggle header handlers by resize
-    var mq991 = window.matchMedia("(max-width: 991px)");
+  mq_inner_width.addEventListener("change", handleMQ);
 
-    var handleMQ = (e) => {
-      if (!e.matches && !isScrollTriggerInit) {
-        // init GSAP ScrollTrigger
-        gsap.registerPlugin(ScrollTrigger);
-        startScrollingBlockAnimation();
-        initAnimation();
-        // initTematikiAnimation();
-      }
-    };
+  // init services slider
+  var slider = document.querySelector(".scr_instrumtech_art6__slider");
 
-    mq991.addEventListener("change", handleMQ);
-  }
-  //=== END INDEX PAGE
+  slider && initScrInstrumtechSlider();
+
+  // init useful material accordion
+  var usefulMaterial = document.querySelector(".scr_polezn_material_art6");
+  usefulMaterial && initUsefulMaterialAccordion();
+
+  // init useful material accordion
+  var watchAlso = document.querySelector(".scr_sm_takzhe_art6");
+  watchAlso && initSmTakzheAccordion();
+  watchAlso && initWatchAlsoAccordion();
+
+  var modal_info = document.querySelector(".scr_info_modal");
+  modal_info && initModalInfo();
 });
-
-// TODO: plug GSAP after delay
-// function doCreateMapScript(cb) {
-//   setTimeout(function () {
-//     var script = document.createElement("script");
-//     script.async = false;
-//     script.src = "https://api-maps.yandex.ru/2.1/?apikey=key&lang=ru_RU";
-//     document.body.appendChild(script);
-//     script.onload = () => cb();
-//   }, 2000);
-// }

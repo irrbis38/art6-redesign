@@ -1,0 +1,578 @@
+extends base/_layout
+block vars
+    - var pageName = 'services-promotion scrolling-titles-exist'
+block head
+    title ART6 услуги - Продвижение сайтов 
+block page
+
+    section.first_scr_main_art6
+        .container
+
+            h1.first_scr_main_art6__title
+                span
+                    .
+                        Продвижение
+                    button.first_scr_main_art6__help(type='button' aria-label="Показать справку") [ i ]
+            p.first_scr_main_art6__subtitle #[span Займите топовые позиции в Яндекс и Google в 2 раза быстрее и дешевле с ART6]
+
+            ul.first_scr_main_art6__list 
+                li.first_scr_main_art6__item Получайте комплексное SEO-продвижение с глубокой маркетинговой составляющей
+                li.first_scr_main_art6__item Зарабатывайте в разы больше за счет продвижения по неограниченному числу запросов
+                li.first_scr_main_art6__item Получите не только аудит, но и работы уже с 1-ой недели продвижения
+                li.first_scr_main_art6__item Избавьтесь от лишних исполнителей – все работы “под ключ” в нашем агентстве
+
+
+
+    include ./blocks/modal_info.pug
+
+
+
+    section.scr_opisanie_uslugi_art6
+        .container
+
+            h2.scr_opisanie_uslugi_art6__title SEO-продвижение #[br]от лидера индустрии
+
+            p.scr_opisanie_uslugi_art6__subtitle С 2013 года digital-агентство ART6 продвинуло более 300 сайтов на первую страницу поисковых систем Яндекс и Google в 38 регионах России. В SEO-продвижении крайне важно долгосрочное партнерское сотрудничество, поэтому с большинством клиентов компания плодотворно сотрудничает на протяжении 5-10 лет
+
+
+    .scr_preimushestva_uslugi_art6
+        .container
+
+            ul.scr_preimushestva_uslugi_art6__list
+
+                -
+                    var uslugi_list = [
+                        {
+                            name: 'SEO “под ключ”',
+                            text: 'Все работы мы проводим “под ключ” – от дизайна до бэкенда, но при вашем желании можем работать и в сотрудничестве',
+                            imgNum: 1
+                        },
+                        {
+                            name: 'Ключевые фразы',
+                            text: 'Продвигаем сайты по неограниченному количеству ключевых фраз, обычно их в 2-3 раза больше чем у конкурентов',
+                            imgNum: 2
+                        },
+                        {
+                            name: 'Прозрачность работ',
+                            text: 'Предоставляем полный список всех работ на согласование в начале каждого нового периода (месяца)',
+                            imgNum: 3
+                        },
+                        {
+                            name: 'Эффективность',
+                            text: 'Ежемесячно мы проводим полный анализ сайта и формируем план с наиболее эффективными работами',
+                            imgNum: 4
+                        },
+                        {
+                            name: 'Гарантии',
+                            text: 'Прозрачность и честность – наши друзья, работаем строго по план-графику, отвечаем за качество и результат',
+                            imgNum: 1
+                        },
+                        {
+                            name: '20 специалистов в штате',
+                            text: 'Над вашим проектом будут работать SEO-специалист, маркетолог, копирайтер, дизайнер, разработчик, контент-менеджер и другие',
+                            imgNum: 2
+                        },
+                        {
+                            name: 'Стоимость',
+                            text: 'Банально, но важно, обязательно запросите список работ у нас и у конкурентов, только после сравнения принимайте решение',
+                            imgNum: 3
+                        },
+                        {
+                            name: 'Повышение конверсии',
+                            text: 'Мы делаем не просто SEO, а работаем комплексно с вашим сайтом, повышая его конверсию и позиции в поиске',
+                            imgNum: 4
+                        }
+                    ]
+
+                each item in uslugi_list
+
+                    li.scr_preimushestva_uslugi_art6__item
+
+                        .scr_preimushestva_uslugi_art6__icon
+                            img(src= "./images/scr_preimushestva_uslugi_art6/uslugi_art6_icon_" + item.imgNum + ".svg" alt="")
+
+                        p.scr_preimushestva_uslugi_art6__name= item.name
+
+                        p.scr_preimushestva_uslugi_art6__text= item.text
+
+
+
+    section.scr_tseni_uslugi_art6
+        .container 
+
+            h2.scr_tseni_uslugi_art6__title Цены на SEO-продвижение
+
+            ul.scr_tseni_uslugi_art6__list
+
+                li.scr_tseni_uslugi_art6__benefit.scr_tseni_uslugi_art6__benefit--blue
+                    span SEO-продвижение сайта в Краснодаре – от 7 000₽/месяц
+
+                li.scr_tseni_uslugi_art6__benefit.scr_tseni_uslugi_art6__benefit--pink
+                    span Ставка 1 часа работы специалиста – 1 500₽
+
+            p.scr_tseni_uslugi_art6__descr Стоимость продвижения зависит от множества факторов, но преимущественно от конкуренции в отрасли в поисковых системах Яндекс и Google. Также отметим высокую корреляцию цены и размера (численности населения) города.
+
+
+            .scr_tseni_uslugi_art6__wrapper
+
+                -
+                    var tseni_uslugi_cards = [
+                        {
+                            heading: 'Продвижение в небольшом городе',
+                            name1: 'Население',
+                            value1: '500К',
+                            name2: 'Среднее кол-во фраз',
+                            value2: '300-700',
+                            name3: 'Первые результаты',
+                            value3: '1-2 мес',
+                            name4: 'Высокие результаты',
+                            value4: '5-6 мес',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '15.000-40.000₽',
+                            name6: 'Минимальная ежемесячная цена',
+                            value6: 'от 7.000₽',
+                            name7: 'Средняя ежемесячная цена',
+                            value7: '10.000₽',
+                        },
+                        {
+                            heading: 'Продвижение в крупном городе',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Среднее кол-во фраз',
+                            value2: '500-2000',
+                            name3: 'Первые результаты',
+                            value3: '1-2 мес',
+                            name4: 'Высокие результаты',
+                            value4: '7-10 мес',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Минимальная ежемесячная цена',
+                            value6: 'от 10.000₽',
+                            name7: 'Средняя ежемесячная цена',
+                            value7: '12.000-25.000₽',
+                        },
+                        {
+                            heading: 'Продвижение в крупном городе',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Среднее кол-во фраз',
+                            value2: '500-2000',
+                            name3: 'Первые результаты',
+                            value3: '1-2 мес',
+                            name4: 'Высокие результаты',
+                            value4: '7-10 мес',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Минимальная ежемесячная цена',
+                            value6: 'от 10.000₽',
+                            name7: 'Средняя ежемесячная цена',
+                            value7: '12.000-25.000₽',
+                        },
+                        {
+                            heading: 'Продвижение в крупном городе',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Среднее кол-во фраз',
+                            value2: '500-2000',
+                            name3: 'Первые результаты',
+                            value3: '1-2 мес',
+                            name4: 'Высокие результаты',
+                            value4: '7-10 мес',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Минимальная ежемесячная цена',
+                            value6: 'от 10.000₽',
+                            name7: 'Средняя ежемесячная цена',
+                            value7: '12.000-25.000₽',
+                        },
+                        {
+                            heading: 'Продвижение в крупном городе',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Среднее кол-во фраз',
+                            value2: '500-2000',
+                            name3: 'Первые результаты',
+                            value3: '1-2 мес',
+                            name4: 'Высокие результаты',
+                            value4: '7-10 мес',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Минимальная ежемесячная цена',
+                            value6: 'от 10.000₽',
+                            name7: 'Средняя ежемесячная цена',
+                            value7: '12.000-25.000₽',
+                        },
+                        {
+                            heading: 'Продвижение в крупном городе',
+                            name1: 'Население',
+                            value1: '500К - 3 млн',
+                            name2: 'Среднее кол-во фраз',
+                            value2: '500-2000',
+                            name3: 'Первые результаты',
+                            value3: '1-2 мес',
+                            name4: 'Высокие результаты',
+                            value4: '7-10 мес',
+                            name5: 'Средний ежемесячная бюджет',
+                            value5: '25.000-100.000₽',
+                            name6: 'Минимальная ежемесячная цена',
+                            value6: 'от 10.000₽',
+                            name7: 'Средняя ежемесячная цена',
+                            value7: '12.000-25.000₽',
+                        }
+                    ]
+
+                each item in tseni_uslugi_cards
+
+                    .scr_tseni_uslugi_art6__item
+
+                        p.scr_tseni_uslugi_art6__heading= item.heading
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name1
+                            p.scr_tseni_uslugi_art6__value= item.value1
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name2
+                            p.scr_tseni_uslugi_art6__value= item.value2
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name3
+                            p.scr_tseni_uslugi_art6__value= item.value3
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name4
+                            p.scr_tseni_uslugi_art6__value= item.value4
+
+                        .scr_tseni_uslugi_art6__group.scr_tseni_uslugi_art6__group--main
+                            p.scr_tseni_uslugi_art6__name= item.name6
+                            p.scr_tseni_uslugi_art6__value
+                                span= item.value6
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name7
+                            p.scr_tseni_uslugi_art6__value= item.value7
+
+            button.scr_keysy_art6__more.btn_more_arrow(type="button") Показать больше
+
+
+    include ./blocks/_scr_keysy_art6
+
+
+
+    section.scr_raboti_uslugi_art6
+        .container
+
+            h2.scr_raboti_uslugi_art6__title Работы по SEO&nbsp;-&nbsp;продвижению
+
+            p.scr_raboti_uslugi_art6__subtitle Абсолютно все работы мы выполняем “под ключ” – вам не требуется обращаться в другие компании.
+
+            .scr_raboti_uslugi_art6__wrapper 
+
+                .scr_raboti_uslugi_art6__item.item__59
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Технические работы
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Установка SSL-сертификата и перевод сайта на защищенный протокол HTTPS
+                            li Проверка и настройка редиректов с www на без www, с http на https
+                            li Проверка и формирование URL-ов в соответствии с рекомендациями поисковых систем
+                            li Установка SSL-сертификата и перевод сайта на защищенный протокол HTTPS
+                            li Проверка и настройка редиректов с www на без www, с http на https
+                            li Установка SSL-сертификата и перевод сайта на защищенный протокол HTTPS
+                            li Проверка и настройка редиректов с www на без www, с http на https
+                            li Проверка и формирование URL-ов в соответствии с рекомендациями поисковых систем
+
+                .scr_raboti_uslugi_art6__item.item__59
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Технические работы
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Установка SSL-сертификата и перевод сайта на защищенный протокол HTTPS
+                            li Проверка и настройка редиректов с www на без www, с http на https
+                            li Проверка и формирование URL-ов в соответствии с рекомендациями поисковых систем
+                            li Установка SSL-сертификата и перевод сайта на защищенный протокол HTTPS
+                            li Проверка и настройка редиректов с www на без www, с http на https
+                            li Установка SSL-сертификата и перевод сайта на защищенный протокол HTTPS
+                            li Проверка и настройка редиректов с www на без www, с http на https
+                            li Проверка и формирование URL-ов в соответствии с рекомендациями поисковых систем
+
+
+                .scr_raboti_uslugi_art6__item.item__59
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Работа с Яндекс.Вебмастер, Google Search Console и индексацией
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Работа над качеством сайта в соответствии с рекомендациями в вебмастерах Яндекс и Google
+                            li Проведение полной диагностики сайта в вебмастерах и устранение ошибок и недочетов
+                            li Проведение работ по безопасности и устранению нарушений, если такие присутствуют
+                            li Работа с поисковыми запросами в вебмастерах
+                            li Проведение работ по индексированию сайта в поисковых системах
+                            li Добавление страниц в индекс Google с помощью API и/или вручную
+                            li Проверка изображений в индексе Яндекс и Google и работа с их индексацией
+                            li Работа с товарами и предложениями, подключение их с помощью YML
+                            li Анализ и работа со ссылочной массой в вебмастерах
+
+                    .scr_raboti_uslugi_art6__more
+                        .scr_raboti_uslugi_art6__inner
+                            span 20 других важных работ по индексации сайта
+
+
+                .scr_raboti_uslugi_art6__item.item__59
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Работа с Яндекс.Вебмастер, Google Search Console и индексацией
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Работа над качеством сайта в соответствии с рекомендациями в вебмастерах Яндекс и Google
+                            li Проведение полной диагностики сайта в вебмастерах и устранение ошибок и недочетов
+                            li Проведение работ по безопасности и устранению нарушений, если такие присутствуют
+                            li Работа с поисковыми запросами в вебмастерах
+                            li Проведение работ по индексированию сайта в поисковых системах
+                            li Добавление страниц в индекс Google с помощью API и/или вручную
+                            li Проверка изображений в индексе Яндекс и Google и работа с их индексацией
+                            li Работа с товарами и предложениями, подключение их с помощью YML
+                            li Анализ и работа со ссылочной массой в вебмастерах
+
+                    .scr_raboti_uslugi_art6__more
+                        .scr_raboti_uslugi_art6__inner
+                            span 20 других важных работ по индексации сайта
+
+
+
+
+            .scr_raboti_uslugi_art6__attention.scr_raboti_uslugi_art6__attention--columns
+
+                p.scr_raboti_uslugi_art6__heading Внимание!
+
+                p.scr_raboti_uslugi_art6__text Многие подрядчики не предоставляют точный план работ на месяц, а формируют отчет по выполненным работам по прошествии периода. Такой отчет может содержать все что угодно, проверить были ли действительно сделаны работы невозможно. Мы же работаем честно и предоставляем точный план работ на согласование до начала периода, а не после.#[br] Мы представили часть основных работ по SEO-продвижению сайта. Полный же пул насчитывает более 300 различных работ из области SEO, маркетинга, дизайна, frontend и backend-разработки, контента, копирайтинга и аналитики – и все эти работы мы делаем в процессе продвижения вашего сайта.
+
+
+    include ./blocks/_scr_text_director_art6
+
+
+    include ./blocks/_scr_tematiki_art6
+
+
+
+
+    .scr_forma_audit_art6
+        .container
+            p.scr_forma_audit_art6__title Закажите SEO-аудит
+            p.scr_forma_audit_art6__subtitle Бесплатный SEO-аудит – проверим основные показатели сайта.
+            p.scr_forma_audit_art6__subtitle Версия аудита “Стандарт” –  проверим сайт по 124 показателям – #[span 10 000₽]
+            p.scr_forma_audit_art6__subtitle Версия аудита “Полная”  – помимо проверки, дадим детальные рекомендации – #[span 20 000₽]
+
+
+
+            form.scr_forma_audit_art6__form(action="#" novalidate)
+
+                .scr_forma_audit_art6__fields
+                    .scr_forma_audit_art6__client 
+                        .scr_forma_audit_art6__name
+                            input.scr_forma_audit_art6__input.required(type="text" placeholder="Имя*" name="client_name" required)
+
+                        .scr_forma_audit_art6__contact
+                            input.scr_forma_audit_art6__input.required(type="text" placeholder="Телефон/мессенджер*" name="client_contact" required)
+
+                    button.scr_forma_audit_art6__submit(type="submit") Отправить
+
+                    p.scr_forma_audit_art6__confirm Нажав на кнопку, вы даете согласие на обработку #[a(href="./index.html") персональных данных]
+
+
+
+    include ./blocks/_scr_company_art6
+
+
+    include ./blocks/_scr_komanda_art6
+
+
+    include ./blocks/_scr_dostizheniya_art6
+
+
+    include ./blocks/_scr_sertif_partnery_art6
+
+
+    include ./blocks/_scr_klienty_onas_art6
+
+
+    include ./blocks/_scr_voprosy_art6
+
+
+    .scr_polezn_material_art6
+        .container 
+
+            h3.scr_polezn_material_art6__title Бесплатный полезный материал от экспертов ART6
+
+            .scr_polezn_material_art6__wrapper
+
+                .scr_polezn_material_art6__descr
+
+                    p.scr_polezn_material_art6__name Как повысить конверсию продвигаемого сайта в 2 раза без увеличения бюджета?
+
+                    .scr_polezn_material_art6__text
+                        p Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения.
+                        p Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.
+                        p Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения.
+                        p Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.
+
+                    button.scr_polezn_material_art6__btn(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                    button.scr_polezn_material_art6__download
+                        span Скачать чек-ап по повышению конверсии корпоративного сайта
+                        span Скачать чек-ап 
+                        svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M4.16536 5.34297L5.34036 4.16797L14.1654 12.993L14.1654 7.5013H15.832L15.832 15.8346L7.4987 15.8346V14.168L12.9904 14.168L4.16536 5.34297Z" fill="#166FF5")
+
+                .scr_polezn_material_art6__evaluation
+
+                    label.scr_polezn_material_art6__label.label_interesting
+                        input(type="radio" name="material_evaluation" value="interesting")
+                        span Интересно
+
+                    label.scr_polezn_material_art6__label.label_noninteresting
+                        input(type="radio" name="material_evaluation" value="non_interesting")
+                        span Не интересно
+
+
+
+    section.scr_sm_takzhe_art6
+        .container 
+
+            h4.scr_sm_takzhe_art6__title Смотрите также
+
+            .scr_sm_takzhe_art6__wrapper
+
+                -
+                    var seo_list = [
+                        'SEO-аудит сайтов',
+                        'SEO-оптимизация сайтов',
+                        'Продвижение сайтов в Яндекс',
+                        'SEO-аудит сайтов',
+                        'SEO-оптимизация сайтов',
+                    ]
+
+                    var promotion_list = [
+                        'Интернет-магазины',
+                        'Одностраничные сайты',
+                        'Сайты-визитки',
+                        'Интернет-магазины',
+                        'Одностраничные сайты',
+                        'Сайты-визитки',
+                    ]
+
+                    var promotion_cms_list = [
+                        '1С-Битрикс',
+                        'Tilda',
+                        'WordPress',
+                        '1С-Битрикс',
+                        'Tilda',
+                        'WordPress'
+                    ]
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Услуги по SEO-продвижению:
+
+                    ul.scr_sm_takzhe_art6__list
+
+                        each item in seo_list
+                            li.scr_sm_takzhe_art6__item
+                                a(href="#").scr_sm_takzhe_art6__link
+                                    span= item
+                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Продвижение по виду сайта:
+
+                    ul.scr_sm_takzhe_art6__list
+
+                        each item in promotion_list
+                            li.scr_sm_takzhe_art6__item
+                                a(href="#").scr_sm_takzhe_art6__link
+                                    span= item
+                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Услуги по SEO-продвижению:
+
+                    ul.scr_sm_takzhe_art6__list
+
+                        each item in promotion_cms_list
+                            li.scr_sm_takzhe_art6__item
+                                a(href="#").scr_sm_takzhe_art6__link
+                                    span= item
+                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Продвижение по виду сайта:
+
+                    ul.scr_sm_takzhe_art6__list
+
+                        each item in promotion_list
+                            li.scr_sm_takzhe_art6__item
+                                a(href="#").scr_sm_takzhe_art6__link
+                                    span= item
+                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+            button.scr_sm_takzhe_art6__more(type="button") Показать больше
+
+
+
+
+
+
+
+    include ./blocks/_scr_forma_footer_art6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,504 @@
+.scr_raboti_uslugi_art6 {
+  margin-bottom: 196px;
+
+  @include xl {
+    margin-bottom: 146px;
+  }
+
+  @include lg {
+    margin-bottom: 120px;
+  }
+
+  @include sm {
+    margin-bottom: 102px;
+  }
+
+  @include xs {
+    margin-bottom: 200px;
+  }
+}
+
+.scr_raboti_uslugi_art6__title {
+  max-width: 1000px;
+  margin-bottom: 56px;
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 90px;
+  letter-spacing: -0.02em;
+
+  @include xl {
+    max-width: 860px;
+    margin-bottom: 43px;
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  @include lg {
+    max-width: 691px;
+    margin-bottom: 36px;
+    font-size: 55px;
+    line-height: 60px;
+  }
+
+  @include sm {
+    margin-bottom: 17px;
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  @include xs {
+    max-width: 360px;
+    font-size: 38px;
+    line-height: 46px;
+  }
+}
+
+.scr_raboti_uslugi_art6__subtitle {
+  max-width: 740px;
+  margin-bottom: 70px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  color: $color_grey_2;
+
+  @include xl {
+    max-width: 632px;
+    margin-bottom: 64px;
+    font-size: 20px;
+    line-height: 31px;
+  }
+
+  @include lg {
+    max-width: 506px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  @include sm {
+    max-width: 573px;
+    margin-bottom: 66px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  @include xs {
+    margin-bottom: 43px;
+  }
+}
+
+// .scr_raboti_uslugi_art6__wrapper {
+//   column-count: 2;
+//   column-gap: 108px;
+
+//   @include xl {
+//     column-gap: 92px;
+//   }
+
+//   @include lg {
+//     column-gap: 74px;
+//   }
+
+//   @include sm {
+//     column-gap: 48px;
+//   }
+
+//   @include xs {
+//     column-count: unset;
+//     column-gap: unset;
+//   }
+// }
+
+// .scr_raboti_uslugi_art6__item {
+//   break-inside: avoid;
+//   margin-bottom: 106px;
+//   padding: 48px 76px 50px 40px;
+//   background-color: $color_grey_light;
+
+//   @include xl {
+//     margin-bottom: 91px;
+//     padding: 41px 65px 50px 41px;
+//   }
+// }
+
+.scr_raboti_uslugi_art6__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 108px;
+  margin-bottom: 117px;
+
+  @include xl {
+    margin-bottom: 85px;
+    gap: 0 92px;
+  }
+
+  @include lg {
+    margin-bottom: 53px;
+    gap: 0 74px;
+  }
+
+  @include sm {
+    margin-bottom: 49px;
+    gap: 0 48px;
+  }
+
+  @include xs {
+    margin-bottom: 56px;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.scr_raboti_uslugi_art6__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $color_grey_light;
+  margin-bottom: 106px;
+
+  @include xl {
+    margin-bottom: 92px;
+  }
+
+  @include lg {
+    margin-bottom: 76px;
+  }
+
+  @include sm {
+    margin-bottom: 50px;
+  }
+
+  @include xs {
+    margin-bottom: 40px;
+  }
+
+  // &:not(:last-child) {
+  //   margin-bottom: 106px;
+  // }
+
+  // @include xl {
+  //   &:not(:last-child) {
+  //     margin-bottom: 92px;
+  //   }
+  // }
+
+  // @include lg {
+  //   &:not(:last-child) {
+  //     margin-bottom: 76px;
+  //   }
+  // }
+
+  // @include sm {
+  //   &:not(:last-child) {
+  //     margin-bottom: 50px;
+  //   }
+  // }
+
+  // @include xs {
+  //   &:not(:last-child) {
+  //     margin-bottom: 40px;
+  //   }
+  // }
+
+  &.scr_raboti_uslugi_art6__item--scrollable {
+    height: 574px;
+    overflow: hidden;
+
+    &:hover {
+      height: auto;
+    }
+  }
+
+  // hover for item
+
+  @media (hover: hover) {
+    &:hover {
+      .scr_raboti_uslugi_art6__list {
+        li {
+          color: $color_dark;
+
+          &::before {
+            background-color: $color_blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.item__44 {
+  grid-row-end: span 44;
+}
+
+.item__48 {
+  grid-row-end: span 48;
+}
+
+.item__55 {
+  grid-row-end: span 52;
+}
+
+.item__59 {
+  grid-row-end: span 59;
+}
+
+.item__71 {
+  grid-row-end: span 71;
+}
+
+.item__77 {
+  grid-row-end: span 77;
+}
+
+.item__91 {
+  grid-row-end: span 91;
+}
+
+.item__110 {
+  grid-row-end: span 110;
+}
+
+.scr_raboti_uslugi_art6__info {
+  padding: 48px 76px 50px 40px;
+  background-color: $color_grey_light;
+
+  @include xl {
+    padding: 41px 65px 50px 41px;
+  }
+
+  @include lg {
+    padding: 33px 52px 34px 27px;
+  }
+
+  @include sm {
+    padding: 23px 15px;
+  }
+}
+
+.scr_raboti_uslugi_art6__name {
+  margin-bottom: 45px;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+
+  @include xl {
+    font-size: 33px;
+    line-height: 41px;
+  }
+
+  @include lg {
+    margin-bottom: 21px;
+    font-size: 30px;
+    line-height: 33px;
+  }
+
+  @include sm {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  @include r(359px) {
+    font-size: 26px;
+  }
+}
+
+.scr_raboti_uslugi_art6__list {
+  li {
+    position: relative;
+    padding-left: 36px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: -0.03em;
+    color: $color_grey;
+    transition: color 0.2s ease-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 8px;
+      height: 8px;
+      background-color: $color_grey;
+      transition: background-color 0.2s ease-out;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    @include xl {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.scr_raboti_uslugi_art6__more {
+  padding: 0 55px 50px 40px;
+
+  @include xl {
+    padding: 0 40px 50px 41px;
+  }
+
+  @include lg {
+    padding: 0 40px 34px 27px;
+  }
+
+  @include sm {
+    padding: 0 15px 23px 15px;
+    background-color: $color_blue;
+  }
+}
+
+.scr_raboti_uslugi_art6__inner {
+  position: relative;
+  min-height: 32px;
+  padding-left: 36px;
+
+  span {
+    padding: 3px 1px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 31px;
+    letter-spacing: -0.03em;
+    color: $color_white;
+    background-color: $color_blue;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      left: 5px;
+      top: -1px;
+      background: url("../images/scr_raboti_uslugi_art6/plus.svg") center /
+        contain no-repeat;
+      background-color: $color_blue;
+    }
+
+    @include xl {
+      padding: 5px 1px;
+      font-size: 18px;
+      line-height: 26px;
+
+      &::before {
+        top: -3px;
+      }
+    }
+
+    @include lg {
+      padding: 6px 1px;
+      font-size: 16px;
+      line-height: 24px;
+
+      &::before {
+        top: -4px;
+      }
+    }
+
+    @include sm {
+      &::before {
+        top: -4px;
+      }
+    }
+
+    @include xs {
+    }
+  }
+
+  @include sm {
+    margin-top: 25px;
+  }
+}
+
+// attention
+
+.scr_raboti_uslugi_art6__attention {
+  max-width: 696px;
+  padding-bottom: 57px;
+  border-bottom: 2px solid $color_grey_light;
+
+  @include lg {
+    padding-bottom: 44px;
+  }
+
+  @include sm {
+    max-width: 100%;
+    padding-bottom: 40px;
+  }
+
+  @include xs {
+    padding-bottom: 58px;
+  }
+}
+
+.scr_raboti_uslugi_art6__heading {
+  margin-bottom: 16px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 49px;
+  letter-spacing: -0.03em;
+
+  @include xl {
+    font-size: 35px;
+    line-height: 43px;
+  }
+
+  @include lg {
+    margin-bottom: 19px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  @include sm {
+    max-width: 572px;
+
+    margin-bottom: 16px;
+  }
+}
+
+.scr_raboti_uslugi_art6__text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+  color: $color_grey;
+
+  @include lg {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include sm {
+    max-width: 572px;
+  }
+}
+
+.scr_raboti_uslugi_art6__attention.scr_raboti_uslugi_art6__attention--columns {
+  max-width: 100%;
+  .scr_raboti_uslugi_art6__text {
+    column-count: 2;
+    column-gap: 108px;
+
+    @include xl {
+      column-gap: 92px;
+    }
+
+    @include lg {
+      column-gap: 74px;
+    }
+
+    @include sm {
+      column-gap: 48px;
+    }
+
+    @include xs {
+      column-count: unset;
+      column-gap: unset;
+    }
+  }
+}
