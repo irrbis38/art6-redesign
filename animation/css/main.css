@@ -150,6 +150,7 @@ input {
   font-family: inherit;
   font-size: inherit;
   border: none;
+  border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1019,19 +1020,13 @@ button.header_art6__more {
   .index_page_title {
     padding-top: 0;
     font-size: 60px;
-    line-height: 83%;
-    white-space: unset
+    line-height: 1.1;
+    white-space: unset;
+    font-weight: 600;
+    letter-spacing: -.02em
   }
   .index_page_title::before {
     display: none
-  }
-}
-@media (max-width:991px) {
-  .index_page_title {
-    font-size: 60px;
-    line-height: 83%;
-    font-weight: 600;
-    letter-spacing: -.02em
   }
 }
 @media (max-width:767px) {
@@ -1190,7 +1185,11 @@ button.header_art6__more {
     line-height: 60px
   }
   .first_scr_main_art6__title span:nth-child(1) {
+    display: inline;
     margin-right: 13px
+  }
+  .first_scr_main_art6__title span:nth-child(2) {
+    display: inline
   }
   .first_scr_main_art6__title span:nth-child(3)::before {
     margin-right: 7px
@@ -1460,14 +1459,27 @@ button.header_art6__more {
   }
 }
 .services-advertisement .first_scr_main_art6__subtitle {
+  position: relative;
   max-width: 900px;
   padding: 0;
+  padding-left: 10px;
   background-color: transparent
 }
 .services-advertisement .first_scr_main_art6__subtitle span {
+  position: relative;
   background-color: #166ff5;
   display: inline;
-  padding: 6px 5px
+  padding: 6px 5px 6px 0
+}
+.services-advertisement .first_scr_main_art6__subtitle span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  z-index: -1;
+  width: 15px;
+  height: 100%;
+  background-color: #166ff5
 }
 @media (max-width:1300px) {
   .services-advertisement .first_scr_main_art6__subtitle {
@@ -1586,7 +1598,7 @@ button.header_art6__more {
 }
 @media (max-width:767px) {
   .industries .first_scr_main_art6 {
-    margin-bottom: 25px
+    margin-bottom: 0
   }
 }
 .industries .first_scr_main_art6 .container {
@@ -1624,13 +1636,28 @@ button.header_art6__more {
 .industries .first_scr_main_art6__subtitle {
   max-width: 100%;
   margin-bottom: 0;
+  padding: 8px 10px 8px 0;
   color: #1c1c20;
   background-color: transparent
 }
 .industries .first_scr_main_art6__subtitle span {
+  position: relative;
   display: inline;
-  border-bottom: 4px solid #166ff5;
   background-color: transparent
+}
+.industries .first_scr_main_art6__subtitle span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #166ff5
+}
+@media (max-width:767px) {
+  .industries .first_scr_main_art6__subtitle span::after {
+    bottom: 2px
+  }
 }
 .services-advertisement .first_scr_main_art6__title span,
 .services-promotion .first_scr_main_art6__title span,
@@ -2447,6 +2474,9 @@ button.header_art6__more {
 .scr_uslugi_art6__item:hover {
   background-color: #1c1c20
 }
+.scr_uslugi_art6__item:hover:first-child .scr_uslugi_art6__inner {
+  border-top-color: transparent
+}
 .scr_uslugi_art6__item:hover .scr_uslugi_art6__inner {
   border-bottom-color: transparent
 }
@@ -2475,7 +2505,7 @@ button.header_art6__more {
   visibility: visible
 }
 .scr_uslugi_art6__item:first-child .scr_uslugi_art6__inner {
-  border-top: 1px solid #f2f2f2
+  border-top: 2px solid #f2f2f2
 }
 .scr_uslugi_art6__inner {
   min-height: 412px;
@@ -2705,7 +2735,7 @@ button.header_art6__more {
   }
 }
 .scr_keysy_art6 {
-  margin-bottom: 173px
+  margin-bottom: 300px
 }
 @media (max-width:1600px) {
   .scr_keysy_art6 {
@@ -3714,7 +3744,7 @@ button.header_art6__more {
   transition: color .2s ease-out
 }
 .project .scr_keysy_art6__title {
-  margin-bottom: 20px;
+  margin-bottom: 58px;
   padding-top: 0;
   font-weight: 500;
   font-size: 80px;
@@ -4065,7 +4095,7 @@ button.header_art6__more {
   background: url(../images/scr_text_director_art6/quote-start.svg) center/contain no-repeat
 }
 .scr_text_director_art6__cite::after {
-  bottom: 10px;
+  bottom: 0;
   right: -52px;
   background: url(../images/scr_text_director_art6/quote-end.svg) center/contain no-repeat
 }
@@ -4265,7 +4295,7 @@ button.header_art6__more {
 }
 @media (max-width:991px) {
   .scr_tematiki_art6__title {
-    margin-bottom: 23px;
+    margin-bottom: 10px;
     padding-top: 0;
     font-size: 60px;
     line-height: 117%;
@@ -4353,6 +4383,10 @@ button.header_art6__more {
     margin-bottom: 42px
   }
 }
+.scr_tematiki_art6__wrapper {
+  position: relative;
+  z-index: 1
+}
 .scr_tematiki_art6__wrapper .container {
   position: relative;
   z-index: 1;
@@ -4380,6 +4414,11 @@ button.header_art6__more {
 @media (max-width:767px) {
   .scr_tematiki_art6__wrapper {
     margin-top: 40px
+  }
+}
+@media (max-width:767px) {
+  .industries .scr_tematiki_art6__wrapper {
+    margin-top: 0
   }
 }
 .scr_tematiki_art6__group {
@@ -4603,6 +4642,11 @@ button.header_art6__more {
   .industries .scr_tematiki_art6 {
     margin-bottom: 79px
   }
+}
+.services-advertisement .scr_tematiki_art6,
+.services-promotion .scr_tematiki_art6,
+.services-website-creation .scr_tematiki_art6 {
+  margin-bottom: 187px
 }
 .scr_company_art6 {
   background-color: #1c1c20;
@@ -4873,7 +4917,7 @@ button.header_art6__more {
 @media (max-width:991px) {
   .scr_company_art6__manager2 {
     top: 60%;
-    left: 80%
+    left: 75%
   }
 }
 @media (max-width:767px) {
@@ -7738,6 +7782,21 @@ button.header_art6__more {
   letter-spacing: -.03em;
   color: #8e8e93
 }
+@media (max-width:1600px) {
+  .scr_opisanie_uslugi_art6__subtitle {
+    max-width: 627px
+  }
+}
+@media (max-width:1300px) {
+  .scr_opisanie_uslugi_art6__subtitle {
+    max-width: 502px
+  }
+}
+@media (max-width:991px) {
+  .scr_opisanie_uslugi_art6__subtitle {
+    max-width: 571px
+  }
+}
 .scr_preimushestva_uslugi_art6 {
   margin-bottom: 382px
 }
@@ -8288,26 +8347,26 @@ button.header_art6__more {
   }
 }
 .scr_elemsotrudn_uslugi_art6 {
-  margin-bottom: 383px
+  margin-bottom: 267px
 }
 @media (max-width:1600px) {
   .scr_elemsotrudn_uslugi_art6 {
-    margin-bottom: 220px
+    margin-bottom: 174px
   }
 }
 @media (max-width:1300px) {
   .scr_elemsotrudn_uslugi_art6 {
-    margin-bottom: 182px
+    margin-bottom: 132px
   }
 }
 @media (max-width:991px) {
   .scr_elemsotrudn_uslugi_art6 {
-    margin-bottom: 153px
+    margin-bottom: 132px
   }
 }
 @media (max-width:767px) {
   .scr_elemsotrudn_uslugi_art6 {
-    margin-bottom: 187px
+    margin-bottom: 137px
   }
 }
 .scr_elemsotrudn_uslugi_art6__title {
@@ -8346,7 +8405,7 @@ button.header_art6__more {
   .scr_elemsotrudn_uslugi_art6__title {
     max-width: 360px;
     margin-bottom: 100px;
-    margin-bottom: 17px;
+    margin-bottom: 58px;
     font-size: 38px;
     line-height: 46px
   }
@@ -8376,33 +8435,46 @@ button.header_art6__more {
   }
 }
 .scr_elemsotrudn_uslugi_art6__item {
-  margin-bottom: 116px;
+  padding-bottom: 116px;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
-  break-inside: avoid;
-  padding-bottom: 57px;
+  break-inside: avoid
+}
+.scr_elemsotrudn_uslugi_art6__item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 57px;
   border-bottom: 2px solid #f2f2f2
 }
 @media (max-width:1600px) {
   .scr_elemsotrudn_uslugi_art6__item {
-    margin-bottom: 74px;
-    padding-bottom: 48px
+    padding-bottom: 74px
+  }
+  .scr_elemsotrudn_uslugi_art6__item::after {
+    height: 48px
   }
 }
 @media (max-width:1300px) {
   .scr_elemsotrudn_uslugi_art6__item {
-    margin-bottom: 50px
+    padding-bottom: 50px
   }
 }
 @media (max-width:991px) {
-  .scr_elemsotrudn_uslugi_art6__item {
-    padding-bottom: 50px
+  .scr_elemsotrudn_uslugi_art6__item::after {
+    height: 50px
+  }
+  .scr_elemsotrudn_uslugi_art6__item:first-child {
+    padding-top: 56px;
+    border-top: 2px solid #f2f2f2
   }
 }
 @media (max-width:767px) {
   .scr_elemsotrudn_uslugi_art6__item {
-    margin-bottom: 56px;
-    padding-bottom: 57px
+    padding-bottom: 56px
+  }
+  .scr_elemsotrudn_uslugi_art6__item::after {
+    height: 56px
   }
 }
 .scr_elemsotrudn_uslugi_art6__name {
@@ -8587,30 +8659,26 @@ button.header_art6__more {
 .scr_raboti_uslugi_art6__wrapper {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap: 0 108px;
-  margin-bottom: 117px
+  gap: 0 108px
 }
 @media (max-width:1600px) {
   .scr_raboti_uslugi_art6__wrapper {
-    margin-bottom: 85px;
     gap: 0 92px
   }
 }
 @media (max-width:1300px) {
   .scr_raboti_uslugi_art6__wrapper {
-    margin-bottom: 53px;
     gap: 0 74px
   }
 }
 @media (max-width:991px) {
   .scr_raboti_uslugi_art6__wrapper {
-    margin-bottom: 49px;
     gap: 0 48px
   }
 }
 @media (max-width:767px) {
   .scr_raboti_uslugi_art6__wrapper {
-    margin-bottom: 56px;
+    margin-bottom: 20px;
     grid-template-columns: 1fr;
     gap: 0
   }
@@ -8799,24 +8867,11 @@ button.header_art6__more {
   color: #fff;
   background-color: #166ff5
 }
-.scr_raboti_uslugi_art6__inner span::before {
-  content: "";
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  left: 5px;
-  top: -1px;
-  background: url(../images/scr_raboti_uslugi_art6/plus.svg) center/contain no-repeat;
-  background-color: #166ff5
-}
 @media (max-width:1600px) {
   .scr_raboti_uslugi_art6__inner span {
     padding: 5px 1px;
     font-size: 18px;
     line-height: 26px
-  }
-  .scr_raboti_uslugi_art6__inner span::before {
-    top: -3px
   }
 }
 @media (max-width:1300px) {
@@ -8824,14 +8879,6 @@ button.header_art6__more {
     padding: 6px 1px;
     font-size: 16px;
     line-height: 24px
-  }
-  .scr_raboti_uslugi_art6__inner span::before {
-    top: -4px
-  }
-}
-@media (max-width:991px) {
-  .scr_raboti_uslugi_art6__inner span::before {
-    top: -4px
   }
 }
 @media (max-width:991px) {
@@ -9303,7 +9350,7 @@ button.header_art6__more {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 16px 0;
-    margin-bottom: 19px
+    margin-bottom: 44px
   }
 }
 .scr_forma_audit_art6__contact,
@@ -9799,7 +9846,7 @@ button.header_art6__more {
 .scr_polezn_material_art6__label span {
   display: inline-block;
   min-height: 54px;
-  padding: 14px 19px 16px 19px;
+  padding: 8px 18px;
   font-weight: 500;
   font-size: 20px;
   line-height: 160%;
@@ -9851,7 +9898,7 @@ button.header_art6__more {
   -ms-flex-align: start;
   align-items: flex-start;
   gap: 0 12px;
-  text-wrap: nowrap;
+  white-space: nowrap;
   font-weight: 500;
   font-size: 18px;
   line-height: 200%;
@@ -10067,7 +10114,7 @@ button.header_art6__more {
   font-size: 18px;
   line-height: 144%;
   letter-spacing: -.02em;
-  color: #8e8e93;
+  color: #1c1c20;
   transition: color .2s ease-out,background-color .2s ease-out;
   border-bottom: 2px solid #166ff5
 }
@@ -10417,7 +10464,7 @@ button.header_art6__more {
   margin-bottom: 10px
 }
 .scr_hleb_kroshki_art6 {
-  padding-top: 82px;
+  padding-top: 92px;
   background-color: #f2f2f2
 }
 @media (max-width:767px) {
