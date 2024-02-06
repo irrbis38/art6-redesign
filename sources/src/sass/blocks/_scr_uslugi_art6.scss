@@ -167,6 +167,12 @@
   &:hover {
     background-color: $color_dark;
 
+    &:first-child {
+      .scr_uslugi_art6__inner {
+        border-top-color: transparent;
+      }
+    }
+
     .scr_uslugi_art6__inner {
       border-bottom-color: transparent;
     }
@@ -211,7 +217,7 @@
 
 .scr_uslugi_art6__item:first-child {
   .scr_uslugi_art6__inner {
-    border-top: 1px solid $color_grey_light;
+    border-top: 2px solid $color_grey_light;
   }
 }
 

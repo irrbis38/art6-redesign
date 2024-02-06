@@ -1,20 +1,25 @@
 .scr_elemsotrudn_uslugi_art6 {
-  margin-bottom: 383px;
+  // margin-bottom: 383px;
+  margin-bottom: 267px;
 
   @include xl {
-    margin-bottom: 220px;
+    // margin-bottom: 220px;
+    margin-bottom: 174px;
   }
 
   @include lg {
-    margin-bottom: 182px;
+    // margin-bottom: 182px;
+    margin-bottom: 132px;
   }
 
   @include sm {
-    margin-bottom: 153px;
+    // margin-bottom: 153px;
+    margin-bottom: 132px;
   }
 
   @include xs {
-    margin-bottom: 187px;
+    // margin-bottom: 187px;
+    margin-bottom: 137px;
   }
 }
 
@@ -50,7 +55,7 @@
   @include xs {
     max-width: 360px;
     margin-bottom: 100px;
-    margin-bottom: 17px;
+    margin-bottom: 58px;
     font-size: 38px;
     line-height: 46px;
   }
@@ -72,27 +77,55 @@
 }
 
 .scr_elemsotrudn_uslugi_art6__item {
-  margin-bottom: 116px;
+  // margin-bottom: 116px;
+  padding-bottom: 116px;
   break-inside: avoid;
-  padding-bottom: 57px;
-  border-bottom: 2px solid $color_grey_light;
+  // padding-bottom: 57px;
+  // border-bottom: 2px solid $color_grey_light;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 57px;
+    border-bottom: 2px solid $color_grey_light;
+  }
 
   @include xl {
-    margin-bottom: 74px;
-    padding-bottom: 48px;
+    padding-bottom: 74px;
+    // margin-bottom: 74px;
+    // padding-bottom: 48px;
+
+    &::after {
+      height: 48px;
+    }
   }
 
   @include lg {
-    margin-bottom: 50px;
-  }
-
-  @include sm {
+    // margin-bottom: 50px;
     padding-bottom: 50px;
   }
 
+  @include sm {
+    // padding-bottom: 50px;
+    &::after {
+      height: 50px;
+    }
+
+    &:first-child {
+      padding-top: 56px;
+      border-top: 2px solid $color_grey_light;
+    }
+  }
+
   @include xs {
-    margin-bottom: 56px;
-    padding-bottom: 57px;
+    padding-bottom: 56px;
+
+    &::after {
+      height: 56px;
+    }
+    // margin-bottom: 56px;
+    // padding-bottom: 57px;
   }
 }
 

@@ -71,7 +71,8 @@
 
   @include sm {
     // display: none;
-    margin-bottom: 23px;
+    // margin-bottom: 23px;
+    margin-bottom: 10px;
     padding-top: 0;
     // font-size: 60px;
     // line-height: 83%;
@@ -209,6 +210,8 @@
 // }
 
 .scr_tematiki_art6__wrapper {
+  position: relative;
+  z-index: 1;
   // margin-top: 367px;
 
   .container {
@@ -267,6 +270,14 @@
 
   @include xs {
     margin-top: 40px;
+  }
+}
+
+.industries {
+  .scr_tematiki_art6__wrapper {
+    @include xs {
+      margin-top: 0;
+    }
   }
 }
 
@@ -512,5 +523,13 @@
     @include xs {
       margin-bottom: 79px;
     }
+  }
+}
+
+.services-advertisement,
+.services-promotion,
+.services-website-creation {
+  .scr_tematiki_art6 {
+    margin-bottom: 187px;
   }
 }

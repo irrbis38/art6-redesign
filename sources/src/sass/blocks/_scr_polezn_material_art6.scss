@@ -189,7 +189,8 @@
   span {
     display: inline-block;
     min-height: 54px;
-    padding: 14px 19px 16px 19px;
+    // padding: 14px 19px 16px 19px;
+    padding: 8px 18px;
     font-weight: 500;
     font-size: 20px;
     line-height: 160%;
@@ -247,7 +248,7 @@
   align-items: flex-start;
   gap: 0 12px;
   // padding: 2px;
-  text-wrap: nowrap;
+  white-space: nowrap;
   font-weight: 500;
   font-size: 18px;
   line-height: 200%;

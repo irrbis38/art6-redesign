@@ -126,25 +126,26 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0 108px;
-  margin-bottom: 117px;
+  // margin-bottom: 117px;
 
   @include xl {
-    margin-bottom: 85px;
+    // margin-bottom: 85px;
     gap: 0 92px;
   }
 
   @include lg {
-    margin-bottom: 53px;
+    // margin-bottom: 53px;
     gap: 0 74px;
   }
 
   @include sm {
-    margin-bottom: 49px;
+    // margin-bottom: 49px;
     gap: 0 48px;
   }
 
   @include xs {
-    margin-bottom: 56px;
+    // margin-bottom: 56px;
+    margin-bottom: 20px;
     grid-template-columns: 1fr;
     gap: 0;
   }
@@ -368,26 +369,26 @@
     color: $color_white;
     background-color: $color_blue;
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 32px;
-      height: 32px;
-      left: 5px;
-      top: -1px;
-      background: url("../images/scr_raboti_uslugi_art6/plus.svg") center /
-        contain no-repeat;
-      background-color: $color_blue;
-    }
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   width: 32px;
+    //   height: 32px;
+    //   left: 5px;
+    //   top: -1px;
+    //   background: url("../images/scr_raboti_uslugi_art6/plus.svg") center /
+    //     contain no-repeat;
+    //   background-color: $color_blue;
+    // }
 
     @include xl {
       padding: 5px 1px;
       font-size: 18px;
       line-height: 26px;
 
-      &::before {
-        top: -3px;
-      }
+      // &::before {
+      //   top: -3px;
+      // }
     }
 
     @include lg {
@@ -395,18 +396,15 @@
       font-size: 16px;
       line-height: 24px;
 
-      &::before {
-        top: -4px;
-      }
+      // &::before {
+      //   top: -4px;
+      // }
     }
 
     @include sm {
-      &::before {
-        top: -4px;
-      }
-    }
-
-    @include xs {
+      // &::before {
+      //   top: -4px;
+      // }
     }
   }
 

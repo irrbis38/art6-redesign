@@ -61,4 +61,19 @@
   line-height: 36px;
   letter-spacing: -0.03em;
   color: $color_grey;
+
+  @include xl {
+    max-width: 627px;
+  }
+
+  @include lg {
+    max-width: 502px;
+  }
+
+  @include sm {
+    max-width: 571px;
+  }
+
+  @include xs {
+  }
 }

@@ -62,19 +62,14 @@
   @include sm {
     padding-top: 0;
     font-size: 60px;
-    line-height: 83%;
+    line-height: 1.1;
     white-space: unset;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 
     &::before {
       display: none;
     }
-  }
-
-  @include sm {
-    font-size: 60px;
-    line-height: 83%;
-    font-weight: 600;
-    letter-spacing: -0.02em;
   }
 
   @include xs {
