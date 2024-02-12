@@ -137,7 +137,8 @@
 }
 
 .scr_tematiki_art6__subtitle {
-  margin-bottom: 71px;
+  // margin-bottom: 71px;
+  margin-bottom: 61px;
   font-weight: 500;
   font-size: 40px;
   line-height: 215%;
@@ -154,21 +155,22 @@
   }
 
   @include lg {
-    margin-bottom: 61px;
+    // margin-bottom: 61px;
+    margin-bottom: 51px;
     font-size: 30px;
     // line-height: 287%;
     line-height: 140%;
   }
 
   @include sm {
-    margin-bottom: 63px;
     font-size: 20px;
     line-height: 150%;
   }
 
   @include xs {
     max-width: 340px;
-    margin-bottom: 42px;
+    // margin-bottom: 42px;
+    margin-bottom: 32px;
   }
 }
 
@@ -282,15 +284,18 @@
 }
 
 .scr_tematiki_art6__group {
-  margin-bottom: 73px;
+  // margin-bottom: 73px;
+  padding-bottom: 63px;
   break-inside: avoid;
 
   @include lg {
-    margin-bottom: 86px;
+    // margin-bottom: 86px;
+    padding-bottom: 76px;
   }
 
   @include sm {
-    margin-bottom: 0;
+    // margin-bottom: 0;
+    padding-bottom: 0;
     border-bottom: 2px solid $color_grey_light;
 
     &.active {
@@ -317,6 +322,7 @@
   position: relative;
   display: inline-block;
   margin-bottom: 27px;
+  padding-top: 10px;
   font-weight: 500;
   font-size: 28px;
   letter-spacing: -0.02em;

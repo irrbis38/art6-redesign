@@ -72,6 +72,8 @@
 
   @include sm {
     max-width: 571px;
+    font-size: 16px;
+    line-height: 150%;
   }
 
   @include xs {

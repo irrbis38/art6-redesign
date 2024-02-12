@@ -111,4 +111,9 @@
   line-height: 26px;
   letter-spacing: -0.03em;
   color: $color_grey;
+
+  @include sm {
+    font-size: 16px;
+    line-height: 125%;
+  }
 }

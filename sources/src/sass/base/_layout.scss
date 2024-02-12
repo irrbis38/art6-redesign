@@ -16,11 +16,16 @@
 }
 // min-height: 0.001vw; // — Fixes Safari bug with viewport units in calc()
 
+html {
+  min-width: 320px;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
   font-family: "Montserrat", sans-serif;
   color: $color_dark;
+  background-color: $color_white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -104,6 +109,10 @@ input {
 
 button {
   cursor: pointer;
+}
+
+textarea {
+  border-radius: 0;
 }
 
 :active,
