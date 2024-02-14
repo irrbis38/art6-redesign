@@ -1623,7 +1623,7 @@ button.header_art6__more {
 }
 @media (max-width:767px) {
   .industries .first_scr_main_art6__subtitle span::after {
-    bottom: 2px
+    height: 3px
   }
 }
 .services-advertisement .first_scr_main_art6__title,
