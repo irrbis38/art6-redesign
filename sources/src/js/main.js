@@ -727,15 +727,15 @@ var startScrollingBlockAnimation = () => {
       "top top"
     );
 
-  // var first_scr_with_scroll = document.querySelector(".first_scr_with_scroll");
+  var first_scr_with_scroll = document.querySelector(".first_scr_with_scroll");
 
-  // first_scr_with_scroll &&
-  //   initScrollAnimation(
-  //     ".first_scr_with_scroll__title",
-  //     ".first_scr_with_scroll",
-  //     ".first_scr_with_scroll .scroll_container",
-  //     "top top"
-  //   );
+  first_scr_with_scroll &&
+    initScrollAnimation(
+      ".first_scr_with_scroll__title",
+      ".first_scr_with_scroll",
+      ".first_scr_with_scroll .scroll_container",
+      "top top"
+    );
 };
 
 var initAnimation = () => {
