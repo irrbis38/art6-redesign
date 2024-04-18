@@ -1,0 +1,66 @@
+.scr_partnerka_peredacha_lidov_art6 {
+  margin-bottom: 376px;
+
+  @include xl {
+    margin-bottom: 320px;
+  }
+
+  @include lg {
+    margin-bottom: 250px;
+  }
+
+  @include sm {
+    margin-bottom: 200px;
+  }
+  @include xs {
+    margin-bottom: 184px;
+  }
+}
+
+.scr_partnerka_peredacha_lidov_art6__title {
+  max-width: 993px;
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 106%;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+
+  @include xl {
+    font-size: 60px;
+    line-height: 125%;
+  }
+
+  @include lg {
+    font-size: 50px;
+  }
+
+  @include sm {
+    font-size: 40px;
+  }
+
+  @include xs {
+    margin-bottom: 17px;
+    font-size: 38px;
+    line-height: 121%;
+  }
+}
+
+.scr_partnerka_peredacha_lidov_art6__subtitle {
+  max-width: 700px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 164%;
+  letter-spacing: -0.02em;
+  color: $color_grey_2;
+
+  @include xl {
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  @include xs {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}

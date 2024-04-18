@@ -8,12 +8,15 @@ block page
     section.first_scr_main_art6
         .container
 
-            h1.first_scr_main_art6__title
-                span
-                    .
-                        Создание
-                    button.first_scr_main_art6__help(type='button' aria-label="Показать справку") [ i ]
-                span сайтов
+            .first_scr_main_art6__title_wrapper
+
+                h1.first_scr_main_art6__title
+                    span Создание                        
+                    span сайтов
+
+                button.first_scr_main_art6__help(type='button' aria-label="Показать справку") [ i ]
+
+
             p.first_scr_main_art6__subtitle #[span Закажите разработку высококонверсионного сайта, который более чем в 2 раза увеличит ваши продажи]
 
             ul.first_scr_main_art6__list 
@@ -88,7 +91,7 @@ block page
                     li.scr_preimushestva_uslugi_art6__item
 
                         .scr_preimushestva_uslugi_art6__icon
-                            img(src= "./images/scr_preimushestva_uslugi_art6/uslugi_art6_icon_" + item.imgNum + ".svg" alt="" width="32" height="32")
+                            img(src= "./images/scr_preimushestva_uslugi_art6/uslugi_art6_icon_" + item.imgNum + ".svg" alt="" width="32" height="32" decoding="async" loading="lazy")
 
                         p.scr_preimushestva_uslugi_art6__name= item.name
 
@@ -477,13 +480,8 @@ block page
                     .scr_sm_takzhe_art6__name Услуги по SEO-продвижению:
 
                     ul.scr_sm_takzhe_art6__list
-
                         each item in seo_list
-                            li.scr_sm_takzhe_art6__item
-                                a(href="#").scr_sm_takzhe_art6__link
-                                    span= item
-                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+                            +src_sm_takzhe_item(item)
 
                     button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
                         span Показать все
@@ -495,13 +493,8 @@ block page
                     .scr_sm_takzhe_art6__name Продвижение по виду сайта:
 
                     ul.scr_sm_takzhe_art6__list
-
                         each item in promotion_list
-                            li.scr_sm_takzhe_art6__item
-                                a(href="#").scr_sm_takzhe_art6__link
-                                    span= item
-                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+                            +src_sm_takzhe_item(item)
 
                     button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
                         span Показать все
@@ -514,12 +507,9 @@ block page
 
                     ul.scr_sm_takzhe_art6__list
 
+                    ul.scr_sm_takzhe_art6__list
                         each item in promotion_cms_list
-                            li.scr_sm_takzhe_art6__item
-                                a(href="#").scr_sm_takzhe_art6__link
-                                    span= item
-                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+                            +src_sm_takzhe_item(item)
 
                     button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
                         span Показать все
@@ -531,13 +521,8 @@ block page
                     .scr_sm_takzhe_art6__name Продвижение по виду сайта:
 
                     ul.scr_sm_takzhe_art6__list
-
                         each item in promotion_list
-                            li.scr_sm_takzhe_art6__item
-                                a(href="#").scr_sm_takzhe_art6__link
-                                    span= item
-                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+                            +src_sm_takzhe_item(item)
 
                     button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
                         span Показать все

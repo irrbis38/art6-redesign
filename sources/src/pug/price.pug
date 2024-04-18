@@ -1,0 +1,84 @@
+extends base/_layout
+block vars
+    - var pageName = 'price'
+block head
+    title ART6 услуги - Цены
+block page
+
+    section.first_scr_main_art6
+        .container
+
+            h1.first_scr_main_art6__title.index_page_title
+                span Цены
+
+            p.first_scr_main_art6__subtitle
+                span Средняя стоимость 1 часа работы специалиста – 1 500₽
+
+
+
+
+
+    .scr_voprosy_art6
+        .container
+
+            .scr_voprosy_art6__wrapper
+
+                .scr_voprosy_art6__question
+                    h3.scr_voprosy_art6__heading.scr_voprosy_art6__price_heading Создание сайтов #[span]
+
+                    .scr_voprosy_art6__content
+                        include ./blocks/_scr_voprosy_art6_price_item
+
+                .scr_voprosy_art6__question
+                    h3.scr_voprosy_art6__heading.scr_voprosy_art6__price_heading Контекстная реклама #[span]
+
+                    .scr_voprosy_art6__content
+                        include ./blocks/_scr_voprosy_art6_price_item
+
+                .scr_voprosy_art6__question
+                    h3.scr_voprosy_art6__heading.scr_voprosy_art6__price_heading SEO-продвижение сайтов #[span]
+
+                    .scr_voprosy_art6__content
+                        include ./blocks/_scr_voprosy_art6_price_item
+
+                .scr_voprosy_art6__question
+                    h3.scr_voprosy_art6__heading.scr_voprosy_art6__price_heading Маркетинг #[span]
+
+                    .scr_voprosy_art6__content
+                        include ./blocks/_scr_voprosy_art6_price_item
+
+                .scr_voprosy_art6__question
+                    h3.scr_voprosy_art6__heading.scr_voprosy_art6__price_heading Аналитика #[span]
+
+                    .scr_voprosy_art6__content
+                        include ./blocks/_scr_voprosy_art6_price_item
+
+                .scr_voprosy_art6__question
+                    h3.scr_voprosy_art6__heading.scr_voprosy_art6__price_heading Аудит #[span]
+
+                    .scr_voprosy_art6__content
+                        include ./blocks/_scr_voprosy_art6_price_item
+
+                .scr_voprosy_art6__question
+                    h3.scr_voprosy_art6__heading.scr_voprosy_art6__price_heading Аренда сайтов #[span]
+
+                    .scr_voprosy_art6__content
+                        include ./blocks/_scr_voprosy_art6_price_item
+
+                .scr_voprosy_art6__question
+                    h3.scr_voprosy_art6__heading.scr_voprosy_art6__price_heading Поддержка сайтов #[span]
+
+                    .scr_voprosy_art6__content
+                        include ./blocks/_scr_voprosy_art6_price_item
+
+
+
+
+
+
+
+
+
+
+
+    include ./blocks/_scr_forma_footer_art6

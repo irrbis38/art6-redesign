@@ -8,6 +8,7 @@
 //@import "../libs/LIB_NAME/path/to/style.scss"
 // @import "../libs/splidejs/splide.min.css";
 @import "../libs/glide/glide.core.min.css";
+@import "../libs/swiper/swiper-bundle.css";
 
 /*===== global styles =====*/
 
@@ -215,4 +216,86 @@ textarea {
       height: 26px;
     }
   }
+}
+
+// === VIDEO PREVIEW
+
+.video {
+  position: relative;
+
+  @media (hover: hover) {
+    &:hover {
+      .video_blur {
+        &::before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.video_blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    transition: opacity 0.2s ease-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.666 17.1328V63.7995L63.3327 40.4661L26.666 17.1328Z' fill='white' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.video_preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border: none;
 }

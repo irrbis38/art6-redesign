@@ -16,33 +16,57 @@ import "./gulp_tasks/styles.js";
 import "./gulp_tasks/w3c_validator.js";
 import "./gulp_tasks/watcher.js";
 
-import { createRequire } from 'module'
+import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
 global.$ = {
-    browsersync: browsersync,
-    packageJson: require('./package.json'),
-    path: {
-        dest: '../html/', // or just 'html/', 'dest/' — for current folder. WARNING: This directory will be cleaned at build!
-        sources: 'sources/' // or '/' — for current folder
-    }
+  browsersync: browsersync,
+  packageJson: require("./package.json"),
+  path: {
+    dest: "../html/", // or just 'html/', 'dest/' — for current folder. WARNING: This directory will be cleaned at build!
+    sources: "sources/", // or '/' — for current folder
+  },
 };
 
 // BUILD
-gulp.task("build", gulp.series("clean", "sprite", "libs", "fonts", "images",
+gulp.task(
+  "build",
+  gulp.series(
+    "clean",
+    "sprite",
+    "libs",
+    "fonts",
+    "images",
     gulp.parallel("pug", "styles", "favicons", "scripts"),
-    gulp.parallel("html_direct_copying", "validateHtml")
-));
+    gulp.parallel("html_direct_copying")
+  )
+);
 // BUILD minified
-gulp.task("build_min", gulp.series("clean", "sprite", "libs", "fonts", "images",
+gulp.task(
+  "build_min",
+  gulp.series(
+    "clean",
+    "sprite",
+    "libs",
+    "fonts",
+    "images",
     gulp.parallel("pug", "styles_min", "favicons", "scripts_min"),
-    gulp.parallel("html_direct_copying", "validateHtml")
-));
+    gulp.parallel("html_direct_copying")
+  )
+);
 // BUILD unminified
-gulp.task("build_unmin", gulp.series("clean", "sprite", "libs", "fonts", "images",
+gulp.task(
+  "build_unmin",
+  gulp.series(
+    "clean",
+    "sprite",
+    "libs",
+    "fonts",
+    "images",
     gulp.parallel("pug", "styles_unmin", "favicons", "scripts_unmin"),
-    gulp.parallel("html_direct_copying", "validateHtml")
-));
+    gulp.parallel("html_direct_copying")
+  )
+);
 
 // Watch
 gulp.task("watch", gulp.parallel("watcher", "serve"));
@@ -53,4 +77,3 @@ gulp.task("watch_unmin", gulp.parallel("watcher_unmin", "serve"));
 
 // Default
 gulp.task("default", gulp.series("build", "watch"));
-

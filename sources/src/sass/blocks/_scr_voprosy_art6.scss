@@ -187,11 +187,54 @@
   }
 }
 
+.scr_voprosy_art6__heading.scr_voprosy_art6__price_heading {
+  padding: 30px 70px 30px 0;
+  font-size: 40px;
+
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::before {
+      top: 13px;
+      left: 5px;
+      width: 18px;
+      height: 2px;
+    }
+
+    &::after {
+      top: 5px;
+      left: 13px;
+      width: 2px;
+      height: 18px;
+    }
+  }
+
+  @include xl {
+    font-size: 35px;
+  }
+
+  @include lg {
+    padding: 15px 70px 15px 0;
+    font-size: 30px;
+  }
+
+  @include xs {
+    min-height: 54px;
+    padding: 10px 70px 10px 0;
+    font-size: 20px;
+    line-height: 130%;
+  }
+}
+
+.scr_voprosy_art6__content,
 .scr_voprosy_art6__text {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
 
+.scr_voprosy_art6__text {
   p {
     max-width: 1120px;
     padding-bottom: 23px;
@@ -273,5 +316,13 @@
       width: 26px;
       height: 26px;
     }
+  }
+}
+
+// ======= PRICE PAGE
+
+.scr_voprosy_art6 {
+  @include xs {
+    padding-bottom: 50px;
   }
 }

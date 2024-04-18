@@ -21,6 +21,38 @@ mixin picture(name,ext,x2)
             img.picture__img.object-fit-cover(src="images/" + name + "." + ext srcset="images/" + name + "." + ext + ", images/" + name + "@2x." + ext + " 2x" alt="")
 
 
+
+
+mixin img(imgSizes, imgSrcset, imgSrc, alt, width, height, isLazy)
+    img(
+        sizes= imgSizes
+        srcset= imgSrcset
+        src= "images/" + imgSrc + ".webp"
+        alt=(alt ? alt : false )
+        width=(width ? width : false )
+        height=(height ? height : false )
+        loading=(isLazy ? 'lazy' : false )
+        decoding="async"
+    )
+
+
+
+
+mixin imgWithClass(isActive, imgSrcset, imgSrc, alt, width, height, isLazy)
+    img(
+        class= isActive ? 'active without-transition' : 'without-transition'
+        sizes= imgSizes
+        srcset= imgSrcset
+        src= "images/" + imgSrc + ".webp"
+        alt=(alt ? alt : false )
+        width=(width ? width : false )
+        height=(height ? height : false )
+        loading=(isLazy ? 'lazy' : false )
+        decoding="async"
+    )
+
+
+
 mixin breadcrumbs(arr,cur)
     .b-breadcrumbs
         .container
@@ -54,3 +86,62 @@ mixin pagination(amount, current, ellipsis, last, arrows)
 
         if (arrows === true)
             a(href="#").pagination__next: span
+
+
+mixin formaFooter(title)
+    .scr_forma_footer_art6
+        .container
+            p.scr_forma_footer_art6__title= title
+            p.scr_forma_footer_art6__subtitle Исследуем, создадим, продвинем – достигнем высочайших результатов
+
+
+            form.scr_forma_footer_art6__form(action="#" novalidate)
+
+                .scr_forma_footer_art6__fields
+                    .scr_forma_footer_art6__client 
+                        .scr_forma_footer_art6__name
+                            input.scr_forma_footer_art6__input.required(type="text" placeholder="Имя*" name="client_name" required)
+
+                        .scr_forma_footer_art6__contact
+                            input.scr_forma_footer_art6__input.required(type="text" placeholder="Телефон/мессенджер*" name="client_contact" required)
+
+                    textarea.scr_forma_footer_art6__descr(placeholder="Расскажите немного о проекте" cols="30" rows="1")
+
+                    button.scr_forma_footer_art6__submit(type="submit") Отправить
+
+                    p.scr_forma_footer_art6__confirm Нажав на кнопку, вы даете согласие на обработку #[a(href="./index.html") персональных данных]
+
+                ul.scr_forma_footer_art6__list
+                    li
+                        input.scr_forma_footer_art6__check(type="checkbox" id="strategy")
+                        label.scr_forma_footer_art6__subject(for="strategy") Стратегия
+                    li
+                        input.scr_forma_footer_art6__check(type="checkbox" id="dev")
+                        label.scr_forma_footer_art6__subject(for="dev") Разработка
+                    li
+                        input.scr_forma_footer_art6__check(type="checkbox" id="seo")
+                        label.scr_forma_footer_art6__subject(for="seo") Продвижение
+                    li
+                        input.scr_forma_footer_art6__check(type="checkbox" id="adw")
+                        label.scr_forma_footer_art6__subject(for="adw") Реклама
+                    li
+                        input.scr_forma_footer_art6__check(type="checkbox" id="marketing")
+                        label.scr_forma_footer_art6__subject(for="marketing") Маркетинг
+                    li
+                        input.scr_forma_footer_art6__check(type="checkbox" id="lids")
+                        label.scr_forma_footer_art6__subject(for="lids") Лидогенерация
+                    li
+                        input.scr_forma_footer_art6__check(type="checkbox" id="analitics")
+                        label.scr_forma_footer_art6__subject(for="analitics") Аналитика
+                    li
+                        input.scr_forma_footer_art6__check(type="checkbox" id="support")
+                        label.scr_forma_footer_art6__subject(for="support") Поддержка
+
+
+mixin src_sm_takzhe_item(item)
+
+    li.scr_sm_takzhe_art6__item
+        a(href="#").scr_sm_takzhe_art6__link= item
+            //- span= item
+            //- svg(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+            //-     path(d="M0.169271 10.658L1.34427 11.833L10.1693 3.00801L10.1693 8.49967H11.8359L11.8359 0.166341L3.5026 0.166341V1.83301L8.99427 1.83301L0.169271 10.658Z" fill="#166FF5")

@@ -16,7 +16,14 @@ block page
     section.scr_perv_keys_art6
 
         .scr_perv_keys_art6__mobile_img
-            img(src="./images/scr_perv_keys_art6/project_1.webp" alt="скриншот проекта Астра-Пул" width="390" height="273")
+            -
+                var imgSizes = "100vw"
+
+                var imgSrcset = "./images/scr_perv_keys_art6/project_screenshot_mob_400.webp 400w, ./images/scr_perv_keys_art6/project_screenshot_mob_640.webp 640w, ./images/scr_perv_keys_art6/project_screenshot_mob_767.webp 767w, ./images/scr_perv_keys_art6/project_screenshot_mob_1534.webp 1534w"
+
+                var imgSrc = "scr_perv_keys_art6/project_screenshot_mob_767"
+
+            +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта Астра-Пул', 390, 273, false)
 
         .scr_perv_keys_art6__intro
             .container
@@ -28,7 +35,14 @@ block page
         .scr_perv_keys_art6__wrapper
 
             .scr_perv_keys_art6__img
-                img(src="./images/scr_perv_keys_art6/project_1.webp" alt="скриншот проекта Астра-Пул" width="1117" height="880")
+                -
+                    var imgSizes = "(max-width: 1300px) 56vw, 58vw"
+
+                    var imgSrcset = "./images/scr_perv_keys_art6/project_screenshot_900.webp 900w, ./images/scr_perv_keys_art6/project_screenshot_1200.webp 1200w, ./images/scr_perv_keys_art6/project_screenshot_1600.webp 1600w, ./images/scr_perv_keys_art6/project_screenshot_2234.webp 2234w"
+
+                    var imgSrc = "scr_perv_keys_art6/project_screenshot_1600"
+
+                +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта Астра-Пул', 1117, 880, false)
 
             .scr_perv_keys_art6__descr.container
                 .scr_perv_keys_art6__content
@@ -60,19 +74,40 @@ block page
             p.scr_opisanie_keysa_art6__text Разработали дизайн в соответствии с фирменным стилем компании-производителя. Использовали качественные фотографии и видеофрагменты. Меню сайта расположили сбоку и сделали статичным.
 
             .scr_opisanie_keysa_art6__img
-                img(src="./images/scr_perv_keys_art6/project_1.webp" alt="скриншот проекта Астра-Пул" width="1500" height="1047")
+                -
+                    var imgSizes = "(max-width: 991px) 92vw, (max-width: 1300px) 68vw,(max-width: 1600px) 94vw, (max-width: 1600px) 94vw, 1500px"
+
+                    var imgSrcset = "./images/scr_perv_keys_art6/project_1_600.webp 600w, ./images/scr_perv_keys_art6/project_1_900.webp 900w, ./images/scr_perv_keys_art6/project_1_1200.webp 1200w, ./images/scr_perv_keys_art6/project_1_1500.webp 1500w ./images/scr_perv_keys_art6/project_1_3000.webp 3000w"
+
+                    var imgSrc = "scr_perv_keys_art6/project_screenshot_1600"
+
+                +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта Астра-Пул', 1117, 880, true)
 
             p.scr_opisanie_keysa_art6__text Добавили анимацию на блоки сайта, которая срабатывает при скроле. Эффект добавляет сайту динамичности.
 
             .scr_opisanie_keysa_art6__img
-                img(src="./images/scr_perv_keys_art6/project_1.webp" alt="скриншот проекта Астра-Пул" width="1500" height="1047")
+                -
+                    var imgSizes = "(max-width: 991px) 92vw, (max-width: 1300px) 68vw,(max-width: 1600px) 94vw, (max-width: 1600px) 94vw, 1500px"
+
+                    var imgSrcset = "./images/scr_perv_keys_art6/project_1_600.webp 600w, ./images/scr_perv_keys_art6/project_1_900.webp 900w, ./images/scr_perv_keys_art6/project_1_1200.webp 1200w, ./images/scr_perv_keys_art6/project_1_1500.webp 1500w ./images/scr_perv_keys_art6/project_1_3000.webp 3000w"
+
+                    var imgSrc = "scr_perv_keys_art6/project_screenshot_1600"
+
+                +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта Астра-Пул', 1117, 880, true)
 
             h3.scr_opisanie_keysa_art6__subtitle Структура сайта
 
             p.scr_opisanie_keysa_art6__text На сайте отразили всю важную информацию о производителе, показали процесс производства поэтапно, подробно рассказали о каждом виде продукции в отдельной карточке.
 
             .scr_opisanie_keysa_art6__img
-                img(src="./images/scr_perv_keys_art6/project_1.webp" alt="скриншот проекта Астра-Пул" width="1500" height="1047")
+                -
+                    var imgSizes = "(max-width: 991px) 92vw, (max-width: 1300px) 68vw,(max-width: 1600px) 94vw, (max-width: 1600px) 94vw, 1500px"
+
+                    var imgSrcset = "./images/scr_perv_keys_art6/project_1_600.webp 600w, ./images/scr_perv_keys_art6/project_1_900.webp 900w, ./images/scr_perv_keys_art6/project_1_1200.webp 1200w, ./images/scr_perv_keys_art6/project_1_1500.webp 1500w ./images/scr_perv_keys_art6/project_1_3000.webp 3000w"
+
+                    var imgSrc = "scr_perv_keys_art6/project_screenshot_1600"
+
+                +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта Астра-Пул', 1117, 880, true)
 
 
     section.scr_rezultat_keysa_art6
@@ -114,14 +149,28 @@ block page
             h3.scr_rezultat_keysa_art6__subtitle Отзыв клиента
 
             .scr_rezultat_keysa_art6__img
-                img(src="./images/scr_rezultat_keysa_art6/reviews-small.webp" alt="Отзыв компании Астра-Пул" width='487' height="690")
+                -
+                    var imgSizes = "(max-width: 575px) 95vw, 487px"
+
+                    var imgSrcset = "./images/scr_rezultat_keysa_art6/reviews_small_400.webp 400w, ./images/scr_rezultat_keysa_art6/reviews_small_600.webp 600w, ./images/scr_rezultat_keysa_art6/reviews_small_800.webp 800w, ./images/scr_rezultat_keysa_art6/reviews_small_974.webp 974w"
+
+                    var imgSrc = "scr_rezultat_keysa_art6/reviews_small_800"
+
+                +img(imgSizes, imgSrcset, imgSrc, 'Отзыв компании Астра-Пул', 487, 690, true)
 
     .scr_review_modal
         .scr_review_modal__overlay
         .scr_review_modal__wrapper
             .scr_review_modal__inner
                 .scr_review_modal__image
-                    img(src="./images/scr_rezultat_keysa_art6/reviews-full.webp" alt="Отзыв компании" width='487' height="690")
+                    -
+                        var imgSizes = "(max-width: 1300px) 88vw, 1160px"
+
+                        var imgSrcset = "./images/scr_rezultat_keysa_art6/reviews_full_600.webp 600w, ./images/scr_rezultat_keysa_art6/reviews_full_900.webp 900w, ./images/scr_rezultat_keysa_art6/reviews_full_1200.webp 1200w, ./images/scr_rezultat_keysa_art6/reviews_full_1600.webp 1600w, ./images/scr_rezultat_keysa_art6/reviews_full_1948.webp 1948w"
+
+                        var imgSrc = "scr_rezultat_keysa_art6/reviews_full_1600"
+
+                    +img(imgSizes, imgSrcset, imgSrc, 'Отзыв компании', 1160, 1640, true)
 
             button.scr_review_modal__btn(type="button" aria-label="Закрыть окно")
                 svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")

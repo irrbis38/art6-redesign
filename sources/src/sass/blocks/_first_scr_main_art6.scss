@@ -101,7 +101,7 @@
     &:nth-child(1) {
       position: relative;
       width: 100%;
-      width: max-content;
+      // width: max-content;
     }
 
     &:nth-child(2) {
@@ -123,6 +123,7 @@
 
   @include xl {
     left: -8px;
+    // max-width: 970px;
     margin-bottom: 26px;
     font-size: 90px;
     line-height: 95.5px;
@@ -142,6 +143,7 @@
   }
 
   @include lg {
+    // max-width: 860px;
     margin-bottom: 17px;
     font-size: 80px;
     left: -4px;
@@ -187,7 +189,8 @@
       &:nth-child(1) {
         // display: inline;
         position: static;
-        display: inline;
+        // display: inline;
+        display: block;
         margin-right: 13px;
         margin-right: 0;
       }
@@ -795,5 +798,216 @@
     line-height: 186%;
     letter-spacing: -0.02em;
     color: $color_blue;
+  }
+}
+
+.first_scr_main_art6__title_wrapper {
+  position: relative;
+  width: min-content;
+}
+
+//=========== PARTNERSHIP PAGE
+
+.partnership {
+  .first_scr_main_art6 {
+    padding-top: 0;
+    margin-bottom: 200px;
+
+    @include lg {
+      margin-bottom: 150px;
+    }
+
+    @include sm {
+      margin-bottom: 112px;
+    }
+
+    .container {
+      position: relative;
+      margin-top: 207px;
+
+      @include xl {
+        margin-top: 198px;
+      }
+
+      @include lg {
+        margin-top: 190px;
+      }
+
+      @include sm {
+        margin-top: 131px;
+      }
+
+      @include xs {
+        margin-top: 50px;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  .first_scr_main_art6__title {
+    span {
+      display: block;
+    }
+
+    @include xs {
+      margin-bottom: 25px;
+      font-size: 52px;
+      line-height: 115%;
+    }
+
+    @include r(375px) {
+      font-size: 40px;
+    }
+  }
+
+  .first_scr_main_art6__subtitle {
+    max-width: 1000px;
+
+    @include xl {
+      max-width: 850px;
+    }
+
+    @include xs {
+      margin-bottom: 57px;
+      line-height: 150%;
+
+      span {
+        padding: 5px 0;
+      }
+    }
+  }
+
+  .first_scr_main_art6__list {
+    gap: 0 22px;
+
+    @include xxs {
+      grid-template-columns: 1fr;
+      gap: 35px 22px;
+    }
+  }
+
+  .first_scr_main_art6__item {
+    // width: 33%;
+    max-width: 484px;
+    margin-right: 0;
+  }
+}
+
+.first_scr_main_art6__video {
+  position: absolute;
+  top: -15px;
+  right: 80px;
+  z-index: 1;
+  width: 466px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 56.65%;
+  }
+
+  @include xl {
+    top: -60px;
+    right: 40px;
+  }
+
+  @include lg {
+    top: -50px;
+    width: 360px;
+  }
+
+  @include sm {
+    display: none;
+  }
+}
+
+//=========== PRICE PAGE
+
+.price {
+  .first_scr_main_art6 {
+    margin-bottom: 30px;
+
+    @include sm {
+      margin-bottom: 0;
+    }
+
+    @include xs {
+      margin-bottom: 0;
+    }
+
+    .container {
+      margin-top: 307px;
+
+      &::after {
+        // top: -253px;
+        // right: -70px;
+        background-image: url("./../images/first_scr_main_art6/industries-first-bg.svg");
+      }
+
+      @include xl {
+        margin-top: 198px;
+      }
+
+      @include lg {
+        margin-top: 190px;
+      }
+
+      @include sm {
+        margin-top: 130px;
+        padding-bottom: 50px;
+      }
+
+      @include xs {
+        margin-top: 97px;
+        padding-bottom: 0;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .first_scr_main_art6__title {
+    margin-bottom: 40px;
+
+    @include xs {
+      margin-bottom: 21px;
+      font-size: 52px;
+      line-height: 115%;
+    }
+  }
+
+  .first_scr_main_art6__subtitle {
+    max-width: 680px;
+
+    span {
+      padding: 5px 0;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 140%;
+      letter-spacing: -0.03em;
+      color: $color_white;
+      background-color: $color_blue;
+    }
+
+    @include xl {
+      span {
+        font-size: 35px;
+        line-height: 48px;
+      }
+    }
+
+    @include xs {
+      max-width: 340px;
+
+      span {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
   }
 }

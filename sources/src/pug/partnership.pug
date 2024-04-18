@@ -1,0 +1,147 @@
+extends base/_layout
+block vars
+    - var pageName = 'partnership'
+block head
+    title Партнёрская программа
+block page
+
+    nav.scr_hleb_kroshki_art6.scr_hleb_kroshki_art6_white_bg(aria-label="Хлебные крошки")
+        .container
+            ol
+                li: a(href="./index.html" aria-label="Перейти на главную") Главная
+                li: a(href="./our-projects.html" aria-label="Перейти на общую страницу проектов") Вакансии
+                li: span Разработчик (Java)
+
+    section.first_scr_main_art6
+        .container
+
+            h1.first_scr_main_art6__title
+                span Партнерская
+                span программа
+                
+            p.first_scr_main_art6__subtitle 
+                span Приглашаем вас принять участие в партнерской программе нашего digital-агентства
+
+            ul.first_scr_main_art6__list 
+                li.first_scr_main_art6__item Все очень просто: вы рекомендуете нас своим друзьям, знакомым, клиентам, партнерам и получаете от нас вознаграждение за каждую услугу.
+
+                li.first_scr_main_art6__item При этом продавать вам ничего не нужно –  вы просто передаете нам контакты, а продажей займутся наши специалисты. В случае успеха, мы перечислим вам вознаграждение.
+
+            .first_scr_main_art6__video.video(data-video="https://youtu.be/fNFzfwLM72c")
+                    .video_blur
+                    .video_preview
+                            -
+                                var imgSizes = "(max-width: 1300px) 360px, 466px"
+
+                                var imgSrcset = "./images/scr_video_otzivi_art6/preview.webp, ./images/scr_video_otzivi_art6/preview@2x.webp 2x"
+
+                                var imgSrc = "scr_video_otzivi_art6/preview@2x"
+
+                            +img(imgSizes, imgSrcset, imgSrc, 'создание сайтов', 466, 264, false)
+
+
+
+    .scr_partnerka_usloviya_art6
+        .container 
+
+            -
+                var partners_data = [
+                    {
+                        name: 'Создание сайта',
+                        value: '10%',
+                        text: 'От стоимости разработки'
+                    },
+                    {
+                        name: 'SEO-продвижение',
+                        value: '30%',
+                        text: 'по 10% ежемесячно'
+                    },
+                    {
+                        name: 'Реклама',
+                        value: '30%',
+                        text: 'по 10% ежемесячно'
+                    },
+
+                ]
+
+            .scr_partnerka_usloviya_art6__list 
+
+                each item in partners_data
+
+                    .scr_partnerka_usloviya_art6__item
+                        p.scr_partnerka_usloviya_art6__name: span= item.name
+                        p.scr_partnerka_usloviya_art6__value= item.value
+                        p.scr_partnerka_usloviya_art6__text= item.text
+
+
+
+
+    .scr_partnerka_dlyakogo_art6
+        .container 
+
+            h2.scr_partnerka_dlyakogo_art6__title Для кого это интересно
+
+            .scr_partnerka_dlyakogo_art6__subtitle Наша партнерская программа подходит всем, у кого есть лиды или одно обращение по любому из наших направлений:
+
+            -
+                var partners_data = [
+                    {
+                        value: '1',
+                        text: 'Студии или агентству, подобное нашему, которое хочет передать неподходящие вам лиды за процент'
+                    },
+                    {
+                        value: '2',
+                        text: 'Компании из другой сферы, у которой есть лиды или одно обращение'
+                    },
+                    {
+                        value: '3',
+                        text: 'Тому у кого есть лиды или одно обращение'
+                    },
+
+                ]
+
+            .scr_partnerka_dlyakogo_art6__list 
+
+                each item in partners_data
+
+                    .scr_partnerka_dlyakogo_art6__item
+                        p.scr_partnerka_dlyakogo_art6__value= item.value
+                        p.scr_partnerka_dlyakogo_art6__text= item.text
+
+                        
+
+
+    .scr_partnerka_peredacha_lidov_art6
+
+        .container 
+            h2.scr_partnerka_peredacha_lidov_art6__title Передача наших партнерских лидов вам
+
+            p.scr_partnerka_peredacha_lidov_art6__subtitle Также мы ищем партнеров, которым сможем передавать на постоянной основе свои непрофильные лиды, к нам часто обращаются по направлениям: SMM, маркетплейсы, CRM, 1С, развитие бизнеса, выстраивание продаж, подбор персонала и другие. Мы готовы их передавать вам за небольшой процент.
+
+
+
+    .scr_video_otzivi_art6 
+        .container 
+
+            h2.scr_video_otzivi_art6__title Отзывы наших партнеров
+
+            .scr_video_otzivi_art6__wrapper 
+
+                - var videos_amount = [1, 2, 4, 4]
+
+                each num in videos_amount
+
+                    .scr_video_otzivi_art6__item.video(data-video="https://youtu.be/fNFzfwLM72c")
+                        .video_blur
+                        .video_preview
+                                -
+                                    var imgSizes = "56vw"
+
+                                    var imgSrcset = "./images/scr_video_otzivi_art6/preview.webp, ./images/scr_video_otzivi_art6/preview@2x.webp 2x"
+
+                                    var imgSrc = "scr_video_otzivi_art6/preview@2x"
+
+                                +img(imgSizes, imgSrcset, imgSrc, 'превью отзыва нашего партнёра', 697, 395, true)
+    
+
+    include ./blocks/_scr_forma_footer_art6

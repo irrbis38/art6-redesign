@@ -1,0 +1,152 @@
+.first_scr_with_scroll {
+  margin-bottom: 90px;
+  padding-top: 92px;
+  background-size: 922px 663px;
+  // overflow: hidden;
+
+  .container {
+    position: relative;
+    margin-top: 358px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -253px;
+      right: -69px;
+      z-index: -1;
+      width: 993px;
+      height: 633px;
+      background: url("./../images/first_scr_main_art6/industries-first-bg.svg")
+        center / contain no-repeat;
+    }
+  }
+
+  @include xl {
+    .container {
+      margin-top: 198px;
+
+      &::after {
+        top: -156px;
+        right: -20px;
+        width: 739px;
+        height: 486px;
+      }
+    }
+  }
+
+  @include lg {
+    margin-bottom: 50px;
+
+    .container {
+      margin-top: 190px;
+
+      &::after {
+        top: -170px;
+        right: -225px;
+        width: 705px;
+        height: 464px;
+      }
+    }
+  }
+
+  @include sm {
+    .container {
+      margin-top: 131px;
+
+      &::after {
+        top: -97px;
+        right: -146px;
+        width: 592px;
+        height: 389px;
+      }
+    }
+  }
+
+  @include xs {
+    .container {
+      margin-top: 97px;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.first_scr_with_scroll__title__block {
+  overflow: initial;
+
+  @include xl {
+    min-height: 172px;
+  }
+
+  @include lg {
+    min-height: 142px;
+  }
+
+  @include sm {
+    min-height: 83px;
+    min-height: auto;
+  }
+}
+
+.first_scr_with_scroll__title {
+  span:last-child {
+    display: none;
+  }
+
+  @include sm {
+    span:first-child {
+      display: none;
+    }
+
+    span:last-child {
+      display: inline;
+    }
+  }
+
+  @include xs {
+    max-width: 450px;
+  }
+}
+
+.first_scr_with_scroll__subtitle {
+  max-width: 828px;
+  margin-top: 35px;
+  // margin-bottom: 48px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: $color_white;
+
+  span {
+    background-color: $color_blue;
+  }
+
+  @include xl {
+    // margin-bottom: 15px;
+    // margin-bottom: 37px;
+    font-size: 35px;
+  }
+
+  @include lg {
+    // margin-top: 15px;
+    font-size: 30px;
+  }
+
+  @include sm {
+    max-width: 550px;
+    margin-top: 23px;
+    // margin-bottom: 25px;
+  }
+
+  @include xs {
+    max-width: 380px;
+    margin-top: 16px;
+    // margin-bottom: 30px;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+  }
+}

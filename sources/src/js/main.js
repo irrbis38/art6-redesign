@@ -726,6 +726,16 @@ var startScrollingBlockAnimation = () => {
       ".first_scr_main_art6 .container",
       "top top"
     );
+
+  // var first_scr_with_scroll = document.querySelector(".first_scr_with_scroll");
+
+  // first_scr_with_scroll &&
+  //   initScrollAnimation(
+  //     ".first_scr_with_scroll__title",
+  //     ".first_scr_with_scroll",
+  //     ".first_scr_with_scroll .scroll_container",
+  //     "top top"
+  //   );
 };
 
 var initAnimation = () => {
@@ -905,6 +915,134 @@ var initPinProjectImage = () => {
   });
 };
 
+// ===== REMOVE VIDEO PREVIEW
+
+var initYoutubeVideo = (videos) => {
+  // generate video url
+  var generateUrl = (id) => {
+    var query = "?rel=0&showinfo=0&autoplay=1";
+    // var query = "?ps=docs&controls=1";
+    return "https://www.youtube.com/embed/" + id + query;
+  };
+
+  // create iframe element
+  var createIframe = (id) => {
+    var iframe = document.createElement("iframe");
+    iframe.classList.add("video-iframe");
+    iframe.setAttribute("src", generateUrl(id));
+    iframe.setAttribute("title", "YouTube video player");
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allowfullscreen", "");
+    iframe.setAttribute(
+      "allow",
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+    );
+
+    return iframe;
+  };
+
+  // handling each video element
+  videos.forEach((el) => {
+    var videoHref = el.dataset.video;
+    var deletedLength = "https://youtu.be/".length;
+
+    var videoId = videoHref.substring(deletedLength, videoHref.length);
+
+    el.addEventListener("click", () => {
+      if (el.classList.contains("preview-removed")) return;
+
+      var iframe = createIframe(videoId);
+      el.querySelector(".video_blur").remove();
+      el.querySelector(".video_preview").remove();
+      el.append(iframe);
+      el.classList.add("preview-removed");
+    });
+  });
+};
+
+// ===== INIT REVIEWS SLIDER
+
+var initReviewsSlider = () => {
+  var images = Array.from(
+    document.querySelectorAll(".scr_otzyvy_full__wrapper img")
+  );
+
+  var previews = Array.from(document.querySelectorAll(".scr_otzyvy__item"));
+
+  if (images.length < 1 || previews.length < 1) return;
+
+  var nav = document.querySelector(".scr_otzyvy_full__nav");
+
+  images.length === 1 && nav.classList.add("hidden");
+
+  var full_container = document.querySelector(".scr_otzyvy_full");
+  var overlay = document.querySelector(".scr_otzyvy_full__overlay");
+  var closeBtn = document.querySelector(".scr_otzyvy_full__close");
+
+  var prevBtn = document.querySelector(".scr_otzyvy_full__prev");
+  var nextBtn = document.querySelector(".scr_otzyvy_full__next");
+
+  var currImgIndex = 0;
+
+  var initSetup = () => {
+    images.forEach((img) => img.classList.remove("active"));
+    images[currImgIndex].classList.add("active");
+
+    currImgIndex === 0
+      ? prevBtn.classList.add("disabled")
+      : prevBtn.classList.remove("disabled");
+    currImgIndex === images.length - 1
+      ? nextBtn.classList.add("disabled")
+      : nextBtn.classList.remove("disabled");
+  };
+
+  previews.forEach((preview) => {
+    preview.addEventListener("click", (e) => {
+      document.body.classList.add("lock");
+      full_container.classList.add("active");
+
+      currImgIndex = previews.indexOf(e.currentTarget);
+
+      initSetup();
+
+      setTimeout(
+        () => images.forEach((i) => i.classList.remove("without-transition")),
+        700
+      );
+    });
+  });
+
+  [overlay, closeBtn].forEach((el) =>
+    el.addEventListener("click", () => {
+      document.body.classList.remove("lock");
+      full_container.classList.remove("active");
+      images.forEach((i) => i.classList.add("without-transition"));
+    })
+  );
+
+  prevBtn.addEventListener("click", () => {
+    images[currImgIndex].classList.remove("active");
+    currImgIndex--;
+    images[currImgIndex].classList.add("active");
+    nextBtn.classList.remove("disabled");
+
+    if (currImgIndex < 1) {
+      prevBtn.classList.add("disabled");
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    images[currImgIndex].classList.remove("active");
+    currImgIndex++;
+    images[currImgIndex].classList.add("active");
+    prevBtn.classList.remove("disabled");
+
+    if (currImgIndex >= images.length - 1) {
+      nextBtn.classList.add("disabled");
+    }
+  });
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
@@ -1030,4 +1168,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var modal_info = document.querySelector(".scr_info_modal");
   modal_info && initModalInfo();
+
+  // init video by click
+  var videos = Array.from(document.querySelectorAll(".video"));
+  videos.length > 0 && initYoutubeVideo(videos);
+
+  // init reviews slider
+  initReviewsSlider();
 });

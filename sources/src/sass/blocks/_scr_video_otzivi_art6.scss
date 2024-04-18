@@ -1,0 +1,79 @@
+.scr_video_otzivi_art6 {
+  margin-bottom: 128px;
+}
+
+.scr_video_otzivi_art6__title {
+  margin-bottom: 65px;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 106%;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+
+  @include xl {
+    font-size: 60px;
+    line-height: 121%;
+  }
+
+  @include lg {
+    font-size: 50px;
+  }
+
+  @include sm {
+    margin-bottom: 42px;
+    font-size: 40px;
+  }
+
+  @include xs {
+    font-size: 38px;
+  }
+}
+
+.scr_video_otzivi_art6__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 106px;
+
+  @include xl {
+    gap: 90px;
+  }
+
+  @include lg {
+    gap: 70px;
+  }
+
+  @include sm {
+    gap: 54px;
+  }
+
+  @include xs {
+    display: block;
+  }
+}
+
+.scr_video_otzivi_art6__item {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 56.67%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include xs {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}

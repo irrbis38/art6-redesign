@@ -2,6 +2,10 @@
   padding-top: 92px;
   background-color: $color_grey_light;
 
+  &.scr_hleb_kroshki_art6_white_bg {
+    background-color: $color_white;
+  }
+
   @include xs {
     padding-top: 70px;
   }

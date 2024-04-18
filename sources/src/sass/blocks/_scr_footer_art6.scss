@@ -110,7 +110,6 @@
   }
 }
 
-.scr_footer_art6__adress,
 .scr_footer_art6__phone,
 .scr_footer_art6__email {
   position: relative;
@@ -142,6 +141,7 @@
 }
 
 .scr_footer_art6__adress {
+  width: max-content;
   margin-bottom: 16px;
   font-weight: 500;
   font-size: 22px;

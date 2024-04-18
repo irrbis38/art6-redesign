@@ -1,0 +1,35 @@
+.first_scr_zagolovok_art6 {
+  padding-top: 250px;
+
+  @include lg {
+    padding-top: 150px;
+  }
+
+  @include xs {
+    padding-top: 100px;
+  }
+}
+
+.first_scr_zagolovok_art6__intro {
+  margin-bottom: 125px;
+
+  @include lg {
+    margin-bottom: 80px;
+  }
+
+  @include xs {
+    margin-bottom: 20px;
+  }
+}
+
+.first_scr_zagolovok_art6__title {
+  margin-bottom: 48px;
+
+  @include lg {
+    margin-bottom: 30px;
+  }
+
+  @include xs {
+    margin-bottom: 25px;
+  }
+}

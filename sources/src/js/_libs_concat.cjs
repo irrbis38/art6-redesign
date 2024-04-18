@@ -5,4 +5,5 @@ module.exports = [
   "./src/libs/glide/glide.min.js",
   "./src/libs/gsap/gsap.min.js",
   "./src/libs/gsap/ScrollTrigger.min.js",
+  "./src/libs/swiper/swiper-bundle.min.js",
 ];

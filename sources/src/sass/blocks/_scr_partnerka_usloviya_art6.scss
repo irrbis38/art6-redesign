@@ -1,0 +1,164 @@
+.scr_partnerka_usloviya_art6 {
+  margin-bottom: 189px;
+
+  @include xl {
+    margin-bottom: 170px;
+  }
+
+  @include lg {
+    margin-bottom: 120px;
+  }
+
+  @include sm {
+    margin-bottom: 140px;
+  }
+
+  @include xs {
+    margin-bottom: 90px;
+  }
+}
+
+.scr_partnerka_usloviya_art6__list {
+  display: flex;
+  gap: 0 48px;
+
+  @include xs {
+    display: block;
+  }
+}
+
+.scr_partnerka_usloviya_art6__item {
+  flex: 1 1 30%;
+  max-width: 459px;
+  padding: 35px 0 35px 35px;
+  border-left: 2px solid $color_grey_light;
+  transition: border-color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: $color_blue;
+    }
+  }
+
+  @include xl {
+    max-width: 393px;
+  }
+
+  @include lg {
+    max-width: 330px;
+    padding: 33px 0 33px 27px;
+  }
+
+  @include sm {
+    padding: 33px 0 3px 24px;
+  }
+
+  @include xs {
+    padding: 25px 0 34px 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.scr_partnerka_usloviya_art6__name {
+  margin-bottom: 48px;
+
+  span {
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    background-color: $color_blue;
+  }
+
+  @include xl {
+    margin-bottom: 44px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  @include lg {
+    margin-bottom: 37px;
+
+    span {
+      font-size: 18px;
+    }
+  }
+
+  @include sm {
+    margin-bottom: 29px;
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  @include xs {
+    margin-bottom: 22px;
+
+    span {
+      font-size: 18px;
+      line-height: 144%;
+    }
+  }
+}
+
+.scr_partnerka_usloviya_art6__value {
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 137%;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+
+  @include xl {
+    font-size: 60px;
+    line-height: 159%;
+  }
+
+  @include lg {
+    font-size: 55px;
+    line-height: 149%;
+  }
+
+  @include sm {
+    font-size: 50px;
+    line-height: 148%;
+  }
+
+  @include xs {
+    font-size: 64px;
+    line-height: 136%;
+  }
+}
+
+.scr_partnerka_usloviya_art6__text {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 136%;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+
+  @include xl {
+    font-size: 19px;
+    line-height: 136%;
+  }
+
+  @include lg {
+    font-size: 18px;
+    line-height: 124%;
+  }
+
+  @include sm {
+    font-size: 16px;
+    line-height: 126%;
+  }
+
+  @include xs {
+    font-size: 18px;
+    line-height: 144%;
+  }
+}

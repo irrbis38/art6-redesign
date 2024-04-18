@@ -1,0 +1,280 @@
+extends base/_layout
+block vars
+    - var pageName = 'services-list scrolling-titles-exist'
+block head
+    title ART6 услуги - Полный список услуг
+block page
+
+    section.first_scr_zagolovok_art6
+
+        .first_scr_zagolovok_art6__intro
+            .container
+                h1.first_scr_zagolovok_art6__title.index_page_title Полный список услуг
+
+
+    -
+        var sites_types = [
+            'Корпоративные сайты',
+            'Интернет-магазины',
+            'Сайты-каталоги',
+            'Одностраничные сайты',
+            'Интернет-магазины',
+            'Сайты-визитки',
+            'Промо-сайты'
+        ]
+
+        var sites_cms = [
+            '1С-Битрикс',
+            'Tilda',
+            'WordPress'
+        ]
+
+        var sites_tematics = [
+            'Тематики'
+        ]
+
+        var seo_more = [
+            'SEO-аудит сайтов',
+            'SEO-оптимизация сайтов',
+            'Продвижение сайтов в Яндекс',
+            'Продвижение сайтов в Google'
+        ]
+
+        var seo_types = [
+            'Интернет-магазины',
+            'Одностраничные сайты',
+            'Сайты-визитки'
+        ]
+
+
+        var adv_services = [
+            'Контекстная реклама в Яндекс.Директ',
+            'Контекстная реклама в Google.Ads',
+            'Аудит контекстной рекламы',
+            'Настройка контекстной рекламы',
+            'Ведение контекстной рекламы'
+        ]
+
+
+        var marketing = [
+            'Performance-маркетинг', 
+            'Контент-маркетинг', 
+            'Разработка маркетинговых стратегий'
+        ]
+
+        var audit = [
+            'Маркетинговый аудит сайта',
+            'SEO-аудит сайта',
+            'Аудит контекстной рекламы',
+            'Аудит таргетированной рекламы',
+            'Аудит медийной рекламы'
+        ]
+
+        var internet_adv = [
+            'Контекстная реклама',
+            'Реклама в Яндекс.Бизнес',
+            'Таргетированная реклама',
+            'Таргетированная реклама VK',
+            'Медийная реклама',
+            'Медийная реклама в Яндекс'
+        ]
+
+        var support = [
+            'Техническая поддержка сайтов',
+            'Контентная поддержка сайтов',
+            'Функциональная поддержка сайтов'
+        ]
+
+        var complex = [
+            'Создание и продвижение сайтов',
+            'Создание и реклама сайтов',
+            'Создание и поддержка сайтов',
+            'Продвижение и реклама сайтов',
+            'Продвижение и поддержка сайтов',
+            'Продвижение и контекстная реклама сайтов',
+            'Контекстная и таргетированная реклама',
+            'Поддержка и реклама сайтов',
+            'Аренда сайта с продвижением',
+            'Создание, продвижение и реклама сайтов'
+        ]
+
+    .scr_sm_takzhe_art6.scr_sm_takzhe_art6__full
+        .container 
+
+            h4.scr_sm_takzhe_art6__title: a(href="#") Создание сайтов
+
+            .scr_sm_takzhe_art6__wrapper
+
+
+                .scr_sm_takzhe_art6__category
+                    .scr_sm_takzhe_art6__name Виды сайтов:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in sites_types
+                            +src_sm_takzhe_item(item)
+
+
+                .scr_sm_takzhe_art6__category
+                    .scr_sm_takzhe_art6__name CMS / Платформа:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in sites_cms
+                            +src_sm_takzhe_item(item)
+
+
+                .scr_sm_takzhe_art6__category
+                    .scr_sm_takzhe_art6__name Тематика:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in sites_tematics
+                            +src_sm_takzhe_item(item)
+
+
+
+
+            h4.scr_sm_takzhe_art6__title: a(href="#") SEO-продвижение сайтов
+
+            .scr_sm_takzhe_art6__wrapper
+
+
+                .scr_sm_takzhe_art6__category
+                    .scr_sm_takzhe_art6__name Еще услуги:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in seo_more
+                            +src_sm_takzhe_item(item)
+
+
+                .scr_sm_takzhe_art6__category
+                    .scr_sm_takzhe_art6__name Продвижение по виду сайта:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in seo_types
+                            +src_sm_takzhe_item(item)
+
+
+                .scr_sm_takzhe_art6__category
+                    .scr_sm_takzhe_art6__name CMS / Платформа:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in sites_cms
+                            +src_sm_takzhe_item(item)
+
+
+                .scr_sm_takzhe_art6__category
+                    .scr_sm_takzhe_art6__name Продвижение по тематике: 
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in sites_tematics
+                            +src_sm_takzhe_item(item)
+
+
+
+
+            h4.scr_sm_takzhe_art6__title: a(href="#") Контекстная реклама
+
+            .scr_sm_takzhe_art6__wrapper
+
+
+                .scr_sm_takzhe_art6__category
+                    .scr_sm_takzhe_art6__name Услуги:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in adv_services
+                            +src_sm_takzhe_item(item)
+
+
+                .scr_sm_takzhe_art6__category
+                    .scr_sm_takzhe_art6__name Продвижение по тематике: 
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in sites_tematics
+                            +src_sm_takzhe_item(item)
+
+
+
+
+            h4.scr_sm_takzhe_art6__title: a(href="#") Маркетинг
+
+            .scr_sm_takzhe_art6__wrapper
+
+
+                .scr_sm_takzhe_art6__category
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in marketing
+                            +src_sm_takzhe_item(item)
+
+
+
+            h4.scr_sm_takzhe_art6__title.non-sub-categories: a(href="#") Аналитика
+
+
+
+
+            h4.scr_sm_takzhe_art6__title: a(href="#") Аудит
+
+            .scr_sm_takzhe_art6__wrapper
+
+
+                .scr_sm_takzhe_art6__category
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in audit
+                            +src_sm_takzhe_item(item)
+
+
+
+
+            h4.scr_sm_takzhe_art6__title: a(href="#") Интернет-реклама
+
+            .scr_sm_takzhe_art6__wrapper
+
+
+                .scr_sm_takzhe_art6__category
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in internet_adv
+                            +src_sm_takzhe_item(item)
+
+
+
+            h4.scr_sm_takzhe_art6__title.non-sub-categories: a(href="#") Лидогенерация
+
+
+
+            h4.scr_sm_takzhe_art6__title.non-sub-categories: a(href="#") Аренда сайтов
+
+
+
+
+            h4.scr_sm_takzhe_art6__title: a(href="#") Поддержка сайтов
+
+            .scr_sm_takzhe_art6__wrapper
+
+
+                .scr_sm_takzhe_art6__category
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in support
+                            +src_sm_takzhe_item(item)
+
+
+
+
+            h4.scr_sm_takzhe_art6__title: a(href="#") Комплексные предложения
+
+            .scr_sm_takzhe_art6__wrapper
+
+
+                .scr_sm_takzhe_art6__category
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in complex
+                            +src_sm_takzhe_item(item)
+
+
+
+
+
+    include ./blocks/_scr_forma_footer_art6

@@ -1,0 +1,146 @@
+-
+    var tseni_uslugi_cards = [
+        {
+            heading: 'Реклама в небольшом городе',
+            name1: 'Население',
+            value1: 'до 500К',
+            name2: 'Первые результаты',
+            value2: '1 неделя',
+            name3: 'Высокие результаты',
+            value3: '2-3 мес',
+            name4: 'Средняя ежемесячная цена работы',
+            value4: '8.000-10.000₽',
+            name5: 'Средний ежемесячная бюджет',
+            value5: '15.000-40.000₽',
+            name6: 'Ежемесячная стоймость работы',
+            value6: 'от 7.000₽',
+            name7: 'Ежемесячный бюджет работ',
+            value7: 'от 14.000₽',
+        },
+        {
+            heading: 'Реклама в крупном городе',
+            name1: 'Население',
+            value1: '500К - 3 млн',
+            name2: 'Первые результаты',
+            value2: '1-2 недели',
+            name3: 'Высокие результаты',
+            value3: '2-4 мес',
+            name4: 'Средняя ежемесячная цена работы',
+            value4: '12.000-18.000₽',
+            name5: 'Средний ежемесячная бюджет',
+            value5: '25.000-100.000₽',
+            name6: 'Ежемесячная стоймость работы',
+            value6: 'от 9.000₽',
+            name7: 'Ежемесячный бюджет работ',
+            value7: 'от 20.000₽',
+        },
+        {
+            heading: 'Реклама по нескольким городам',
+            name1: 'Население',
+            value1: '500К - 3 млн',
+            name2: 'Первые результаты',
+            value2: '1-2 недели',
+            name3: 'Высокие результаты',
+            value3: '2-4 мес',
+            name4: 'Средняя ежемесячная цена работы',
+            value4: '12.000-18.000₽',
+            name5: 'Средний ежемесячная бюджет',
+            value5: '25.000-100.000₽',
+            name6: 'Ежемесячная стоймость работы',
+            value6: 'от 9.000₽',
+            name7: 'Ежемесячный бюджет работ',
+            value7: 'от 20.000₽',
+        },
+        {
+            heading: 'Реклама в мегаполисе (Мск, Спб)',
+            name1: 'Население',
+            value1: '500К - 3 млн',
+            name2: 'Первые результаты',
+            value2: '1-2 недели',
+            name3: 'Высокие результаты',
+            value3: '2-4 мес',
+            name4: 'Средняя ежемесячная цена работы',
+            value4: '12.000-18.000₽',
+            name5: 'Средний ежемесячная бюджет',
+            value5: '25.000-100.000₽',
+            name6: 'Ежемесячная стоймость работы',
+            value6: 'от 9.000₽',
+            name7: 'Ежемесячный бюджет работ',
+            value7: 'от 20.000₽',
+        },
+        {
+            heading: 'Реклама по нескольким городам',
+            name1: 'Население',
+            value1: '500К - 3 млн',
+            name2: 'Первые результаты',
+            value2: '1-2 недели',
+            name3: 'Высокие результаты',
+            value3: '2-4 мес',
+            name4: 'Средняя ежемесячная цена работы',
+            value4: '12.000-18.000₽',
+            name5: 'Средний ежемесячная бюджет',
+            value5: '25.000-100.000₽',
+            name6: 'Ежемесячная стоймость работы',
+            value6: 'от 9.000₽',
+            name7: 'Ежемесячный бюджет работ',
+            value7: 'от 20.000₽',
+        },
+        {
+            heading: 'Реклама в мегаполисе (Мск, Спб)',
+            name1: 'Население',
+            value1: '500К - 3 млн',
+            name2: 'Первые результаты',
+            value2: '1-2 недели',
+            name3: 'Высокие результаты',
+            value3: '2-4 мес',
+            name4: 'Средняя ежемесячная цена работы',
+            value4: '12.000-18.000₽',
+            name5: 'Средний ежемесячная бюджет',
+            value5: '25.000-100.000₽',
+            name6: 'Ежемесячная стоймость работы',
+            value6: 'от 9.000₽',
+            name7: 'Ежемесячный бюджет работ',
+            value7: 'от 20.000₽',
+        }
+    ]
+
+.scr_tseni_uslugi_art6__wrapper
+
+    each item in tseni_uslugi_cards
+
+        .scr_tseni_uslugi_art6__item
+
+            p.scr_tseni_uslugi_art6__heading= item.heading
+
+            .scr_tseni_uslugi_art6__group.scr_tseni_uslugi_art6__group--wide
+                p.scr_tseni_uslugi_art6__name= item.name1
+                p.scr_tseni_uslugi_art6__value= item.value1
+
+            .scr_tseni_uslugi_art6__group
+                p.scr_tseni_uslugi_art6__name= item.name2
+                p.scr_tseni_uslugi_art6__value= item.value2
+
+            .scr_tseni_uslugi_art6__group
+                p.scr_tseni_uslugi_art6__name= item.name3
+                p.scr_tseni_uslugi_art6__value= item.value3
+
+            .scr_tseni_uslugi_art6__group
+                p.scr_tseni_uslugi_art6__name= item.name4
+                p.scr_tseni_uslugi_art6__value.scr_tseni_uslugi_art6__value--sm= item.value4
+
+            .scr_tseni_uslugi_art6__group
+                p.scr_tseni_uslugi_art6__name= item.name5
+                p.scr_tseni_uslugi_art6__value.scr_tseni_uslugi_art6__value--sm= item.value5
+
+            .scr_tseni_uslugi_art6__group.scr_tseni_uslugi_art6__group--main
+                p.scr_tseni_uslugi_art6__name= item.name6
+                p.scr_tseni_uslugi_art6__value
+                    span= item.value6
+
+            .scr_tseni_uslugi_art6__group
+                p.scr_tseni_uslugi_art6__name= item.name7
+                p.scr_tseni_uslugi_art6__value= item.value7
+
+
+a.scr_tseni_uslugi_art6__more.btn_more_arrow(href="#") Подробнее
+

@@ -47,7 +47,7 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0px 20px;
+  gap: 0px 30px;
   margin-bottom: 40px;
 
   &::after {
@@ -156,22 +156,25 @@
 
 .scr_sm_takzhe_art6__item {
   &:not(:last-child) {
-    margin-bottom: 26px;
+    margin-bottom: 20px;
   }
 }
 
 .scr_sm_takzhe_art6__link {
   position: relative;
-  width: max-content;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 0 6px;
+  // width: max-content;
+  // display: flex;
+  // justify-content: flex-start;
+  // align-items: flex-start;
+  // gap: 0 6px;
   // padding: 5px 0;
   // text-wrap: nowrap;
+  padding: 3px;
+  padding-right: 29px;
   font-weight: 500;
   font-size: 18px;
-  line-height: 144%;
+  // line-height: 144%;
+  line-height: 150%;
   letter-spacing: -0.02em;
   color: $color_dark;
   transition: color 0.2s ease-out, background-color 0.2s ease-out;
@@ -185,23 +188,79 @@
     font-size: 16px;
   }
 
-  svg {
-    flex: 0 0 17px;
-    transform: translateY(4px);
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding-left: 6px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: opacity 0.2s ease-out;
   }
 
-  path {
-    transition: fill 0.2s ease-out;
+  &::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.16927 14.658L5.34427 15.833L14.1693 7.00801L14.1693 12.4997H15.8359L15.8359 4.16634L7.5026 4.16634V5.83301L12.9943 5.83301L4.16927 14.658Z' fill='%23166FF5' /%3E%3C/svg%3E");
   }
+
+  &::before {
+    opacity: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.16927 14.658L5.34427 15.833L14.1693 7.00801L14.1693 12.4997H15.8359L15.8359 4.16634L7.5026 4.16634V5.83301L12.9943 5.83301L4.16927 14.658Z' fill='%23fff' /%3E%3C/svg%3E");
+  }
+
+  // span {
+  //   position: relative;
+  //   padding-right: 29px;
+
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     bottom: 0;
+  //     right: 0;
+  //     width: 20px;
+  //     height: 20px;
+  //     background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.169271 10.658L1.34427 11.833L10.1693 3.00801L10.1693 8.49967H11.8359L11.8359 0.166341L3.5026 0.166341V1.83301L8.99427 1.83301L0.169271 10.658Z' fill='%23166FF5' /%3E%3C/svg%3E");
+  //     background-repeat: no-repeat no-repeat;
+  //     background-position: center center;
+  //     background-size: cover;
+  //   }
+  // }
+
+  // svg {
+  //   // flex: 0 0 17px;
+  //   display: inline-block;
+  //   width: 20px;
+  //   height: 20px;
+  //   padding-left: 6px;
+  //   // transform: translateY(4px);
+  //   transform: translateY(5px);
+  // }
+
+  // path {
+  //   transition: fill 0.2s ease-out;
+  // }
 
   @media (hover: hover) {
     &:hover {
       color: $color_white;
       background-color: $color_blue;
 
-      path {
-        fill: $color_white;
+      &::before {
+        opacity: 1;
       }
+
+      &::after {
+        opacity: 0;
+      }
+
+      // path {
+      //   fill: $color_white;
+      // }
     }
   }
 }
@@ -292,5 +351,102 @@
 
   @include sm {
     display: none;
+  }
+}
+
+//===== SERVICES LIST PAGE
+
+.scr_sm_takzhe_art6__full {
+  .scr_sm_takzhe_art6__title {
+    // position: relative;
+    // display: inline-block;
+    // padding-right: 50px;
+    color: $color_blue;
+
+    a {
+      display: inline-block;
+      position: relative;
+      padding-right: 50px;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      // top: 12px;
+      // top: 50%;
+      bottom: 0;
+      right: 0;
+      // transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.33594 14.6671V17.3338H21.3359L14.0026 24.6671L15.8959 26.5604L26.4559 16.0004L15.8959 5.44043L14.0026 7.33376L21.3359 14.6671H5.33594Z' fill='%23166FF5' /%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      transition: transform 0.2s ease-out;
+
+      @include xs {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        a::after {
+          transform: translateX(5px);
+        }
+      }
+    }
+
+    &.non-sub-categories {
+      margin-bottom: 130px;
+
+      @include xl {
+        margin-bottom: 110px;
+      }
+
+      @include xs {
+        margin-bottom: 90px;
+      }
+    }
+  }
+
+  .scr_sm_takzhe_art6__wrapper {
+    height: auto;
+    overflow: initial;
+
+    &:not(:last-child) {
+      margin-bottom: 138px;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    @include xl {
+      &:not(:last-child) {
+        margin-bottom: 110px;
+      }
+    }
+
+    @include sm {
+      gap: 40px 20px;
+    }
+
+    @include xs {
+      &:not(:last-child) {
+        margin-bottom: 90px;
+      }
+    }
+  }
+
+  .scr_sm_takzhe_art6__list {
+    height: auto;
+    overflow: initial;
+
+    &::after {
+      display: none;
+    }
   }
 }

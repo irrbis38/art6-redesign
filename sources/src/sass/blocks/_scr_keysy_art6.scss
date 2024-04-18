@@ -363,7 +363,8 @@
 
   @include xl {
     // grid-row-end: span 61;
-    grid-row-end: span 71;
+    // grid-row-end: span 71;
+    grid-row-end: span 78;
     // min-height: 614px;
     // padding: 42px 34px 48px 34px;
 
@@ -472,7 +473,8 @@
   // VIOLET XL
   @include xl {
     // grid-row-end: span 70;
-    grid-row-end: span 80;
+    // grid-row-end: span 80;
+    grid-row-end: span 87;
     // min-height: 700px;
 
     .scr_keysy_art6__descr {
@@ -591,7 +593,8 @@
 
   // BLUE XL
   @include xl {
-    grid-row-end: span 64;
+    // grid-row-end: span 64;
+    grid-row-end: span 71;
     // min-height: 550px;
 
     .scr_keysy_art6__name {
@@ -672,7 +675,8 @@
   // GREEN XL
   @include xl {
     // grid-row-end: span 55;
-    grid-row-end: span 64;
+    // grid-row-end: span 64;
+    grid-row-end: span 71;
     // min-height: 550px;
 
     .scr_keysy_art6__name {
@@ -751,7 +755,8 @@
 
   // BLACK XL
   @include xl {
-    grid-row-end: span 79;
+    // grid-row-end: span 79;
+    grid-row-end: span 86;
 
     .scr_keysy_art6__descr {
       margin-bottom: 45px;
@@ -823,7 +828,8 @@
 
   // RED XL
   @include xl {
-    grid-row-end: span 71;
+    // grid-row-end: span 71;
+    grid-row-end: span 78;
 
     .scr_keysy_art6__name {
       margin-bottom: 14px;
@@ -1130,6 +1136,14 @@
     text-align: center;
     color: $color_grey;
     transition: color 0.2s ease-out;
+  }
+
+  @include xxs {
+    justify-content: center;
+    li:nth-child(4),
+    li:nth-child(5) {
+      display: none;
+    }
   }
 }
 

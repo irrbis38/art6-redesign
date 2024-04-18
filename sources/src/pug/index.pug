@@ -88,7 +88,16 @@ block page
                             a.scr_uslugi_art6__all(href="./index.html") Все услуги
 
                         .scr_uslugi_art6__img 
-                            img(src="./images/scr_uslugi_art6/services-1.webp" alt="создание сайтов" width="420" height="420")
+                            //- img(src="./images/scr_uslugi_art6/services-1.webp" alt="создание сайтов" width="420" height="420")
+
+                            -
+                                var imgSizes = "(max-width: 991px) 289px, (max-width: 1300px) 341px, (max-width: 1600px) 383px, 420px"
+
+                                var imgSrcset = "./images/scr_uslugi_art6/services-1_300.webp 300w, ./images/scr_uslugi_art6/services-1_420.webp 420w, ./images/scr_uslugi_art6/services-1_600.webp 600w, ./images/scr_uslugi_art6/services-1_840.webp 820w"
+
+                                var imgSrc = "scr_uslugi_art6/services-1_840"
+
+                            +img(imgSizes, imgSrcset, imgSrc, 'создание сайтов', 420, 420, true)
 
             article.scr_uslugi_art6__item
                 .container
@@ -102,7 +111,14 @@ block page
                             a.scr_uslugi_art6__all(href="./index.html") Все услуги
 
                         .scr_uslugi_art6__img 
-                            img(src="./images/scr_uslugi_art6/services-1.webp" alt="создание сайтов" width="420" height="420")
+                            -
+                                var imgSizes = "(max-width: 991px) 289px, (max-width: 1300px) 341px, (max-width: 1600px) 383px, 420px"
+
+                                var imgSrcset = "./images/scr_uslugi_art6/services-1_300.webp 300w, ./images/scr_uslugi_art6/services-1_420.webp 420w, ./images/scr_uslugi_art6/services-1_600.webp 600w, ./images/scr_uslugi_art6/services-1_840.webp 820w"
+
+                                var imgSrc = "scr_uslugi_art6/services-1_840"
+
+                            +img(imgSizes, imgSrcset, imgSrc,  "name_1600", 'SEO-продвижение сайтов', 420, 420, true)
 
             article.scr_uslugi_art6__item
                 .container
@@ -116,7 +132,14 @@ block page
                             a.scr_uslugi_art6__all(href="./index.html") Все услуги
 
                         .scr_uslugi_art6__img 
-                            img(src="./images/scr_uslugi_art6/services-1.webp" alt="создание сайтов" width="420" height="420")
+                            -
+                                var imgSizes = "(max-width: 991px) 289px, (max-width: 1300px) 341px, (max-width: 1600px) 383px, 420px"
+
+                                var imgSrcset = "./images/scr_uslugi_art6/services-1_300.webp 300w, ./images/scr_uslugi_art6/services-1_420.webp 420w, ./images/scr_uslugi_art6/services-1_600.webp 600w, ./images/scr_uslugi_art6/services-1_840.webp 820w"
+
+                                var imgSrc = "scr_uslugi_art6/services-1_840"
+
+                            +img(imgSizes, imgSrcset, imgSrc,  "name_1600", 'Контекстная реклама', 420, 420, true)
 
 
     include ./blocks/_scr_keysy_art6
@@ -149,3 +172,11 @@ block page
     include ./blocks/_scr_forma_footer_art6
 
 
+    //- -
+    //-     var imgSizes = "(max-width: 575px) 100vw, (max-width: 767px) 100vw, (max-width: 1200px) 100vw, (max-width: 1600px) 100vw, 100vw"
+
+    //-     var imgSrcset = "images/name_640.webp 640w, images/name_800.webp 800w, images/name_1200.webp 1200w, images/name_1600.webp 1600w, images/name_2000.webp 2000w"
+
+    //-     var imgSrc = "name_1600"
+
+    //- +img(imgSizes, imgSrcset, imgSrc,  "name_1600", 'hello', false, false, true)

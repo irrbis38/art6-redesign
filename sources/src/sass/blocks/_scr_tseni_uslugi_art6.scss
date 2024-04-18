@@ -444,3 +444,11 @@
 }
 
 // END services-website-creation page
+
+.scr_tseni_uslugi_art6__more {
+  margin-bottom: 35px;
+
+  @include xs {
+    margin-bottom: 22px;
+  }
+}
