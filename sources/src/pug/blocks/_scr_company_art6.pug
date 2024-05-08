@@ -2,31 +2,59 @@ section.scr_company_art6
     .scr_company_art6__wrapper
 
         .scr_company_art6__bg
-            img(src="./images/scr_company_art6/scr_company_art6_bg.webp" alt="Наша дружная команда" width="1920" height="881")
+            //- img(src="./images/scr_company_art6/scr_company_art6_bg_1920.webp" alt="Наша дружная команда" width="1920" height="881")
 
-            .scr_company_art6__person.scr_company_art6__person--arrow_right.scr_company_art6__manager1.hidden
-                p.scr_company_art6__name Ваня Комов
-                p.scr_company_art6__post
-                    | Product#[br]Manager
-                    span
-                        svg(width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg")
-                            path(d="M26.6089 24.6565L0.694215 17.5263L13.6898 13.7427L14.89 0.843353L26.6089 24.6565Z" fill="#8e8e93")
+            -
+                var imgSizes = "100vw"
 
-            .scr_company_art6__person.scr_company_art6__person--arrow_left.scr_company_art6__manager2.hidden
-                p.scr_company_art6__name Ваня Комов
-                p.scr_company_art6__post
-                    | Product#[br]Manager
-                    span
-                        svg(width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg")
-                            path(d="M0.000464651 24.6565L25.9152 17.5263L12.9195 13.7427L11.7193 0.843353L0.000464651 24.6565Z" fill="#8E8E93")
+                var imgSrcset = "./images/scr_company_art6/scr_company_art6_bg_640.webp 640w, ./images/scr_company_art6/scr_company_art6_bg_900.webp 900w, ./images/scr_company_art6/scr_company_art6_bg_1300.webp 1300w, ./images/scr_company_art6/scr_company_art6_bg_1920.webp 1920w, ./images/scr_company_art6/scr_company_art6_bg_2600.webp 2600w, ./images/scr_company_art6/scr_company_art6_bg_3840.webp 3840w"
 
-            .scr_company_art6__person.scr_company_art6__person--arrow_right.scr_company_art6__manager3.hidden
-                p.scr_company_art6__name Ваня Комов
+                var imgSrc = "scr_company_art6/scr_company_art6_bg_1920"
+
+            +img(imgSizes, imgSrcset, imgSrc, 'Наша дружная команда', 1920, 746, false)
+
+            .scr_company_art6__person.scr_company_art6__person--arrow_right.scr_company_art6__person1.hidden
+                p.scr_company_art6__name Виктория
                 p.scr_company_art6__post
-                    | Product#[br]Manager
+                    | Менеджер#[br]проектов
                     span
-                        svg(width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg")
-                            path(d="M26.6089 24.6565L0.694215 17.5263L13.6898 13.7427L14.89 0.843353L26.6089 24.6565Z" fill="#8e8e93")
+                        //- svg(width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        //-     path(d="M26.6089 24.6565L0.694215 17.5263L13.6898 13.7427L14.89 0.843353L26.6089 24.6565Z" fill="#8e8e93")
+
+            .scr_company_art6__person.scr_company_art6__person--arrow_right.scr_company_art6__person2.hidden
+                p.scr_company_art6__name Виолетта
+                p.scr_company_art6__post
+                    | Веб-дизайнер
+                    span
+                        //- svg(width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        //-     path(d="M26.6089 24.6565L0.694215 17.5263L13.6898 13.7427L14.89 0.843353L26.6089 24.6565Z" fill="#8e8e93")
+
+
+            .scr_company_art6__person.scr_company_art6__person--arrow_right.scr_company_art6__person3.hidden
+                p.scr_company_art6__name Сергей
+                p.scr_company_art6__post
+                    | Рекламный#[br]Специалист
+                    span
+                        //- svg(width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        //-     path(d="M26.6089 24.6565L0.694215 17.5263L13.6898 13.7427L14.89 0.843353L26.6089 24.6565Z" fill="#8e8e93")
+
+
+            .scr_company_art6__person.scr_company_art6__person--arrow_left.scr_company_art6__person4.hidden
+                p.scr_company_art6__name Даниил
+                p.scr_company_art6__post
+                    | Seo#[br]специалист
+                    span
+                        //- svg(width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        //-     path(d="M0.000464651 24.6565L25.9152 17.5263L12.9195 13.7427L11.7193 0.843353L0.000464651 24.6565Z" fill="#8E8E93")
+
+
+            .scr_company_art6__person.scr_company_art6__person--arrow_left.scr_company_art6__person5.hidden
+                p.scr_company_art6__name Артур
+                p.scr_company_art6__post
+                    | Веб-#[br]программист
+                    span
+                        //- svg(width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        //-     path(d="M0.000464651 24.6565L25.9152 17.5263L12.9195 13.7427L11.7193 0.843353L0.000464651 24.6565Z" fill="#8E8E93")
 
 
         .scr_company_art6__intro

@@ -150,3 +150,44 @@
     letter-spacing: -0.02em;
   }
 }
+
+// === CAREER PAGE
+
+.career-page {
+  .first_scr_with_scroll {
+    .container {
+      &::after {
+        background-image: url("./../images/first_scr_main_art6/first-bg.svg");
+      }
+    }
+  }
+
+  .scroll_container {
+    position: relative;
+
+    @include sm {
+      width: max-content;
+    }
+  }
+
+  .first_scr_main_art6__help {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 186%;
+    letter-spacing: -0.02em;
+    color: $color_blue;
+
+    @include lg {
+      top: 0;
+    }
+
+    @include sm {
+      top: -3px;
+      right: -30px;
+      font-size: 18px;
+    }
+  }
+}

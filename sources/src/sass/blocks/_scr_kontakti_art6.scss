@@ -1,0 +1,341 @@
+.scr_kontakti_art6 {
+  margin-bottom: 90px;
+  padding-top: 230px;
+  overflow: hidden;
+
+  @include lg {
+    margin-bottom: 50px;
+    padding-top: 250px;
+  }
+
+  @include xs {
+    padding-top: 190px;
+  }
+
+  .container {
+    position: relative;
+  }
+}
+
+.scr_kontakti_art6__title {
+  margin-bottom: 115px;
+
+  @include xl {
+    margin-bottom: 110px;
+  }
+
+  @include lg {
+    margin-bottom: 75px;
+  }
+
+  @include sm {
+    margin-bottom: 65px;
+  }
+
+  @include xs {
+    margin-bottom: 35px;
+  }
+}
+
+.scr_kontakti_art6__wrapper {
+  position: relative;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: 347px 1fr;
+  gap: 67px 45px;
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  border-bottom: 2px solid $color_grey_light;
+
+  @include lg {
+    grid-template-columns: 300px 1fr;
+    gap: 60px 40px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include sm {
+    grid-template-columns: 280px 1fr;
+    gap: 50px 25px;
+  }
+
+  @include xs {
+    display: block;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.scr_kontakti_art6__phone,
+.scr_kontakti_art6__email,
+.scr_kontakti_art6__schedule {
+  @include xs {
+    margin-bottom: 30px;
+  }
+}
+
+.scr_kontakti_art6__label {
+  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+
+  @include lg {
+    font-size: 16px;
+  }
+
+  @include sm {
+    margin-bottom: 7px;
+  }
+
+  @include xs {
+    margin-bottom: 9px;
+  }
+}
+
+.scr_kontakti_art6__value {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+
+  @include lg {
+    font-size: 24px;
+  }
+
+  @include sm {
+    font-size: 22px;
+    line-height: 108%;
+  }
+
+  @include xs {
+    font-size: 18px;
+    line-height: 144%;
+  }
+}
+
+a.scr_kontakti_art6__value {
+  transition: color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color_blue;
+    }
+  }
+}
+
+.scr_kontakti_art6__phone {
+  .scr_kontakti_art6__value {
+    position: relative;
+    display: inline-block;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $color_blue;
+    }
+  }
+}
+
+.scr_kontakti_art6__schedule {
+  span {
+    &:nth-child(1) {
+      margin-right: 28px;
+    }
+  }
+}
+
+// === MAP
+
+.scr_kontakti_art6__map {
+  position: absolute;
+  top: -70px;
+  right: -60px;
+  width: 59.58%;
+
+  @include lg {
+    top: -90px;
+    right: -140px;
+    width: 63.58%;
+  }
+
+  @include sm {
+    top: -123px;
+    right: -120px;
+    width: 66.58%;
+  }
+
+  @include xs {
+    position: relative;
+    width: calc(100% + 30px);
+    top: unset;
+    right: unset;
+    margin: 0 -15px 50px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 65.34%;
+
+    @include xs {
+      padding-top: 80%;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+    background: url("./../images/scr_kontakti_art6/map_overlay.svg") center /
+      cover no-repeat;
+
+    @include xs {
+      display: none;
+      background: unset;
+    }
+  }
+}
+
+.scr_kontakti_art6__map_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  @include xs {
+    &::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 200%;
+      height: 40px;
+      z-index: 5;
+      background-color: #fff;
+      transform-origin: top left;
+      transform: rotate(5deg);
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      width: 200%;
+      height: 50px;
+      z-index: 5;
+      background-color: #fff;
+      transform-origin: bottom left;
+      transform: rotate(-5deg);
+      pointer-events: none;
+    }
+  }
+}
+
+// reset copyright of yandex map
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+// === INFO
+
+.scr_kontakti_art6__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0 120px;
+
+  @include xs {
+    display: block;
+  }
+}
+
+.scr_kontakti_art6__postal {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+
+  @include xl {
+    max-width: 660px;
+  }
+
+  @include sm {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  @include xs {
+    margin-bottom: 30px;
+  }
+}
+
+.scr_kontakti_art6__requisites {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0 9px;
+  transition: color 0.2s ease-out;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: -0.02em;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.16927 14.658L5.34427 15.833L14.1693 7.00801L14.1693 12.4997H15.8359L15.8359 4.16634L7.5026 4.16634V5.83301L12.9943 5.83301L4.16927 14.658Z' fill='%23166FF5' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $color_blue;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color_blue;
+    }
+  }
+
+  @include lg {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  @include xs {
+    width: max-content;
+    font-size: 18px;
+    line-height: 144%;
+  }
+}

@@ -1,0 +1,200 @@
+.scr_komanda_foto_art6 {
+  margin-bottom: 72px;
+
+  @include xs {
+    margin-bottom: 0;
+  }
+}
+
+.scr_komanda_foto_art6__title {
+  margin-bottom: 53px;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  color: $color_dark;
+
+  @include xl {
+    margin-bottom: 55px;
+    font-size: 35px;
+  }
+
+  @include lg {
+    margin-bottom: 45px;
+    font-size: 30px;
+  }
+
+  @include sm {
+    margin-bottom: 36px;
+  }
+
+  @include xs {
+    margin-bottom: 26px;
+    font-size: 32px;
+  }
+
+  @include r(360px) {
+    font-size: 26px;
+  }
+}
+
+.scr_komanda_foto_art6__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px 20px;
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include xs {
+    gap: 40px 14px;
+  }
+
+  @include xxs {
+    max-width: 390px;
+    margin: 0 auto;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px 0;
+  }
+}
+
+.scr_komanda_foto_art6__item {
+  &.hidden {
+    display: none;
+  }
+
+  &.visible {
+    display: block !important;
+  }
+
+  @include xs {
+    &:nth-child(n + 7) {
+      display: none;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .scr_komanda_foto_art6__name {
+        padding-left: 24px;
+
+        span {
+          color: $color_white;
+          background-color: $color_blue;
+        }
+
+        &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.scr_komanda_foto_art6__img {
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;
+  background-color: $color_grey_btn_bg;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 94.17%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 94.17%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  }
+
+  @include xl {
+    margin-bottom: 20px;
+  }
+
+  @include sm {
+    margin-bottom: 23px;
+  }
+
+  @include xs {
+    margin-bottom: 26px;
+  }
+}
+
+.scr_komanda_foto_art6__name {
+  position: relative;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: $color_dark;
+  transition: padding 0.2s ease-out;
+
+  span {
+    transition: color 0.2s ease-out, background-color 0.2s ease-out;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    background-color: $color_dark;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  }
+
+  @include xl {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  @include lg {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  @include sm {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  @include xs {
+    margin-bottom: 10px;
+  }
+}
+
+.scr_komanda_foto_art6__post {
+  font-weight: 500;
+  font-size: 14px;
+  color: $color_grey;
+}
+
+.scr_komanda_foto_art6__more {
+  @include buttonMoreWithPlus();
+  display: none;
+
+  @include xs {
+    margin-top: 50px;
+    display: block;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}

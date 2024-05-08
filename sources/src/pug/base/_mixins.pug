@@ -27,7 +27,7 @@ mixin img(imgSizes, imgSrcset, imgSrc, alt, width, height, isLazy)
     img(
         sizes= imgSizes
         srcset= imgSrcset
-        src= "images/" + imgSrc + ".webp"
+        src= "./images/" + imgSrc + ".webp"
         alt=(alt ? alt : false )
         width=(width ? width : false )
         height=(height ? height : false )
@@ -41,9 +41,23 @@ mixin img(imgSizes, imgSrcset, imgSrc, alt, width, height, isLazy)
 mixin imgWithClass(isActive, imgSrcset, imgSrc, alt, width, height, isLazy)
     img(
         class= isActive ? 'active without-transition' : 'without-transition'
+        srcset= imgSrcset
+        src= "./images/" + imgSrc + ".webp"
+        alt=(alt ? alt : false )
+        width=(width ? width : false )
+        height=(height ? height : false )
+        loading=(isLazy ? 'lazy' : false )
+        decoding="async"
+    )
+
+
+
+mixin imgWithCustomClass(className, imgSizes, imgSrcset, imgSrc, alt, width, height, isLazy)
+    img(
+        class= className
         sizes= imgSizes
         srcset= imgSrcset
-        src= "images/" + imgSrc + ".webp"
+        src= "./images/" + imgSrc + ".webp"
         alt=(alt ? alt : false )
         width=(width ? width : false )
         height=(height ? height : false )

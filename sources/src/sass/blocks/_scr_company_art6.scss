@@ -47,7 +47,7 @@
     content: "";
     display: block;
     width: 100%;
-    padding-top: 45.89%;
+    padding-top: 38.85%;
   }
 
   img {
@@ -61,7 +61,13 @@
 
   @include xl {
     &::after {
-      padding-top: 45.89%;
+      padding-top: 38.85%;
+    }
+  }
+
+  @include lg {
+    &::after {
+      padding-top: 42%;
     }
   }
 
@@ -69,14 +75,15 @@
     margin-bottom: 37px;
 
     &::after {
+      padding-top: 42%;
       // padding-top: 43.39%;
-      padding-top: 47.89%;
+      // padding-top: 47.89%;
     }
   }
 
   @include xs {
     &::after {
-      padding-top: 51.69%;
+      padding-top: 46.15%;
     }
   }
 }
@@ -95,8 +102,17 @@
     color: $color_white;
 
     .scr_company_art6__post {
-      path {
-        fill: $color_white;
+      span {
+        &::before {
+          opacity: 1;
+        }
+
+        &::after {
+          opacity: 0;
+        }
+        // path {
+        //   fill: $color_white;
+        // }
       }
     }
 
@@ -111,6 +127,10 @@
   &.hidden {
     opacity: 0;
     visibility: hidden;
+  }
+
+  @include sm {
+    display: none;
   }
 }
 
@@ -183,21 +203,46 @@
       width: 24px;
       height: 26px;
 
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: opacity 1s ease-out;
+      }
+
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg width='34' height='36' viewBox='0 0 34 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.5431 29.4023L5.06517 18.3009L18.493 16.5996L21.6989 4.04745L29.5431 29.4023Z' fill='white' /%3E%3C/svg%3E");
+        opacity: 0;
+      }
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='34' height='36' viewBox='0 0 34 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.5431 29.4023L5.06517 18.3009L18.493 16.5996L21.6989 4.04745L29.5431 29.4023Z' fill='%238e8e93' /%3E%3C/svg%3E");
+      }
+
       @include sm {
         right: -20px;
         bottom: 20px;
         transform: rotate(-84deg);
       }
 
-      svg {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
+      // svg {
+      //   display: block;
+      //   width: 100%;
+      //   height: auto;
+      //   display: none;
+      // }
 
-      path {
-        transition: all 1s ease-out;
-      }
+      // path {
+      //   transition: all 1s ease-out;
+      // }
     }
   }
 }
@@ -257,14 +302,28 @@
         transform: rotate(84deg);
       }
 
-      svg {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
         display: block;
         width: 100%;
-        height: auto;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: opacity 1s ease-out;
       }
 
-      path {
-        transition: all 1s ease-out;
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.00154023 25.9869L24.7552 15.522L11.3758 13.4741L8.49546 0.843298L-0.00154023 25.9869Z' fill='white' /%3E%3C/svg%3E");
+        opacity: 0;
+      }
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.00154023 25.9869L24.7552 15.522L11.3758 13.4741L8.49546 0.843298L-0.00154023 25.9869Z' fill='%238e8e93' /%3E%3C/svg%3E");
       }
     }
   }
@@ -272,72 +331,151 @@
 
 // positions of labels
 
-.scr_company_art6__manager1 {
+.scr_company_art6__person1 {
   position: absolute;
-  top: 61.1%;
-  left: 25.6%;
+  // top: 61.1%;
+  // left: 25.6%;
+  top: 19.9%;
+  left: 7.4%;
   z-index: 3;
 
   @include xl {
-    top: 60%;
-    left: 21.3%;
+    left: 3.3%;
+    top: 20%;
   }
 
-  @include sm {
-    top: 68.2%;
-    left: 9.5%;
+  @include lg {
+    left: 0.5%;
+    top: 18%;
   }
 
-  @include xs {
-    display: none;
+  // @include xl {
+  //   top: 60%;
+  //   left: 21.3%;
+  // }
+
+  // @include sm {
+  //   top: 68.2%;
+  //   left: 9.5%;
+  // }
+
+  // @include xs {
+  //   display: none;
+  // }
+}
+
+.scr_company_art6__person2 {
+  position: absolute;
+  top: 41%;
+  left: 39%;
+  z-index: 3;
+
+  @include xl {
+    left: 35%;
+    top: 42%;
+  }
+
+  @include lg {
+    left: 29%;
+    top: 43%;
   }
 }
 
-.scr_company_art6__manager2 {
+.scr_company_art6__person3 {
   position: absolute;
-  top: 57.7%;
-  left: 85.6%;
+  top: 22%;
+  left: 78%;
   z-index: 3;
 
   @include xl {
-    top: 57.7%;
-    left: 85.6%;
+    top: 21%;
+    left: 74%;
+  }
+
+  @include lg {
+    top: 20%;
+    left: 72%;
+  }
+
+  // @include xl {
+  //   top: 30%;
+  //   left: 59%;
+  // }
+
+  // @include lg {
+  //   top: 30%;
+  //   left: 54%;
+  // }
+
+  // @include xs {
+  //   display: none;
+  // }
+}
+
+.scr_company_art6__person4 {
+  position: absolute;
+  top: 62%;
+  left: 31.8%;
+  z-index: 3;
+
+  @include xl {
+    top: 62%;
+    left: 31.8%;
   }
 
   @include lg {
     top: 60%;
-    left: 80%;
+    left: 30%;
   }
 
-  @include sm {
-    top: 60%;
-    left: 75%;
-  }
+  // @include xl {
+  //   top: 30%;
+  //   left: 59%;
+  // }
 
-  @include xs {
-    display: none;
-  }
+  // @include lg {
+  //   top: 30%;
+  //   left: 54%;
+  // }
+
+  // @include xs {
+  //   display: none;
+  // }
 }
 
-.scr_company_art6__manager3 {
+.scr_company_art6__person5 {
   position: absolute;
-  top: 30%;
-  left: 65%;
+  // top: 57.7%;
+  // left: 85.6%;
+  top: 62.4%;
+  left: 79.6%;
   z-index: 3;
 
   @include xl {
-    top: 30%;
-    left: 59%;
+    // top: 57.7%;
+    // left: 85.6%;
+    top: 62.4%;
+    left: 79.6%;
   }
 
   @include lg {
-    top: 30%;
-    left: 54%;
+    top: 60.4%;
+    left: 82.6%;
   }
 
-  @include xs {
-    display: none;
-  }
+  // @include lg {
+  //   top: 60%;
+  //   left: 80%;
+  // }
+
+  // @include sm {
+  //   top: 60%;
+  //   left: 75%;
+  // }
+
+  // @include xs {
+  //   display: none;
+  // }
 }
 
 .scr_company_art6__intro {
@@ -668,5 +806,23 @@
   @include xs {
     font-size: 20px;
     line-height: 150%;
+  }
+}
+
+.company-page {
+  .scr_company_art6 {
+    padding-top: 92px;
+
+    @include xl {
+      padding-top: 82px;
+    }
+
+    @include sm {
+      padding-top: 80px;
+    }
+
+    @include xs {
+      padding-top: 70px;
+    }
   }
 }

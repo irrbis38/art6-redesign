@@ -1,0 +1,18 @@
+extends base/_layout
+block vars
+    - var pageName = 'career-page scrolling-titles-exist'
+block head
+    title ART6 - отзывы
+block page
+
+    section.first_scr_with_scroll
+        .container
+            .first_scr_with_scroll__title__block.index_page__title_block.hidescrollbar
+                .scroll_container
+                    h2.first_scr_with_scroll__title.index_page_title
+                        span Найди себя среди стратегов и мечтателей
+                        span Карьера
+
+                    button.first_scr_main_art6__help(type='button' aria-label="Показать справку") [ i ]
+
+    include ./blocks/modal_info.pug

@@ -213,3 +213,60 @@
     }
   }
 }
+
+// ========== CULTURE PAGE ==========
+
+.culture-page {
+  .scr_elemsotrudn_uslugi_art6__wrapper {
+    column-count: unset;
+    column-gap: unset;
+    display: flex;
+    gap: 0 106px;
+    padding-top: 118px;
+    border-top: 2px solid $color_grey_light;
+
+    @include lg {
+      max-width: 100%;
+    }
+
+    @include sm {
+      max-width: 572px;
+      display: block;
+      border-top: none;
+    }
+
+    @include xs {
+      padding-top: 0;
+    }
+  }
+
+  .scr_elemsotrudn_uslugi_art6__name {
+    @include r(360px) {
+      font-size: 28px;
+    }
+  }
+
+  .scr_elemsotrudn_uslugi_art6__name_with_icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 30px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 27.5L5 32.4V18.3333H10M18.3333 24.4333L15.7167 22.2L13.3333 24.4V11.6667H18.3333M26.6667 21.6667L21.6667 26.6667V5H26.6667M31.35 21.35L28.3333 18.3333H36.6667V26.6667L33.6833 23.6833L21.6667 35.6L15.8833 30.5667L9.58333 36.6667H5L15.7833 26.1L21.6667 31.0667' fill='%23166FF5' /%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .scr_elemsotrudn_uslugi_art6__item {
+    &:last-child {
+      margin-bottom: 10px;
+    }
+  }
+}

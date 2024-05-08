@@ -1,0 +1,41 @@
+extends base/_layout
+block vars
+    - var pageName = 'contacts-page scrolling-titles-exist'
+block head
+    title ART6 - контакты
+block page
+
+    .scr_kontakti_art6
+        .container 
+            h1.scr_kontakti_art6__title.index_page_title Контакты
+
+            .scr_kontakti_art6__wrapper 
+
+                .scr_kontakti_art6__phone
+                    p.scr_kontakti_art6__label Телефон
+                    a.scr_kontakti_art6__value(href="tel:+78003505590") +7 800 350-55-90
+
+                .scr_kontakti_art6__email
+                    p.scr_kontakti_art6__label Почта
+                    a.scr_kontakti_art6__value(href="mailto:sale@art6.ru") sale@art6.ru
+
+                .scr_kontakti_art6__schedule
+                    p.scr_kontakti_art6__label График работы
+                    p.scr_kontakti_art6__value
+                        span Пн — Пт
+                        span 9:00–18:00
+
+                .scr_kontakti_art6__adress
+                    p.scr_kontakti_art6__label Наш адрес
+                    p.scr_kontakti_art6__value Краснодар, Северная, 452, 3 этаж
+
+            .scr_kontakti_art6__map
+
+                .scr_kontakti_art6__map_container#contacts-map
+
+
+            .scr_kontakti_art6__info
+                p.scr_kontakti_art6__postal Почтовый адрес: 350002, Российская Федерация, Краснодарский край, г. Краснодар, ул. Северная, 452, этаж 3
+                a.scr_kontakti_art6__requisites(href="#" download) Реквизиты
+
+    include ./blocks/_scr_forma_footer_art6

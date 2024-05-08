@@ -2,11 +2,20 @@ section.scr_text_director_art6
     .scr_text_director_art6__wrapper
 
         .scr_text_director_art6__bg
-            img(src="./images/scr_text_director_art6/scr_text_director_art6_bg.webp" alt="" width="1314" height="880")
+            //- img(src="./images/scr_text_director_art6/scr_text_director_art6_bg.webp" alt="" width="1314" height="880")
 
-            .scr_text_director_art6__director
-                p.scr_text_director_art6__name Джурко Игорь
-                p.scr_text_director_art6__post Директор и руководитель
+            -
+                var imgSizes = "100vw"
+
+                var imgSrcset = "./images/scr_text_director_art6/scr_text_director_art6_bg_640.webp 640w, ./images/scr_text_director_art6/scr_text_director_art6_bg_1000.webp 1000w, ./images/scr_text_director_art6/scr_text_director_art6_bg_1600.webp 1600w, ./images/scr_text_director_art6/scr_text_director_art6_bg_2000.webp 2000w, ./images/scr_text_director_art6/scr_text_director_art6_bg_3840.webp 2500w"
+
+                var imgSrc = "scr_text_director_art6/scr_text_director_art6_bg_2000.webp"
+
+            +img(imgSizes, imgSrcset, imgSrc, 'Директор и руководитель компании ART6  - Джурко Игорь', 1920, 880, true)
+
+            //- .scr_text_director_art6__director
+            //-     p.scr_text_director_art6__name Джурко Игорь
+            //-     p.scr_text_director_art6__post Директор и руководитель
 
 
         .scr_text_director_art6__intro

@@ -1,0 +1,143 @@
+.scr_karusel_foto_art6 {
+  margin-bottom: 117px;
+
+  @include xs {
+    margin-bottom: 112px;
+  }
+}
+
+.scr_karusel_foto_art6__slider {
+  overflow: hidden;
+
+  .container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.scr_karusel_foto_art6__wrapper {
+  height: 600px;
+
+  @include xl {
+    height: 426px;
+  }
+
+  @include lg {
+    height: 385px;
+  }
+
+  @include sm {
+    height: 278px;
+  }
+
+  @include xs {
+    height: auto;
+    display: block;
+  }
+}
+
+.scr_karusel_foto_art6__slide {
+  display: block;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+
+  @include xs {
+    width: 100%;
+    height: auto;
+
+    &:nth-child(n + 5) {
+      display: none;
+    }
+  }
+
+  &.visible {
+    display: block;
+  }
+}
+
+.scr_karusel_foto_art6__nav {
+  // position: absolute;
+  // left: 0;
+  // top: 50%;
+  // transform: translateY(-50%);
+  // z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+
+  @include xs {
+    display: none;
+  }
+}
+
+.scr_karusel_foto_art6__prev,
+.scr_karusel_foto_art6__next {
+  display: block;
+  width: 44px;
+  height: 44px;
+  background-color: $color_dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color_blue;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  @include xxs {
+    width: 44px;
+    height: 44px;
+
+    &::after {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.scr_karusel_foto_art6__prev {
+  &::after {
+    background: url("../images/scr_komanda_art6/arrow_prev.svg") center /
+      contain no-repeat;
+  }
+}
+
+.scr_karusel_foto_art6__next {
+  &::after {
+    background: url("../images/scr_komanda_art6/arrow_next.svg") center /
+      contain no-repeat;
+  }
+}
+
+.scr_karusel_foto_art6__more {
+  @include buttonMoreWithPlus();
+  display: none;
+
+  @include xs {
+    margin-top: 50px;
+    display: block;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
