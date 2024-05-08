@@ -709,23 +709,47 @@ var startScrollingBlockAnimation = () => {
     ".scr_text_director_art6"
   );
 
-  scr_text_director_art6 &&
-    initScrollAnimation(
-      ".scr_text_director_art6__title",
-      ".scr_text_director_art6",
-      ".first_scr_main_art6 .container",
-      "top -10%"
-    );
-
   var scr_company_art6 = document.querySelector(".scr_company_art6");
+  var company_page = document.querySelector(".company-page");
 
-  scr_company_art6 &&
-    initScrollAnimation(
-      ".scr_company_art6__title",
-      ".scr_company_art6",
-      ".first_scr_main_art6 .container",
-      "top top"
-    );
+  if (company_page) {
+    // animation for company page
+
+    scr_company_art6 &&
+      initScrollAnimation(
+        ".scr_company_art6__title",
+        ".scr_company_art6",
+        ".scr_company_art6__intro .container",
+        "top top"
+      );
+
+    scr_text_director_art6 &&
+      initScrollAnimation(
+        ".scr_text_director_art6__title",
+        ".scr_text_director_art6",
+        ".scr_company_art6__intro .container",
+        "top top"
+        // "top -10%"
+      );
+  } else {
+    // animation for main page
+    scr_text_director_art6 &&
+      initScrollAnimation(
+        ".scr_text_director_art6__title",
+        ".scr_text_director_art6",
+        ".first_scr_main_art6 .container",
+        "top top"
+        // "top -10%"
+      );
+
+    scr_company_art6 &&
+      initScrollAnimation(
+        ".scr_company_art6__title",
+        ".scr_company_art6",
+        ".first_scr_main_art6 .container",
+        "top top"
+      );
+  }
 
   var first_scr_with_scroll = document.querySelector(".first_scr_with_scroll");
 
@@ -1043,6 +1067,109 @@ var initReviewsSlider = () => {
   });
 };
 
+var initCompanyPageSlider = () => {
+  var slider_el = document.querySelector(".scr_karusel_foto_art6__slider");
+  if (!slider_el) return;
+
+  var slider = null;
+
+  var createCompanyPageSlider = () => {
+    slider = new Swiper(slider_el, {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      navigation: {
+        nextEl: ".scr_karusel_foto_art6__next",
+        prevEl: ".scr_karusel_foto_art6__prev",
+      },
+    });
+  };
+
+  var destroyCompanyPageSlider = () => {
+    slider && slider.destroy();
+    slider = null;
+  };
+
+  window.innerWidth > 767 && createCompanyPageSlider();
+
+  var mqMin768 = window.matchMedia("(min-width: 768px)");
+
+  mqMin768.addEventListener("change", (e) => {
+    e.matches ? createCompanyPageSlider() : destroyCompanyPageSlider();
+  });
+};
+
+var initMoreButtonOnMobile = (btn, images) => {
+  var toggleCompanyImages = (action) => {
+    images.forEach((img) => {
+      img.classList[action]("visible");
+    });
+    btn.classList[action]("hidden");
+  };
+
+  btn.addEventListener("click", () => toggleCompanyImages("add"));
+
+  var mqMin768 = window.matchMedia("(min-width: 768px)");
+
+  mqMin768.addEventListener("change", (e) => {
+    e.matches && toggleCompanyImages("remove");
+  });
+};
+
+// ========== INIT MAP
+
+var doCreateMapScript = (cb) => {
+  setTimeout(function () {
+    console.log("create");
+    var script = document.createElement("script");
+    script.async = false;
+    script.src = "https://api-maps.yandex.ru/2.1/?apikey=key&lang=ru_RU";
+    document.body.appendChild(script);
+    script.onload = () => cb();
+  }, 2000);
+};
+
+var initMap = () => {
+  console.log("CB");
+  var map = document.getElementById("contacts-map");
+  if (map) {
+    var init = () => {
+      var coords = [45.03750207460071, 38.991877999999915];
+      var mark_link = "images/mark.svg";
+
+      if (ymaps) {
+        var map = new ymaps.Map("contacts-map", {
+          center: coords,
+          zoom: 17,
+        });
+
+        var placemark = new ymaps.Placemark(
+          coords,
+          {},
+          {
+            iconLayout: "default#image",
+            iconImageHref: mark_link,
+            iconImageSize: [100, 100],
+            iconImageOffset: [-60, -80],
+          }
+        );
+
+        map.controls.remove("geolocationControl");
+        map.controls.remove("searchControl");
+        map.controls.remove("trafficControl");
+        map.controls.remove("typeSelector");
+        map.controls.remove("fullscreenControl");
+        // map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+        map.controls.remove("rulerControl");
+        // map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+
+        map.geoObjects.add(placemark);
+      }
+    };
+
+    ymaps.ready(init);
+  }
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
@@ -1163,8 +1290,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // init useful material accordion
   var watchAlso = document.querySelector(".scr_sm_takzhe_art6");
-  watchAlso && initSmTakzheAccordion();
-  watchAlso && initWatchAlsoAccordion();
+  var services_list_page = document.querySelector(".services-list");
+  watchAlso && !services_list_page && initSmTakzheAccordion();
+  watchAlso && !services_list_page && initWatchAlsoAccordion();
 
   var modal_info = document.querySelector(".scr_info_modal");
   modal_info && initModalInfo();
@@ -1175,4 +1303,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // init reviews slider
   initReviewsSlider();
+
+  var company_page = document.querySelector(".company-page");
+  if (company_page) {
+    initCompanyPageSlider();
+
+    var btn = document.querySelector(".scr_karusel_foto_art6__more");
+    var images = document.querySelectorAll(".scr_karusel_foto_art6__slide");
+    var komanda_btn = document.querySelector(".scr_komanda_foto_art6__more");
+    var items = document.querySelectorAll(".scr_komanda_foto_art6__item");
+
+    initMoreButtonOnMobile(btn, images);
+    initMoreButtonOnMobile(komanda_btn, items);
+  }
+
+  // INIT CONTACTS PAGE
+
+  var contacts_page = document.querySelector(".contacts-page");
+  if (contacts_page) {
+    doCreateMapScript(initMap);
+  }
 });
