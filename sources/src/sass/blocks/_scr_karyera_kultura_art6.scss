@@ -1,0 +1,142 @@
+.scr_karyera_kultura_art6 {
+  margin-bottom: 196px;
+
+  @include xl {
+    margin-bottom: 146px;
+  }
+
+  @include lg {
+    margin-bottom: 120px;
+  }
+
+  @include sm {
+    margin-bottom: 44px;
+  }
+
+  @include xs {
+    margin-bottom: 116px;
+  }
+}
+
+.scr_karyera_kultura_art6__title {
+  margin-bottom: 60px;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+
+  @include xl {
+    margin-bottom: 52px;
+    font-size: 60px;
+  }
+
+  @include lg {
+    margin-bottom: 44px;
+    font-size: 55px;
+  }
+
+  @include sm {
+    margin-bottom: 43px;
+    font-size: 40px;
+  }
+
+  @include xs {
+    font-size: 38px;
+  }
+}
+
+.scr_karyera_kultura_art6__list {
+  max-width: 1460px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 60px;
+
+  @include xl {
+    max-width: 1200px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 37px 104px;
+  }
+
+  @include lg {
+    max-width: 1008px;
+    gap: 45px 118px;
+  }
+
+  @include sm {
+    max-width: 600px;
+    display: block;
+  }
+}
+
+.scr_karyera_kultura_art6__item {
+  padding: 33px 0 33px 40px;
+  border-left: 2px solid $color_grey_light;
+
+  h4 {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 136%;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: -0.02em;
+    color: $color_grey;
+  }
+
+  @include xl {
+    min-height: 272px;
+    // padding: 10px 0 10px 40px;
+
+    h4 {
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+
+  @include lg {
+    min-height: 247px;
+    padding: 15px 0 25px 40px;
+
+    h4 {
+      font-size: 18px;
+      line-height: 167%;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  @include sm {
+    min-height: 187px;
+    padding: 5px 0 20px 40px;
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    h4 {
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+
+  @include xs {
+    min-height: auto;
+    padding: 20px 0 20px 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+
+    h4 {
+      font-size: 18px;
+    }
+  }
+}

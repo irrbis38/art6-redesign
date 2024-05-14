@@ -356,3 +356,265 @@
   color: $color_white;
   background-color: $color_dark;
 }
+
+//=== scr_forma_career_footer_art6
+
+.scr_forma_footer_art6.scr_forma_career_footer_art6 {
+  padding: 108px 0 123px;
+
+  @include xl {
+    padding: 81px 0 90px;
+  }
+
+  @include lg {
+    padding: 65px 0 75px;
+  }
+
+  @include sm {
+    padding: 56px 0 63px;
+  }
+
+  @include xs {
+    padding: 72px 0 80px;
+  }
+
+  .scr_forma_footer_art6__title {
+    margin-bottom: 23px;
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+
+    @include xl {
+      margin-bottom: 28px;
+      font-size: 60px;
+    }
+
+    @include lg {
+      margin-bottom: 25px;
+      font-size: 55px;
+    }
+
+    @include sm {
+      margin-bottom: 17px;
+      font-size: 40px;
+    }
+
+    @include xs {
+      max-width: 290px;
+      margin-bottom: 20px;
+      font-size: 32px;
+      line-height: 125%;
+    }
+  }
+
+  .scr_forma_footer_art6__subtitle {
+    max-width: 1050px;
+    margin-bottom: 112px;
+    font-size: 22px;
+    line-height: 164%;
+    letter-spacing: -0.02em;
+
+    @include xl {
+      margin-bottom: 83px;
+      font-size: 20px;
+      line-height: 155%;
+    }
+
+    @include lg {
+      margin-bottom: 71px;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    @include sm {
+      margin-bottom: 54px;
+      font-size: 20px;
+      line-height: 135%;
+    }
+
+    @include xs {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  .scr_forma_footer_art6__cta {
+    margin-bottom: 44px;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+
+    @include xl {
+      font-size: 35px;
+    }
+
+    @include lg {
+      margin-bottom: 25px;
+      font-size: 30px;
+    }
+
+    @include sm {
+      margin-bottom: 19px;
+    }
+  }
+
+  .scr_forma_footer_art6__form {
+    display: block;
+    margin-bottom: 118px;
+
+    @include xl {
+      margin-bottom: 90px;
+    }
+
+    @include lg {
+      margin-bottom: 70px;
+    }
+
+    @include sm {
+      margin-bottom: 60px;
+    }
+
+    @include xs {
+      margin-bottom: 40px;
+    }
+  }
+
+  .scr_forma_footer_art6__fieldset {
+    display: grid;
+    grid-template-columns: 24% 24% 1fr;
+    gap: 32px 20px;
+    margin-bottom: 40px;
+    padding: 0;
+    border: unset;
+    grid-template-areas:
+      "name phone descr"
+      "email resume descr";
+
+    @include xl {
+      grid-template-columns: 28% 28% 1fr;
+    }
+
+    @include lg {
+      grid-template-columns: 29.4% 29.4% 1fr;
+      margin-bottom: 70px;
+    }
+
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "name phone"
+        "email resume"
+        "descr descr";
+      gap: 20px 30px;
+      margin-bottom: 36px;
+    }
+
+    @include xs {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "name"
+        "phone"
+        "email"
+        "resume"
+        "descr";
+      gap: 16px 0;
+      margin-bottom: 3px;
+    }
+  }
+
+  .scr_forma_footer_art6__name {
+    grid-area: name;
+    width: auto;
+  }
+
+  .scr_forma_footer_art6__phone {
+    grid-area: phone;
+    width: auto;
+  }
+
+  .scr_forma_footer_art6__email {
+    grid-area: email;
+  }
+
+  .scr_forma_footer_art6__resume {
+    grid-area: resume;
+  }
+
+  .scr_forma_footer_art6__descr {
+    grid-area: descr;
+    height: 100%;
+
+    @include sm {
+      height: auto;
+      min-height: 53px;
+      max-width: 571px;
+    }
+
+    @include xs {
+      min-height: 108px;
+    }
+  }
+
+  .scr_forma_footer_art6__input,
+  .scr_forma_footer_art6__descr {
+    display: block;
+    width: 100%;
+  }
+
+  .scr_forma_footer_art6__mailto {
+    span {
+      display: block;
+      width: max-content;
+      margin-bottom: 18px;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 109%;
+      letter-spacing: -0.03em;
+      color: $color_grey;
+    }
+
+    a {
+      width: max-content;
+      display: block;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 69%;
+      letter-spacing: -0.02em;
+    }
+
+    @include xl {
+      span {
+        margin-bottom: 15px;
+        font-size: 20px;
+        line-height: 120%;
+      }
+
+      a {
+        font-size: 35px;
+      }
+    }
+
+    @include lg {
+      span {
+        font-size: 18px;
+        line-height: 133%;
+      }
+
+      a {
+        font-size: 30px;
+      }
+    }
+
+    @include xs {
+      span {
+        font-size: 16px;
+      }
+
+      a {
+        font-size: 24px;
+      }
+    }
+  }
+}

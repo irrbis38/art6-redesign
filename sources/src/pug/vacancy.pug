@@ -1,0 +1,187 @@
+extends base/_layout
+block vars
+    - var pageName = 'vacancy-page scrolling-titles-exist'
+block head
+    title ART6 - Вакансия
+block page
+
+    nav.scr_hleb_kroshki_art6.scr_hleb_kroshki_art6_white_bg(aria-label="Хлебные крошки")
+        .container
+            ol
+                li: a(href="./index.html" aria-label="Перейти на главную") Главная
+                li: a(href="./our-projects.html" aria-label="Перейти на общую страницу проектов") Вакансии
+                li: span Разработчик (Java)
+
+    section.first_scr_with_scroll
+        .container
+            .first_scr_with_scroll__title__block.index_page__title_block.hidescrollbar
+                .scroll_container
+                    h2.first_scr_with_scroll__title.index_page_title
+                        span Программист 1С-Битрикс
+                        span Программист 1С-Битрикс
+
+
+    include ./blocks/modal_info.pug
+
+
+    .scr_vacancy 
+
+        .container.scr_vacancy__container 
+
+            ul.scr_vacancy__menu
+                li: a.scr_vacancy__link.active(href="#briefly") Вкратце
+                li: a.scr_vacancy__link(href="#tasks") Задачи
+                li: a.scr_vacancy__link(href="#requirements") Требования
+                li: a.scr_vacancy__link(href="#examples-of-projects") Примеры проектов
+                li: a.scr_vacancy__link(href="#conditions") Условия
+                li: a.scr_vacancy__link(href="#company") О компании
+
+            .scr_vacancy__main
+
+                .scr_vacancy__block.active#briefly
+                    h3.scr_vacancy__title Вкратце
+
+                    p Ищем разработчика на 1С-Битрикс с небольшим опытом, но огромным желанием развиваться.
+
+                    ul 
+                        li за 3 года вы вырастите до Senior;
+                        li интересные задачи;
+                        li непрерывное обучение.
+
+                    p Мы рассматриваем кандидатов как с небольшим опытом - до 2-ух лет, так и совсем без опыта, но с набором базовых знаний.
+
+                    .scr_vacancy__details 
+                        .scr_vacancy__details_item
+                            span Зарплата
+                            span от 50.000 до 80.000₽
+                        .scr_vacancy__details_item
+                            span Требуемый опыт
+                            span от 1 года до 3 лет
+                        .scr_vacancy__details_item
+                            span Место работы
+                            span Дистанционно
+                        .scr_vacancy__details_item
+                            span Занятость
+                            span Полный день
+
+
+                .scr_vacancy__block#tasks
+                    h3.scr_vacancy__title Задачи
+
+                    p Разработка и доработка сайтов на 1С-Битрикс:
+
+                    ul 
+                        li интеграция готовой верстки;
+                        li разработка/доработка функциональной части;
+                        li настройка проектов и запуск.
+
+                    p Работа с серверами в панели управления сайтами ispmanager:
+
+                    ul 
+                        li установка 1С-Битрикс;
+                        li настройка необходимых параметров для работы сайтов;
+                        li работа с резервным копированием сайтов.
+
+                    p Работа с сайтами на CMS WP и OpenCart – редко
+
+
+                .scr_vacancy__block#requirements
+                    h3.scr_vacancy__title Требования
+
+                    ul 
+                        li знание 1С-Битрикс, HTML, PHP, Javascript, jQuery, SQL;
+                        li опыт разработки сайтов на 1С-Битрикс;
+                        li базовые знания CSS;
+                        li внимательность;
+                        li ответственность;
+                        li плюсом будет знание ispmanager.
+
+
+                .scr_vacancy__block#examples-of-projects
+                    h3.scr_vacancy__title Примеры проектов
+
+                    .scr_vacancy__examples 
+                        a.scr_vacancy__examples_link(href="#") kukhni-na-zakaz.com
+                        a.scr_vacancy__examples_link(href="#") embryo-ivf.ru
+                        a.scr_vacancy__examples_link(href="#") safe-centre.ru
+                        a.scr_vacancy__examples_link(href="#") centerstroydoc.ru
+                        a.scr_vacancy__examples_link(href="#") modern-dveri.ru
+
+
+                .scr_vacancy__block#conditions
+                    h3.scr_vacancy__title Условия
+
+                    ul 
+                        li оклад + бонусы;
+                        li полная занятость (9.00 – 18.00 или 10.00 – 19.00);
+                        li оформление по ТК РФ;
+                        li 28-дневный оплачиваемый отпуск;
+                        li работа в команде профессионалов;
+                        li уютный офис в центре города.
+
+
+
+                .scr_vacancy__block.scr_vacancy__company#company
+                    h3.scr_vacancy__title О компании
+
+                    p Digital-агентство ART6 помогает компаниям эффективно решать комплексные маркетинговые задачи: разработка стратегий, аналитика, performance-маркетинг.
+
+                    p Достигаем высоких результатов и обеспечиваем стабильный рост за счет многоканальности: разработка сайтов, контекстная, таргетированная и медийная реклама, SEO-продвижение, SERM, CRO, контент-маркетинг.
+
+                    ul 
+                        li С 2013 года в digital-маркетинге.
+                        li Экспертиза более чем в 15-ти сферах бизнеса.
+                        li 230 клиентов из 37 регионов России.
+
+
+                    span.scr_vacancy__cta Будем рады видеть вас в команде digital-агентства ART6!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+
+
+
+                            
+
+
+
+
+
+
+    include ./blocks/_scr_forma_career_footer_art6

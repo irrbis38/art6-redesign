@@ -2,7 +2,7 @@ extends base/_layout
 block vars
     - var pageName = 'career-page scrolling-titles-exist'
 block head
-    title ART6 - отзывы
+    title ART6 - Карьера
 block page
 
     section.first_scr_with_scroll
@@ -15,4 +15,235 @@ block page
 
                     button.first_scr_main_art6__help(type='button' aria-label="Показать справку") [ i ]
 
+
     include ./blocks/modal_info.pug
+
+
+    .scr_karyera_preimushestva_art6
+
+        .container
+
+            -
+                var preimushestva_list = [
+                    {
+                        icon: 'career_icon1.svg',
+                        text: 'Непрерывно обучайся и расти от Junior до Middle, от Middle до Senior'
+                    },
+                    {
+                        icon: 'career_icon2.svg',
+                        text: 'Выполняй задания, оттачивай навыки, предлагай новые решения'
+                    },
+                    {
+                        icon: 'career_icon3.svg',
+                        text: 'Инвестируй время навыки, которые востребованы на рынке'
+                    },
+                    {
+                        icon: 'career_icon4.svg',
+                        text: 'Работай в надежной компании, основанной в 2013 году'
+                    }
+                ]
+
+            ul.scr_karyera_preimushestva_art6__list
+
+                each item in preimushestva_list
+                    li.scr_karyera_preimushestva_art6__item
+                        img(src= "./images/scr_karyera_preimushestva_art6/" + item.icon, alt="" width="32" height="32" loading="lazy" decoding="async")
+                        p= item.text
+
+            .scr_karyera_preimushestva_art6__career
+
+                h2.scr_karyera_preimushestva_art6__title Карьера в топовой компании
+
+                p.scr_karyera_preimushestva_art6__subtitle С 2013 года digital-агентство ART6 разработало, продвинуло и прорекламировало более 500 сайтов для более чем 300 клиентов из Краснодара и 38 регионов России, и заняло 1-ое место по количеству клиентов среди агентств нашего региона.
+
+
+
+
+    section.scr_karyera_vakansii_art6
+        .container
+        
+            .scr_karyera_vakansii_art6__container
+
+                .scr_karyera_vakansii_art6__aside.empty
+
+                .scr_karyera_vakansii_art6__main
+
+                    h2.scr_karyera_vakansii_art6__title Вакансии
+
+                    .scr_karyera_vakansii_art6__subtitle
+                        p Мы непрерывно растем, поэтому периодически у нас появляются новые вакансии. Данный раздел регулярно обновляется, если сейчас тебе ничего не подошло, будем ждать тебя позже.
+
+                        p Также если ты не нашел подходящую вакансию, но твоя область близка к нашей, отправь свое резюме нам на почту #[a(href="mailto:hr@art6.ru") hr@art6.ru]
+
+            .scr_karyera_vakansii_art6__line
+
+
+            .scr_karyera_vakansii_art6__container.vacancies__list
+
+                fieldset.scr_karyera_vakansii_art6__aside
+
+                    label.scr_karyera_vakansii_art6__label
+                        input(type="radio" name="vacancies" checked)
+                        span Все #[sup 25]
+
+                    label.scr_karyera_vakansii_art6__label
+                        input(type="radio" name="vacancies" )
+                        span Прямо сейчас #[sup 12]
+
+                    label.scr_karyera_vakansii_art6__label
+                        input(type="radio" name="vacancies" )
+                        span В перспективе #[sup 9]
+
+                    label.scr_karyera_vakansii_art6__label
+                        input(type="radio" name="vacancies" )
+                        span Удаленка #[sup 5]
+
+                -
+                    var vacancies_list = [
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'Программист / Разработчик 1С-Битрикс',
+                            salary_from: 'от 50 000',
+                            salary_to: 'до 80 000₽',
+                            experience: 'от 0 до 1 года'
+                        },
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'Разработчик 1С-Битрикс',
+                            salary_from: 'от 50.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'UX/UI дизайнер',
+                            salary_from: 'от 90.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'Разработчик 1С-Битрикс',
+                            salary_from: 'от 50.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'В перспективе',
+                            name: 'UX/UI дизайнер',
+                            salary_from: 'от 90.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'UX/UI дизайнер',
+                            salary_from: 'от 90.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'В перспективе',
+                            name: 'UX/UI дизайнер',
+                            salary_from: 'от 90.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'UX/UI дизайнер',
+                            salary_from: 'от 90.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'Разработчик 1С-Битрикс',
+                            salary_from: 'от 50.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'UX/UI дизайнер',
+                            salary_from: 'от 90.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'Разработчик 1С-Битрикс',
+                            salary_from: 'от 50.000₽',
+                            experience: 'от 3 лет опыта'
+                        },
+                        {
+                            group: 'Прямо сейчас',
+                            name: 'Разработчик 1С-Битрикс',
+                            salary_from: 'от 50.000₽',
+                            experience: 'от 3 лет опыта'
+                        }
+                    ]
+
+                .scr_karyera_vakansii_art6__main
+
+                    each item in vacancies_list
+
+                        .scr_karyera_vakansii_art6__item
+
+                            a(href="#")
+
+                            p.scr_karyera_vakansii_art6__group= item.group
+
+                            p.scr_karyera_vakansii_art6__name= item.name
+
+                            .scr_karyera_vakansii_art6__bottom 
+
+                                p.scr_karyera_vakansii_art6__salary
+                                    span= item.salary_from + ' '
+
+                                    if item.salary_to
+
+                                        span= item.salary_to
+
+                                p.scr_karyera_vakansii_art6__experience= item.experience
+
+
+
+    -
+        var kultura_list = [
+            {
+                title: 'Уважение',
+                descr: 'Уважать всех участников команды не зависимо от того какую должность они занимают. Уважать их работу, время, результаты, ошибки. Уважать идеи, советы, мнения. Уважать "тишину", коллег вместо разговоров под ухом. Уважать коллег как партнеров, с которыми идем вместе к одной цели'
+            },
+            {
+                title: 'Честность',
+                descr: 'Важно быть честным, важно не бросаться словами, держать слово. Обещать только то, что можешь сделать. Делать то, что обещал. Быть честным перед компанией, коллегами, собой'
+            },
+            {
+                title: 'Коммуникабельность',
+                descr: 'Уметь хорошо слушать, вместо принятия поспешных решений. Емко и внятно изъясняться как устно, так и письменно. Сохранять спокойствие и самообладание в стрессовых ситуациях'
+            },
+            {
+                title: 'Результативность',
+                descr: 'Выполнять впечатляющий объем важной работы. Демонстрировать неизменно высокие результаты. Являться тем, на кого могут положиться коллеги. Сфокусированность на результате, а не на процессе'
+            },
+            {
+                title: 'Развитие',
+                descr: 'Непрерывно заниматься собственным профессиональным обучением. Стремиться найти способы для более эффективного достижения целей. Находить, изучать, тестировать, описывать, внедрять то, что повышает эффективность'
+            },
+            {
+                title: 'Ответственность',
+                descr: 'Уметь брать ответственность за себя, команду, компанию. Если давать слово, то держать его. Уметь признавать ошибки, не прятать их, а решать. Не перекидывать ответственность на других, а брать ее на себя'
+            }
+        ]
+
+    .scr_karyera_kultura_art6
+
+        .container
+
+            h3.scr_karyera_kultura_art6__title Культура команды ART6
+
+            ul.scr_karyera_kultura_art6__list
+
+                each item in kultura_list
+
+                    li.scr_karyera_kultura_art6__item
+                        h4= item.title
+                        p= item.descr
+
+
+    include ./blocks/_scr_forma_career_footer_art6
+
+
+

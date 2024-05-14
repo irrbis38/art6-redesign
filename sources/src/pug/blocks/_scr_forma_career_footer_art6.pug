@@ -1,0 +1,33 @@
+.scr_forma_footer_art6.scr_forma_career_footer_art6
+    .container
+        p.scr_forma_footer_art6__title Присоединяйся к ART6
+        p.scr_forma_footer_art6__subtitle Мы всегда рады новым знакомствам. Если сейчас у нас нет подходящей вакансии, то давай познакомимся и как только такая появится, мы тебя пригласим.
+
+        p.scr_forma_footer_art6__cta Отправь резюме сейчас
+
+
+        form.scr_forma_footer_art6__form(action="#" novalidate)
+
+            fieldset.scr_forma_footer_art6__fieldset 
+                .scr_forma_footer_art6__name
+                    input.scr_forma_footer_art6__input.required(type="text" placeholder="Имя*" name="person_name" required)
+
+                .scr_forma_footer_art6__phone
+                    input.scr_forma_footer_art6__input.required(type="text" placeholder="Телефон/мессенджер*" name="person_phone" required)
+
+                .scr_forma_footer_art6__email
+                    input.scr_forma_footer_art6__input(type="text" placeholder="Почта" name="person_email")
+
+                .scr_forma_footer_art6__resume
+                    input.scr_forma_footer_art6__input(type="text" placeholder="Ссылка на резюме" name="person_link")
+
+                textarea.scr_forma_footer_art6__descr(placeholder="Сопроводительное письмо" cols="30" rows="1")
+
+            button.scr_forma_footer_art6__submit(type="submit") Отправить
+
+            p.scr_forma_footer_art6__confirm Нажав на кнопку, вы даете согласие на обработку #[a(href="./index.html") персональных данных]
+
+        
+        .scr_forma_footer_art6__mailto 
+            span HR-отдел:
+            a(href="mailto:hr@art6.ru") hr@art6.ru

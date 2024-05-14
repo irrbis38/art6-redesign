@@ -160,6 +160,10 @@
         background-image: url("./../images/first_scr_main_art6/first-bg.svg");
       }
     }
+
+    @include xs {
+      margin-bottom: 38px;
+    }
   }
 
   .scroll_container {
@@ -188,6 +192,78 @@
       top: -3px;
       right: -30px;
       font-size: 18px;
+    }
+  }
+}
+
+// VACANCY PAGE
+
+.vacancy-page {
+  .first_scr_with_scroll {
+    margin-bottom: 129px;
+
+    @include lg {
+      margin-bottom: 90px;
+    }
+
+    @include xs {
+      margin-bottom: 60px;
+    }
+
+    .container {
+      margin-top: 135px;
+      padding-bottom: 100px;
+      border-bottom: 2px solid $color_grey_light;
+
+      @include xs {
+        position: relative;
+        margin-top: 160px;
+        padding-bottom: 50px;
+        border: unset;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: block;
+          width: calc(100% - 30px);
+          height: 2px;
+          background-color: $color_grey_light;
+        }
+      }
+
+      &::after {
+        top: -263px;
+        right: -12px;
+        width: 944px;
+        height: 584px;
+        background-image: url("./../images/first_scr_main_art6/first-bg-vacancy.svg");
+
+        @include xl {
+          width: 785px;
+          height: 486px;
+        }
+
+        @include sm {
+          top: -223px;
+          width: 594px;
+          height: 360px;
+        }
+
+        @include xs {
+          display: block;
+          top: -270px;
+          right: -115px;
+        }
+      }
+    }
+
+    .index_page_title {
+      @include r(389px) {
+        font-size: 36px;
+      }
     }
   }
 }

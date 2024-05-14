@@ -515,7 +515,6 @@ var formValidation = () => {
         checkValidity(requiredElements);
 
         if (checkForm(requiredElements)) {
-          // console.log("Заполните все обязательные поля");
         } else {
           form.reset();
 
@@ -1119,7 +1118,6 @@ var initMoreButtonOnMobile = (btn, images) => {
 
 var doCreateMapScript = (cb) => {
   setTimeout(function () {
-    console.log("create");
     var script = document.createElement("script");
     script.async = false;
     script.src = "https://api-maps.yandex.ru/2.1/?apikey=key&lang=ru_RU";
@@ -1129,7 +1127,6 @@ var doCreateMapScript = (cb) => {
 };
 
 var initMap = () => {
-  console.log("CB");
   var map = document.getElementById("contacts-map");
   if (map) {
     var init = () => {
@@ -1168,6 +1165,87 @@ var initMap = () => {
 
     ymaps.ready(init);
   }
+};
+
+// ========== INIT PIN VACANCY ASIDE
+
+var initPinVacancy = () => {
+  var vacancy = document.querySelector(".scr_vacancy");
+  var menu = document.querySelector(".scr_vacancy__menu");
+
+  if (!vacancy || !menu) return;
+
+  ScrollTrigger.matchMedia({
+    "(min-width: 768px)": function () {
+      ScrollTrigger.create({
+        trigger: ".scr_vacancy",
+        start: "-=5% top",
+        endTrigger: ".scr_vacancy",
+        end: "bottom center",
+        pin: ".scr_vacancy__menu",
+        pinSpacing: false,
+      });
+    },
+  });
+
+  var navLinks = Array.from(document.querySelectorAll(".scr_vacancy__link"));
+
+  var blocks = Array.from(document.querySelectorAll(".scr_vacancy__block"));
+
+  blocks.forEach((block, index) => {
+    ScrollTrigger.create({
+      trigger: block,
+      start: "top +=11%",
+      end: "bottom +=11%",
+      toggleClass: {
+        targets: [navLinks[index], block],
+        className: "active",
+      },
+      onLeaveBack: () => {
+        if (index === 0) {
+          navLinks[index].classList.add("active");
+          block.classList.add("active");
+        }
+      },
+    });
+  });
+
+  smoothScroll(".scr_vacancy__link");
+};
+
+// ========== INIT SMOOTH SCROLL
+
+var smoothScroll = (btnsSelector) => {
+  var btns = Array.from(document.querySelectorAll(btnsSelector));
+
+  if (btns.length < 1) return;
+
+  var scrollHandler = (e) => {
+    e.preventDefault();
+
+    // var headerHeight = document.querySelector("header").scrollHeight;
+    // var gap = 10;
+    var headerHeight = 100;
+    var gap = 0;
+
+    var target = document.getElementById(
+      e.target.getAttribute("href").slice(1)
+    );
+
+    if (!target) return;
+
+    var elementPosition =
+      target.getBoundingClientRect().top - headerHeight - gap;
+
+    window.scrollBy({
+      top: elementPosition,
+      behavior: "smooth",
+    });
+  };
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", scrollHandler);
+  });
 };
 
 // =============================================
@@ -1323,4 +1401,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   if (contacts_page) {
     doCreateMapScript(initMap);
   }
+
+  // INIT VACANCY PAGE
+
+  var vacancy_page = document.querySelector(".vacancy-page");
+  vacancy_page && initPinVacancy();
+  // if (vacancy_page) {
+  //   initPinVacancy();
+  // }
 });
