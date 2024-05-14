@@ -83,6 +83,7 @@
   .first_word {
     position: relative;
     margin-right: 73px;
+    line-height: 1;
     color: $color_white;
 
     &::after {
@@ -257,8 +258,9 @@
   // last letter in first word
   .letter {
     position: absolute;
-    top: -100%;
-    top: unset;
+    // top: -100%;
+    line-height: 1;
+    top: 8px;
     left: 96.5%;
 
     &::after {
@@ -275,7 +277,8 @@
 
     .manager {
       position: absolute;
-      top: -38px;
+      // top: -38px;
+      top: -70px;
       right: -126px;
       z-index: 2;
       width: 137px;
@@ -295,7 +298,8 @@
       }
 
       .manager {
-        top: -20px;
+        // top: -20px;
+        top: -60px;
         right: -117px;
         width: 122px;
         height: 69px;
@@ -307,7 +311,8 @@
       // top: -136%;
 
       .manager {
-        top: -16px;
+        // top: -16px;
+        top: -58px;
         right: -110px;
         width: 120px;
         height: 64px;

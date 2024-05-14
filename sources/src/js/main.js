@@ -167,44 +167,70 @@ var initSmothScroll = () => {
 
 // ===== INIT SLIDER ON MAIN PAGE
 var initTeamSlider = () => {
-  var glide = new Glide(".scr_komanda_art6__slider", {
-    type: "carousel",
-    gap: 20,
-    perView: 4,
+  var slider = new Swiper(".scr_komanda_art6__slider", {
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: ".scr_komanda_art6__next",
+      prevEl: ".scr_komanda_art6__prev",
+    },
     breakpoints: {
-      1300: {
-        perView: 3,
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 20,
       },
-      991: {
-        perView: 2,
-        gap: 48,
+      768: {
+        spaceBetween: 48,
       },
-      767: {
-        perView: 2,
-        gap: 20,
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 20,
       },
-      575: {
-        perView: 1,
+      1301: {
+        slidesPerView: 4,
+        spaceBetween: 20,
       },
     },
   });
 
-  var btnNext = document.querySelector(".scr_komanda_art6__next");
-  var btnPrev = document.querySelector(".scr_komanda_art6__prev");
+  // var glide = new Glide(".scr_komanda_art6__slider", {
+  //   type: "carousel",
+  //   gap: 20,
+  //   perView: 4,
+  //   breakpoints: {
+  //     1300: {
+  //       perView: 3,
+  //     },
+  //     991: {
+  //       perView: 2,
+  //       gap: 48,
+  //     },
+  //     767: {
+  //       perView: 2,
+  //       gap: 20,
+  //     },
+  //     575: {
+  //       perView: 1,
+  //     },
+  //   },
+  // });
 
-  btnNext.addEventListener("click", function (event) {
-    event.preventDefault();
+  // var btnNext = document.querySelector(".scr_komanda_art6__next");
+  // var btnPrev = document.querySelector(".scr_komanda_art6__prev");
 
-    glide.go(">");
-  });
+  // btnNext.addEventListener("click", function (event) {
+  //   event.preventDefault();
 
-  btnPrev.addEventListener("click", function (event) {
-    event.preventDefault();
+  //   glide.go(">");
+  // });
 
-    glide.go("<");
-  });
+  // btnPrev.addEventListener("click", function (event) {
+  //   event.preventDefault();
 
-  glide.mount();
+  //   glide.go("<");
+  // });
+
+  // glide.mount();
 };
 
 // ===== INIT ACCORDION FOR QUESTIONS (main page)
@@ -218,8 +244,8 @@ var initQuestionsAccordion = () => {
   // set start state
   var firstBlock = questions[0];
   var firstText = firstBlock.children[1];
-  firstBlock.classList.add("active");
-  firstText.style.maxHeight = firstText.scrollHeight + 25 + "px";
+  // firstBlock.classList.add("active");
+  // firstText.style.maxHeight = firstText.scrollHeight + 25 + "px";
 
   var activeText = firstText;
 
@@ -767,7 +793,7 @@ var initAnimation = () => {
   var mm = gsap.matchMedia();
 
   mm.add("(min-width: 992px)", () => {
-    gsap.set(letter, { y: "-54%" });
+    gsap.set(letter, { y: "-91%" });
 
     var tl = gsap.timeline({
       scrollTrigger: {
@@ -782,7 +808,8 @@ var initAnimation = () => {
     });
 
     tl.to(letter, {
-      y: -0.3,
+      y: "0%",
+      ease: "none",
     });
   });
 };
@@ -814,41 +841,35 @@ var initCompanyPersonsAnimation = () => {
 
 // ===== INIT SLIDER ON SERVICES PAGE
 var initScrInstrumtechSlider = () => {
-  var glide = new Glide(".scr_instrumtech_art6__slider", {
-    type: "carousel",
-    gap: 20,
-    perView: 4,
-    breakpoints: {
-      1600: {
-        gap: 17,
+  var slider = null;
+
+  var initSlider = () => {
+    slider = new Swiper(".scr_instrumtech_art6__slider", {
+      slidesPerView: 4,
+      spaceBetween: 13,
+      loop: true,
+      navigation: {
+        prevEl: ".scr_instrumtech_art6__prev",
+        nextEl: ".scr_instrumtech_art6__next",
       },
-      1300: {
-        gap: 13,
+      breakpoints: {
+        1301: {
+          spaceBetween: 17,
+        },
+        1601: {
+          spaceBetween: 20,
+        },
       },
-    },
-  });
+    });
+  };
 
-  var btnPrev = document.querySelector(".scr_instrumtech_art6__prev");
-  var btnNext = document.querySelector(".scr_instrumtech_art6__next");
-
-  btnNext.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    glide.go(">");
-  });
-
-  btnPrev.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    glide.go("<");
-  });
-
-  window.innerWidth > 991 && glide.mount();
+  window.innerWidth > 991 && initSlider();
   var handleMQ = (e) => {
     if (e.matches) {
-      glide.destroy();
+      slider.destroy();
+      slider = null;
     } else {
-      glide.mount();
+      initSlider();
     }
   };
 
@@ -1176,7 +1197,7 @@ var initPinVacancy = () => {
   if (!vacancy || !menu) return;
 
   ScrollTrigger.matchMedia({
-    "(min-width: 768px)": function () {
+    "(min-width: 992px)": function () {
       ScrollTrigger.create({
         trigger: ".scr_vacancy",
         start: "-=5% top",
@@ -1195,8 +1216,8 @@ var initPinVacancy = () => {
   blocks.forEach((block, index) => {
     ScrollTrigger.create({
       trigger: block,
-      start: "top +=11%",
-      end: "bottom +=11%",
+      start: "top +=40%",
+      end: "bottom +=40%",
       toggleClass: {
         targets: [navLinks[index], block],
         className: "active",
@@ -1211,6 +1232,48 @@ var initPinVacancy = () => {
   });
 
   smoothScroll(".scr_vacancy__link");
+};
+
+// ========== INIT PIN CAREER ASIDE
+
+var initPinCareer = () => {
+  var list = document.querySelector(".scr_karyera_preimushestva_art6__list");
+
+  if (!list) return;
+
+  ScrollTrigger.matchMedia({
+    "(min-width: 992px)": () => {
+      ScrollTrigger.create({
+        trigger: ".scr_karyera_preimushestva_art6__list",
+        start: "-=5% top",
+        endTrigger: ".scr_karyera_vakansii_art6__main",
+        end: "bottom bottom",
+        pin: ".scr_karyera_preimushestva_art6__list",
+        pinSpacing: false,
+        invalidateOnRefresh: true,
+      });
+    },
+  });
+};
+
+var initPinCareerList = () => {
+  var fieldset = document.querySelector(".scr_karyera_vakansii_art6__aside");
+
+  if (!fieldset) return;
+
+  ScrollTrigger.matchMedia({
+    "(min-width: 992px)": function () {
+      ScrollTrigger.create({
+        trigger: ".vacancies__list",
+        start: "-=5% top",
+        endTrigger: ".vacancies__list",
+        end: "bottom bottom",
+        pin: ".scr_karyera_vakansii_art6__aside__wrapper",
+        pinSpacing: false,
+        // markers: true,
+      });
+    },
+  });
 };
 
 // ========== INIT SMOOTH SCROLL
@@ -1406,7 +1469,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var vacancy_page = document.querySelector(".vacancy-page");
   vacancy_page && initPinVacancy();
-  // if (vacancy_page) {
-  //   initPinVacancy();
-  // }
+
+  // INIT VACANCY PAGE
+
+  var career_page = document.querySelector(".career-page");
+  career_page && initPinCareer();
+  career_page && initPinCareerList();
 });

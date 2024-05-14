@@ -234,6 +234,10 @@
   transition: max-height 0.2s ease-out;
 }
 
+.active .scr_voprosy_art6__content {
+  max-height: none;
+}
+
 .scr_voprosy_art6__text {
   p {
     max-width: 1120px;

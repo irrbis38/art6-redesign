@@ -45,18 +45,19 @@ fieldset.scr_karyera_vakansii_art6__aside,
 .scr_karyera_vakansii_art6__aside {
   flex: 0 0 308px;
   padding: 0;
-  padding-right: 26px;
   border: 0;
-  border-right: 2px solid $color_grey_light;
+  // padding-right: 26px;
+  // border-right: 2px solid $color_grey_light;
 
   @include lg {
     flex: 0 0 251px;
   }
 
   @include sm {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // gap: 50px;
+    display: block;
     padding-right: 0;
     border-right: none;
   }
@@ -70,7 +71,12 @@ fieldset.scr_karyera_vakansii_art6__aside,
   }
 }
 
-fieldset.scr_karyera_vakansii_art6__aside {
+.scr_karyera_vakansii_art6__aside__wrapper {
+  width: 100%;
+  padding-right: 26px;
+  border: 0;
+  border-right: 2px solid $color_grey_light;
+
   @include sm {
     display: flex;
     flex-wrap: wrap;
@@ -225,6 +231,7 @@ fieldset.scr_karyera_vakansii_art6__aside {
 }
 
 .scr_karyera_vakansii_art6__aside {
+  display: block;
   padding: 0;
   border-right: 2px solid $color_grey_light;
   border: none;
