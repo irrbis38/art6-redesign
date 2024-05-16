@@ -1007,6 +1007,10 @@ var initYoutubeVideo = (videos) => {
 // ===== INIT REVIEWS SLIDER
 
 var initReviewsSlider = () => {
+  var wrapper = document.querySelector(".scr_otzyvy_full__wrapper");
+
+  wrapper && wrapper.classList.remove("hidden");
+
   var images = Array.from(
     document.querySelectorAll(".scr_otzyvy_full__wrapper img")
   );
@@ -1144,7 +1148,7 @@ var doCreateMapScript = (cb) => {
     script.src = "https://api-maps.yandex.ru/2.1/?apikey=key&lang=ru_RU";
     document.body.appendChild(script);
     script.onload = () => cb();
-  }, 2000);
+  }, 3000);
 };
 
 var initMap = () => {
@@ -1443,7 +1447,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   videos.length > 0 && initYoutubeVideo(videos);
 
   // init reviews slider
-  initReviewsSlider();
+  var reviews_page = document.querySelector(".reviews-page");
+  if (reviews_page) {
+    setTimeout(() => {
+      initReviewsSlider();
+    }, 2000);
+  }
 
   var company_page = document.querySelector(".company-page");
   if (company_page) {

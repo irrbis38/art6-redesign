@@ -13041,6 +13041,9 @@ button.header_art6__more {
   align-items: flex-start;
   gap: 0 50px
 }
+.scr_otzyvy_full__wrapper.hidden {
+  display: none
+}
 .scr_otzyvy_full__wrapper img {
   grid-column-start: 1;
   grid-column-end: 2;
