@@ -41,6 +41,10 @@
   align-items: flex-start;
   gap: 0 50px;
 
+  &.hidden {
+    display: none;
+  }
+
   img {
     grid-column-start: 1;
     grid-column-end: 2;
