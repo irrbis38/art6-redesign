@@ -5053,18 +5053,10 @@ button.header_art6__more {
   font-size: 14px;
   letter-spacing: -.02em;
   color: #8e8e93;
-  transition: all 1s ease-out
-}
-.scr_company_art6__person.active {
+  transition: all 1s ease-out;
   color: #fff
 }
-.scr_company_art6__person.active .scr_company_art6__post span::before {
-  opacity: 1
-}
-.scr_company_art6__person.active .scr_company_art6__post span::after {
-  opacity: 0
-}
-.scr_company_art6__person.active .scr_company_art6__name {
+.scr_company_art6__person .scr_company_art6__name {
   opacity: 1;
   visibility: visible
 }
@@ -5079,8 +5071,6 @@ button.header_art6__more {
 }
 .scr_company_art6__person--arrow_right .scr_company_art6__name {
   position: relative;
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 1s ease-out,visibility 1s ease-out
 }
 .scr_company_art6__person--arrow_right .scr_company_art6__name::before {
@@ -5115,7 +5105,6 @@ button.header_art6__more {
   width: 24px;
   height: 26px
 }
-.scr_company_art6__person--arrow_right .scr_company_art6__post span::after,
 .scr_company_art6__person--arrow_right .scr_company_art6__post span::before {
   content: "";
   position: absolute;
@@ -5131,10 +5120,7 @@ button.header_art6__more {
 }
 .scr_company_art6__person--arrow_right .scr_company_art6__post span::before {
   background-image: url("data:image/svg+xml,%3Csvg width='34' height='36' viewBox='0 0 34 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.5431 29.4023L5.06517 18.3009L18.493 16.5996L21.6989 4.04745L29.5431 29.4023Z' fill='white' /%3E%3C/svg%3E");
-  opacity: 0
-}
-.scr_company_art6__person--arrow_right .scr_company_art6__post span::after {
-  background-image: url("data:image/svg+xml,%3Csvg width='34' height='36' viewBox='0 0 34 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.5431 29.4023L5.06517 18.3009L18.493 16.5996L21.6989 4.04745L29.5431 29.4023Z' fill='%238e8e93' /%3E%3C/svg%3E")
+  opacity: 1
 }
 @media (max-width:991px) {
   .scr_company_art6__person--arrow_right .scr_company_art6__post span {
@@ -5149,8 +5135,6 @@ button.header_art6__more {
   -ms-flex-order: 2;
   order: 2;
   position: relative;
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 1s ease-out,visibility 1s ease-out
 }
 .scr_company_art6__person--arrow_left .scr_company_art6__name::before {
@@ -5184,8 +5168,8 @@ button.header_art6__more {
   left: -25px;
   bottom: -15px;
   z-index: 1;
-  width: 24px;
-  height: 26px
+  width: 20px;
+  height: 21px
 }
 @media (max-width:991px) {
   .scr_company_art6__person--arrow_left .scr_company_art6__post span {
@@ -5195,7 +5179,6 @@ button.header_art6__more {
     transform: rotate(84deg)
   }
 }
-.scr_company_art6__person--arrow_left .scr_company_art6__post span::after,
 .scr_company_art6__person--arrow_left .scr_company_art6__post span::before {
   content: "";
   position: absolute;
@@ -5211,10 +5194,7 @@ button.header_art6__more {
 }
 .scr_company_art6__person--arrow_left .scr_company_art6__post span::before {
   background-image: url("data:image/svg+xml,%3Csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.00154023 25.9869L24.7552 15.522L11.3758 13.4741L8.49546 0.843298L-0.00154023 25.9869Z' fill='white' /%3E%3C/svg%3E");
-  opacity: 0
-}
-.scr_company_art6__person--arrow_left .scr_company_art6__post span::after {
-  background-image: url("data:image/svg+xml,%3Csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.00154023 25.9869L24.7552 15.522L11.3758 13.4741L8.49546 0.843298L-0.00154023 25.9869Z' fill='%238e8e93' /%3E%3C/svg%3E")
+  opacity: 1
 }
 .scr_company_art6__person1 {
   position: absolute;
@@ -5990,6 +5970,9 @@ button.header_art6__more {
   background-color: #166ff5;
   box-shadow: 0 6px #166ff5,0 0 #166ff5
 }
+.scr_dostizheniya_art6__item:hover .scr_dostizheniya_art6__descr {
+  color: #1c1c20
+}
 @media (max-width:1600px) {
   .scr_dostizheniya_art6__item {
     min-height: 284px;
@@ -6054,8 +6037,9 @@ button.header_art6__more {
   margin-bottom: 10px;
   font-weight: 500;
   font-size: 18px;
-  letter-spacing: -.02em;
-  color: #1c1c20
+  letter-spacing: -.02e;
+  color: #8e8e93;
+  transition: color .2s ease-out
 }
 @media (max-width:1600px) {
   .scr_dostizheniya_art6__descr {
@@ -6182,7 +6166,7 @@ button.header_art6__more {
 }
 .scr_sertif_partnery_art6__list {
   display: grid;
-  grid-template-columns: 25.2% 25.2% 25.2% 24.4%;
+  grid-template-columns: repeat(4,1fr);
   gap: 32px 0
 }
 @media (max-width:1600px) {
@@ -6192,13 +6176,13 @@ button.header_art6__more {
 }
 @media (max-width:1300px) {
   .scr_sertif_partnery_art6__list {
-    grid-template-columns: 27% 27% 27% 19%;
+    grid-template-columns: repeat(4,1fr);
     gap: 51px 0
   }
 }
 @media (max-width:991px) {
   .scr_sertif_partnery_art6__list {
-    grid-template-columns: 53.13% 46.87%;
+    grid-template-columns: repeat(2,1fr);
     gap: 44px 0
   }
 }
@@ -7476,6 +7460,11 @@ button.header_art6__more {
 @media (max-width:991px) {
   .scr_forma_footer_art6.scr_forma_career_footer_art6 .scr_forma_footer_art6__cta {
     margin-bottom: 19px
+  }
+}
+@media (max-width:767px) {
+  .scr_forma_footer_art6.scr_forma_career_footer_art6 .scr_forma_footer_art6__cta {
+    display: none
   }
 }
 .scr_forma_footer_art6.scr_forma_career_footer_art6 .scr_forma_footer_art6__form {
@@ -9160,10 +9149,6 @@ button.header_art6__more {
 @media (max-width:991px) {
   .scr_elemsotrudn_uslugi_art6__item::after {
     height: 50px
-  }
-  .scr_elemsotrudn_uslugi_art6__item:first-child {
-    padding-top: 56px;
-    border-top: 2px solid #f2f2f2
   }
 }
 @media (max-width:767px) {
@@ -10879,16 +10864,32 @@ button.header_art6__more {
 .scr_sm_takzhe_art6__link:before {
   content: "";
   position: absolute;
-  bottom: 3px;
+  bottom: 4px;
   right: 0;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   padding-left: 6px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   transition: opacity .2s ease-out
+}
+@media (max-width:1300px) {
+  .scr_sm_takzhe_art6__link:after,
+  .scr_sm_takzhe_art6__link:before {
+    width: 16px;
+    height: 16px;
+    bottom: 1px
+  }
+}
+@media (max-width:991px) {
+  .scr_sm_takzhe_art6__link:after,
+  .scr_sm_takzhe_art6__link:before {
+    width: 18px;
+    height: 18px;
+    bottom: 2px
+  }
 }
 .scr_sm_takzhe_art6__link::after {
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.16927 14.658L5.34427 15.833L14.1693 7.00801L14.1693 12.4997H15.8359L15.8359 4.16634L7.5026 4.16634V5.83301L12.9943 5.83301L4.16927 14.658Z' fill='%23166FF5' /%3E%3C/svg%3E")
@@ -11013,7 +11014,7 @@ button.header_art6__more {
 .scr_sm_takzhe_art6__full .scr_sm_takzhe_art6__title a::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 4px;
   right: 0;
   width: 32px;
   height: 32px;
@@ -11999,6 +12000,16 @@ button.header_art6__more {
     margin-bottom: 25px
   }
 }
+@media (max-width:767px) {
+  .services-list .first_scr_zagolovok_art6 {
+    padding-top: 192px
+  }
+}
+@media (max-width:767px) {
+  .services-list .first_scr_zagolovok_art6__title {
+    margin-bottom: 76px
+  }
+}
 .aktsii_art6 {
   margin-bottom: 196px
 }
@@ -12555,16 +12566,19 @@ button.header_art6__more {
 }
 @media (max-width:1300px) {
   .scr_partnerka_peredacha_lidov_art6__title {
+    max-width: 940px;
     font-size: 50px
   }
 }
 @media (max-width:991px) {
   .scr_partnerka_peredacha_lidov_art6__title {
+    max-width: 750px;
     font-size: 40px
   }
 }
 @media (max-width:767px) {
   .scr_partnerka_peredacha_lidov_art6__title {
+    max-width: 700px;
     margin-bottom: 17px;
     font-size: 38px;
     line-height: 121%
@@ -13031,7 +13045,7 @@ button.header_art6__more {
   transform: translate(-50%,-50%);
   z-index: 2;
   height: 95%;
-  overflow: auto;
+  overflow: hidden;
   display: grid;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -13670,13 +13684,14 @@ button.header_art6__more {
   display: none
 }
 .scr_kontakti_art6 {
-  margin-bottom: 90px;
+  margin-bottom: 80px;
   padding-top: 230px;
+  padding-bottom: 10px;
   overflow: hidden
 }
 @media (max-width:1300px) {
   .scr_kontakti_art6 {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     padding-top: 250px
   }
 }
@@ -13870,7 +13885,8 @@ a.scr_kontakti_art6__value {
   height: 100%;
   z-index: 5;
   pointer-events: none;
-  background: url(../images/scr_kontakti_art6/map_overlay.svg) center/cover no-repeat
+  background: url(../images/scr_kontakti_art6/map_overlay.svg) center/cover no-repeat;
+  box-shadow: 0 0 0 20px #fff
 }
 @media (max-width:767px) {
   .scr_kontakti_art6__map:before {
@@ -14071,6 +14087,9 @@ a.scr_kontakti_art6__value {
   }
 }
 .scr_karyera_preimushestva_art6__list {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
   -webkit-flex: 0 0 308px;
   -ms-flex: 0 0 308px;
   flex: 0 0 308px;
@@ -14341,7 +14360,8 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
     gap: 8px;
     margin: 60px 0 50px;
     padding-bottom: 65px;
-    border-bottom: 2px solid #f2f2f2
+    border-bottom: 2px solid #f2f2f2;
+    border-right: none
   }
 }
 @media (max-width:767px) {
@@ -15148,7 +15168,6 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 0 12px;
   margin-bottom: 42px;
   font-weight: 500;
   font-size: 40px;
@@ -15158,15 +15177,16 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
 }
 .scr_vacancy__title::before {
   content: "";
-  max-width: 0;
   width: 100%;
+  max-width: 0;
   height: 24px;
+  padding-left: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='15' height='24' viewBox='0 0 15 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.37645 22.2879C6.37645 19.5406 6.37645 16.7933 6.37645 14.0461H0L1.50258 11.4718L6.80944 2.37965L8.19838 0V1.71215V9.95393H14.5748L13.0722 12.5282L7.76539 21.6203L6.37645 24V22.2879Z' fill='%231463FF' /%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   opacity: 0;
-  transition: max-width .2s ease-out
+  transition: max-width .2s ease-out,padding-left .2s ease-out
 }
 @media (max-width:767px) {
   .scr_vacancy__title::before {
@@ -15176,7 +15196,13 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
 }
 .scr_vacancy__block.active .scr_vacancy__title::before {
   max-width: 15px;
+  padding-left: 12px;
   opacity: 1
+}
+@media (max-width:767px) {
+  .scr_vacancy__block.active .scr_vacancy__title::before {
+    padding-left: 8px
+  }
 }
 @media (max-width:1600px) {
   .scr_vacancy__title {
@@ -15193,7 +15219,6 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
 }
 @media (max-width:767px) {
   .scr_vacancy__title {
-    gap: 8px;
     margin-bottom: 17px;
     font-size: 28px;
     line-height: 107%
@@ -15202,7 +15227,7 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
 .scr_vacancy__details {
   display: grid;
   grid-template-columns: repeat(auto-fill,233px);
-  gap: 30px 21px
+  gap: 30px 30px
 }
 .scr_vacancy__details:not(:first-child) {
   margin-top: 40px
