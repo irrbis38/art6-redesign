@@ -247,7 +247,9 @@ var initQuestionsAccordion = () => {
   // firstBlock.classList.add("active");
   // firstText.style.maxHeight = firstText.scrollHeight + 25 + "px";
 
-  var activeText = firstText;
+  // var activeText = firstText;
+
+  var activeTexts = [];
 
   // add listeners to headings
 
@@ -260,23 +262,26 @@ var initQuestionsAccordion = () => {
       if (isActive) {
         parent.classList.remove("active");
         text.style.maxHeight = null;
-        activeText = null;
+        // activeText = null;
+        activeTexts = activeTexts.filter((t) => t !== text);
       } else {
-        questions.forEach((q) => q.classList.remove("active"));
-        texts.forEach((t) => (t.style.maxHeight = null));
+        // questions.forEach((q) => q.classList.remove("active"));
+        // texts.forEach((t) => (t.style.maxHeight = null));
         parent.classList.add("active");
         text.style.maxHeight = text.scrollHeight + "px";
-        activeText = text;
+        // activeText = text;
+        activeTexts.push(text);
       }
     })
   );
 
-  window.addEventListener(
-    "resize",
-    () =>
-      activeText &&
-      (activeText.style.maxHeight = activeText.scrollHeight + "px")
-  );
+  window.addEventListener("resize", () => {
+    if (activeTexts.length > 0) {
+      activeTexts.forEach((aText) => {
+        aText.style.maxHeight = aText.scrollHeight + "px";
+      });
+    }
+  });
 
   // TODO: update all elements by more_btn click
   // var more_btn = document.querySelector(".scr_voprosy_art6__more");
@@ -779,6 +784,7 @@ var startScrollingBlockAnimation = () => {
   var first_scr_with_scroll = document.querySelector(".first_scr_with_scroll");
   var culture_page = document.querySelector(".culture-page");
   var reviews_page = document.querySelector(".reviews-page");
+  var vacancy_page = document.querySelector(".vacancy-page");
 
   if (culture_page || reviews_page) {
     first_scr_with_scroll &&
@@ -788,6 +794,15 @@ var startScrollingBlockAnimation = () => {
         ".first_scr_with_scroll .scroll_container",
         "top top"
       );
+  } else if (vacancy_page) {
+    return;
+    // first_scr_with_scroll &&
+    //   initScrollAnimation(
+    //     ".first_scr_with_scroll__title",
+    //     ".first_scr_with_scroll",
+    //     ".first_scr_with_scroll .scroll_container",
+    //     "top top"
+    //   );
   } else {
     first_scr_with_scroll &&
       initScrollAnimation(
@@ -1232,12 +1247,13 @@ var initPinVacancy = () => {
   blocks.forEach((block, index) => {
     ScrollTrigger.create({
       trigger: block,
-      start: "top +=40%",
-      end: "bottom +=40%",
+      start: "top +=35%",
+      end: "bottom +=35%",
       toggleClass: {
         targets: [navLinks[index], block],
         className: "active",
       },
+      markers: true,
       onLeaveBack: () => {
         if (index === 0) {
           navLinks[index].classList.add("active");
