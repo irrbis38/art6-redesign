@@ -1196,6 +1196,9 @@ button.header_art6__more {
     font-size: 38px
   }
 }
+.vacancy-page .index_page_title {
+  white-space: unset
+}
 .first_scr_main_art6 {
   margin-bottom: 120px;
   padding-top: 92px;
@@ -15055,6 +15058,7 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
   opacity: 1
 }
 .scr_vacancy__block {
+  min-height: 420px;
   font-weight: 500;
   font-size: 18px;
   line-height: 156%;
