@@ -777,14 +777,26 @@ var startScrollingBlockAnimation = () => {
   }
 
   var first_scr_with_scroll = document.querySelector(".first_scr_with_scroll");
+  var culture_page = document.querySelector(".culture-page");
+  var reviews_page = document.querySelector(".reviews-page");
 
-  first_scr_with_scroll &&
-    initScrollAnimation(
-      ".first_scr_with_scroll__title",
-      ".first_scr_with_scroll",
-      ".first_scr_with_scroll .scroll_container",
-      "top top"
-    );
+  if (culture_page || reviews_page) {
+    first_scr_with_scroll &&
+      initScrollAnimation(
+        ".first_scr_with_scroll__title",
+        ".main",
+        ".first_scr_with_scroll .scroll_container",
+        "top top"
+      );
+  } else {
+    first_scr_with_scroll &&
+      initScrollAnimation(
+        ".first_scr_with_scroll__title",
+        ".first_scr_with_scroll",
+        ".first_scr_with_scroll .scroll_container",
+        "top top"
+      );
+  }
 };
 
 var initAnimation = () => {
@@ -1250,11 +1262,12 @@ var initPinCareer = () => {
       ScrollTrigger.create({
         trigger: ".scr_karyera_preimushestva_art6__list",
         start: "-=5% top",
-        endTrigger: ".scr_karyera_vakansii_art6__main",
-        end: "bottom bottom",
+        endTrigger: ".vacancies__list",
+        end: "top bottom",
         pin: ".scr_karyera_preimushestva_art6__list",
         pinSpacing: false,
         invalidateOnRefresh: true,
+        // markers: true,
       });
     },
   });
@@ -1271,7 +1284,7 @@ var initPinCareerList = () => {
         trigger: ".vacancies__list",
         start: "-=5% top",
         endTrigger: ".vacancies__list",
-        end: "bottom bottom",
+        end: "bottom center",
         pin: ".scr_karyera_vakansii_art6__aside__wrapper",
         pinSpacing: false,
         // markers: true,

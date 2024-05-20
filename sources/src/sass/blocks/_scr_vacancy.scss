@@ -230,7 +230,7 @@
 .scr_vacancy__title {
   display: flex;
   align-items: center;
-  gap: 0 12px;
+  // gap: 0 12px;
   margin-bottom: 42px;
   font-weight: 500;
   font-size: 40px;
@@ -242,15 +242,17 @@
     // display: none;
 
     content: "";
-    max-width: 0;
     width: 100%;
+    max-width: 0;
     height: 24px;
+    padding-left: 0;
+    // padding-left: 12px;
     background-image: url("data:image/svg+xml,%3Csvg width='15' height='24' viewBox='0 0 15 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.37645 22.2879C6.37645 19.5406 6.37645 16.7933 6.37645 14.0461H0L1.50258 11.4718L6.80944 2.37965L8.19838 0V1.71215V9.95393H14.5748L13.0722 12.5282L7.76539 21.6203L6.37645 24V22.2879Z' fill='%231463FF' /%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     opacity: 0;
-    transition: max-width 0.2s ease-out;
+    transition: max-width 0.2s ease-out, padding-left 0.2s ease-out;
 
     @include xs {
       width: 10px;
@@ -262,7 +264,12 @@
     &::before {
       // display: block;
       max-width: 15px;
+      padding-left: 12px;
       opacity: 1;
+
+      @include xs {
+        padding-left: 8px;
+      }
     }
   }
 
@@ -278,7 +285,7 @@
   }
 
   @include xs {
-    gap: 8px;
+    // gap: 8px;
     margin-bottom: 17px;
     font-size: 28px;
     line-height: 107%;
@@ -289,7 +296,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 233px);
   // grid-auto-columns: 233px;
-  gap: 30px 21px;
+  // gap: 30px 21px;
+  gap: 30px 30px;
 
   &:not(:first-child) {
     margin-top: 40px;

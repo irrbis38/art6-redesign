@@ -458,6 +458,10 @@
     @include sm {
       margin-bottom: 19px;
     }
+
+    @include xs {
+      display: none;
+    }
   }
 
   .scr_forma_footer_art6__form {

@@ -57,7 +57,8 @@
 .scr_sertif_partnery_art6__list {
   display: grid;
   // grid-template-columns: repeat(4, 1fr);
-  grid-template-columns: 25.2% 25.2% 25.2% 24.4%;
+  // grid-template-columns: 25.2% 25.2% 25.2% 24.4%;
+  grid-template-columns: repeat(4, 1fr);
   // gap: 32px 21px;
   gap: 32px 0;
 
@@ -68,12 +69,14 @@
 
   @include lg {
     // gap: 51px 60px;
-    grid-template-columns: 27% 27% 27% 19%;
+    // grid-template-columns: 27% 27% 27% 19%;
+    grid-template-columns: repeat(4, 1fr);
     gap: 51px 0;
   }
 
   @include sm {
-    grid-template-columns: 53.13% 46.87%;
+    // grid-template-columns: 53.13% 46.87%;
+    grid-template-columns: repeat(2, 1fr);
     // gap: 64px 45px;
     gap: 44px 0;
   }

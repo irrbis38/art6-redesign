@@ -111,6 +111,10 @@
       background-color: $color_blue;
       box-shadow: 0 6px $color_blue, 0 0 $color_blue;
     }
+
+    .scr_dostizheniya_art6__descr {
+      color: $color_dark;
+    }
   }
 
   @include xl {
@@ -171,8 +175,9 @@
   margin-bottom: 10px;
   font-weight: 500;
   font-size: 18px;
-  letter-spacing: -0.02em;
-  color: $color_dark;
+  letter-spacing: -0.02e;
+  color: $color_grey;
+  transition: color 0.2s ease-out;
 
   @include xl {
     max-width: 226px;

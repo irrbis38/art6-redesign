@@ -1,10 +1,11 @@
 .scr_kontakti_art6 {
-  margin-bottom: 90px;
+  margin-bottom: 80px;
   padding-top: 230px;
+  padding-bottom: 10px;
   overflow: hidden;
 
   @include lg {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     padding-top: 250px;
   }
 
@@ -203,6 +204,7 @@ a.scr_kontakti_art6__value {
     pointer-events: none;
     background: url("./../images/scr_kontakti_art6/map_overlay.svg") center /
       cover no-repeat;
+    box-shadow: 0px 0px 0px 20px $color_white;
 
     @include xs {
       display: none;

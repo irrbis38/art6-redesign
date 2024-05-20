@@ -40,6 +40,8 @@
 }
 
 .scr_karyera_preimushestva_art6__list {
+  position: sticky;
+  top: 10px;
   flex: 0 0 308px;
   padding-right: 26px;
   border-right: 2px solid $color_grey_light;

@@ -32,14 +32,17 @@
   }
 
   @include lg {
+    max-width: 940px;
     font-size: 50px;
   }
 
   @include sm {
+    max-width: 750px;
     font-size: 40px;
   }
 
   @include xs {
+    max-width: 700px;
     margin-bottom: 17px;
     font-size: 38px;
     line-height: 121%;

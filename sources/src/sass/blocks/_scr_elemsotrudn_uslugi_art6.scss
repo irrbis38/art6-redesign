@@ -112,10 +112,10 @@
       height: 50px;
     }
 
-    &:first-child {
-      padding-top: 56px;
-      border-top: 2px solid $color_grey_light;
-    }
+    // &:first-child {
+    //   padding-top: 56px;
+    //   border-top: 2px solid $color_grey_light;
+    // }
   }
 
   @include xs {

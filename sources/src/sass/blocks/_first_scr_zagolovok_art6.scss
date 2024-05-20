@@ -33,3 +33,19 @@
     margin-bottom: 25px;
   }
 }
+
+// services-list page
+
+.services-list {
+  .first_scr_zagolovok_art6 {
+    @include xs {
+      padding-top: 192px;
+    }
+  }
+
+  .first_scr_zagolovok_art6__title {
+    @include xs {
+      margin-bottom: 76px;
+    }
+  }
+}

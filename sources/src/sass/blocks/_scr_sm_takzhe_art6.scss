@@ -192,16 +192,28 @@
   &:after {
     content: "";
     position: absolute;
-    bottom: 3px;
+    bottom: 4px;
     right: 0;
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     padding-left: 6px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     transition: opacity 0.2s ease-out;
+
+    @include lg {
+      width: 16px;
+      height: 16px;
+      bottom: 1px;
+    }
+
+    @include sm {
+      width: 18px;
+      height: 18px;
+      bottom: 2px;
+    }
   }
 
   &::after {
@@ -374,7 +386,7 @@
       position: absolute;
       // top: 12px;
       // top: 50%;
-      bottom: 0;
+      bottom: 4px;
       right: 0;
       // transform: translateY(-50%);
       width: 32px;

@@ -84,6 +84,7 @@ fieldset.scr_karyera_vakansii_art6__aside,
     margin: 60px 0 50px;
     padding-bottom: 65px;
     border-bottom: 2px solid $color_grey_light;
+    border-right: none;
   }
 
   @include xs {
