@@ -39,18 +39,20 @@ html(lang="ru")
 
 
 
-        #luxy
 
-            block main
-                include ../blocks/_main
+        block main
+            include ../blocks/_main
 
-            block footer
-                include ../blocks/_footer
+        block footer
+            include ../blocks/_footer
 
         include ../blocks/scr_b_client_art6
         include ../blocks/scr_b_consultation_art6
         include ../blocks/scr_success_msg_art6
         include ../blocks/scr_cities_art6
+
+        if pageName == 'reviews-page scrolling-titles-exist'
+            include ../blocks/_scr_otzyvy_full
 
         block js
             script(src="js/main.min.js")

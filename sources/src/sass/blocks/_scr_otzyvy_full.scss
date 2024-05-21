@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 11;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -26,89 +26,96 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  // pointer-events: all;
 }
 
-.scr_otzyvy_full__wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  height: 95%;
-  // overflow: auto;
-  overflow: hidden;
-  display: grid;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0 50px;
-
-  &.hidden {
-    display: none;
-  }
-
-  img {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    position: relative;
-    display: block;
-    height: 100%;
-    min-height: 500px;
-    width: auto;
-    // max-width: 95vw;
-    max-width: 650px;
-    object-fit: contain;
-
-    transform: translate3d(100%, 0, 0);
-    opacity: 0;
-    transition: transform 0.5s ease-in, opacity 0.5s ease-in;
-
-    &.active {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-      z-index: 3;
-    }
-
-    &.without-transition {
-      transition: unset;
-    }
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      .scr_otzyvy_full__nav,
-      .scr_otzyvy_full__close {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-      }
-    }
-  }
+.scr_otzyvy_full__slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
+
+// .scr_otzyvy_full__wrapper {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   z-index: 2;
+//   height: 95%;
+//   // overflow: auto;
+//   overflow: hidden;
+//   display: grid;
+//   justify-content: center;
+//   align-items: flex-start;
+//   gap: 0 50px;
+
+//   &.hidden {
+//     display: none;
+//   }
+
+//   img {
+//     grid-column-start: 1;
+//     grid-column-end: 2;
+//     grid-row-start: 1;
+//     grid-row-end: 2;
+//     position: relative;
+//     display: block;
+//     height: 100%;
+//     min-height: 500px;
+//     width: auto;
+//     // max-width: 95vw;
+//     max-width: 650px;
+//     object-fit: contain;
+
+//     transform: translate3d(100%, 0, 0);
+//     opacity: 0;
+//     transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+
+//     &.active {
+//       transform: translate3d(0, 0, 0);
+//       opacity: 1;
+//       z-index: 3;
+//     }
+
+//     &.without-transition {
+//       transition: unset;
+//     }
+//   }
+
+//   @media (hover: hover) {
+//     &:hover {
+//       .scr_otzyvy_full__nav,
+//       .scr_otzyvy_full__close {
+//         opacity: 1;
+//         visibility: visible;
+//         pointer-events: all;
+//       }
+//     }
+//   }
+// }
 
 .scr_otzyvy_full__nav {
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translate(-50%, -50%);
   z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  width: 100%;
+  width: 90%;
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 
-  &.hidden {
-    display: none;
-  }
+  // &.hidden {
+  //   display: none;
+  // }
 
-  @media (hover: hover) {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
+  // @media (hover: hover) {
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   pointer-events: none;
+  // }
 }
 
 .scr_otzyvy_full__prev,
@@ -121,6 +128,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
+  pointer-events: all;
 
   @media (hover: hover) {
     &:hover {
@@ -145,14 +153,15 @@
 
 .scr_otzyvy_full__close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 28px;
+  right: 28px;
   z-index: 3;
   display: block;
   width: 38px;
   height: 38px;
   cursor: pointer;
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  pointer-events: all;
 
   &::after {
     content: "";
@@ -185,9 +194,9 @@
   }
 
   @media (hover: hover) {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    // opacity: 0;
+    // visibility: hidden;
+    // pointer-events: none;
 
     &:hover {
       &::after {
@@ -200,5 +209,28 @@
         fill: $color_blue;
       }
     }
+  }
+}
+
+.scr_otzyvy_full__slider,
+.scr_otzyvy_full__wrapper {
+  pointer-events: none;
+}
+
+.scr_otzyvy_full__slide {
+  pointer-events: none !important;
+
+  img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    object-fit: contain;
+    pointer-events: all;
   }
 }
