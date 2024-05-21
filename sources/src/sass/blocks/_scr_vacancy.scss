@@ -103,6 +103,7 @@
 
 .scr_vacancy__block {
   min-height: 420px;
+
   &::after {
     content: "";
     display: block;
@@ -144,6 +145,8 @@
   }
 
   @include sm {
+    min-height: unset;
+
     &::after {
       margin-top: 43px;
     }

@@ -1253,7 +1253,7 @@ var initPinVacancy = () => {
         targets: [navLinks[index], block],
         className: "active",
       },
-      markers: true,
+      // markers: true,
       onLeaveBack: () => {
         if (index === 0) {
           navLinks[index].classList.add("active");

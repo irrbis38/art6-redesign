@@ -87,3 +87,11 @@
     white-space: unset;
   }
 }
+
+.reviews-page {
+  @include xs {
+    .index_page_title {
+      font-size: 40px;
+    }
+  }
+}
