@@ -1033,89 +1033,127 @@ var initYoutubeVideo = (videos) => {
 
 // ===== INIT REVIEWS SLIDER
 
+// var initReviewsSlider = () => {
+//   var wrapper = document.querySelector(".scr_otzyvy_full__wrapper");
+
+//   wrapper && wrapper.classList.remove("hidden");
+
+//   var images = Array.from(
+//     document.querySelectorAll(".scr_otzyvy_full__wrapper img")
+//   );
+
+//   var previews = Array.from(document.querySelectorAll(".scr_otzyvy__item"));
+
+//   if (images.length < 1 || previews.length < 1) return;
+
+//   var nav = document.querySelector(".scr_otzyvy_full__nav");
+
+//   images.length === 1 && nav.classList.add("hidden");
+
+//   var full_container = document.querySelector(".scr_otzyvy_full");
+//   var overlay = document.querySelector(".scr_otzyvy_full__overlay");
+//   var closeBtn = document.querySelector(".scr_otzyvy_full__close");
+
+//   var prevBtn = document.querySelector(".scr_otzyvy_full__prev");
+//   var nextBtn = document.querySelector(".scr_otzyvy_full__next");
+
+//   var currImgIndex = 0;
+
+//   var initSetup = () => {
+//     images.forEach((img) => img.classList.remove("active"));
+//     images[currImgIndex].classList.add("active");
+
+//     currImgIndex === 0
+//       ? prevBtn.classList.add("disabled")
+//       : prevBtn.classList.remove("disabled");
+//     currImgIndex === images.length - 1
+//       ? nextBtn.classList.add("disabled")
+//       : nextBtn.classList.remove("disabled");
+//   };
+
+//   previews.forEach((preview) => {
+//     preview.addEventListener("click", (e) => {
+//       document.body.classList.add("lock");
+//       full_container.classList.add("active");
+
+//       currImgIndex = previews.indexOf(e.currentTarget);
+
+//       initSetup();
+
+//       setTimeout(
+//         () => images.forEach((i) => i.classList.remove("without-transition")),
+//         700
+//       );
+//     });
+//   });
+
+//   [overlay, closeBtn].forEach((el) =>
+//     el.addEventListener("click", () => {
+//       document.body.classList.remove("lock");
+//       full_container.classList.remove("active");
+//       images.forEach((i) => i.classList.add("without-transition"));
+//     })
+//   );
+
+//   prevBtn.addEventListener("click", () => {
+//     images[currImgIndex].classList.remove("active");
+//     currImgIndex--;
+//     images[currImgIndex].classList.add("active");
+//     nextBtn.classList.remove("disabled");
+
+//     if (currImgIndex < 1) {
+//       prevBtn.classList.add("disabled");
+//     }
+//   });
+
+//   nextBtn.addEventListener("click", () => {
+//     images[currImgIndex].classList.remove("active");
+//     currImgIndex++;
+//     images[currImgIndex].classList.add("active");
+//     prevBtn.classList.remove("disabled");
+
+//     if (currImgIndex >= images.length - 1) {
+//       nextBtn.classList.add("disabled");
+//     }
+//   });
+// };
+
 var initReviewsSlider = () => {
-  var wrapper = document.querySelector(".scr_otzyvy_full__wrapper");
-
-  wrapper && wrapper.classList.remove("hidden");
-
-  var images = Array.from(
-    document.querySelectorAll(".scr_otzyvy_full__wrapper img")
+  var previews = Array.from(document.querySelectorAll(".scr_otzyvy__item"));
+  var full_slides = Array.from(
+    document.querySelectorAll(".scr_otzyvy_full__slide")
   );
 
-  var previews = Array.from(document.querySelectorAll(".scr_otzyvy__item"));
-
-  if (images.length < 1 || previews.length < 1) return;
-
-  var nav = document.querySelector(".scr_otzyvy_full__nav");
-
-  images.length === 1 && nav.classList.add("hidden");
-
-  var full_container = document.querySelector(".scr_otzyvy_full");
+  var container_full = document.querySelector(".scr_otzyvy_full");
+  var close = document.querySelector(".scr_otzyvy_full__close");
   var overlay = document.querySelector(".scr_otzyvy_full__overlay");
-  var closeBtn = document.querySelector(".scr_otzyvy_full__close");
 
-  var prevBtn = document.querySelector(".scr_otzyvy_full__prev");
-  var nextBtn = document.querySelector(".scr_otzyvy_full__next");
+  if (previews.length < 1) return;
 
-  var currImgIndex = 0;
-
-  var initSetup = () => {
-    images.forEach((img) => img.classList.remove("active"));
-    images[currImgIndex].classList.add("active");
-
-    currImgIndex === 0
-      ? prevBtn.classList.add("disabled")
-      : prevBtn.classList.remove("disabled");
-    currImgIndex === images.length - 1
-      ? nextBtn.classList.add("disabled")
-      : nextBtn.classList.remove("disabled");
-  };
-
-  previews.forEach((preview) => {
-    preview.addEventListener("click", (e) => {
-      document.body.classList.add("lock");
-      full_container.classList.add("active");
-
-      currImgIndex = previews.indexOf(e.currentTarget);
-
-      initSetup();
-
-      setTimeout(
-        () => images.forEach((i) => i.classList.remove("without-transition")),
-        700
-      );
-    });
+  var slider = new Swiper(".scr_otzyvy_full__slider", {
+    lazy: true,
+    effect: "fade",
+    navigation: {
+      prevEl: ".scr_otzyvy_full__prev",
+      nextEl: ".scr_otzyvy_full__next",
+    },
   });
 
-  [overlay, closeBtn].forEach((el) =>
-    el.addEventListener("click", () => {
-      document.body.classList.remove("lock");
-      full_container.classList.remove("active");
-      images.forEach((i) => i.classList.add("without-transition"));
+  previews.forEach((p) =>
+    p.addEventListener("click", () => {
+      var idx = previews.indexOf(p);
+      slider.slideTo(idx, 0, false);
+      container_full.classList.add("active");
+      document.body.classList.add("lock");
     })
   );
 
-  prevBtn.addEventListener("click", () => {
-    images[currImgIndex].classList.remove("active");
-    currImgIndex--;
-    images[currImgIndex].classList.add("active");
-    nextBtn.classList.remove("disabled");
-
-    if (currImgIndex < 1) {
-      prevBtn.classList.add("disabled");
-    }
-  });
-
-  nextBtn.addEventListener("click", () => {
-    images[currImgIndex].classList.remove("active");
-    currImgIndex++;
-    images[currImgIndex].classList.add("active");
-    prevBtn.classList.remove("disabled");
-
-    if (currImgIndex >= images.length - 1) {
-      nextBtn.classList.add("disabled");
-    }
-  });
+  [close, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      container_full.classList.remove("active");
+      document.body.classList.remove("lock");
+    })
+  );
 };
 
 var initCompanyPageSlider = () => {
@@ -1477,11 +1515,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // init reviews slider
   var reviews_page = document.querySelector(".reviews-page");
-  if (reviews_page) {
-    setTimeout(() => {
-      initReviewsSlider();
-    }, 2000);
-  }
+  reviews_page && initReviewsSlider();
+  // if (reviews_page) {
+  //   setTimeout(() => {
+  //     initReviewsSlider();
+  //   }, 2000);
+  // }
 
   var company_page = document.querySelector(".company-page");
   if (company_page) {
