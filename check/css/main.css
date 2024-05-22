@@ -2173,7 +2173,8 @@ button.header_art6__more {
 }
 @media (max-width:767px) {
   .vacancy-page .first_scr_main_art6 {
-    margin-bottom: 60px
+    margin-bottom: 60px;
+    padding-top: 50px
   }
 }
 .vacancy-page .first_scr_main_art6 .container {
@@ -2194,7 +2195,7 @@ button.header_art6__more {
 }
 @media (max-width:767px) {
   .vacancy-page .first_scr_main_art6 .container {
-    margin-top: 168px;
+    margin-top: 0;
     padding-bottom: 32px
   }
 }
@@ -2244,9 +2245,7 @@ button.header_art6__more {
 }
 @media (max-width:767px) {
   .vacancy-page .first_scr_main_art6 .container::after {
-    display: block;
-    top: -270px;
-    right: -115px
+    display: none
   }
 }
 @media (max-width:991px) {
