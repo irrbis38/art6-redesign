@@ -14,6 +14,13 @@
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+
+    .scr_otzyvy_full__prev,
+    .scr_otzyvy_full__next,
+    .scr_otzyvy_full__close,
+    .scr_otzyvy_full__slide img {
+      pointer-events: all;
+    }
   }
 }
 
@@ -26,7 +33,6 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  // pointer-events: all;
 }
 
 .scr_otzyvy_full__slider {
@@ -34,65 +40,6 @@
   width: 100%;
   height: 100%;
 }
-
-// .scr_otzyvy_full__wrapper {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   z-index: 2;
-//   height: 95%;
-//   // overflow: auto;
-//   overflow: hidden;
-//   display: grid;
-//   justify-content: center;
-//   align-items: flex-start;
-//   gap: 0 50px;
-
-//   &.hidden {
-//     display: none;
-//   }
-
-//   img {
-//     grid-column-start: 1;
-//     grid-column-end: 2;
-//     grid-row-start: 1;
-//     grid-row-end: 2;
-//     position: relative;
-//     display: block;
-//     height: 100%;
-//     min-height: 500px;
-//     width: auto;
-//     // max-width: 95vw;
-//     max-width: 650px;
-//     object-fit: contain;
-
-//     transform: translate3d(100%, 0, 0);
-//     opacity: 0;
-//     transition: transform 0.5s ease-in, opacity 0.5s ease-in;
-
-//     &.active {
-//       transform: translate3d(0, 0, 0);
-//       opacity: 1;
-//       z-index: 3;
-//     }
-
-//     &.without-transition {
-//       transition: unset;
-//     }
-//   }
-
-//   @media (hover: hover) {
-//     &:hover {
-//       .scr_otzyvy_full__nav,
-//       .scr_otzyvy_full__close {
-//         opacity: 1;
-//         visibility: visible;
-//         pointer-events: all;
-//       }
-//     }
-//   }
-// }
 
 .scr_otzyvy_full__nav {
   position: absolute;
@@ -107,32 +54,30 @@
   width: 90%;
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 
-  // &.hidden {
-  //   display: none;
-  // }
-
-  // @media (hover: hover) {
-  //   opacity: 0;
-  //   visibility: hidden;
-  //   pointer-events: none;
-  // }
+  @include xs {
+    width: 98%;
+  }
 }
 
 .scr_otzyvy_full__prev,
 .scr_otzyvy_full__next {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-  background-color: $color_dark;
-  transition: background-color 0.2s ease-out;
+  background-color: transparent;
+  transition: background-color 0.2s ease-out box-shadow 0.2s ease-out;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
-  pointer-events: all;
+  border-radius: 12px;
+  // pointer-events: all;
 
   @media (hover: hover) {
     &:hover {
-      background-color: $color_blue;
+      background-color: $color_grey_light;
+      box-shadow: 0px 0px 8px 2px $color_blue;
     }
   }
 
@@ -141,14 +86,6 @@
     background-color: $color_grey_light;
     cursor: default;
   }
-}
-
-.scr_otzyvy_full__prev {
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.6641 9.16706V10.8337H6.66406L11.2474 15.4171L10.0641 16.6004L3.46406 10.0004L10.0641 3.40039L11.2474 4.58372L6.66406 9.16706H16.6641Z' fill='white' /%3E%3C/svg%3E");
-}
-
-.scr_otzyvy_full__next {
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.33594 9.16706V10.8337H13.3359L8.7526 15.4171L9.93594 16.6004L16.5359 10.0004L9.93594 3.40039L8.7526 4.58372L13.3359 9.16706H3.33594Z' fill='white' /%3E%3C/svg%3E");
 }
 
 .scr_otzyvy_full__close {
@@ -161,7 +98,7 @@
   height: 38px;
   cursor: pointer;
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-  pointer-events: all;
+  // pointer-events: all;
 
   &::after {
     content: "";
@@ -194,13 +131,8 @@
   }
 
   @media (hover: hover) {
-    // opacity: 0;
-    // visibility: hidden;
-    // pointer-events: none;
-
     &:hover {
       &::after {
-        // border-color: $color_blue;
         transform: translate(-50%, -50%) scale(1.1);
         box-shadow: 0px 0px 8px 2px $color_blue;
       }
@@ -209,6 +141,11 @@
         fill: $color_blue;
       }
     }
+  }
+
+  @include xxs {
+    top: 14px;
+    right: 14px;
   }
 }
 
@@ -231,6 +168,10 @@
     transform: translate(-50%, -50%);
     z-index: 11;
     object-fit: contain;
-    pointer-events: all;
+    // pointer-events: all;
+
+    @include xxs {
+      max-width: 96%;
+    }
   }
 }
