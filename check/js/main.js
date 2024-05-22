@@ -1267,7 +1267,7 @@ var initPinVacancy = () => {
   if (!vacancy || !menu) return;
 
   ScrollTrigger.matchMedia({
-    "(min-width: 992px)": function () {
+    "(min-width: 1500px)": function () {
       ScrollTrigger.create({
         trigger: ".scr_vacancy",
         start: "-=5% top",
@@ -1275,6 +1275,7 @@ var initPinVacancy = () => {
         end: "bottom center",
         pin: ".scr_vacancy__menu",
         pinSpacing: false,
+        // markers: true,
       });
     },
   });

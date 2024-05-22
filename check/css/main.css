@@ -2225,7 +2225,7 @@ button.header_art6__more {
   right: -200px;
   width: 944px;
   height: 584px;
-  background-image: url(../images/first_scr_main_art6/first-bg-vacancy.svg)
+  background-image: url(../images/first_scr_main_art6/first-bg.svg)
 }
 @media (max-width:1600px) {
   .vacancy-page .first_scr_main_art6 .container::after {
@@ -2246,8 +2246,7 @@ button.header_art6__more {
   .vacancy-page .first_scr_main_art6 .container::after {
     display: block;
     top: -270px;
-    right: -115px;
-    background-image: url(../images/first_scr_main_art6/first-bg-vacancy-small.svg)
+    right: -115px
   }
 }
 @media (max-width:991px) {
@@ -15140,15 +15139,18 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
   }
 }
 .scr_vacancy {
-  margin-bottom: 278px
+  padding-bottom: 150px;
+  margin-bottom: 128px
 }
-@media (max-width:767px) {
+@media (max-width:1600px) {
   .scr_vacancy {
-    margin-bottom: 200px
+    padding-bottom: 100px;
+    margin-bottom: 100px
   }
 }
 @media (max-width:991px) {
   .scr_vacancy {
+    padding-bottom: 65px;
     margin-bottom: 125px
   }
 }
@@ -15256,7 +15258,6 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
   opacity: 1
 }
 .scr_vacancy__block {
-  min-height: 420px;
   font-weight: 500;
   font-size: 18px;
   line-height: 156%;
@@ -15499,6 +15500,7 @@ fieldset.scr_karyera_vakansii_art6__aside.empty {
 }
 .scr_vacancy__examples {
   max-width: 1000px;
+  margin-top: 20px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
