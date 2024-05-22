@@ -1024,6 +1024,7 @@
 
     @include xs {
       margin-bottom: 60px;
+      padding-top: 50px;
     }
 
     .container {
@@ -1041,7 +1042,9 @@
       }
 
       @include xs {
-        margin-top: 168px;
+        // margin-top: 168px;
+        margin-top: 0;
+
         padding-bottom: 32px;
       }
 
@@ -1086,10 +1089,11 @@
         }
 
         @include xs {
-          display: block;
-          top: -270px;
-          right: -115px;
+          // display: block;
+          // top: -270px;
+          // right: -115px;
           // background-image: url("./../images/first_scr_main_art6/first-bg-vacancy-small.svg");
+          display: none;
         }
       }
     }
