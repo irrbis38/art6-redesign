@@ -13249,6 +13249,12 @@ button.header_art6__more {
   visibility: visible;
   pointer-events: all
 }
+.scr_otzyvy_full.active .scr_otzyvy_full__close,
+.scr_otzyvy_full.active .scr_otzyvy_full__next,
+.scr_otzyvy_full.active .scr_otzyvy_full__prev,
+.scr_otzyvy_full.active .scr_otzyvy_full__slide img {
+  pointer-events: all
+}
 .scr_otzyvy_full__overlay {
   position: absolute;
   top: 0;
@@ -13284,22 +13290,36 @@ button.header_art6__more {
   width: 90%;
   transition: opacity .5s ease-out,visibility .5s ease-out
 }
+@media (max-width:767px) {
+  .scr_otzyvy_full__nav {
+    width: 98%
+  }
+}
 .scr_otzyvy_full__next,
 .scr_otzyvy_full__prev {
-  display: block;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-  background-color: #1c1c20;
-  transition: background-color .2s ease-out;
+  background-color: transparent;
+  transition: background-color .2s ease-out box-shadow .2s ease-out;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
-  pointer-events: all
+  border-radius: 12px
 }
 @media (hover:hover) {
   .scr_otzyvy_full__next:hover,
   .scr_otzyvy_full__prev:hover {
-    background-color: #166ff5
+    background-color: #f2f2f2;
+    box-shadow: 0 0 8px 2px #166ff5
   }
 }
 .scr_otzyvy_full__next.disabled,
@@ -13307,12 +13327,6 @@ button.header_art6__more {
   pointer-events: none;
   background-color: #f2f2f2;
   cursor: default
-}
-.scr_otzyvy_full__prev {
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.6641 9.16706V10.8337H6.66406L11.2474 15.4171L10.0641 16.6004L3.46406 10.0004L10.0641 3.40039L11.2474 4.58372L6.66406 9.16706H16.6641Z' fill='white' /%3E%3C/svg%3E")
-}
-.scr_otzyvy_full__next {
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.33594 9.16706V10.8337H13.3359L8.7526 15.4171L9.93594 16.6004L16.5359 10.0004L9.93594 3.40039L8.7526 4.58372L13.3359 9.16706H3.33594Z' fill='white' /%3E%3C/svg%3E")
 }
 .scr_otzyvy_full__close {
   position: absolute;
@@ -13323,8 +13337,7 @@ button.header_art6__more {
   width: 38px;
   height: 38px;
   cursor: pointer;
-  transition: opacity .5s ease-out,visibility .5s ease-out;
-  pointer-events: all
+  transition: opacity .5s ease-out,visibility .5s ease-out
 }
 .scr_otzyvy_full__close::after {
   content: "";
@@ -13366,6 +13379,12 @@ button.header_art6__more {
     fill: #166ff5
   }
 }
+@media (max-width:575px) {
+  .scr_otzyvy_full__close {
+    top: 14px;
+    right: 14px
+  }
+}
 .scr_otzyvy_full__slider,
 .scr_otzyvy_full__wrapper {
   pointer-events: none
@@ -13385,8 +13404,12 @@ button.header_art6__more {
   transform: translate(-50%,-50%);
   z-index: 11;
   -o-object-fit: contain;
-  object-fit: contain;
-  pointer-events: all
+  object-fit: contain
+}
+@media (max-width:575px) {
+  .scr_otzyvy_full__slide img {
+    max-width: 96%
+  }
 }
 .scr_karusel_foto_art6 {
   margin-bottom: 117px
