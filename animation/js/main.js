@@ -88,7 +88,8 @@ var initHeader = () => {
     ".header_art6__mobile-item-has-submenu ul"
   );
 
-  burger_button.addEventListener("click", () => {
+  burger_button.addEventListener("click", (e) => {
+    console.log("click");
     header.classList.toggle("mobile-menu-open");
     body.classList.toggle("lock");
     submenues.forEach((submenu) => {
@@ -605,63 +606,63 @@ var handleSuccessMsgModal = () => {
 
 // ===== ВЫБОР ГОРОДА
 
-var changeCity = () => {
-  var btn = document.querySelector(".scr_footer_art6__offices"),
-    body = document.body,
-    modal = document.querySelector(".scr_cities_art6"),
-    close_btn = document.querySelector(".scr_cities_art6__btn"),
-    overlay = document.querySelector(".scr_cities_art6__overlay"),
-    inputs = Array.from(document.querySelectorAll(".scr_cities_art6__input")),
-    search = document.querySelector(".scr_cities_art6__search");
+// var changeCity = () => {
+//   var btn = document.querySelector(".scr_footer_art6__offices"),
+//     body = document.body,
+//     modal = document.querySelector(".scr_cities_art6"),
+//     close_btn = document.querySelector(".scr_cities_art6__btn"),
+//     overlay = document.querySelector(".scr_cities_art6__overlay"),
+//     inputs = Array.from(document.querySelectorAll(".scr_cities_art6__input")),
+//     search = document.querySelector(".scr_cities_art6__search");
 
-  btn.addEventListener("click", () => {
-    modal.classList.add("active");
-    body.classList.add("lock");
-  });
+//   btn.addEventListener("click", () => {
+//     modal.classList.add("active");
+//     body.classList.add("lock");
+//   });
 
-  [close_btn, overlay].forEach((el) =>
-    el.addEventListener("click", () => {
-      modal.classList.remove("active");
-      body.classList.remove("lock");
-      search.value = "";
-      inputs.forEach((i) => i.classList.remove("hidden"));
-    })
-  );
+//   [close_btn, overlay].forEach((el) =>
+//     el.addEventListener("click", () => {
+//       modal.classList.remove("active");
+//       body.classList.remove("lock");
+//       search.value = "";
+//       inputs.forEach((i) => i.classList.remove("hidden"));
+//     })
+//   );
 
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      modal.classList.remove("active");
-      // if mobile menu is non-open than unlock body
-      if (!header.classList.contains("mobile-menu-open")) {
-        body.classList.remove("lock");
-      }
-      search.value = "";
-      inputs.forEach((i) => i.classList.remove("hidden"));
-    }
-  });
+//   window.addEventListener("keydown", (e) => {
+//     if (e.key === "Escape") {
+//       modal.classList.remove("active");
+//       // if mobile menu is non-open than unlock body
+//       if (!header.classList.contains("mobile-menu-open")) {
+//         body.classList.remove("lock");
+//       }
+//       search.value = "";
+//       inputs.forEach((i) => i.classList.remove("hidden"));
+//     }
+//   });
 
-  // handle city inputs
-  inputs.forEach((i) =>
-    i.addEventListener("click", () => {
-      modal.classList.remove("active");
-      body.classList.remove("lock");
-      btn.children[1].textContent = i.value;
-      search.value = "";
-      inputs.forEach((i) => i.classList.remove("hidden"));
-    })
-  );
+//   // handle city inputs
+//   inputs.forEach((i) =>
+//     i.addEventListener("click", () => {
+//       modal.classList.remove("active");
+//       body.classList.remove("lock");
+//       btn.children[1].textContent = i.value;
+//       search.value = "";
+//       inputs.forEach((i) => i.classList.remove("hidden"));
+//     })
+//   );
 
-  // city searching
-  search.addEventListener("input", () => {
-    inputs.forEach((i) => {
-      if (i.value.toLowerCase().includes(search.value.toLowerCase())) {
-        i.classList.remove("hidden");
-      } else {
-        i.classList.add("hidden");
-      }
-    });
-  });
-};
+//   // city searching
+//   search.addEventListener("input", () => {
+//     inputs.forEach((i) => {
+//       if (i.value.toLowerCase().includes(search.value.toLowerCase())) {
+//         i.classList.remove("hidden");
+//       } else {
+//         i.classList.add("hidden");
+//       }
+//     });
+//   });
+// };
 
 // ===== АНИМАЦИЯ ПО СКРОЛЛУ
 
@@ -1033,89 +1034,127 @@ var initYoutubeVideo = (videos) => {
 
 // ===== INIT REVIEWS SLIDER
 
+// var initReviewsSlider = () => {
+//   var wrapper = document.querySelector(".scr_otzyvy_full__wrapper");
+
+//   wrapper && wrapper.classList.remove("hidden");
+
+//   var images = Array.from(
+//     document.querySelectorAll(".scr_otzyvy_full__wrapper img")
+//   );
+
+//   var previews = Array.from(document.querySelectorAll(".scr_otzyvy__item"));
+
+//   if (images.length < 1 || previews.length < 1) return;
+
+//   var nav = document.querySelector(".scr_otzyvy_full__nav");
+
+//   images.length === 1 && nav.classList.add("hidden");
+
+//   var full_container = document.querySelector(".scr_otzyvy_full");
+//   var overlay = document.querySelector(".scr_otzyvy_full__overlay");
+//   var closeBtn = document.querySelector(".scr_otzyvy_full__close");
+
+//   var prevBtn = document.querySelector(".scr_otzyvy_full__prev");
+//   var nextBtn = document.querySelector(".scr_otzyvy_full__next");
+
+//   var currImgIndex = 0;
+
+//   var initSetup = () => {
+//     images.forEach((img) => img.classList.remove("active"));
+//     images[currImgIndex].classList.add("active");
+
+//     currImgIndex === 0
+//       ? prevBtn.classList.add("disabled")
+//       : prevBtn.classList.remove("disabled");
+//     currImgIndex === images.length - 1
+//       ? nextBtn.classList.add("disabled")
+//       : nextBtn.classList.remove("disabled");
+//   };
+
+//   previews.forEach((preview) => {
+//     preview.addEventListener("click", (e) => {
+//       document.body.classList.add("lock");
+//       full_container.classList.add("active");
+
+//       currImgIndex = previews.indexOf(e.currentTarget);
+
+//       initSetup();
+
+//       setTimeout(
+//         () => images.forEach((i) => i.classList.remove("without-transition")),
+//         700
+//       );
+//     });
+//   });
+
+//   [overlay, closeBtn].forEach((el) =>
+//     el.addEventListener("click", () => {
+//       document.body.classList.remove("lock");
+//       full_container.classList.remove("active");
+//       images.forEach((i) => i.classList.add("without-transition"));
+//     })
+//   );
+
+//   prevBtn.addEventListener("click", () => {
+//     images[currImgIndex].classList.remove("active");
+//     currImgIndex--;
+//     images[currImgIndex].classList.add("active");
+//     nextBtn.classList.remove("disabled");
+
+//     if (currImgIndex < 1) {
+//       prevBtn.classList.add("disabled");
+//     }
+//   });
+
+//   nextBtn.addEventListener("click", () => {
+//     images[currImgIndex].classList.remove("active");
+//     currImgIndex++;
+//     images[currImgIndex].classList.add("active");
+//     prevBtn.classList.remove("disabled");
+
+//     if (currImgIndex >= images.length - 1) {
+//       nextBtn.classList.add("disabled");
+//     }
+//   });
+// };
+
 var initReviewsSlider = () => {
-  var wrapper = document.querySelector(".scr_otzyvy_full__wrapper");
-
-  wrapper && wrapper.classList.remove("hidden");
-
-  var images = Array.from(
-    document.querySelectorAll(".scr_otzyvy_full__wrapper img")
-  );
-
   var previews = Array.from(document.querySelectorAll(".scr_otzyvy__item"));
+  // var full_slides = Array.from(
+  //   document.querySelectorAll(".scr_otzyvy_full__slide")
+  // );
 
-  if (images.length < 1 || previews.length < 1) return;
-
-  var nav = document.querySelector(".scr_otzyvy_full__nav");
-
-  images.length === 1 && nav.classList.add("hidden");
-
-  var full_container = document.querySelector(".scr_otzyvy_full");
+  var container_full = document.querySelector(".scr_otzyvy_full");
+  var close = document.querySelector(".scr_otzyvy_full__close");
   var overlay = document.querySelector(".scr_otzyvy_full__overlay");
-  var closeBtn = document.querySelector(".scr_otzyvy_full__close");
 
-  var prevBtn = document.querySelector(".scr_otzyvy_full__prev");
-  var nextBtn = document.querySelector(".scr_otzyvy_full__next");
+  if (previews.length < 1) return;
 
-  var currImgIndex = 0;
-
-  var initSetup = () => {
-    images.forEach((img) => img.classList.remove("active"));
-    images[currImgIndex].classList.add("active");
-
-    currImgIndex === 0
-      ? prevBtn.classList.add("disabled")
-      : prevBtn.classList.remove("disabled");
-    currImgIndex === images.length - 1
-      ? nextBtn.classList.add("disabled")
-      : nextBtn.classList.remove("disabled");
-  };
-
-  previews.forEach((preview) => {
-    preview.addEventListener("click", (e) => {
-      document.body.classList.add("lock");
-      full_container.classList.add("active");
-
-      currImgIndex = previews.indexOf(e.currentTarget);
-
-      initSetup();
-
-      setTimeout(
-        () => images.forEach((i) => i.classList.remove("without-transition")),
-        700
-      );
-    });
+  var slider = new Swiper(".scr_otzyvy_full__slider", {
+    lazy: true,
+    effect: "fade",
+    navigation: {
+      prevEl: ".scr_otzyvy_full__prev",
+      nextEl: ".scr_otzyvy_full__next",
+    },
   });
 
-  [overlay, closeBtn].forEach((el) =>
-    el.addEventListener("click", () => {
-      document.body.classList.remove("lock");
-      full_container.classList.remove("active");
-      images.forEach((i) => i.classList.add("without-transition"));
+  previews.forEach((p) =>
+    p.addEventListener("click", () => {
+      var idx = previews.indexOf(p);
+      slider.slideTo(idx, 0, false);
+      container_full.classList.add("active");
+      document.body.classList.add("lock");
     })
   );
 
-  prevBtn.addEventListener("click", () => {
-    images[currImgIndex].classList.remove("active");
-    currImgIndex--;
-    images[currImgIndex].classList.add("active");
-    nextBtn.classList.remove("disabled");
-
-    if (currImgIndex < 1) {
-      prevBtn.classList.add("disabled");
-    }
-  });
-
-  nextBtn.addEventListener("click", () => {
-    images[currImgIndex].classList.remove("active");
-    currImgIndex++;
-    images[currImgIndex].classList.add("active");
-    prevBtn.classList.remove("disabled");
-
-    if (currImgIndex >= images.length - 1) {
-      nextBtn.classList.add("disabled");
-    }
-  });
+  [close, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      container_full.classList.remove("active");
+      document.body.classList.remove("lock");
+    })
+  );
 };
 
 var initCompanyPageSlider = () => {
@@ -1228,7 +1267,7 @@ var initPinVacancy = () => {
   if (!vacancy || !menu) return;
 
   ScrollTrigger.matchMedia({
-    "(min-width: 992px)": function () {
+    "(min-width: 1500px)": function () {
       ScrollTrigger.create({
         trigger: ".scr_vacancy",
         start: "-=5% top",
@@ -1236,6 +1275,7 @@ var initPinVacancy = () => {
         end: "bottom center",
         pin: ".scr_vacancy__menu",
         pinSpacing: false,
+        // markers: true,
       });
     },
   });
@@ -1253,7 +1293,7 @@ var initPinVacancy = () => {
         targets: [navLinks[index], block],
         className: "active",
       },
-      markers: true,
+      // markers: true,
       onLeaveBack: () => {
         if (index === 0) {
           navLinks[index].classList.add("active");
@@ -1359,7 +1399,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   scr_text_director_art6_consultation && toggleConsultationModal();
 
   // footer
-  changeCity();
+  // changeCity();
 
   // sliders
   var teamSlider = document.querySelector(".scr_komanda_art6__slider");
@@ -1477,11 +1517,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // init reviews slider
   var reviews_page = document.querySelector(".reviews-page");
-  if (reviews_page) {
-    setTimeout(() => {
-      initReviewsSlider();
-    }, 2000);
-  }
+  reviews_page && initReviewsSlider();
+  // if (reviews_page) {
+  //   setTimeout(() => {
+  //     initReviewsSlider();
+  //   }, 2000);
+  // }
 
   var company_page = document.querySelector(".company-page");
   if (company_page) {
