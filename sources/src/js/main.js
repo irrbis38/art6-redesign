@@ -606,63 +606,63 @@ var handleSuccessMsgModal = () => {
 
 // ===== ВЫБОР ГОРОДА
 
-// var changeCity = () => {
-//   var btn = document.querySelector(".scr_footer_art6__offices"),
-//     body = document.body,
-//     modal = document.querySelector(".scr_cities_art6"),
-//     close_btn = document.querySelector(".scr_cities_art6__btn"),
-//     overlay = document.querySelector(".scr_cities_art6__overlay"),
-//     inputs = Array.from(document.querySelectorAll(".scr_cities_art6__input")),
-//     search = document.querySelector(".scr_cities_art6__search");
+var changeCity = () => {
+  var btn = document.querySelector(".scr_footer_art6__offices"),
+    body = document.body,
+    modal = document.querySelector(".scr_cities_art6"),
+    close_btn = document.querySelector(".scr_cities_art6__btn"),
+    overlay = document.querySelector(".scr_cities_art6__overlay"),
+    inputs = Array.from(document.querySelectorAll(".scr_cities_art6__input")),
+    search = document.querySelector(".scr_cities_art6__search");
 
-//   btn.addEventListener("click", () => {
-//     modal.classList.add("active");
-//     body.classList.add("lock");
-//   });
+  btn.addEventListener("click", () => {
+    modal.classList.add("active");
+    body.classList.add("lock");
+  });
 
-//   [close_btn, overlay].forEach((el) =>
-//     el.addEventListener("click", () => {
-//       modal.classList.remove("active");
-//       body.classList.remove("lock");
-//       search.value = "";
-//       inputs.forEach((i) => i.classList.remove("hidden"));
-//     })
-//   );
+  [close_btn, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    })
+  );
 
-//   window.addEventListener("keydown", (e) => {
-//     if (e.key === "Escape") {
-//       modal.classList.remove("active");
-//       // if mobile menu is non-open than unlock body
-//       if (!header.classList.contains("mobile-menu-open")) {
-//         body.classList.remove("lock");
-//       }
-//       search.value = "";
-//       inputs.forEach((i) => i.classList.remove("hidden"));
-//     }
-//   });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
+      // if mobile menu is non-open than unlock body
+      if (!header.classList.contains("mobile-menu-open")) {
+        body.classList.remove("lock");
+      }
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    }
+  });
 
-//   // handle city inputs
-//   inputs.forEach((i) =>
-//     i.addEventListener("click", () => {
-//       modal.classList.remove("active");
-//       body.classList.remove("lock");
-//       btn.children[1].textContent = i.value;
-//       search.value = "";
-//       inputs.forEach((i) => i.classList.remove("hidden"));
-//     })
-//   );
+  // handle city inputs
+  inputs.forEach((i) =>
+    i.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      btn.children[1].textContent = i.value;
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    })
+  );
 
-//   // city searching
-//   search.addEventListener("input", () => {
-//     inputs.forEach((i) => {
-//       if (i.value.toLowerCase().includes(search.value.toLowerCase())) {
-//         i.classList.remove("hidden");
-//       } else {
-//         i.classList.add("hidden");
-//       }
-//     });
-//   });
-// };
+  // city searching
+  search.addEventListener("input", () => {
+    inputs.forEach((i) => {
+      if (i.value.toLowerCase().includes(search.value.toLowerCase())) {
+        i.classList.remove("hidden");
+      } else {
+        i.classList.add("hidden");
+      }
+    });
+  });
+};
 
 // ===== АНИМАЦИЯ ПО СКРОЛЛУ
 
@@ -1399,7 +1399,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   scr_text_director_art6_consultation && toggleConsultationModal();
 
   // footer
-  // changeCity();
+  changeCity();
 
   // sliders
   var teamSlider = document.querySelector(".scr_komanda_art6__slider");
