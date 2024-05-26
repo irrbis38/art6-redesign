@@ -4,14 +4,14 @@
     .scr_image_full__slider.swiper
         .scr_image_full__wrapper.swiper-wrapper
             - var counter = 0;
-            while counter < 16
+            while counter < 9
 
                 -
                     var isActive = counter === 0 ? true : false
                     
-                    var imgSrcset = `./images/scr_otzyvy/review_full_${counter + 1}.webp, ./images/scr_otzyvy/review_full_${counter + 1}@2x.webp 2x`
+                    var imgSrcset = `./images/scr_nagradi_art6/achivment_full_${counter + 1}.webp, ./images/scr_nagradi_art6/achivment_full_${counter + 1}@2x.webp 2x`
 
-                    var imgSrc = `scr_otzyvy/review_full_${counter + 1}@2x`
+                    var imgSrc = `scr_nagradi_art6/achivment_full_${counter + 1}@2x`
 
                 .scr_image_full__slide.swiper-slide
                     +imgWithClass(isActive, imgSrcset, imgSrc, 'отзыв', 540, 760, true)

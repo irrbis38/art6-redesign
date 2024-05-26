@@ -1,0 +1,70 @@
+.scr_karta_art6 {
+  margin-top: 120px;
+  margin-bottom: 112px;
+
+  @include xl {
+    margin-top: 95px;
+    margin-bottom: 95px;
+  }
+
+  @include lg {
+    margin-top: 78px;
+    margin-bottom: 78px;
+  }
+
+  @include sm {
+    margin-top: 58px;
+    margin-bottom: 58px;
+  }
+
+  @include xs {
+    margin-top: 111px;
+    margin-bottom: 80px;
+  }
+}
+
+.scr_karta_art6__descr {
+  margin-bottom: 53px;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+
+  span {
+    border-bottom: 4px solid $color_blue;
+  }
+
+  @include xl {
+    font-size: 35px;
+  }
+
+  @include lg {
+    margin-bottom: 45px;
+    font-size: 35px;
+
+    span {
+      border-bottom: 3px solid $color_blue;
+    }
+  }
+
+  @include sm {
+    max-width: 462px;
+    margin-bottom: 36px;
+    font-size: 30px;
+  }
+
+  @include xs {
+    margin-bottom: 25px;
+    font-size: 32px;
+    line-height: 125%;
+  }
+
+  @include r(380px) {
+    font-size: 26px;
+  }
+}
+
+.scr_karta_art6__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

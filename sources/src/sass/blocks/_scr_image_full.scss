@@ -1,4 +1,4 @@
-.scr_otzyvy_full {
+.scr_image_full {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,33 +15,47 @@
     visibility: visible;
     pointer-events: all;
 
-    .scr_otzyvy_full__prev,
-    .scr_otzyvy_full__next,
-    .scr_otzyvy_full__close,
-    .scr_otzyvy_full__slide img {
+    .scr_image_full__prev,
+    .scr_image_full__next,
+    .scr_image_full__close,
+    .scr_image_full__slide img {
       pointer-events: all;
+    }
+
+    .scr_image_full__slide {
+      // pointer-events: none !important;
+
+      &.swiper-slide-active {
+        img {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: all;
+          transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+      }
     }
   }
 }
 
-.scr_otzyvy_full__overlay {
+.scr_image_full__overlay {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  // background-color: rgba(0, 0, 0, 0.5);
+  background-color: $color_dark;
   cursor: pointer;
 }
 
-.scr_otzyvy_full__slider {
+.scr_image_full__slider {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.scr_otzyvy_full__nav {
+.scr_image_full__nav {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -55,40 +69,38 @@
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 
   @include xs {
-    width: 98%;
+    width: 95%;
   }
 }
 
-.scr_otzyvy_full__prev,
-.scr_otzyvy_full__next {
+.scr_image_full__prev,
+.scr_image_full__next {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
   background-color: transparent;
-  transition: background-color 0.2s ease-out box-shadow 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
-  border-radius: 12px;
-  // pointer-events: all;
+  border-radius: 50%;
+  background-color: rgba(24, 24, 27, 0.1);
 
   @media (hover: hover) {
     &:hover {
-      background-color: $color_grey_light;
-      box-shadow: 0px 0px 8px 2px $color_blue;
+      background-color: rgba(24, 24, 27, 0.3);
     }
   }
 
-  &.disabled {
+  &.swiper-button-disabled {
     pointer-events: none;
-    background-color: $color_grey_light;
     cursor: default;
   }
 }
 
-.scr_otzyvy_full__close {
+.scr_image_full__close {
   position: absolute;
   top: 28px;
   right: 28px;
@@ -96,26 +108,11 @@
   display: block;
   width: 38px;
   height: 38px;
+  border-radius: 50%;
+  background-color: rgba(24, 24, 27, 0.1);
   cursor: pointer;
-  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-  // pointer-events: all;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    background-color: #fff;
-    box-sizing: border-box;
-    transition: transform 0.3s linear, border-color 0.2s linear,
-      box-shadow 0.3s linear;
-  }
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out,
+    background-color 0.2s ease-out;
 
   svg {
     width: 32px;
@@ -126,20 +123,9 @@
     transform: translate(-50%, -50%);
   }
 
-  path {
-    transition: all 0.2s ease-out;
-  }
-
   @media (hover: hover) {
     &:hover {
-      &::after {
-        transform: translate(-50%, -50%) scale(1.1);
-        box-shadow: 0px 0px 8px 2px $color_blue;
-      }
-
-      path {
-        fill: $color_blue;
-      }
+      background-color: rgba(24, 24, 27, 0.3);
     }
   }
 
@@ -149,18 +135,34 @@
   }
 }
 
-.scr_otzyvy_full__slider,
-.scr_otzyvy_full__wrapper {
+.scr_image_full__slider,
+.scr_image_full__wrapper {
   pointer-events: none;
 }
 
-.scr_otzyvy_full__slide {
+.scr_image_full__slide {
   pointer-events: none !important;
 
+  // &.swiper-slide-active {
+  //   img {
+  //     opacity: 1;
+  //     visibility: visible;
+  //     pointer-events: all;
+  //     transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  //   }
+  // }
+
   img {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
     position: absolute;
-    width: auto;
-    height: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    // width: auto;
+    // height: auto;
     max-width: 90%;
     max-height: 90%;
     top: 50%;
