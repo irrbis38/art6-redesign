@@ -606,63 +606,63 @@ var handleSuccessMsgModal = () => {
 
 // ===== ВЫБОР ГОРОДА
 
-// var changeCity = () => {
-//   var btn = document.querySelector(".scr_footer_art6__offices"),
-//     body = document.body,
-//     modal = document.querySelector(".scr_cities_art6"),
-//     close_btn = document.querySelector(".scr_cities_art6__btn"),
-//     overlay = document.querySelector(".scr_cities_art6__overlay"),
-//     inputs = Array.from(document.querySelectorAll(".scr_cities_art6__input")),
-//     search = document.querySelector(".scr_cities_art6__search");
+var changeCity = () => {
+  var btn = document.querySelector(".scr_footer_art6__offices"),
+    body = document.body,
+    modal = document.querySelector(".scr_cities_art6"),
+    close_btn = document.querySelector(".scr_cities_art6__btn"),
+    overlay = document.querySelector(".scr_cities_art6__overlay"),
+    inputs = Array.from(document.querySelectorAll(".scr_cities_art6__input")),
+    search = document.querySelector(".scr_cities_art6__search");
 
-//   btn.addEventListener("click", () => {
-//     modal.classList.add("active");
-//     body.classList.add("lock");
-//   });
+  btn.addEventListener("click", () => {
+    modal.classList.add("active");
+    body.classList.add("lock");
+  });
 
-//   [close_btn, overlay].forEach((el) =>
-//     el.addEventListener("click", () => {
-//       modal.classList.remove("active");
-//       body.classList.remove("lock");
-//       search.value = "";
-//       inputs.forEach((i) => i.classList.remove("hidden"));
-//     })
-//   );
+  [close_btn, overlay].forEach((el) =>
+    el.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    })
+  );
 
-//   window.addEventListener("keydown", (e) => {
-//     if (e.key === "Escape") {
-//       modal.classList.remove("active");
-//       // if mobile menu is non-open than unlock body
-//       if (!header.classList.contains("mobile-menu-open")) {
-//         body.classList.remove("lock");
-//       }
-//       search.value = "";
-//       inputs.forEach((i) => i.classList.remove("hidden"));
-//     }
-//   });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
+      // if mobile menu is non-open than unlock body
+      if (!header.classList.contains("mobile-menu-open")) {
+        body.classList.remove("lock");
+      }
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    }
+  });
 
-//   // handle city inputs
-//   inputs.forEach((i) =>
-//     i.addEventListener("click", () => {
-//       modal.classList.remove("active");
-//       body.classList.remove("lock");
-//       btn.children[1].textContent = i.value;
-//       search.value = "";
-//       inputs.forEach((i) => i.classList.remove("hidden"));
-//     })
-//   );
+  // handle city inputs
+  inputs.forEach((i) =>
+    i.addEventListener("click", () => {
+      modal.classList.remove("active");
+      body.classList.remove("lock");
+      btn.children[1].textContent = i.value;
+      search.value = "";
+      inputs.forEach((i) => i.classList.remove("hidden"));
+    })
+  );
 
-//   // city searching
-//   search.addEventListener("input", () => {
-//     inputs.forEach((i) => {
-//       if (i.value.toLowerCase().includes(search.value.toLowerCase())) {
-//         i.classList.remove("hidden");
-//       } else {
-//         i.classList.add("hidden");
-//       }
-//     });
-//   });
-// };
+  // city searching
+  search.addEventListener("input", () => {
+    inputs.forEach((i) => {
+      if (i.value.toLowerCase().includes(search.value.toLowerCase())) {
+        i.classList.remove("hidden");
+      } else {
+        i.classList.add("hidden");
+      }
+    });
+  });
+};
 
 // ===== АНИМАЦИЯ ПО СКРОЛЛУ
 
@@ -1120,23 +1120,21 @@ var initYoutubeVideo = (videos) => {
 // };
 
 var initReviewsSlider = () => {
-  var previews = Array.from(document.querySelectorAll(".scr_otzyvy__item"));
-  // var full_slides = Array.from(
-  //   document.querySelectorAll(".scr_otzyvy_full__slide")
-  // );
+  var previews = Array.from(document.querySelectorAll(".scr-image-item"));
+  var container_full = document.querySelector(".scr_image_full");
+  var close = document.querySelector(".scr_image_full__close");
+  var overlay = document.querySelector(".scr_image_full__overlay");
 
-  var container_full = document.querySelector(".scr_otzyvy_full");
-  var close = document.querySelector(".scr_otzyvy_full__close");
-  var overlay = document.querySelector(".scr_otzyvy_full__overlay");
+  console.log(previews);
 
   if (previews.length < 1) return;
 
-  var slider = new Swiper(".scr_otzyvy_full__slider", {
+  var slider = new Swiper(".scr_image_full__slider", {
     lazy: true,
     effect: "fade",
     navigation: {
-      prevEl: ".scr_otzyvy_full__prev",
-      nextEl: ".scr_otzyvy_full__next",
+      prevEl: ".scr_image_full__prev",
+      nextEl: ".scr_image_full__next",
     },
   });
 
@@ -1384,6 +1382,27 @@ var smoothScroll = (btnsSelector) => {
   });
 };
 
+// ========== INIT PIN HISTORY GOALS
+
+var initPinHistoryGoals = () => {
+  var goals = document.querySelector(".scr_istoriya_art6__goals");
+  var container = document.querySelector(".scr_istoriya_art6__container");
+  console.log(goals.clientHeight);
+  console.log(container.scrollHeight);
+  ScrollTrigger.matchMedia({
+    "(min-width: 1301px)": () => {
+      ScrollTrigger.create({
+        trigger: ".scr_istoriya_art6__goals",
+        start: "-=5% top",
+        end: () => `+=${container.scrollHeight - goals.clientHeight}px`,
+        pin: ".scr_istoriya_art6__goals",
+        pinSpacing: false,
+        // markers: true,
+      });
+    },
+  });
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
@@ -1399,7 +1418,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   scr_text_director_art6_consultation && toggleConsultationModal();
 
   // footer
-  // changeCity();
+  changeCity();
 
   // sliders
   var teamSlider = document.querySelector(".scr_komanda_art6__slider");
@@ -1518,11 +1537,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // init reviews slider
   var reviews_page = document.querySelector(".reviews-page");
   reviews_page && initReviewsSlider();
-  // if (reviews_page) {
-  //   setTimeout(() => {
-  //     initReviewsSlider();
-  //   }, 2000);
-  // }
+
+  // init slider on achivement page
+  var achievements_page = document.querySelector(".achievements-page");
+  achievements_page && initReviewsSlider();
 
   var company_page = document.querySelector(".company-page");
   if (company_page) {
@@ -1554,4 +1572,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var career_page = document.querySelector(".career-page");
   career_page && initPinCareer();
   career_page && initPinCareerList();
+
+  // INIT HISTORY PAGE
+
+  var history_page = document.querySelector(".history-page");
+  history_page && initPinHistoryGoals();
 });
