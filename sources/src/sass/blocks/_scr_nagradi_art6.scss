@@ -2,6 +2,11 @@
   margin-top: 104px;
   padding-top: 118px;
   border-top: 2px solid $color_grey_light;
+
+  @include xs {
+    margin-top: 37px;
+    padding-top: 44px;
+  }
 }
 
 .scr_nagradi_art6__descr {

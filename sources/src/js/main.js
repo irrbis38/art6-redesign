@@ -89,7 +89,6 @@ var initHeader = () => {
   );
 
   burger_button.addEventListener("click", (e) => {
-    console.log("click");
     header.classList.toggle("mobile-menu-open");
     body.classList.toggle("lock");
     submenues.forEach((submenu) => {
@@ -1125,8 +1124,6 @@ var initReviewsSlider = () => {
   var close = document.querySelector(".scr_image_full__close");
   var overlay = document.querySelector(".scr_image_full__overlay");
 
-  console.log(previews);
-
   if (previews.length < 1) return;
 
   var slider = new Swiper(".scr_image_full__slider", {
@@ -1387,8 +1384,6 @@ var smoothScroll = (btnsSelector) => {
 var initPinHistoryGoals = () => {
   var goals = document.querySelector(".scr_istoriya_art6__goals");
   var container = document.querySelector(".scr_istoriya_art6__container");
-  console.log(goals.clientHeight);
-  console.log(container.scrollHeight);
   ScrollTrigger.matchMedia({
     "(min-width: 1301px)": () => {
       ScrollTrigger.create({

@@ -287,3 +287,33 @@
     margin-bottom: 0;
   }
 }
+
+// === ACHIEVEMENTS PAGE
+
+.achievements-page,
+.history-page {
+  .container {
+    &::after {
+      right: -50px;
+      width: 941px;
+      height: 600px;
+
+      @include xl {
+        top: -200px;
+        right: -20px;
+        width: 784px;
+        height: 500px;
+      }
+
+      @include lg {
+        right: 0;
+        width: 706px;
+        height: 450px;
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+  }
+}
