@@ -13154,6 +13154,35 @@ button.header_art6__more {
 .history-page .first_scr_with_scroll {
   margin-bottom: 0
 }
+.achievements-page .container::after,
+.history-page .container::after {
+  right: -50px;
+  width: 941px;
+  height: 600px
+}
+@media (max-width:1600px) {
+  .achievements-page .container::after,
+  .history-page .container::after {
+    top: -200px;
+    right: -20px;
+    width: 784px;
+    height: 500px
+  }
+}
+@media (max-width:1300px) {
+  .achievements-page .container::after,
+  .history-page .container::after {
+    right: 0;
+    width: 706px;
+    height: 450px
+  }
+}
+@media (max-width:991px) {
+  .achievements-page .container::after,
+  .history-page .container::after {
+    display: none
+  }
+}
 .scr_otzyvy {
   margin-bottom: 225px
 }
@@ -15884,6 +15913,12 @@ p.scr_istoriya_art6__goals__title {
   margin-top: 104px;
   padding-top: 118px;
   border-top: 2px solid #f2f2f2
+}
+@media (max-width:767px) {
+  .scr_nagradi_art6 {
+    margin-top: 37px;
+    padding-top: 44px
+  }
 }
 .scr_nagradi_art6__descr {
   margin-bottom: 53px;
