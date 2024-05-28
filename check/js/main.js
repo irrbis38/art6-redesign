@@ -1312,7 +1312,7 @@ var initPinCareer = () => {
     "(min-width: 992px)": () => {
       ScrollTrigger.create({
         trigger: ".scr_karyera_preimushestva_art6__list",
-        start: "-=5% top",
+        start: "-=95px top",
         endTrigger: ".vacancies__list",
         end: "top bottom",
         pin: ".scr_karyera_preimushestva_art6__list",
