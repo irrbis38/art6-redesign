@@ -1363,7 +1363,7 @@ var initPinCareerList = () => {
         end: () => `+=${list.scrollHeight - wrapper.scrollHeight - 48}px`,
         pin: ".scr_karyera_vakansii_art6__aside__wrapper",
         pinSpacing: false,
-        markers: true,
+        // markers: true,
       });
     },
   });
