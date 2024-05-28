@@ -1388,7 +1388,7 @@ var initPinHistoryGoals = () => {
     "(min-width: 1301px)": () => {
       ScrollTrigger.create({
         trigger: ".scr_istoriya_art6__goals",
-        start: "-=5% top",
+        start: "-=95px top",
         end: () => `+=${container.scrollHeight - goals.clientHeight}px`,
         pin: ".scr_istoriya_art6__goals",
         pinSpacing: false,
