@@ -1308,17 +1308,33 @@ var initPinCareer = () => {
 
   if (!list) return;
 
+  var karyera_preimushestva = document.querySelector(
+    ".scr_karyera_preimushestva_art6"
+  );
+
+  var karyera_vakansii_container = document.querySelector(
+    ".scr_karyera_vakansii_art6__container"
+  );
+
+  var marginBottom = 253;
+
   ScrollTrigger.matchMedia({
-    "(min-width: 992px)": () => {
+    "(min-width: 1601px)": () => {
       ScrollTrigger.create({
         trigger: ".scr_karyera_preimushestva_art6__list",
         start: "-=95px top",
-        endTrigger: ".vacancies__list",
-        end: "top bottom",
+        // endTrigger: ".vacancies__list",
+        // end: "top bottom",
+        end: () =>
+          `+=${
+            karyera_preimushestva.scrollHeight -
+            list.scrollHeight +
+            marginBottom +
+            karyera_vakansii_container.scrollHeight
+          }px`,
         pin: ".scr_karyera_preimushestva_art6__list",
         pinSpacing: false,
         invalidateOnRefresh: true,
-        // markers: true,
       });
     },
   });
@@ -1329,16 +1345,25 @@ var initPinCareerList = () => {
 
   if (!fieldset) return;
 
+  var list = document.querySelector(".vacancies__list");
+  var wrapper = document.querySelector(
+    ".scr_karyera_vakansii_art6__aside__wrapper"
+  );
+
+  console.log(list.scrollHeight);
+  console.log(wrapper.scrollHeight);
+
   ScrollTrigger.matchMedia({
     "(min-width: 992px)": function () {
       ScrollTrigger.create({
         trigger: ".vacancies__list",
         start: "-=5% top",
-        endTrigger: ".vacancies__list",
-        end: "bottom center",
+        // endTrigger: ".vacancies__list",
+        // end: "bottom center",
+        end: () => `+=${list.scrollHeight - wrapper.scrollHeight - 48}px`,
         pin: ".scr_karyera_vakansii_art6__aside__wrapper",
         pinSpacing: false,
-        // markers: true,
+        markers: true,
       });
     },
   });
