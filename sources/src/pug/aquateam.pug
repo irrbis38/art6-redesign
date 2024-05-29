@@ -1,0 +1,75 @@
+extends base/_layout
+block vars
+    - var pageName = 'project'
+block head
+    title Наш проект - Акватим
+block page
+
+    nav.scr_hleb_kroshki_art6(aria-label="Хлебные крошки")
+        .container
+            ol
+                li: a(href="./index.html" aria-label="Перейти на главную") Главная
+                li: a(href="./our-projects.html" aria-label="Перейти на общую страницу проектов") Вакансия
+                li: span Разработчик (Java)
+
+
+    section.scr_perv_keys_art6.project_seo
+
+        .scr_perv_keys_art6__mobile_img
+            -
+                var imgSizes = "100vw"
+
+                var imgSrcset = "./images/scr_perv_keys_art6/aquateam_mob_400.webp 400w, ./images/scr_perv_keys_art6/aquateam_mob_640.webp 640w, ./images/scr_perv_keys_art6/aquateam_mob_767.webp 767w, ./images/scr_perv_keys_art6/aquateam_mob_1534.webp 1534w"
+
+                var imgSrc = "scr_perv_keys_art6/aquateam_mob_767"
+
+            +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта Астра-Пул', 390, 273, false)
+
+        .scr_perv_keys_art6__intro
+            .container
+                h1.scr_perv_keys_art6__title.index_page_title АкваТим
+
+                p.scr_perv_keys_art6__subtitle: span SEO-продвижение кулеров и пурифайеров в ТОП Яндекс и Google в 5-ти городах России
+
+
+
+        .scr_perv_keys_art6__wrapper
+
+            .scr_perv_keys_art6__img
+                -
+                    var imgSizes = "(max-width: 1300px) 56vw, 58vw"
+
+                    var imgSrcset = "./images/scr_perv_keys_art6/aquateam_900.webp 900w, ./images/scr_perv_keys_art6/aquateam_1200.webp 1200w, ./images/scr_perv_keys_art6/aquateam_1600.webp 1600w, ./images/scr_perv_keys_art6/aquateam_2234.webp 2234w"
+
+                    var imgSrc = "scr_perv_keys_art6/aquateam_1600"
+
+                +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта АкваТим', 1117, 880, false)
+
+            .scr_perv_keys_art6__descr.container
+                .scr_perv_keys_art6__content
+                    h3.scr_perv_keys_art6__heading
+                        svg(width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(fill-rule="evenodd" clip-rule="evenodd" d="M6.37645 22.2879C6.37645 19.5406 6.37645 16.7933 6.37645 14.0461H0L1.50258 11.4718L6.80944 2.37965L8.19838 0V1.71215V9.95393H14.5748L13.0722 12.5282L7.76539 21.6203L6.37645 24V22.2879Z" fill="#1463FF")
+                        span Клиент
+                    p.scr_perv_keys_art6__text АкваТим – компания, осуществляющая продажу товаров, необходимых для обеспечения дома и офиса чистой питьевой водой: кулеры, пурифайеры, фильтры и другое. Работает по всему Краснодарскому краю и имеет собственный сервисный центр для ремонта и обслуживания «водной» техники.
+
+                    h3.scr_perv_keys_art6__heading Задача
+                    .scr_perv_keys_art6__text
+                        p Компания АкваТим поставила перед нами ряд задач:
+
+                        ul
+                            li основная – увеличить продажи с помощью SEO-продвижения сайта;
+                            li занять максимально высокие (ТОП-1, ТОП-3, ТОП-5, ТОП-10) позиции в поисковых системах Яндекс и Google;
+                            li привлечь качественный целевой трафик на сайт, особым приоритетом отметили категории: кулеры, пурифайеры;
+                            li повысить доверие к бренду за счет высоких позиций в поисковиках, а также постоянного улучшения маркетинговой составляющей сайта;
+                            li стать эффективным надежным партнером и предоставлять высокие результаты в долгосрочной перспективе.
+
+                    h3.scr_perv_keys_art6__heading Адрес проекта
+                    a.scr_perv_keys_art6__link(href="#" target="_blank")
+                        span aqua-tim.ru
+                        svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M4.16536 14.658L5.34036 15.833L14.1654 7.00801L14.1654 12.4997H15.832L15.832 4.16634L7.4987 4.16634V5.83301L12.9904 5.83301L4.16536 14.658Z" fill="#166FF5")
+
+                .scr_perv_keys_art6__blank
+
+            .scr_perv_keys_art6__line.container: span
