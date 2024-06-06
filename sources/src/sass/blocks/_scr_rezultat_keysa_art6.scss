@@ -77,8 +77,6 @@
   grid-template-columns: repeat(6, 1fr);
   gap: 40px 30px;
   // margin-bottom: 53px;
-  padding-bottom: 58px;
-  border-bottom: 2px solid $color_grey_light;
 
   &:not(:last-child) {
     margin-bottom: 120px;
@@ -111,6 +109,15 @@
     &:not(:last-child) {
       margin-bottom: 60px;
     }
+  }
+}
+
+.scr_rezultat_keysa_art6__line {
+  margin-top: 58px;
+  border-bottom: 2px solid $color_grey_light;
+
+  @include lg {
+    margin-top: 30px;
   }
 }
 

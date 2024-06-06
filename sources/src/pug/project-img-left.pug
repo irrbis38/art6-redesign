@@ -170,18 +170,14 @@ block page
     .scr_review_modal
         .scr_review_modal__overlay
         .scr_review_modal__wrapper
-            .scr_review_modal__inner
-                .scr_review_modal__image
-                    //- img(src="./images/scr_rezultat_keysa_art6/reviews-full.webp" alt="Отзыв компании")
+            -
+                var imgSizes = "(max-width: 1300px) 88vw, 1160px"
 
-                    -
-                        var imgSizes = "(max-width: 1300px) 88vw, 1160px"
+                var imgSrcset = "./images/scr_rezultat_keysa_art6/reviews_full_600.webp 600w, ./images/scr_rezultat_keysa_art6/reviews_full_900.webp 900w, ./images/scr_rezultat_keysa_art6/reviews_full_1200.webp 1200w, ./images/scr_rezultat_keysa_art6/reviews_full_1600.webp 1600w, ./images/scr_rezultat_keysa_art6/reviews_full_1948.webp 1948w"
 
-                        var imgSrcset = "./images/scr_rezultat_keysa_art6/reviews_full_600.webp 600w, ./images/scr_rezultat_keysa_art6/reviews_full_900.webp 900w, ./images/scr_rezultat_keysa_art6/reviews_full_1200.webp 1200w, ./images/scr_rezultat_keysa_art6/reviews_full_1600.webp 1600w, ./images/scr_rezultat_keysa_art6/reviews_full_1948.webp 1948w"
+                var imgSrc = "scr_rezultat_keysa_art6/reviews_full_1600"
 
-                        var imgSrc = "scr_rezultat_keysa_art6/reviews_full_1600"
-
-                    +img(imgSizes, imgSrcset, imgSrc, 'Отзыв компании', 1160, 1640, true)
+            +img(imgSizes, imgSrcset, imgSrc, 'Отзыв компании', 1160, 1640, true)
 
 
 
