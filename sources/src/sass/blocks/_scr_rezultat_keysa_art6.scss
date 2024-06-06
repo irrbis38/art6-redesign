@@ -12,18 +12,42 @@
   @include xs {
     margin-bottom: 198px;
   }
+
+  &.scr_rezultat_keysa_art6_new {
+    margin-bottom: 120px;
+
+    @include xl {
+      margin-bottom: 110px;
+    }
+
+    @include lg {
+      margin-bottom: 90px;
+    }
+
+    @include sm {
+      margin-bottom: 80px;
+    }
+
+    @include xs {
+      margin-bottom: 60px;
+    }
+  }
 }
 
 .scr_rezultat_keysa_art6__title {
-  margin-bottom: 20px;
+  margin-bottom: 41px;
   font-weight: 500;
   font-size: 80px;
   line-height: 1;
   letter-spacing: -0.02em;
   color: $color_dark;
 
-  @include xl {
-    font-size: 60px;
+  @include lg {
+    font-size: 55px;
+  }
+
+  @include sm {
+    font-size: 40px;
   }
 
   @include xs {
@@ -52,15 +76,41 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 40px 30px;
-  margin-bottom: 53px;
+  // margin-bottom: 53px;
+  padding-bottom: 58px;
+  border-bottom: 2px solid $color_grey_light;
+
+  &:not(:last-child) {
+    margin-bottom: 120px;
+  }
+
+  @include xl {
+    &:not(:last-child) {
+      margin-bottom: 110px;
+    }
+  }
 
   @include lg {
     grid-template-columns: repeat(3, 1fr);
+
+    &:not(:last-child) {
+      margin-bottom: 90px;
+    }
+  }
+
+  @include sm {
+    &:not(:last-child) {
+      margin-bottom: 80px;
+    }
   }
 
   @include xs {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
   }
 }
 
@@ -172,6 +222,199 @@
 
   @include xs {
     margin: 0 auto;
+  }
+
+  @include xxs {
+    max-width: 100%;
+  }
+}
+
+.scr_rezultat_keysa_art6__block {
+  &:not(:first-child) {
+    margin-top: 120px;
+
+    @include xl {
+      margin-top: 110px;
+    }
+
+    @include lg {
+      margin-top: 90px;
+    }
+
+    @include sm {
+      margin-top: 80px;
+    }
+
+    @include xs {
+      margin-top: 60px;
+    }
+  }
+}
+
+.scr_rezultat_keysa_art6__block_title {
+  margin-bottom: 51px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 102%;
+  letter-spacing: -0.02em;
+
+  @include lg {
+    margin-bottom: 30px;
+    font-size: 30px;
+    line-height: 117%;
+  }
+
+  @include xs {
+    margin-bottom: 21px;
+    font-size: 28px;
+    line-height: 107%;
+  }
+}
+
+.scr_rezultat_keysa_art6__positions {
+  max-width: 994px;
+  margin-bottom: 51px;
+
+  @include lg {
+    max-width: 850px;
+    margin-bottom: 40px;
+  }
+
+  @include sm {
+    max-width: 417px;
+  }
+
+  @include xs {
+    margin-bottom: 21px;
+  }
+
+  @include xxs {
+    max-width: 100%;
+  }
+}
+
+.scr_rezultat_keysa_art6__positions_wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 44px 20px;
+
+  @include lg {
+    gap: 35px 17px;
+  }
+
+  @include sm {
+    grid-template-columns: 1fr;
+    gap: 35px 0;
+  }
+}
+
+.scr_rezultat_keysa_art6__vendor {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 156%;
+  letter-spacing: -0.03em;
+
+  @include lg {
+    margin-bottom: 13px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+
+.scr_rezultat_keysa_art6__positions_words {
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 156%;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+
+  @include lg {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+
+.scr_rezultat_keysa_art6__positions_table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid $color_grey_light;
+
+  th,
+  td {
+    padding: 15px 0 12px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: -0.03em;
+    text-align: center;
+
+    @include lg {
+      padding: 13px 0 10px;
+      font-size: 16px;
+      line-height: 139%;
+    }
+
+    @include xs {
+      padding: 10px 0 10px;
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+
+  th:not(:last-child) {
+    border-right: 1px solid #e7e7e7;
+  }
+
+  td:not(:last-child) {
+    border-right: 1px solid #d5d5d5;
+  }
+
+  td {
+    &:nth-child(1),
+    &:nth-child(2) {
+      background-color: #e7e7e7;
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      color: #fff;
+      background-color: #2eb79c;
+    }
+  }
+}
+
+.scr_rezultat_keysa_art6__graph {
+  max-width: 740px;
+  margin-top: 60px;
+  margin-bottom: 120px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @include xl {
+    margin-bottom: 110px;
+  }
+
+  @include lg {
+    margin-top: 30px;
+    margin-bottom: 90px;
+  }
+
+  @include sm {
+    max-width: 570px;
+    margin-bottom: 80px;
+  }
+
+  @include xs {
+    margin-top: 21px;
+    margin-bottom: 60px;
   }
 
   @include xxs {
