@@ -175,7 +175,7 @@
 
 .scr_opisanie_keysa_art6__step,
 .scr_opisanie_keysa_art6__banner,
-.scr_opisanie_keysa_art6__partnership {
+.scr_opisanie_keysa_art6__line {
   &:not(:last-child) {
     margin-bottom: 120px;
 
@@ -195,6 +195,10 @@
       margin-bottom: 60px;
     }
   }
+}
+
+.scr_opisanie_keysa_art6__step,
+.scr_opisanie_keysa_art6__banner {
   &:not(:first-child) {
     margin-top: 120px;
 
@@ -243,7 +247,6 @@
 .scr_opisanie_keysa_art6__partnership {
   max-width: 1120px;
   padding-bottom: 63px;
-  border-bottom: 2px solid $color_grey_light;
 
   p {
     font-weight: 500;
@@ -261,4 +264,8 @@
       line-height: 150%;
     }
   }
+}
+
+.scr_opisanie_keysa_art6__line {
+  border-bottom: 2px solid $color_grey_light;
 }

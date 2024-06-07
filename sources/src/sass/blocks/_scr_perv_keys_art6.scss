@@ -1,7 +1,11 @@
 .scr_perv_keys_art6 {
   padding-top: 54px;
 
-  @include xs {
+  // @include xs {
+  //   padding-top: 0;
+  // }
+
+  @include sm {
     padding-top: 0;
   }
 }
@@ -9,7 +13,8 @@
 .scr_perv_keys_art6__mobile_img {
   display: none;
 
-  @include xs {
+  // @include xs {
+  @include sm {
     position: relative;
     display: block;
     margin-bottom: 30px;
@@ -127,7 +132,8 @@
   flex: 1 1 487px;
   min-width: 290px;
 
-  @include xs {
+  // @include xs {
+  @include sm {
     min-width: unset;
   }
 }
@@ -137,7 +143,8 @@
   padding: 40px;
   height: 300px;
 
-  @include xs {
+  // @include xs {
+  @include sm {
     display: none;
   }
 }
@@ -178,7 +185,8 @@
   //   margin-bottom: 50px;
   // }
 
-  @include xs {
+  // @include xs {
+  @include sm {
     display: none;
   }
 }
@@ -306,6 +314,19 @@
       }
     }
   }
+
+  @include sm {
+    color: $color_white;
+    background-color: $color_blue;
+
+    svg {
+      transform: translateY(2px);
+    }
+
+    path {
+      fill: $color_white;
+    }
+  }
 }
 
 .scr_perv_keys_art6__line {
@@ -334,5 +355,9 @@
 .scr_perv_keys_art6.project_seo {
   .scr_perv_keys_art6__subtitle {
     max-width: 1010px;
+
+    @include sm {
+      max-width: 650px;
+    }
   }
 }
