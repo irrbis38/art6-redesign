@@ -972,13 +972,17 @@ var initModalInfo = () => {
 };
 
 var initPinProjectImage = () => {
+  var container = document.querySelector(".scr_perv_keys_art6__descr");
+  var img = document.querySelector(".scr_perv_keys_art6__img");
+
   ScrollTrigger.matchMedia({
-    "(min-width: 768px)": function () {
+    "(min-width: 992px)": function () {
       ScrollTrigger.create({
         trigger: ".scr_perv_keys_art6__wrapper",
         start: "-=5% top",
-        endTrigger: ".scr_perv_keys_art6__descr",
-        end: "bottom bottom",
+        // endTrigger: ".scr_perv_keys_art6__descr",
+        // end: "bottom bottom",
+        end: () => `+=${container.scrollHeight - img.clientHeight - 60}px`,
         pin: ".scr_perv_keys_art6__img",
         pinSpacing: false,
       });
