@@ -1,0 +1,435 @@
+extends base/_layout
+block vars
+    - var pageName = 'project'
+block head
+    title Наш проект - Evi Clinic
+block page
+
+    nav.scr_hleb_kroshki_art6(aria-label="Хлебные крошки")
+        .container
+            ol
+                li: a(href="./index.html" aria-label="Перейти на главную") Главная
+                li: a(href="./our-projects.html" aria-label="Перейти на общую страницу проектов") Вакансия
+                li: span Разработчик (Java)
+
+
+    section.scr_perv_keys_art6.project_advertisement
+
+        .scr_perv_keys_art6__mobile_img
+            -
+                var imgSizes = "100vw"
+
+                var imgSrcset = "./images/scr_perv_keys_art6/evi_clinic_mob_400.webp 400w, ./images/scr_perv_keys_art6/evi_clinic_mob_640.webp 640w, ./images/scr_perv_keys_art6/evi_clinic_mob_767.webp 767w, ./images/scr_perv_keys_art6/evi_clinic_mob_1534.webp 1534w"
+
+                var imgSrc = "scr_perv_keys_art6/evi_clinic_mob_767"
+
+            +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта EVI Clinic', 390, 273, false)
+
+        .scr_perv_keys_art6__intro
+            .container
+                p.scr_perv_keys_art6__title.index_page_title EVI Clinic
+
+                h1.scr_perv_keys_art6__subtitle: span Контекстная реклама Яндекс.Директ для мед. клиники специализирующейся на офисной гистероскопии
+ 
+
+
+
+        .scr_perv_keys_art6__wrapper
+
+            .scr_perv_keys_art6__img
+                -
+                    var imgSizes = "(max-width: 1300px) 56vw, 58vw"
+
+                    var imgSrcset = "./images/scr_perv_keys_art6/evi_clinic_900.webp 900w, ./images/scr_perv_keys_art6/evi_clinic_1200.webp 1200w, ./images/scr_perv_keys_art6/evi_clinic_1600.webp 1600w, ./images/scr_perv_keys_art6/evi_clinic_2234.webp 2234w"
+
+                    var imgSrc = "scr_perv_keys_art6/evi_clinic_1600"
+
+                +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта EVI Clinic', 1117, 880, false)
+
+            .scr_perv_keys_art6__descr.container
+                .scr_perv_keys_art6__content
+                    h3.scr_perv_keys_art6__heading
+                        svg(width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(fill-rule="evenodd" clip-rule="evenodd" d="M6.37645 22.2879C6.37645 19.5406 6.37645 16.7933 6.37645 14.0461H0L1.50258 11.4718L6.80944 2.37965L8.19838 0V1.71215V9.95393H14.5748L13.0722 12.5282L7.76539 21.6203L6.37645 24V22.2879Z" fill="#1463FF")
+                        span Клиент
+                    p.scr_perv_keys_art6__text EVI Clinic – медицинская клиника, оказывающая широкий спектр услуг по направлениям: гинекология, маммология, генетика, вакцинация, УЗИ, кардиология, неврология и другие. В штате клиники работает более 50 специалистов. Высокоэффективное оборудование и принципы доказательной медицины делают ее одной из лучших в регионе.
+
+                    h3.scr_perv_keys_art6__heading Задача
+                    .scr_perv_keys_art6__text
+                        p Компания EVI Clinic поставила перед нами 6 ключевых задач:
+
+
+
+                        ul
+                            li основная – оперативно увеличить продажи с помощью контекстной рекламы;
+                            li получать звонки и заявки на услугу офисной гистероскопии по цене не превышающей 2000 рублей за лид;
+                            li повышать общую конверсионную составляющую проекта с помощью внедрения улучшений с маркетинговой точки зрения;
+                            li генерировать качественные лиды по максимально низкой стоимости за счет опыта и эффективности;
+                            li повысить доверие к компании за счет регулярного показа рекламы целевой аудитории;
+                            li стать эффективным партнером, который в длительной перспективе будет гарантировать стабильные высокие результаты.
+
+                .scr_perv_keys_art6__blank
+
+            .scr_perv_keys_art6__line.container: span
+
+
+
+    section.scr_opisanie_keysa_art6
+        .container 
+
+            h2.scr_opisanie_keysa_art6__title Исполнение
+
+            p.scr_opisanie_keysa_art6__text Перед тем как приступить к работе с контекстной рекламой мы проводим маркетинговое исследование, включающее анализ рынка, целевой аудитории, предложений клиента и его конкурентов. 
+
+            p.scr_opisanie_keysa_art6__text На основании данного исследования формируем рекламную стратегию, включающую эффективные рекламные каналы и расчет рентабельности по каждому. Если прогнозируемая прибыль не соответствует ожиданиям клиента, то мы не беремся за проект, так как главная наша цель – приносить бизнесу заказчика максимально высокую ожидаемую им прибыль и тем самым обеспечить наше долгосрочное партнерство – на 5, 7 и даже 10 лет.
+
+            p.scr_opisanie_keysa_art6__text С 2013 года контекстная реклама – основное направление нашей компании. За эти годы мы накопили огромное количество компетенций по множеству отраслей, включая данную.
+
+            p.scr_opisanie_keysa_art6__text Провели исследование, сформировали стратегию, получили положительный ответ по прогнозируемым результатам от клиента, приступили к работе.
+
+
+            .scr_opisanie_keysa_art6__step
+
+                h3.scr_opisanie_keysa_art6__subtitle Сайт / посадочные страницы
+
+                p.scr_opisanie_keysa_art6__text На старте сотрудничества с нами у компании EVI Clinic уже был корпоративный сайт. 
+
+                p.scr_opisanie_keysa_art6__text Мы сделали комплексный чек-ап его конверсионного потенциала по 40 пунктам, в который входит анализ:
+
+
+                ul.scr_opisanie_keysa_art6__list
+
+                    li архитектуры сайта;
+
+                    li продающих офферов;
+
+                    li лид-форм;
+
+                    li фирменных элементов компании;
+
+                    li информации о компании;
+
+                    li преимуществ компании и услуг;
+
+                    li форм обратной связи для сбора контактов;
+
+                    li цен на услуги;
+
+                    li информации о специалистах;
+
+                    li выполненных работ (фото, видео, кейсы);
+
+                    li информации об оборудовании, сертификатах, лицензиях;
+
+                    li информации об этапах работы;
+
+                    li социальных доказательств (отзывы, рекомендации);
+
+                    li адреса и времени работы;
+
+                    li медиаконтента;
+
+                    li квизов, калькуляторов;
+
+                    li информации по часто задаваемым вопросам;
+
+                    li онлайн-записи;
+
+                    li способов связей с компанией;
+
+                    li меню и блоков навигации на сайте;
+
+                    li usability сайта;
+
+                    li других параметров, влияющих на конверсию.
+
+                p.scr_opisanie_keysa_art6__text Выявили, что конверсионный потенциал сайта очень низкий. Поэтому было решено создать высокоэффективные посадочные страницы для контекстной рекламы. При разработке их включили: главный оффер и основные преимущества на первом экране, описание клиники, вопросы с ответами по проведению офисной гистероскопии, отличие обычной и офисной гистероскопии, а также другую информацию и конверсионные элементы для эффективной лидогенерации.
+
+
+
+                .scr_opisanie_keysa_art6__img_full.keys-preview
+                    -
+                        var imgSizes = "94vw"
+
+                        var imgSrcset = "./images/scr_opisanie_keysa_art6/evi_clinic_preview1_400.webp 400w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview1_700.webp 700w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview1_900.webp 900w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview1_1280.webp 1280w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview1_1500.webp 1500w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview1_2560.webp 2560w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview1_3000.webp 3000w"
+
+                        var imgSrc = "scr_opisanie_keysa_art6/evi_clinic_preview1_1500"
+
+                    +img(imgSizes, imgSrcset, imgSrc, 'скриншот сайта EVI Clinic', 1500, 2920, true)
+
+                p.scr_opisanie_keysa_art6__text Также для повышения эффективности контекстной рекламы было решено разработать высококонверсионные квизы. При создании их включили: главный оффер и основные преимущества на первом экране, центральный элемент – квиз из нескольких вопросов для побуждения оставить заявку, различные способы связи с компанией, а также другую информацию и конверсионные элементы для эффективной лидогенерации.
+
+
+                .scr_opisanie_keysa_art6__img_aside.keys-preview
+                    -
+                        var imgSizes = "(max-width: 1300px) 94vw, 1120px"
+
+                        var imgSrcset = "./images/scr_opisanie_keysa_art6/evi_clinic_preview2_400.webp 400w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview2_700.webp 700w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview2_900.webp 900w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview2_1200.webp 1200w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview2_1500.webp 1500w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview2_1900.webp 1900w, ./images/scr_opisanie_keysa_art6/evi_clinic_preview2_2240.webp 2240w"
+
+                        var imgSrc = "scr_opisanie_keysa_art6/evi_clinic_preview2_1500"
+
+                    +img(imgSizes, imgSrcset, imgSrc, 'скриншот сайта EVI Clinic', 1120, 2196, true)
+
+
+                p.scr_opisanie_keysa_art6__text Корпоративный сайт, интернет-магазин, лендинги, квиз-лендинги, квизы – это все маркетинговые инструменты, и к какому бы виду не относились посадочные страницы, их необходимо на постоянной основе анализировать и улучшать.
+
+
+
+            .scr_opisanie_keysa_art6__step
+
+                h3.scr_opisanie_keysa_art6__subtitle Аналитика
+
+                p.scr_opisanie_keysa_art6__text Эффективная работа с контекстной рекламой всегда подразумевает анализ больших данных. Для того, чтобы он был максимально точным и полезным, мы настраиваем всю необходимую аналитику:
+
+
+                ul.scr_opisanie_keysa_art6__list
+
+                    li Устанавливаем Google Tag Manager, Яндекс.Метрику и Google Analytics;
+
+                    li Настраиваем события в Яндекс.Метрике;
+
+                    li Устанавливаем Call tracking и подключаем аналитические платформы;
+
+                    li Настраиваем UTM-метки для каждого рекламного объявления;
+
+                    li Привязываем цели к рекламной компании;
+
+                    li И другие работы для получения полных данных о продуктивности работы рекламы.
+
+
+                p.scr_opisanie_keysa_art6__text Уже с первого месяца работы мы начинаем анализировать поступающие данные и вносить улучшения в рекламные объявления, группы объявлений, кампании и посадочные страницы.
+
+                p.scr_opisanie_keysa_art6__text Непрерывная регулярная аналитическая работа с внедрением всех необходимых улучшений в рекламные кампании и сайт приносит свои плоды уже в первые 3 месяца работы и приводит к высочайшим результатам в долгосрочной перспективе.
+
+
+            .scr_opisanie_keysa_art6__banner
+                img(srcset="./images/scr_opisanie_keysa_art6/banner_5.webp, ./images/scr_opisanie_keysa_art6/banner_5@2x.webp 2x" src="./images/scr_opisanie_keysa_art6/banner_5.webp" alt="повышаем конверсию посадочных страниц")
+                img(srcset="./images/scr_opisanie_keysa_art6/banner_5_mob.webp, ./images/scr_opisanie_keysa_art6/banner_5_mob@2x.webp 2x" src="./images/scr_opisanie_keysa_art6/banner_5_mob.webp" alt="повышаем конверсию посадочных страниц")
+
+            .scr_opisanie_keysa_art6__step
+
+                h3.scr_opisanie_keysa_art6__subtitle Рекламные кампании
+
+                p.scr_opisanie_keysa_art6__text Эффективная работа с рекламой подразумевает регулярное выполнение широкого спектра задач. 
+
+                p.scr_opisanie_keysa_art6__text В данном проекте за 3 месяца работы с контекстной рекламой было выполнено более 800 действий, ведущих к достижению поставленных целей по лидогенерации. Приведем часть из них:
+
+                ul.scr_opisanie_keysa_art6__list
+                
+                    li Формирование / проработка семантического ядра (ключевых фраз) для рекламных кампаний (анализ ниши и конкурентов, формирование базисных запросов, сбор ключевых фраз, сегментация семантики для повышения релевантности объявлений, минусация фраз для исключения нецелевых запросов).
+
+                    li Определение и настройка наиболее эффективных стратегий рекламных кампаний с учетом сформированных рекламных бюджетов.
+
+                    li Настройка / корректировка на основе анализа различных параметров: расписание показов, промоакции, корректировка (пол и возраст, устройства, регион и другие), географический таргетинг, приоритизация объявлений и так далее.
+
+                    li Создание и проработка групп объявлений на основании сегментированной семантики, детальная настройка их параметров.
+
+                    li Создание и проработка объявлений в каждой группе: формирование релевантных и кликабельных заголовков, текстов, изображений, видео, дополнений, быстрых ссылок, проведение A/B-тестирований с целью показа наиболее эффективных объявлений и так далее.
+
+
+            .scr_opisanie_keysa_art6__step
+
+                h3.scr_opisanie_keysa_art6__subtitle Примеры объявлений в Яндекс.Директ (Поиск)
+
+
+                .scr_opisanie_keysa_art6__example_full
+
+                    -
+                        var imgSizes = "(max-width: 1300px) 94vw, 1120px"
+
+                        var imgSrcset = "./images/scr_opisanie_keysa_art6/evi_clinic_full_example_400.webp 400w, ./images/scr_opisanie_keysa_art6/evi_clinic_full_example_640.webp 640w, ./images/scr_opisanie_keysa_art6/evi_clinic_full_example_900.webp 900w, ./images/scr_opisanie_keysa_art6/evi_clinic_full_example_1400.webp 1400w, ./images/scr_opisanie_keysa_art6/evi_clinic_full_example_2000.webp 2000w, ./images/scr_opisanie_keysa_art6/evi_clinic_full_example_3000.webp 3000w"
+
+                        var imgSrc = "scr_opisanie_keysa_art6/evi_clinic_full_example_2000"
+
+                    +img(imgSizes, imgSrcset, imgSrc, 'скриншот сайта EVI Clinic', 1500, 1006, true)
+
+
+            .scr_opisanie_keysa_art6__step
+
+                h3.scr_opisanie_keysa_art6__subtitle Примеры объявлений в Яндекс.Директ (РСЯ)
+
+                .scr_opisanie_keysa_art6__examples 
+
+                    .scr_opisanie_keysa_art6__example_half
+
+                        -
+                            var imgSizes = "(max-width: 575px) 96vw,(max-width: 991px) 504px, (max-width: 1300px) 50vw, 735px"
+
+                            var imgSrcset = "./images/scr_opisanie_keysa_art6/evi_clinic_example_half_1_400.webp 400w, ./images/scr_opisanie_keysa_art6/evi_clinic_example_half_1_700.webp 700w, ./images/scr_opisanie_keysa_art6/evi_clinic_example_half_1_900.webp 900w, ./images/scr_opisanie_keysa_art6/evi_clinic_example_half_1_1200.webp 1200w, ./images/scr_opisanie_keysa_art6/evi_clinic_example_half_1_1470.webp 1470w"
+
+                            var imgSrc = "scr_opisanie_keysa_art6/evi_clinic_example_half_1_1200"
+
+                        +img(imgSizes, imgSrcset, imgSrc, 'скриншот рекламы сайта EVI Clinic в Яндекс.Директ', 735, 736, true)
+
+
+                    .scr_opisanie_keysa_art6__example_half
+
+                        -
+                            var imgSizes = "(max-width: 575px) 96vw,(max-width: 991px) 504px, (max-width: 1300px) 50vw, 735px"
+
+                            var imgSrcset = "./images/scr_opisanie_keysa_art6/evi_clinic_example_half_2_400.webp 400w, ./images/scr_opisanie_keysa_art6/evi_clinic_example_half_2_700.webp 700w, ./images/scr_opisanie_keysa_art6/evi_clinic_example_half_2_900.webp 900w, ./images/scr_opisanie_keysa_art6/evi_clinic_example_half_2_1200.webp 1200w, ./images/scr_opisanie_keysa_art6/evi_clinic_example_half_2_1470.webp 1470w"
+
+                            var imgSrc = "scr_opisanie_keysa_art6/evi_clinic_example_half_2_1200"
+
+                        +img(imgSizes, imgSrcset, imgSrc, 'скриншот рекламы сайта EVI Clinic в Яндекс.Директ', 735, 616, true)
+
+
+
+
+            .scr_opisanie_keysa_art6__partnership
+
+                h3.scr_opisanie_keysa_art6__subtitle Партнерские отношения на долгие годы
+
+                p Контекстная реклама – один из самых эффективных маркетинговых каналов. Основное его преимущество – это довольно быстрые результаты. Уже с первой недели можно получать лиды, через 1-3 месяца выйти на стабильные высокие показатели, а в процессе длительного сотрудничества и регулярной работы с рекламой – получать лиды значительно дешевле рыночной стоимости.
+
+                p С большинством клиентов мы выстраиваем взаимовыгодное эффективное сотрудничество на 5, 7 и даже 10 лет.
+
+
+            .scr_opisanie_keysa_art6__line
+
+
+
+    section.scr_rezultat_keysa_art6.scr_rezultat_keysa_art6_new
+        .container 
+            h2.scr_rezultat_keysa_art6__title Результат
+
+            p.scr_rezultat_keysa_art6__text Эффективная непрерывная работа с контекстной рекламой принесла отличные результаты.
+
+            p.scr_rezultat_keysa_art6__text Приводим данные за период: 3 месяца.
+
+            p.scr_rezultat_keysa_art6__text * Стоит отметить, что мы не разглашаем данные по продажам клиента, но именно увеличение объема продаж – это то, ради чего мы сотрудничаем.
+
+            .scr_rezultat_keysa_art6__block.scr_rezultat_keysa_art6__increase
+
+                h3.scr_rezultat_keysa_art6__block_title Общие рекламные показатели
+
+
+                .scr_rezultat_keysa_art6__achievements
+
+                    .scr_rezultat_keysa_art6__indicator 
+                        p.scr_rezultat_keysa_art6__value 207 492 ₽
+                        p.scr_rezultat_keysa_art6__descr Бюджет
+
+                    .scr_rezultat_keysa_art6__indicator 
+                        p.scr_rezultat_keysa_art6__value 96
+                        p.scr_rezultat_keysa_art6__descr Получено лидов
+
+                    .scr_rezultat_keysa_art6__indicator 
+                        p.scr_rezultat_keysa_art6__value 2 187,5 ₽
+                        p.scr_rezultat_keysa_art6__descr Цена лида (CPL)
+
+                    .scr_rezultat_keysa_art6__indicator 
+                        p.scr_rezultat_keysa_art6__value 473%
+                        p.scr_rezultat_keysa_art6__descr общий рост трафика
+
+
+                h3.scr_rezultat_keysa_art6__block_title Яндекс.Директ
+
+
+                .scr_rezultat_keysa_art6__group
+
+                    p.scr_rezultat_keysa_art6__name Поиск
+                    
+                    .scr_rezultat_keysa_art6__achievements
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 169 368 ₽
+                            p.scr_rezultat_keysa_art6__descr Бюджет
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 195 84
+                            p.scr_rezultat_keysa_art6__descr Показы
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 1 341
+                            p.scr_rezultat_keysa_art6__descr Клики
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 6.85%
+                            p.scr_rezultat_keysa_art6__descr Кликабельность (CTR)
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 126 ₽
+                            p.scr_rezultat_keysa_art6__descr Цена клика (CPC) 
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 80
+                            p.scr_rezultat_keysa_art6__descr Получено лидов
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 5,94% 
+                            p.scr_rezultat_keysa_art6__descr Целевое действие (CR)
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 2 117 ₽
+                            p.scr_rezultat_keysa_art6__descr Цена лида (CPL)
+
+                
+                .scr_rezultat_keysa_art6__inner_line
+
+                .scr_rezultat_keysa_art6__group
+
+                    p.scr_rezultat_keysa_art6__name РСЯ
+
+                    .scr_rezultat_keysa_art6__achievements
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 38 124 ₽
+                            p.scr_rezultat_keysa_art6__descr Бюджет
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 302 153
+                            p.scr_rezultat_keysa_art6__descr Показы
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 2 721 
+                            p.scr_rezultat_keysa_art6__descr Клики
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 0.90%
+                            p.scr_rezultat_keysa_art6__descr Кликабельность (CTR)
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 14 ₽
+                            p.scr_rezultat_keysa_art6__descr Цена клика (CPC) 
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 16
+                            p.scr_rezultat_keysa_art6__descr Получено лидов
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 5,94% 
+                            p.scr_rezultat_keysa_art6__descr Целевое действие (CR)
+
+                        .scr_rezultat_keysa_art6__indicator 
+                            p.scr_rezultat_keysa_art6__value 2 117 ₽
+                            p.scr_rezultat_keysa_art6__descr Цена лида (CPL)
+
+
+                    .scr_rezultat_keysa_art6__line
+
+
+
+
+    section.scr_keysy_art6
+        .container
+            h2.scr_keysy_art6__title.index_page_title Еще проекты
+
+            .scr_keysy_art6__cases
+
+                include ./blocks/scr_keysy_art6__item--purple
+
+                include ./blocks/scr_keysy_art6__item--violet
+
+                include ./blocks/scr_keysy_art6__item--red
+
+                include ./blocks/scr_keysy_art6__item--blue
+
+
+    include ./blocks/_scr_forma_footer_art6
+
+
+
+
+
+

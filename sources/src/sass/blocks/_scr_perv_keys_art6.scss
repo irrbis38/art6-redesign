@@ -361,3 +361,15 @@
     }
   }
 }
+
+// evi-clinic page
+
+.scr_perv_keys_art6.project_advertisement {
+  .scr_perv_keys_art6__subtitle {
+    max-width: 1120px;
+
+    @include sm {
+      max-width: 650px;
+    }
+  }
+}

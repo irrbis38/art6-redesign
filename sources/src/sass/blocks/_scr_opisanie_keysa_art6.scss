@@ -39,6 +39,10 @@
   letter-spacing: -0.03em;
   color: $color_grey;
 
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+
   @include sm {
     font-size: 16px;
     line-height: 150%;
@@ -131,6 +135,10 @@
 
   &:not(:first-child) {
     margin-top: 23px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 23px;
   }
 
   @include lg {
@@ -268,4 +276,111 @@
 
 .scr_opisanie_keysa_art6__line {
   border-bottom: 2px solid $color_grey_light;
+}
+
+.scr_opisanie_keysa_art6__img_full {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.scr_opisanie_keysa_art6__img_aside {
+  max-width: 1120px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @include lg {
+    max-width: 100%;
+  }
+}
+
+.keys-preview {
+  &:not(:first-child) {
+    margin-top: 60px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  @include lg {
+    &:not(:first-child) {
+      margin-top: 50px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include sm {
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include xs {
+    &:not(:first-child) {
+      margin-top: 60px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.scr_opisanie_keysa_art6__example_full {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.scr_opisanie_keysa_art6__examples {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0 30px;
+
+  @include sm {
+    max-width: 504px;
+    flex-direction: column;
+    gap: 20px 0;
+  }
+
+  @include xs {
+    gap: 14px 0;
+  }
+
+  @include xxs {
+    max-width: 100%;
+  }
+}
+
+.scr_opisanie_keysa_art6__example_half {
+  flex: 1 1 50%;
+  max-width: 50%;
+
+  @include sm {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }

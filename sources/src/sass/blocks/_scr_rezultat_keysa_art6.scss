@@ -137,6 +137,34 @@
   }
 }
 
+.scr_rezultat_keysa_art6__inner_line {
+  margin: 64px 0 49px;
+  border-bottom: 2px solid $color_grey_light;
+
+  @include xl {
+    margin: 64px 0;
+  }
+
+  @include lg {
+    margin: 50px 0;
+  }
+}
+
+.scr_rezultat_keysa_art6__name {
+  margin-bottom: 29px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 118%;
+  letter-spacing: -0.03em;
+  color: $color_grey;
+
+  @include lg {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+
 .scr_rezultat_keysa_art6__value {
   margin-bottom: 4px;
   font-weight: 500;
@@ -151,6 +179,10 @@
 
   @include xs {
     font-size: 28px;
+  }
+
+  @include r(370px) {
+    font-size: 24px;
   }
 }
 
