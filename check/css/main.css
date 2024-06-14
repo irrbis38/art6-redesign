@@ -11968,6 +11968,14 @@ button.header_art6__more {
     max-width: 650px
   }
 }
+.scr_perv_keys_art6.project_advertisement .scr_perv_keys_art6__subtitle {
+  max-width: 1120px
+}
+@media (max-width:991px) {
+  .scr_perv_keys_art6.project_advertisement .scr_perv_keys_art6__subtitle {
+    max-width: 650px
+  }
+}
 .scr_opisanie_keysa_art6 {
   margin-bottom: 110px
 }
@@ -12010,6 +12018,9 @@ button.header_art6__more {
   line-height: 156%;
   letter-spacing: -.03em;
   color: #8e8e93
+}
+.scr_opisanie_keysa_art6__text:not(:first-child) {
+  margin-top: 16px
 }
 @media (max-width:991px) {
   .scr_opisanie_keysa_art6__text {
@@ -12101,6 +12112,10 @@ button.header_art6__more {
 .scr_opisanie_keysa_art6__conclusion:not(:first-child),
 .scr_opisanie_keysa_art6__list li:not(:first-child) {
   margin-top: 23px
+}
+.scr_opisanie_keysa_art6__conclusion:not(:last-child),
+.scr_opisanie_keysa_art6__list li:not(:last-child) {
+  margin-bottom: 23px
 }
 @media (max-width:1300px) {
   .scr_opisanie_keysa_art6__conclusion,
@@ -12243,6 +12258,109 @@ button.header_art6__more {
 .scr_opisanie_keysa_art6__line {
   border-bottom: 2px solid #f2f2f2
 }
+.scr_opisanie_keysa_art6__img_full img {
+  display: block;
+  width: 100%;
+  height: auto
+}
+.scr_opisanie_keysa_art6__img_aside {
+  max-width: 1120px
+}
+.scr_opisanie_keysa_art6__img_aside img {
+  display: block;
+  width: 100%;
+  height: auto
+}
+@media (max-width:1300px) {
+  .scr_opisanie_keysa_art6__img_aside {
+    max-width: 100%
+  }
+}
+.keys-preview:not(:first-child) {
+  margin-top: 60px
+}
+.keys-preview:not(:last-child) {
+  margin-bottom: 60px
+}
+@media (max-width:1300px) {
+  .keys-preview:not(:first-child) {
+    margin-top: 50px
+  }
+  .keys-preview:not(:last-child) {
+    margin-bottom: 50px
+  }
+}
+@media (max-width:991px) {
+  .keys-preview:not(:first-child) {
+    margin-top: 40px
+  }
+  .keys-preview:not(:last-child) {
+    margin-bottom: 40px
+  }
+}
+@media (max-width:767px) {
+  .keys-preview:not(:first-child) {
+    margin-top: 60px
+  }
+  .keys-preview:not(:last-child) {
+    margin-bottom: 60px
+  }
+}
+.scr_opisanie_keysa_art6__example_full img {
+  display: block;
+  width: 100%;
+  height: auto
+}
+.scr_opisanie_keysa_art6__examples {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 0 30px
+}
+@media (max-width:991px) {
+  .scr_opisanie_keysa_art6__examples {
+    max-width: 504px;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px 0
+  }
+}
+@media (max-width:767px) {
+  .scr_opisanie_keysa_art6__examples {
+    gap: 14px 0
+  }
+}
+@media (max-width:575px) {
+  .scr_opisanie_keysa_art6__examples {
+    max-width: 100%
+  }
+}
+.scr_opisanie_keysa_art6__example_half {
+  -webkit-flex: 1 1 50%;
+  -ms-flex: 1 1 50%;
+  flex: 1 1 50%;
+  max-width: 50%
+}
+@media (max-width:991px) {
+  .scr_opisanie_keysa_art6__example_half {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%
+  }
+}
+.scr_opisanie_keysa_art6__example_half img {
+  display: block;
+  width: 100%;
+  height: auto
+}
 .scr_rezultat_keysa_art6 {
   margin-bottom: 381px
 }
@@ -12365,6 +12483,35 @@ button.header_art6__more {
     margin-bottom: 60px
   }
 }
+.scr_rezultat_keysa_art6__inner_line {
+  margin: 64px 0 49px;
+  border-bottom: 2px solid #f2f2f2
+}
+@media (max-width:1600px) {
+  .scr_rezultat_keysa_art6__inner_line {
+    margin: 64px 0
+  }
+}
+@media (max-width:1300px) {
+  .scr_rezultat_keysa_art6__inner_line {
+    margin: 50px 0
+  }
+}
+.scr_rezultat_keysa_art6__name {
+  margin-bottom: 29px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 118%;
+  letter-spacing: -.03em;
+  color: #8e8e93
+}
+@media (max-width:1300px) {
+  .scr_rezultat_keysa_art6__name {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 150%
+  }
+}
 .scr_rezultat_keysa_art6__value {
   margin-bottom: 4px;
   font-weight: 500;
@@ -12381,6 +12528,11 @@ button.header_art6__more {
 @media (max-width:767px) {
   .scr_rezultat_keysa_art6__value {
     font-size: 28px
+  }
+}
+@media only screen and (max-width:370px) {
+  .scr_rezultat_keysa_art6__value {
+    font-size: 24px
   }
 }
 .scr_rezultat_keysa_art6__descr {
