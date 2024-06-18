@@ -56,9 +56,10 @@
   }
 }
 
-.scr_rezultat_keysa_art6__text {
+.scr_rezultat_keysa_art6__text,
+.scr_rezultat_keysa_art6__sub_text {
   max-width: 1120px;
-  margin-bottom: 50px;
+  margin-bottom: 16px;
   font-weight: 500;
   font-size: 18px;
   line-height: 156%;
@@ -69,6 +70,14 @@
     margin-bottom: 55px;
     font-size: 16px;
     line-height: 150%;
+  }
+}
+
+.scr_rezultat_keysa_art6__sub_text {
+  font-size: 16px;
+
+  @include sm {
+    font-size: 14px;
   }
 }
 
