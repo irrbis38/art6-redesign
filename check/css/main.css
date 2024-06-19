@@ -12416,7 +12416,6 @@ button.header_art6__more {
 @media (max-width:991px) {
   .scr_rezultat_keysa_art6__sub_text,
   .scr_rezultat_keysa_art6__text {
-    margin-bottom: 55px;
     font-size: 16px;
     line-height: 150%
   }
