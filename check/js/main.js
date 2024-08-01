@@ -973,7 +973,9 @@ var initModalInfo = () => {
 
 var initPinProjectImage = () => {
   var container = document.querySelector(".scr_perv_keys_art6__descr");
-  var img = document.querySelector(".scr_perv_keys_art6__img");
+  var img = document.querySelector(".scr_perv_keys_art6__mobile_img");
+
+  if (!container || !img) return;
 
   ScrollTrigger.matchMedia({
     "(min-width: 992px)": function () {
@@ -983,7 +985,7 @@ var initPinProjectImage = () => {
         // endTrigger: ".scr_perv_keys_art6__descr",
         // end: "bottom bottom",
         end: () => `+=${container.scrollHeight - img.clientHeight - 60}px`,
-        pin: ".scr_perv_keys_art6__img",
+        pin: ".scr_perv_keys_art6__mobile_img",
         pinSpacing: false,
       });
     },
