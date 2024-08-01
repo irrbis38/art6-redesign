@@ -1521,7 +1521,7 @@ button.header_art6__more {
   }
   .first_scr_main_art6__title span:nth-child(1) {
     position: static;
-    display: block;
+    display: inline;
     margin-right: 13px;
     margin-right: 0
   }
@@ -5091,19 +5091,16 @@ button.header_art6__more {
 }
 @media (max-width:767px) {
   .scr_tematiki_art6__heading {
+    padding: 10px 34px 10px 0;
     font-size: 24px
   }
 }
 @media only screen and (max-width:400px) {
   .scr_tematiki_art6__heading > span:first-child {
-    max-width: 200px
+    max-width: 300px
   }
 }
 .scr_tematiki_art6__amount {
-  position: absolute;
-  right: -34px;
-  top: -12px;
-  z-index: 1;
   font-weight: 500;
   font-size: 20px;
   line-height: 160%;
@@ -5112,16 +5109,8 @@ button.header_art6__more {
 }
 @media (max-width:1300px) {
   .scr_tematiki_art6__amount {
-    right: -25px;
-    top: -16px;
     font-size: 18px;
     line-height: 177%
-  }
-}
-@media (max-width:767px) {
-  .scr_tematiki_art6__amount {
-    top: -9px;
-    right: -30px
   }
 }
 .scr_tematiki_art6__list {
@@ -12759,8 +12748,7 @@ button.header_art6__more {
 .scr_rezultat_keysa_art6__positions_table {
   display: table;
   width: 100%;
-  border-collapse: collapse;
-  border-top: 1px solid #f2f2f2
+  border-collapse: collapse
 }
 .scr_rezultat_keysa_art6__positions_table td,
 .scr_rezultat_keysa_art6__positions_table th {
@@ -12769,7 +12757,8 @@ button.header_art6__more {
   font-size: 18px;
   line-height: 144%;
   letter-spacing: -.03em;
-  text-align: center
+  text-align: center;
+  border: 1px solid #f2f2f2
 }
 @media (max-width:1300px) {
   .scr_rezultat_keysa_art6__positions_table td,
@@ -12786,15 +12775,6 @@ button.header_art6__more {
     font-size: 14px;
     line-height: 140%
   }
-}
-.scr_rezultat_keysa_art6__positions_table th:not(:last-child) {
-  border-right: 1px solid #e7e7e7
-}
-.scr_rezultat_keysa_art6__positions_table td:not(:last-child) {
-  border-right: 1px solid #d5d5d5
-}
-.scr_rezultat_keysa_art6__positions_table td:nth-child(3) {
-  border-right: 1px solid #1eaa8f
 }
 .scr_rezultat_keysa_art6__positions_table td:nth-child(1),
 .scr_rezultat_keysa_art6__positions_table td:nth-child(2) {
