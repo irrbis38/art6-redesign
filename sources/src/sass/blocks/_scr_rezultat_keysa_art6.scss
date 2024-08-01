@@ -405,7 +405,7 @@
   display: table;
   width: 100%;
   border-collapse: collapse;
-  border-top: 1px solid $color_grey_light;
+  // border-top: 1px solid $color_grey_light;
 
   th,
   td {
@@ -415,6 +415,7 @@
     line-height: 144%;
     letter-spacing: -0.03em;
     text-align: center;
+    border: 1px solid $color_grey_light;
 
     @include lg {
       padding: 13px 0 10px;
@@ -429,17 +430,17 @@
     }
   }
 
-  th:not(:last-child) {
-    border-right: 1px solid #e7e7e7;
-  }
+  // th:not(:last-child) {
+  //   border-right: 1px solid #e7e7e7;
+  // }
 
-  td:not(:last-child) {
-    border-right: 1px solid #d5d5d5;
-  }
+  // td:not(:last-child) {
+  //   border-right: 1px solid #d5d5d5;
+  // }
 
-  td:nth-child(3) {
-    border-right: 1px solid #1eaa8f;
-  }
+  // td:nth-child(3) {
+  //   border-right: 1px solid #1eaa8f;
+  // }
 
   td {
     &:nth-child(1),

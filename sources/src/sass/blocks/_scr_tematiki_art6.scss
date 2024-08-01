@@ -406,21 +406,22 @@
   }
 
   @include xs {
+    padding: 10px 34px 10px 0;
     font-size: 24px;
   }
 
   @include r(400px) {
     & > span:first-child {
-      max-width: 200px;
+      max-width: 300px;
     }
   }
 }
 
 .scr_tematiki_art6__amount {
-  position: absolute;
-  right: -34px;
-  top: -12px;
-  z-index: 1;
+  // position: absolute;
+  // right: -34px;
+  // top: -12px;
+  // z-index: 1;
   font-weight: 500;
   font-size: 20px;
   line-height: 160%;
@@ -428,16 +429,16 @@
   color: $color_grey;
 
   @include lg {
-    right: -25px;
-    top: -16px;
+    // right: -25px;
+    // top: -16px;
     font-size: 18px;
     line-height: 177%;
   }
 
-  @include xs {
-    top: -9px;
-    right: -30px;
-  }
+  // @include xs {
+  //   top: -9px;
+  //   right: -30px;
+  // }
 }
 
 .scr_tematiki_art6__list {
