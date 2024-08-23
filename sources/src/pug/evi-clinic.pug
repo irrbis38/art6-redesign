@@ -13,64 +13,48 @@ block page
                 li: span Разработчик (Java)
 
 
-    section.scr_perv_keys_art6.project_advertisement
+    .container
+        section.scr_perv_keys_art6.project_advertisement
 
-        .scr_perv_keys_art6__mobile_img
-            -
-                var imgSizes = "100vw"
+            .scr_perv_keys_art6__pic
 
-                var imgSrcset = "./images/scr_perv_keys_art6/evi_clinic_mob_400.webp 400w, ./images/scr_perv_keys_art6/evi_clinic_mob_640.webp 640w, ./images/scr_perv_keys_art6/evi_clinic_mob_767.webp 767w, ./images/scr_perv_keys_art6/evi_clinic_mob_1534.webp 1534w"
+                .scr_perv_keys_art6__mobile_img
 
-                var imgSrc = "scr_perv_keys_art6/evi_clinic_mob_767"
+                    img(sizes="(max-width: 991px) 100vw, (min-width: 992px) 56vw, (min-width: 1920px) 907px" srcset="./images/scr_perv_keys_art6/prodvizheniye-internet-magazina-akvatim_700.webp 700w, ./images/scr_perv_keys_art6/prodvizheniye-internet-magazina-akvatim_1300.webp 1300w, ./images/scr_perv_keys_art6/prodvizheniye-internet-magazina-akvatim_1814.webp 1814w" src="./images/scr_perv_keys_art6/prodvizheniye-internet-magazina-akvatim_1814.webp" alt="скриншот проекта EVI Clinic" width="390" height="273" decoding="async")
 
-            +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта EVI Clinic', 390, 273, false)
-
-        .scr_perv_keys_art6__intro
-            .container
+            .scr_perv_keys_art6__intro
                 p.scr_perv_keys_art6__title.index_page_title EVI Clinic
 
                 h1.scr_perv_keys_art6__subtitle: span Контекстная реклама Яндекс.Директ для мед. клиники специализирующейся на офисной гистероскопии
- 
 
 
 
-        .scr_perv_keys_art6__wrapper
+            .scr_perv_keys_art6__wrapper
 
-            .scr_perv_keys_art6__img
-                -
-                    var imgSizes = "(max-width: 1300px) 56vw, 58vw"
+                .scr_perv_keys_art6__descr
+                    .scr_perv_keys_art6__content
+                        h3.scr_perv_keys_art6__heading
+                            svg(width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(fill-rule="evenodd" clip-rule="evenodd" d="M6.37645 22.2879C6.37645 19.5406 6.37645 16.7933 6.37645 14.0461H0L1.50258 11.4718L6.80944 2.37965L8.19838 0V1.71215V9.95393H14.5748L13.0722 12.5282L7.76539 21.6203L6.37645 24V22.2879Z" fill="#1463FF")
+                            span Клиент
+                        p.scr_perv_keys_art6__text EVI Clinic – медицинская клиника, оказывающая широкий спектр услуг по направлениям: гинекология, маммология, генетика, вакцинация, УЗИ, кардиология, неврология и другие. В штате клиники работает более 50 специалистов. Высокоэффективное оборудование и принципы доказательной медицины делают ее одной из лучших в регионе.
 
-                    var imgSrcset = "./images/scr_perv_keys_art6/evi_clinic_900.webp 900w, ./images/scr_perv_keys_art6/evi_clinic_1200.webp 1200w, ./images/scr_perv_keys_art6/evi_clinic_1600.webp 1600w, ./images/scr_perv_keys_art6/evi_clinic_2234.webp 2234w"
+                        h3.scr_perv_keys_art6__heading Задача
+                        .scr_perv_keys_art6__text
+                            p Компания EVI Clinic поставила перед нами ряд задач:
 
-                    var imgSrc = "scr_perv_keys_art6/evi_clinic_1600"
-
-                +img(imgSizes, imgSrcset, imgSrc, 'скриншот проекта EVI Clinic', 1117, 880, false)
-
-            .scr_perv_keys_art6__descr.container
-                .scr_perv_keys_art6__content
-                    h3.scr_perv_keys_art6__heading
-                        svg(width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                            path(fill-rule="evenodd" clip-rule="evenodd" d="M6.37645 22.2879C6.37645 19.5406 6.37645 16.7933 6.37645 14.0461H0L1.50258 11.4718L6.80944 2.37965L8.19838 0V1.71215V9.95393H14.5748L13.0722 12.5282L7.76539 21.6203L6.37645 24V22.2879Z" fill="#1463FF")
-                        span Клиент
-                    p.scr_perv_keys_art6__text EVI Clinic – медицинская клиника, оказывающая широкий спектр услуг по направлениям: гинекология, маммология, генетика, вакцинация, УЗИ, кардиология, неврология и другие. В штате клиники работает более 50 специалистов. Высокоэффективное оборудование и принципы доказательной медицины делают ее одной из лучших в регионе.
-
-                    h3.scr_perv_keys_art6__heading Задача
-                    .scr_perv_keys_art6__text
-                        p Компания EVI Clinic поставила перед нами 6 ключевых задач:
+                            ul
+                                li основная – оперативно увеличить продажи с помощью контекстной рекламы;
+                                li получать звонки и заявки на услугу офисной гистероскопии по цене не превышающей 2000 рублей за лид;
+                                li повышать общую конверсионную составляющую проекта с помощью внедрения улучшений с маркетинговой точки зрения;
+                                li генерировать качественные лиды по максимально низкой стоимости за счет опыта и эффективности;
+                                li повысить доверие к компании за счет регулярного показа рекламы целевой аудитории;
+                                li стать эффективным партнером, который в длительной перспективе будет гарантировать стабильные высокие результаты.
 
 
 
-                        ul
-                            li основная – оперативно увеличить продажи с помощью контекстной рекламы;
-                            li получать звонки и заявки на услугу офисной гистероскопии по цене не превышающей 2000 рублей за лид;
-                            li повышать общую конверсионную составляющую проекта с помощью внедрения улучшений с маркетинговой точки зрения;
-                            li генерировать качественные лиды по максимально низкой стоимости за счет опыта и эффективности;
-                            li повысить доверие к компании за счет регулярного показа рекламы целевой аудитории;
-                            li стать эффективным партнером, который в длительной перспективе будет гарантировать стабильные высокие результаты.
+                .scr_perv_keys_art6__line: span
 
-                .scr_perv_keys_art6__blank
-
-            .scr_perv_keys_art6__line.container: span
 
 
 
@@ -203,8 +187,8 @@ block page
 
 
             .scr_opisanie_keysa_art6__banner
-                img(srcset="./images/scr_opisanie_keysa_art6/banner_5.webp, ./images/scr_opisanie_keysa_art6/banner_5@2x.webp 2x" src="./images/scr_opisanie_keysa_art6/banner_5.webp" alt="повышаем конверсию посадочных страниц")
-                img(srcset="./images/scr_opisanie_keysa_art6/banner_5_mob.webp, ./images/scr_opisanie_keysa_art6/banner_5_mob@2x.webp 2x" src="./images/scr_opisanie_keysa_art6/banner_5_mob.webp" alt="повышаем конверсию посадочных страниц")
+                img(srcset="./images/scr_opisanie_keysa_art6/banner_5.webp, ./images/scr_opisanie_keysa_art6/banner_5@2x.webp 2x" src="./images/scr_opisanie_keysa_art6/banner_5.webp" alt="повышаем конверсию посадочных страниц" loading="lazy" decoding="async")
+                img(srcset="./images/scr_opisanie_keysa_art6/banner_5_mob.webp, ./images/scr_opisanie_keysa_art6/banner_5_mob@2x.webp 2x" src="./images/scr_opisanie_keysa_art6/banner_5_mob.webp" alt="повышаем конверсию посадочных страниц" loading="lazy" decoding="async")
 
             .scr_opisanie_keysa_art6__step
 

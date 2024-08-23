@@ -132,8 +132,14 @@ var initHeader = () => {
       prevScroll = curScroll;
     };
 
+    const scrollStart =
+      document.body.classList.contains("company-page") &&
+      window.innerWidth >= 992
+        ? 700
+        : 100;
+
     var toggleHeader = (direction, curScroll) => {
-      if (direction === 2 && curScroll > 100) {
+      if (direction === 2 && curScroll > scrollStart) {
         if (!header.classList.contains("mobile-menu-open")) {
           header.classList.add("hide");
           prevDirection = direction;
