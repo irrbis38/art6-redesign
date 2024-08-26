@@ -1,0 +1,124 @@
+.not_found {
+  min-height: 886px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
+  @include xs {
+    min-height: 683px;
+  }
+}
+
+.not_found__container {
+  // flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  padding-top: 250px;
+
+  @include xs {
+    padding-top: 177px;
+  }
+}
+
+.not_found__num {
+  margin-bottom: 38px;
+  font-weight: 500;
+  font-size: 200px;
+  line-height: 1;
+  text-align: center;
+
+  @include lg {
+    font-size: 150px;
+  }
+
+  @include xs {
+    margin-bottom: 27px;
+    font-size: 120px;
+  }
+}
+
+.not_found__title {
+  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+
+  span {
+    background-color: $color_blue;
+    padding: 5px 0;
+  }
+
+  @include lg {
+    font-size: 32px;
+  }
+
+  @include xs {
+    max-width: 300px;
+    margin-bottom: 23px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+.not_found__subtitle {
+  margin-bottom: 57px;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #7c7c7c;
+
+  @include lg {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  @include xs {
+    font-size: 16px;
+  }
+}
+
+.not_found__link {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding-left: 60px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 114%;
+  letter-spacing: -0.03em;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.33334 14.6667V17.3333H21.3333L14 24.6667L15.8933 26.56L26.4533 16L15.8933 5.44L14 7.33334L21.3333 14.6667H5.33334Z' fill='%23166FF5' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        transform: translateY(-50%) translateX(5px);
+      }
+    }
+  }
+
+  @include xs {
+    font-size: 24px;
+    line-height: 133%;
+  }
+}

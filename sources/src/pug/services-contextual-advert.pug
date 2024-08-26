@@ -1,0 +1,47 @@
+extends base/_layout
+block vars
+    - var pageName = 'services-advertisement scrolling-titles-exist'
+block head
+    title ART6 услуги - контекстная реклама
+block page
+
+    section.first_scr_main_art6
+        .container
+
+            .first_scr_main_art6__title_wrapper
+
+                h1.first_scr_main_art6__title
+                    span Контекстная                        
+                    span реклама
+
+                button.first_scr_main_art6__help(type='button' aria-label="Показать справку") [ i ]
+
+            p.first_scr_main_art6__subtitle 
+                span Получайте целевых клиентов из рекламы на 50% больше и дешевле с ART6
+
+            ul.first_scr_main_art6__list 
+                li.first_scr_main_art6__item Получите детальную рекламную стратегию на 3 месяца
+                li.first_scr_main_art6__item Получайте теплых целевых клиентов уже через 1 неделю с начала сотрудничества
+                li.first_scr_main_art6__item Сотрудничайте с надежным сертифицирован&shy;ным агентством ART6
+                li.first_scr_main_art6__item Инвестируйте в контекстную рекламу эффективно с гарантиями результата
+
+    include ./blocks/modal_info.pug
+
+
+
+    -
+        const linksList = [
+            'Маркетинговый аудит сайта',
+            'Аудит контекстной рекламы',
+            'Аудит таргетированной рекламы',
+            'SEO-аудит сайта',
+            'Аудит медийной рекламы',
+        ]
+
+
+    .scr_sm_takzhe_art6.scr_links
+        .container
+
+            ul.scr_sm_takzhe_art6__list
+                each item in linksList
+                    +src_sm_takzhe_item(item)

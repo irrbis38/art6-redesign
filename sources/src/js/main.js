@@ -369,8 +369,15 @@ var initAccordion = (group_class, heading_class) => {
 };
 
 var toggleModal = (elements) => {
-  const { buttons_open, client_modal, body, header, close_btn, overlay } =
-    elements;
+  const {
+    buttons_open,
+    client_modal,
+    body,
+    header,
+    close_btn,
+    overlay,
+    isModalReviews = false,
+  } = elements;
 
   buttons_open.forEach((btn) =>
     btn.addEventListener("click", () => {
@@ -385,6 +392,11 @@ var toggleModal = (elements) => {
       // if mobile menu is non-open than unlock body
       !header.classList.contains("mobile-menu-open") &&
         body.classList.remove("lock");
+
+      if (isModalReviews) {
+        var imgFull = document.querySelector(".scr_review_modal__image img");
+        imgFull && (imgFull.src = "");
+      }
     })
   );
 

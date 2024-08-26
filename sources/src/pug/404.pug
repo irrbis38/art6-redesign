@@ -1,0 +1,20 @@
+extends base/_layout
+block vars
+    - var pageName = 'not-found'
+block head
+    title Страница не найдена
+block page
+
+    .not_found
+
+        .container.not_found__container
+
+            p.not_found__num 404
+
+            h1.not_found__title: span Извините,  мы не можем найти эту страницу!
+
+            p.not_found__subtitle Что-то пошло не так или страница больше не существует
+
+            a.not_found__link(href="./index.html") На главную
+
+

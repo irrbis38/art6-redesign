@@ -431,3 +431,57 @@
     }
   }
 }
+
+.scr_sm_takzhe_art6.scr_links {
+  .scr_sm_takzhe_art6__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 38px 20px;
+    height: auto;
+    overflow: initial;
+
+    &::after {
+      display: none;
+    }
+
+    @include xs {
+      display: block;
+    }
+  }
+
+  .scr_sm_takzhe_art6__item {
+    margin-bottom: 0;
+
+    @include xs {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .scr_sm_takzhe_art6__link {
+    font-size: 26px;
+    line-height: 1.4;
+
+    &::before,
+    &::after {
+      width: 22px;
+      height: 22px;
+    }
+
+    @include xl {
+      font-size: 23px;
+
+      &::before,
+      &::after {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @include sm {
+      font-size: 18px;
+      line-height: 1.44;
+    }
+  }
+}

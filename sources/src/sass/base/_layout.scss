@@ -368,3 +368,19 @@ textarea {
     }
   }
 }
+
+.section {
+  margin-bottom: 200px;
+
+  @include lg {
+    margin-bottom: 180px;
+  }
+
+  @include sm {
+    margin-bottom: 150px;
+  }
+
+  @include xs {
+    margin-bottom: 90px;
+  }
+}
