@@ -1447,6 +1447,27 @@ var initPinHistoryGoals = () => {
   });
 };
 
+var setInlineOrders = () => {
+  var orders = document.querySelectorAll(".scr_keysy_art6__item");
+
+  const len = orders.length;
+  const firstHalf = Math.ceil(len / 2);
+  var oddCounter = 1;
+  var evenCounter = 2;
+
+  if (len < 1) return;
+
+  orders.forEach((order, idx) => {
+    if (idx < firstHalf) {
+      order.style.order = oddCounter;
+      oddCounter += 2;
+    } else {
+      order.style.order = evenCounter;
+      evenCounter += 2;
+    }
+  });
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
@@ -1621,4 +1642,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var history_page = document.querySelector(".history-page");
   history_page && initPinHistoryGoals();
+
+  // SET ORDERS TO KEYSES
+  setInlineOrders();
 });
