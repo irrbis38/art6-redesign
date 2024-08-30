@@ -1098,17 +1098,36 @@
       }
     }
 
+    .first_scr_main_art6__title_wrapper {
+      width: auto;
+    }
+
     .first_scr_main_art6__title {
+      font-size: 80px;
+      line-height: 1.25;
+
+      @include xl {
+        font-size: 60px;
+      }
+
+      @include lg {
+        font-size: 55px;
+      }
+
       @include sm {
         max-width: 800px;
+        font-size: 40px;
       }
 
       @include xs {
-        font-size: 50px;
+        // font-size: 50px;
+        font-size: 38px;
+        line-height: 1.18;
       }
 
       @include r(389px) {
-        font-size: 36px;
+        // font-size: 36px;
+        font-size: 34px;
       }
     }
   }

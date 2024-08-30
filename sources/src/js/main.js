@@ -480,6 +480,28 @@ var toggleConsultationModal = () => {
   toggleModal(elements);
 };
 
+// ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "УЗНАТЬ СТОИМОСТЬ"
+var toggleGetPriceModal = (btn) => {
+  var client_modal = document.querySelector(".scr_b_get_price"),
+    body = document.body,
+    close_btn = document.querySelector(".scr_b_consultation_art6__close"),
+    overlay = document.querySelector(".scr_b_get_price__overlay"),
+    header = document.querySelector(".header_art6");
+
+  if (!client_modal || !close_btn || !overlay || !header) return;
+
+  var elements = {
+    buttons_open: [btn],
+    client_modal,
+    body,
+    header,
+    close_btn,
+    overlay,
+  };
+
+  toggleModal(elements);
+};
+
 // ===== ПЕРЕКЛЮЧЕНИЕ МОДАЛЬНОГО ОКНА "ОТЗЫВОВ"
 var handleShowReviewButtons = () => {
   var buttons_open = Array.from(
@@ -1481,6 +1503,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     ".scr_text_director_art6__consultation"
   );
   scr_text_director_art6_consultation && toggleConsultationModal();
+
+  var getPriceBtns = document.querySelectorAll(".js-get-price-btn");
+  getPriceBtns.length > 0 &&
+    getPriceBtns.forEach((btn) => toggleGetPriceModal(btn));
 
   // footer
   changeCity();
