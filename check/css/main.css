@@ -3848,21 +3848,21 @@ button.header_art6__more {
   }
 }
 .scr_keysy_art6__item--black .scr_keysy_art6__inner {
-  padding: 30px 40px 30px
+  padding: 30px 40px 50px
 }
 @media (max-width:1600px) {
   .scr_keysy_art6__item--black .scr_keysy_art6__inner {
-    padding: 22px 34px 36px 34px
+    padding: 22px 34px 40px
   }
 }
 @media (max-width:1300px) {
   .scr_keysy_art6__item--black .scr_keysy_art6__inner {
-    padding: 18px 27px 25px 27px
+    padding: 18px 27px 35px
   }
 }
 @media (max-width:991px) {
   .scr_keysy_art6__item--black .scr_keysy_art6__inner {
-    padding: 10px 16px 25px 16px
+    padding: 10px 16px 30px
   }
 }
 .scr_keysy_art6__item--red .scr_keysy_art6__inner {
@@ -3889,7 +3889,7 @@ button.header_art6__more {
 .scr_keysy_art6__item--purple .scr_keysy_art6__name {
   margin-bottom: 21px
 }
-.scr_keysy_art6__item--purple .scr_keysy_art6__descr {
+.scr_keysy_art6__item--purple .scr_keysy_art6__descr:not(:last-child) {
   margin-bottom: 53px
 }
 .scr_keysy_art6__item--purple .scr_keysy_art6__img {
@@ -3911,7 +3911,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--purple .scr_keysy_art6__name {
     margin-bottom: 17px
   }
-  .scr_keysy_art6__item--purple .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--purple .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 43px
   }
   .scr_keysy_art6__item--purple .scr_keysy_art6__img {
@@ -3922,7 +3922,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--purple .scr_keysy_art6__name {
     margin-bottom: 11px
   }
-  .scr_keysy_art6__item--purple .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--purple .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 35px
   }
   .scr_keysy_art6__item--purple .scr_keysy_art6__img {
@@ -3933,7 +3933,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--purple .scr_keysy_art6__name {
     margin-bottom: 6px
   }
-  .scr_keysy_art6__item--purple .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--purple .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 24px
   }
   .scr_keysy_art6__item--purple .scr_keysy_art6__img {
@@ -3947,7 +3947,7 @@ button.header_art6__more {
 .scr_keysy_art6__item--violet .scr_keysy_art6__name {
   margin-bottom: 17px
 }
-.scr_keysy_art6__item--violet .scr_keysy_art6__descr {
+.scr_keysy_art6__item--violet .scr_keysy_art6__descr:not(:last-child) {
   margin-bottom: 54px
 }
 .scr_keysy_art6__item--violet .scr_keysy_art6__img {
@@ -3975,7 +3975,7 @@ button.header_art6__more {
   margin-bottom: 51px
 }
 @media (max-width:1600px) {
-  .scr_keysy_art6__item--violet .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--violet .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 47px
   }
   .scr_keysy_art6__item--violet .scr_keysy_art6__data:nth-child(3) {
@@ -3992,7 +3992,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--violet .scr_keysy_art6__name {
     margin-bottom: 11px
   }
-  .scr_keysy_art6__item--violet .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--violet .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 36px
   }
   .scr_keysy_art6__item--violet .scr_keysy_art6__data:nth-child(3) {
@@ -4009,7 +4009,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--violet .scr_keysy_art6__name {
     margin-bottom: 5px
   }
-  .scr_keysy_art6__item--violet .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--violet .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 18px
   }
   .scr_keysy_art6__item--violet .scr_keysy_art6__data:nth-child(3) {
@@ -4047,28 +4047,19 @@ button.header_art6__more {
 .scr_keysy_art6__item--blue .scr_keysy_art6__name {
   margin-bottom: 21px
 }
-.scr_keysy_art6__item--blue .scr_keysy_art6__descr {
+.scr_keysy_art6__item--blue .scr_keysy_art6__descr:not(:last-child) {
   margin-bottom: 53px
 }
-.scr_keysy_art6__item--blue .scr_keysy_art6__img {
-  position: relative
-}
-.scr_keysy_art6__item--blue .scr_keysy_art6__img::after {
-  content: "";
+.scr_keysy_art6__item--blue .scr_keysy_art6__img img {
   display: block;
   width: 100%;
-  padding-top: 45.77%
-}
-.scr_keysy_art6__item--blue .scr_keysy_art6__img img {
-  position: absolute;
-  top: 0;
-  left: 0
+  height: auto
 }
 @media (max-width:1600px) {
   .scr_keysy_art6__item--blue .scr_keysy_art6__name {
     margin-bottom: 17px
   }
-  .scr_keysy_art6__item--blue .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--blue .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 43px
   }
 }
@@ -4076,7 +4067,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--blue .scr_keysy_art6__name {
     margin-bottom: 11px
   }
-  .scr_keysy_art6__item--blue .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--blue .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 35px
   }
 }
@@ -4084,7 +4075,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--blue .scr_keysy_art6__name {
     margin-bottom: 6px
   }
-  .scr_keysy_art6__item--blue .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--blue .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 17px
   }
 }
@@ -4094,7 +4085,7 @@ button.header_art6__more {
 .scr_keysy_art6__item--green .scr_keysy_art6__name {
   margin-bottom: 21px
 }
-.scr_keysy_art6__item--green .scr_keysy_art6__descr {
+.scr_keysy_art6__item--green .scr_keysy_art6__descr:not(:last-child) {
   margin-bottom: 53px
 }
 .scr_keysy_art6__item--green .scr_keysy_art6__img {
@@ -4115,7 +4106,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--green .scr_keysy_art6__name {
     margin-bottom: 17px
   }
-  .scr_keysy_art6__item--green .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--green .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 43px
   }
 }
@@ -4123,7 +4114,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--green .scr_keysy_art6__name {
     margin-bottom: 11px
   }
-  .scr_keysy_art6__item--green .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--green .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 35px
   }
 }
@@ -4131,35 +4122,26 @@ button.header_art6__more {
   .scr_keysy_art6__item--green .scr_keysy_art6__name {
     margin-bottom: 6px
   }
-  .scr_keysy_art6__item--green .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--green .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 17px
   }
 }
 .scr_keysy_art6__item--black {
   background-color: #191919
 }
-.scr_keysy_art6__item--black .scr_keysy_art6__img {
-  position: relative
-}
-.scr_keysy_art6__item--black .scr_keysy_art6__img::after {
-  content: "";
+.scr_keysy_art6__item--black .scr_keysy_art6__img img {
   display: block;
   width: 100%;
-  padding-top: 70.9%
-}
-.scr_keysy_art6__item--black .scr_keysy_art6__img img {
-  position: absolute;
-  top: 0;
-  left: 0
+  height: auto
 }
 .scr_keysy_art6__item--black .scr_keysy_art6__name {
   margin-bottom: 17px
 }
-.scr_keysy_art6__item--black .scr_keysy_art6__descr {
+.scr_keysy_art6__item--black .scr_keysy_art6__descr:not(:last-child) {
   margin-bottom: 54px
 }
 @media (max-width:1600px) {
-  .scr_keysy_art6__item--black .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--black .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 45px
   }
 }
@@ -4167,7 +4149,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--black .scr_keysy_art6__name {
     margin-bottom: 12px
   }
-  .scr_keysy_art6__item--black .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--black .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 34px
   }
 }
@@ -4175,38 +4157,29 @@ button.header_art6__more {
   .scr_keysy_art6__item--black .scr_keysy_art6__name {
     margin-bottom: 8px
   }
-  .scr_keysy_art6__item--black .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--black .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 16px
   }
 }
 .scr_keysy_art6__item--red {
   background-color: #f12621
 }
-.scr_keysy_art6__item--red .scr_keysy_art6__img {
-  position: relative
-}
-.scr_keysy_art6__item--red .scr_keysy_art6__img::after {
-  content: "";
+.scr_keysy_art6__item--red .scr_keysy_art6__img img {
   display: block;
   width: 100%;
-  padding-top: 73.9%
-}
-.scr_keysy_art6__item--red .scr_keysy_art6__img img {
-  position: absolute;
-  top: 0;
-  left: 0
+  height: auto
 }
 .scr_keysy_art6__item--red .scr_keysy_art6__name {
   margin-bottom: 20px
 }
-.scr_keysy_art6__item--red .scr_keysy_art6__descr {
+.scr_keysy_art6__item--red .scr_keysy_art6__descr:not(:last-child) {
   margin-bottom: 54px
 }
 @media (max-width:1600px) {
   .scr_keysy_art6__item--red .scr_keysy_art6__name {
     margin-bottom: 14px
   }
-  .scr_keysy_art6__item--red .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--red .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 45px
   }
 }
@@ -4214,7 +4187,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--red .scr_keysy_art6__name {
     margin-bottom: 12px
   }
-  .scr_keysy_art6__item--red .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--red .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 34px
   }
 }
@@ -4222,7 +4195,7 @@ button.header_art6__more {
   .scr_keysy_art6__item--red .scr_keysy_art6__name {
     margin-bottom: 8px
   }
-  .scr_keysy_art6__item--red .scr_keysy_art6__descr {
+  .scr_keysy_art6__item--red .scr_keysy_art6__descr:not(:last-child) {
     margin-bottom: 16px
   }
 }
@@ -4294,12 +4267,17 @@ button.header_art6__more {
   display: inline-block;
   width: auto;
   text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 4px;
   -webkit-text-decoration-color: transparent;
   text-decoration-color: transparent;
   transition: -webkit-text-decoration-color .2s ease-out;
   transition: text-decoration-color .2s ease-out;
   transition: text-decoration-color .2s ease-out,-webkit-text-decoration-color .2s ease-out
+}
+@media (max-width:767px) {
+  .scr_keysy_art6__name span {
+    text-decoration-thickness: 2px
+  }
 }
 .scr_keysy_art6__descr {
   max-width: 416px;
@@ -4336,37 +4314,38 @@ button.header_art6__more {
   object-fit: cover
 }
 .scr_keysy_art6__data {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 0 5px
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 0 15px
 }
 .scr_keysy_art6__value {
   margin-bottom: 12px;
   font-size: 40px;
   font-weight: 500;
-  line-height: 28px;
+  line-height: 1;
   letter-spacing: -.02em;
   color: #fff
 }
 @media (max-width:1600px) {
   .scr_keysy_art6__value {
     margin-bottom: 11px;
-    font-size: 35px;
-    line-height: 23px
+    font-size: 35px
   }
 }
 @media (max-width:1300px) {
   .scr_keysy_art6__value {
     margin-bottom: 9px;
-    font-size: 30px;
-    line-height: 19px
+    font-size: 30px
   }
 }
 @media (max-width:991px) {
   .scr_keysy_art6__value {
     margin-bottom: 0;
-    font-size: 20px;
-    line-height: 28px
+    font-size: 20px
   }
 }
 .scr_keysy_art6__text {
