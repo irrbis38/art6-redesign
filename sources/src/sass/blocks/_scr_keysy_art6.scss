@@ -1126,7 +1126,7 @@
   // grid-template-columns: repeat(3, 1fr);
   display: flex;
   justify-content: space-between;
-  gap: 0 15px;
+  gap: 0 2.45%;
 }
 
 .scr_keysy_art6__value {
@@ -1154,6 +1154,10 @@
     font-size: 20px;
     // line-height: 28px;
   }
+}
+
+.scr_keysy_art6__group {
+  flex: 1 1 31.7%;
 }
 
 .scr_keysy_art6__text {
