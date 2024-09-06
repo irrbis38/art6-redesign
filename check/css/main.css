@@ -11905,45 +11905,33 @@ button.header_art6__more {
   }
 }
 .scr_perv_keys_art6__mobile_img {
-  position: relative;
   grid-area: img;
   width: calc(100% + (100vw - 165.38%)/ 2);
   max-width: 1117px
 }
-.scr_perv_keys_art6__mobile_img::after {
-  content: "";
-  display: block;
-  width: 100%;
-  padding-top: 78.78%
-}
 .scr_perv_keys_art6__mobile_img img {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: block;
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  aspect-ratio: 1117/880
+  height: auto
 }
 @media (max-width:991px) {
   .scr_perv_keys_art6__mobile_img {
-    position: relative;
-    display: block;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     width: 100%;
     margin-bottom: 30px
   }
-  .scr_perv_keys_art6__mobile_img::after {
-    padding-top: 85.55%
-  }
   .scr_perv_keys_art6__mobile_img img {
-    width: 100vw;
-    max-width: unset;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    aspect-ratio: 834/657
+    width: 100vw
+  }
+}
+@media only screen and (max-width:320px) {
+  .scr_perv_keys_art6__mobile_img img {
+    min-width: 320px
   }
 }
 .scr_perv_keys_art6__intro {
