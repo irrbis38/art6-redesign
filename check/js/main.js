@@ -1490,6 +1490,24 @@ var setInlineOrders = () => {
   });
 };
 
+var initCookieMsg = () => {
+  var cookieMsg = document.querySelector(".scr_cookie_msg");
+  var btnClose = cookieMsg.querySelector(".scr_cookie_msg__close");
+
+  if (!cookieMsg || !btnClose) return;
+
+  var isShownCookieMsg = localStorage.getItem("shown_cookie_msg");
+
+  if (!isShownCookieMsg) {
+    cookieMsg.classList.add("active");
+    localStorage.setItem("shown_cookie_msg", "true");
+  }
+
+  btnClose.addEventListener("click", () => {
+    cookieMsg.classList.remove("active");
+  });
+};
+
 // =============================================
 // ===== START JS LOGIC AFTER DOM CONTENT LOADED
 // =============================================
@@ -1671,4 +1689,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   // SET ORDERS TO KEYSES
   setInlineOrders();
+
+  // INIT COOKIE MESSAGE
+  initCookieMsg();
 });
