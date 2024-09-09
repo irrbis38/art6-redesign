@@ -8543,17 +8543,7 @@ button.header_art6__more {
   max-width: 566px;
   min-width: 295px;
   height: 94%;
-  max-height: 519px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
+  max-height: 434px;
   padding: 59px 40px 59px 37px;
   overflow-y: auto;
   background-color: #fff
@@ -8563,6 +8553,19 @@ button.header_art6__more {
     max-height: 460px;
     padding: 38px 15px
   }
+}
+.scr_success_msg_art6__top {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0 15px;
+  margin-bottom: 20px
 }
 .scr_success_msg_art6__title {
   font-weight: 500;
@@ -8576,17 +8579,12 @@ button.header_art6__more {
   }
 }
 .scr_success_msg_art6__btn {
-  position: absolute;
-  top: 59px;
-  right: 40px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: block;
   width: 32px;
   height: 32px
-}
-@media (max-width:575px) {
-  .scr_success_msg_art6__btn {
-    top: 38px;
-    right: 15px
-  }
 }
 .scr_success_msg_art6__btn path {
   transition: all .2s ease-out
@@ -8594,6 +8592,48 @@ button.header_art6__more {
 @media (hover:hover) {
   .scr_success_msg_art6__btn:hover path {
     fill: #8e8e93
+  }
+}
+.scr_success_msg_art6__text {
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: -.03em;
+  color: #8e8e93
+}
+@media (max-width:575px) {
+  .scr_success_msg_art6__text {
+    margin-bottom: 20px;
+    font-size: 16px
+  }
+}
+.scr_success_msg_art6__cta {
+  margin-top: 45px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: -.03em
+}
+.scr_success_msg_art6__cta span {
+  display: block
+}
+.scr_success_msg_art6__cta a {
+  position: relative
+}
+.scr_success_msg_art6__cta a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #166ff5
+}
+@media (max-width:575px) {
+  .scr_success_msg_art6__cta {
+    margin-top: 25px
   }
 }
 .scr_review_modal {
