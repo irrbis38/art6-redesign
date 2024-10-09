@@ -1259,16 +1259,26 @@ var doCreateMapScript = (cb) => {
 };
 
 var initMap = () => {
-  var map = document.getElementById("contacts-map");
-  if (map) {
+  var mapElement = document.getElementById("contacts-map");
+  if (mapElement) {
     var init = () => {
-      var coords = [45.03750207460071, 38.991877999999915];
+      var coordsString = "";
+
+      if (mapElement.dataset && mapElement.dataset.coords) {
+        coordsString = mapElement.dataset.coords;
+        console.log(coordsString.split(",").map((el) => Number(el.trim())));
+      }
+
+      var coords = coordsString
+        ? coordsString.split(",").map((el) => Number(el.trim()))
+        : [45.03750207460071, 38.991877999999915];
+
       var mark_link = "images/mark.svg";
 
       if (ymaps) {
         var map = new ymaps.Map("contacts-map", {
           center: coords,
-          zoom: 17,
+          zoom: 15,
         });
 
         var placemark = new ymaps.Placemark(
