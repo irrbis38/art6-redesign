@@ -1077,6 +1077,180 @@ var initYoutubeVideo = (videos) => {
   });
 };
 
+// ===== INIT VIDEO WITH SOURCE SELECTION
+
+var initVideoSourceSelection = (video_source_selection) => {
+  var mobile_buttons = document.querySelectorAll(
+    ".video_source_selection__btn_mobile"
+  );
+
+  // handling mobile buttons on non-hoverable devices
+  mobile_buttons.length > 0 &&
+    mobile_buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        var video_source_selection = btn.closest(".video_source_selection");
+
+        if (!video_source_selection) return;
+
+        video_source_selection.classList.add("active");
+
+        var windowHandler = (e) => {
+          if (
+            e.target.closest(".video_source_selection") !==
+            video_source_selection
+          ) {
+            video_source_selection.classList.remove("active");
+            window.removeEventListener("click", windowHandler);
+          }
+        };
+
+        window.addEventListener("click", windowHandler);
+      });
+    });
+
+  var generateUrl = (type, num, id) => {
+    var firstPath = "";
+    var query = "";
+
+    if (type === "vk") {
+      firstPath = "https://vk.com/video_ext.php?oid=";
+      query = "&hd=2&autoplay=1";
+      console.log(firstPath + num + "&id=" + id + query);
+      return firstPath + num + "&id=" + id + query;
+    } else if (type === "youtube") {
+      firstPath = "https://www.youtube.com/embed/";
+      query = "?rel=0&showinfo=0&autoplay=1";
+      return firstPath + id + query;
+    } else {
+      return null;
+    }
+  };
+
+  // create iframe element
+  var createIframe = (type, num, id) => {
+    var iframe = document.createElement("iframe");
+    iframe.classList.add("video_source_selection__iframe");
+    iframe.setAttribute("src", generateUrl(type, num, id));
+
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allowfullscreen", "");
+
+    if (type === "youtube") {
+      iframe.setAttribute(
+        "allow",
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+      );
+      iframe.setAttribute("title", "YouTube video player");
+    } else if (type === "vk") {
+      iframe.setAttribute(
+        "allow",
+        "autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+      );
+    }
+
+    return iframe;
+  };
+
+  var createVideo = (iframe__wrapper, type, container) => {
+    var videoHrefVK = container.dataset.vk;
+    var videoHrefYouTube = container.dataset.youtube;
+
+    var deletedLength = "";
+    var videoId = "";
+    var iframe = null;
+
+    if (type === "vk") {
+      var deletedLength = "https://vk.com/video".length;
+      var videoFull = videoHrefVK
+        .substring(deletedLength, videoHrefVK.length)
+        .split("_");
+      iframe = createIframe("vk", videoFull[0], videoFull[1]);
+    } else if (type === "youtube") {
+      var deletedLength = "https://youtu.be/".length;
+      videoId = videoHrefYouTube.substring(
+        deletedLength,
+        videoHrefYouTube.length
+      );
+
+      iframe = createIframe("youtube", null, videoId);
+    }
+
+    iframe__wrapper.append(iframe);
+  };
+
+  var createVideoModal = () => {
+    var modal = document.createElement("div");
+    modal.classList.add("video_source_selection__modal");
+    modal.innerHTML = `
+    <div class="video_source_selection__overlay js-video-modal-close"></div>
+      <div class="video_source_selection__wrapper"></div>
+        <button class="video_source_selection__btn_close js-video-modal-close" type="button" aria-label="Закрыть окно">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.3327 8.54602L23.4527 6.66602L15.9993 14.1193L8.54602 6.66602L6.66602 8.54602L14.1193 15.9993L6.66602 23.4527L8.54602 25.3327L15.9993 17.8793L23.4527 25.3327L25.3327 23.4527L17.8793 15.9993L25.3327 8.54602Z" fill="#1C1C20"></path>
+          </svg>
+        </button>
+    `;
+
+    document.body.append(modal);
+
+    return modal;
+  };
+
+  video_source_selection.forEach((container) => {
+    var vk_play = container.querySelector(".video_source_selection__vk");
+    var youtube_play = container.querySelector(
+      ".video_source_selection__youtube"
+    );
+
+    var buttons = [vk_play, youtube_play];
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        // set of video source
+        var type = e.target.classList.contains("video_source_selection__vk")
+          ? "vk"
+          : "youtube";
+
+        // reset video preview and fixed body
+        container.classList.remove("active");
+        document.body.classList.add("lock");
+
+        var modal = document.querySelector(".video_source_selection__modal");
+
+        // create modal if it doesn't exist
+        if (!modal) {
+          modal = createVideoModal();
+
+          var close_buttons = modal.querySelectorAll(".js-video-modal-close");
+
+          close_buttons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              modal.classList.remove("active");
+              document.body.classList.remove("lock");
+              var iframe__wrapper = modal.querySelector(
+                ".video_source_selection__wrapper"
+              );
+              Array.from(iframe__wrapper.children).forEach((child) =>
+                child.remove()
+              );
+            });
+          });
+        }
+
+        // show modal
+        modal.classList.add("active");
+
+        var iframe__wrapper = modal.querySelector(
+          ".video_source_selection__wrapper"
+        );
+
+        // TODO: do video logic
+        createVideo(iframe__wrapper, type, container);
+      });
+    });
+  });
+};
+
 // ===== INIT REVIEWS SLIDER
 
 // var initReviewsSlider = () => {
@@ -1266,7 +1440,6 @@ var initMap = () => {
 
       if (mapElement.dataset && mapElement.dataset.coords) {
         coordsString = mapElement.dataset.coords;
-        console.log(coordsString.split(",").map((el) => Number(el.trim())));
       }
 
       var coords = coordsString
@@ -1405,9 +1578,6 @@ var initPinCareerList = () => {
   var wrapper = document.querySelector(
     ".scr_karyera_vakansii_art6__aside__wrapper"
   );
-
-  console.log(list.scrollHeight);
-  console.log(wrapper.scrollHeight);
 
   ScrollTrigger.matchMedia({
     "(min-width: 992px)": function () {
@@ -1652,6 +1822,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // init video by click
   var videos = Array.from(document.querySelectorAll(".video"));
   videos.length > 0 && initYoutubeVideo(videos);
+
+  // init videos with source selection
+  var videosWithSource = Array.from(
+    document.querySelectorAll(".video_source_selection")
+  );
+  videosWithSource.length > 0 && initVideoSourceSelection(videosWithSource);
 
   // init reviews slider
   var reviews_page = document.querySelector(".reviews-page");
