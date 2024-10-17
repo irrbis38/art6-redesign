@@ -594,6 +594,11 @@ textarea {
 .video_source_selection.first_scr_main_art6__video {
   padding-top: 0
 }
+@media (max-width:767px) {
+  .video_source_selection:not(:last-child) {
+    margin-bottom: 40px
+  }
+}
 @media (hover:hover) {
   .video_source_selection:hover .video_source_selection__players {
     opacity: 1;
@@ -601,6 +606,7 @@ textarea {
     pointer-events: all
   }
   .video_source_selection:hover .video_source_selection__blur::after {
+    display: none;
     opacity: 0;
     visibility: hidden;
     pointer-events: none
@@ -643,8 +649,7 @@ textarea {
     background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.666 17.1328V63.7995L63.3327 40.4661L26.666 17.1328Z' fill='white' /%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-    transition: opacity .3s ease-out,visibility .3s ease-out
+    background-size: contain
   }
 }
 .video_source_selection__players {
