@@ -1115,7 +1115,6 @@ var initVideoSourceSelection = (video_source_selection) => {
     if (type === "vk") {
       firstPath = "https://vk.com/video_ext.php?oid=";
       query = "&hd=2&autoplay=1";
-      console.log(firstPath + num + "&id=" + id + query);
       return firstPath + num + "&id=" + id + query;
     } else if (type === "youtube") {
       firstPath = "https://www.youtube.com/embed/";
@@ -1138,13 +1137,13 @@ var initVideoSourceSelection = (video_source_selection) => {
     if (type === "youtube") {
       iframe.setAttribute(
         "allow",
-        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; playsinline=1;"
       );
       iframe.setAttribute("title", "YouTube video player");
     } else if (type === "vk") {
       iframe.setAttribute(
         "allow",
-        "autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+        "encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
       );
     }
 
@@ -1201,6 +1200,7 @@ var initVideoSourceSelection = (video_source_selection) => {
     var youtube_play = container.querySelector(
       ".video_source_selection__youtube"
     );
+    var iframe__wrapper = null;
 
     var buttons = [vk_play, youtube_play];
 
@@ -1221,6 +1221,10 @@ var initVideoSourceSelection = (video_source_selection) => {
         if (!modal) {
           modal = createVideoModal();
 
+          iframe__wrapper = modal.querySelector(
+            ".video_source_selection__wrapper"
+          );
+
           var close_buttons = modal.querySelectorAll(".js-video-modal-close");
 
           close_buttons.forEach((btn) => {
@@ -1230,9 +1234,8 @@ var initVideoSourceSelection = (video_source_selection) => {
               var iframe__wrapper = modal.querySelector(
                 ".video_source_selection__wrapper"
               );
-              Array.from(iframe__wrapper.children).forEach((child) =>
-                child.remove()
-              );
+              iframe__wrapper.innerHTML = "";
+              modal.remove();
             });
           });
         }
@@ -1240,11 +1243,6 @@ var initVideoSourceSelection = (video_source_selection) => {
         // show modal
         modal.classList.add("active");
 
-        var iframe__wrapper = modal.querySelector(
-          ".video_source_selection__wrapper"
-        );
-
-        // TODO: do video logic
         createVideo(iframe__wrapper, type, container);
       });
     });
