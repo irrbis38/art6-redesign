@@ -1698,6 +1698,47 @@ button.header_art6__more {
     background: url(../images/first_scr_main_art6/first-bg-small.svg) center/contain no-repeat
   }
 }
+.first_scr_main_art6.first_scr_main_art6__with_bg_elem .container::after {
+  display: none
+}
+.first_scr_main_art6__bg {
+  position: absolute;
+  top: -233px;
+  right: -220px;
+  z-index: -1;
+  width: 993px;
+  height: 633px;
+  background: url(../images/first_scr_main_art6/first-bg.webp) center/contain no-repeat
+}
+@media (max-width:1600px) {
+  .first_scr_main_art6__bg {
+    top: -190px;
+    right: -20px;
+    width: 739px;
+    height: 486px
+  }
+}
+@media (max-width:1300px) {
+  .first_scr_main_art6__bg {
+    top: -170px;
+    right: -225px;
+    width: 705px;
+    height: 464px
+  }
+}
+@media (max-width:991px) {
+  .first_scr_main_art6__bg {
+    top: -140px;
+    right: -146px;
+    width: 592px;
+    height: 389px
+  }
+}
+@media (max-width:767px) {
+  .first_scr_main_art6__bg {
+    display: none
+  }
+}
 .first_scr_main_art6__title {
   position: relative;
   left: -10px;
