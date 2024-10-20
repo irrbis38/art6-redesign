@@ -85,6 +85,57 @@
   }
 }
 
+.first_scr_main_art6.first_scr_main_art6__with_bg_elem {
+  .container {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.first_scr_main_art6__bg {
+  position: absolute;
+  top: -233px;
+  right: -220px;
+  z-index: -1;
+  width: 993px;
+  height: 633px;
+  background: url("./../images/first_scr_main_art6/first-bg.webp") center /
+    contain no-repeat;
+  // background-image: image-set(
+  //   url("./../images/first_scr_main_art6/first-bg.webp") 1x,
+  //   url("./../images/first_scr_main_art6/first-bg@2x.webp") 2x
+  // );
+
+  @include xl {
+    // top: -156px;
+    top: -190px;
+    right: -20px;
+    width: 739px;
+    height: 486px;
+  }
+
+  @include lg {
+    // top: -146px;
+    top: -170px;
+    right: -225px;
+    width: 705px;
+    height: 464px;
+  }
+
+  @include sm {
+    // top: -97px;
+    top: -140px;
+    right: -146px;
+    width: 592px;
+    height: 389px;
+  }
+
+  @include xs {
+    display: none;
+  }
+}
+
 .first_scr_main_art6__title {
   position: relative;
   left: -10px;

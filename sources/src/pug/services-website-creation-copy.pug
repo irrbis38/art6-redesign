@@ -1,0 +1,560 @@
+extends base/_layout
+block vars
+    - var pageName = 'services-website-creation scrolling-titles-exist'
+block head
+    title ART6 услуги - Создание сайтов 
+block page
+
+    section.first_scr_main_art6.first_scr_main_art6__with_bg_elem
+        .container
+
+            .first_scr_main_art6__title_wrapper
+
+                h1.first_scr_main_art6__title
+                    span Создание 
+                    span сайтов
+
+                button.first_scr_main_art6__help(type='button' aria-label="Показать справку") [ i ]
+
+
+            p.first_scr_main_art6__subtitle #[span Закажите разработку высококонверсионного сайта, который более чем в 2 раза увеличит ваши продажи]
+
+            ul.first_scr_main_art6__list 
+                li.first_scr_main_art6__item Получите надежный сайт с нашим обслуживанием и гарантией 1 год
+                li.first_scr_main_art6__item Сайт “под ключ” – аналитика, проектирование, дизайн, разработка, поддержка
+                li.first_scr_main_art6__item Получите высокоскоростной сайт, оптимизированный под SEO-продвижение
+                li.first_scr_main_art6__item Увеличьте ваши продажи за счет действительно рабочего сайта
+
+
+            .first_scr_main_art6__bg(style="background-image: url('./images/first_scr_main_art6/first-bg-website.webp');background-image:image-set(url('./images/first_scr_main_art6/first-bg-website@2x.webp') type('image/webp') 2x, url('./images/first_scr_main_art6/first-bg-website.webp') type('image/webp') 1x)")
+
+
+    include ./blocks/modal_info.pug
+
+
+    section.scr_opisanie_uslugi_art6
+        .container
+
+            h2.scr_opisanie_uslugi_art6__title Разработка #[br]от лидера индустрии
+
+            p.scr_opisanie_uslugi_art6__subtitle С 2013 года digital-агентство ART6 разработало более 400 сайтов для клиентов из Краснодара, Краснодарского края и 37 других регионов России, и заняло 1-ое место по количеству клиентов среди агентств нашего региона. Большинство клиентов заказав создание сайта у нас, продолжают многолетнее сотрудничество по продвижению и рекламе.
+
+
+    .scr_preimushestva_uslugi_art6
+        .container
+
+            ul.scr_preimushestva_uslugi_art6__list
+
+                -
+                    var uslugi_list = [
+                        {
+                            name: 'Гарантия 1 год',
+                            text: 'Вы получаете 100%-ую гарантию на изготовленный сайт, если появится недочет, он будет быстро исправлен.',
+                            imgNum: 1
+                        },
+                        {
+                            name: 'Создание “под ключ”',
+                            text: 'Все работы мы проводим “под ключ” – от аналитики и проектирования до дизайна, разработки и поддержки',
+                            imgNum: 2
+                        },
+                        {
+                            name: 'Длинный срок жизни сайтов',
+                            text: 'Благодаря применению современных технологий и подходов в разработке, наши сайты служат 5-8 и более лет',
+                            imgNum: 3
+                        },
+                        {
+                            name: 'Разработка под SEO',
+                            text: 'При создании сайта мы учитываем абсолютно все требования поисковых систем, продвижение будет эффективным',
+                            imgNum: 4
+                        },
+                        {
+                            name: 'Прибыльные сайты',
+                            text: 'Все наши сайты приносят клиентам прибыль за счет дальнейшего продвижения – это основная наша задача',
+                            imgNum: 1
+                        },
+                        {
+                            name: 'Специализированная команда',
+                            text: 'В производстве принимают участие маркетолог, дизайнер, разработчики, копирайтер, SEO-специалист и другие',
+                            imgNum: 2
+                        },
+                        {
+                            name: 'Стоимость',
+                            text: 'Банально, но мы эффективные, перед выбором подрядчика сравните подход, качество работ и цены',
+                            imgNum: 3
+                        },
+                        {
+                            name: 'Высококонверсионный сайт',
+                            text: 'Мы не просто “собираем” сайт, а создаем продукт, который будет эффективно продвигаться и приводить вам клиентов',
+                            imgNum: 4
+                        }
+                    ]
+
+                each item in uslugi_list
+
+                    li.scr_preimushestva_uslugi_art6__item
+
+                        .scr_preimushestva_uslugi_art6__icon
+                            img(src= "./images/scr_preimushestva_uslugi_art6/uslugi_art6_icon_" + item.imgNum + ".svg" alt="" width="32" height="32" decoding="async" loading="lazy")
+
+                        p.scr_preimushestva_uslugi_art6__name= item.name
+
+                        p.scr_preimushestva_uslugi_art6__text= item.text
+
+
+
+    section.scr_tseni_uslugi_art6
+        .container 
+
+            h2.scr_tseni_uslugi_art6__title Цены на создание сайтов под ключ
+
+            ul.scr_tseni_uslugi_art6__list
+
+                li.scr_tseni_uslugi_art6__benefit.scr_tseni_uslugi_art6__benefit--blue
+                    span Разработка сайта – от 30.000₽
+
+
+            .scr_tseni_uslugi_art6__wrapper
+
+                -
+                    var tseni_uslugi_cards = [
+                        {
+                            heading1: 'Корпоративные сайты',
+                            coloredName1: 'CMS 1С-Битрикс',
+                            name1_1: 'На базе готового решения:',
+                            value1_1: 'от 70.000₽',
+                            name1_2: 'Эксклюзивная разработка:',
+                            value1_2: 'от 150.000₽',
+                            info1: 'Включена стоимость CMS на 1 год',
+                            coloredName2: 'Платформа Tilda',
+                            name2_1: 'На базе типовых блоков:',
+                            value2_1: 'от 50.000₽',
+                            name2_2: 'Эксклюзивная разработка:',
+                            value2_2: 'от 70.000₽',
+                            info2: 'Включена стоимость платформы на 1 месяц'
+                        },
+                        {
+                            heading1: 'Интернет-магазины',
+                            coloredName1: 'CMS 1С-Битрикс',
+                            name1_1: 'На базе готового решения:',
+                            value1_1: 'от 70.000₽',
+                            name1_2: 'Эксклюзивная разработка:',
+                            value1_2: 'от 150.000₽',
+                            info1: 'Включена стоимость CMS на 1 год',
+                            coloredName2: 'Платформа Tilda',
+                            name2_1: 'На базе типовых блоков:',
+                            value2_1: 'от 50.000₽',
+                            name2_2: 'Эксклюзивная разработка:',
+                            value2_2: 'от 70.000₽',
+                            info2: 'Включена стоимость платформы на 1 месяц'
+                        },
+                        {
+                            heading1: 'Сайты-каталоги',
+                            coloredName1: 'CMS 1С-Битрикс',
+                            name1_1: 'На базе готового решения:',
+                            value1_1: 'от 70.000₽',
+                            name1_2: 'Эксклюзивная разработка:',
+                            value1_2: 'от 150.000₽',
+                            info1: 'Включена стоимость CMS на 1 год',
+                            coloredName2: 'Платформа Tilda',
+                            name2_1: 'На базе типовых блоков:',
+                            value2_1: 'от 50.000₽',
+                            name2_2: 'Эксклюзивная разработка:',
+                            value2_2: 'от 70.000₽',
+                            info2: 'Включена стоимость платформы на 1 месяц'
+                        },
+                        {
+                            heading1: 'Одностраничные сайты',
+                            coloredName1: 'CMS 1С-Битрикс',
+                            name1_1: 'На базе готового решения:',
+                            value1_1: 'от 70.000₽',
+                            name1_2: 'Эксклюзивная разработка:',
+                            value1_2: 'от 150.000₽',
+                            info1: 'Включена стоимость CMS на 1 год',
+                            coloredName2: 'Платформа Tilda',
+                            name2_1: 'На базе типовых блоков:',
+                            value2_1: 'от 50.000₽',
+                            name2_2: 'Эксклюзивная разработка:',
+                            value2_2: 'от 70.000₽',
+                            info2: 'Включена стоимость платформы на 1 месяц'
+                        }
+                    ]
+
+                each item in tseni_uslugi_cards
+
+                    .scr_tseni_uslugi_art6__item
+
+                        p.scr_tseni_uslugi_art6__heading= item.heading1
+
+                        .scr_tseni_uslugi_art6__colored_name.scr_tseni_uslugi_art6__group--wide
+                            span= item.coloredName1
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name1_1
+                            p.scr_tseni_uslugi_art6__value= item.value1_1
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name1_2
+                            p.scr_tseni_uslugi_art6__value= item.value1_2
+
+                        .scr_tseni_uslugi_art6__info
+                            span= item.info1
+
+                        .scr_tseni_uslugi_art6__colored_name
+                            span= item.coloredName2
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name2_1
+                            p.scr_tseni_uslugi_art6__value= item.value2_1
+
+                        .scr_tseni_uslugi_art6__group
+                            p.scr_tseni_uslugi_art6__name= item.name2_2
+                            p.scr_tseni_uslugi_art6__value= item.value2_2
+
+                        .scr_tseni_uslugi_art6__info
+                            span= item.info2
+
+
+
+    section.scr_kriterii_art6
+        .container 
+            h4.scr_kriterii_art6__title Критерии, влияющие на стоимость разработки
+
+            ul.scr_kriterii_art6__list 
+
+                li.scr_kriterii_art6__item 
+
+                    p.scr_kriterii_art6__name Вид сайта
+
+                    p.scr_kriterii_art6__descr Корпоративный сайт, интернет-магазин, сайт-каталог, одностраничный сайт (landing-page), сайт-визитка и промо-сайт – каждый из них создается для решения своего пула задач
+
+                li.scr_kriterii_art6__item 
+
+                    p.scr_kriterii_art6__name CMS/платформа сайта
+
+                    p.scr_kriterii_art6__descr 1С-Битрикс и Tilda – в зависимости от ваших целей и задач выбирается система управления сайтом. Обе полностью Российские, самые продаваемые и лучшие в своем роде
+
+                li.scr_kriterii_art6__item 
+
+                    p.scr_kriterii_art6__name Объем сайта
+
+                    p.scr_kriterii_art6__descr Сайт может состоять как из одной или нескольких страниц, так и из тысяч и десятков тысяч страниц. Сами страницы могут быть как одного плана, так и совершенно разные
+
+                li.scr_kriterii_art6__item 
+
+                    p.scr_kriterii_art6__name Эксклюзивность
+
+                    p.scr_kriterii_art6__descr Сайт может быть разработан с использованием готового решения или блоков, которые адаптируются под стилистику и задачи заказчика. А может быть полностью эксклюзивным
+
+                li.scr_kriterii_art6__item 
+
+                    p.scr_kriterii_art6__name Функциональность
+
+                    p.scr_kriterii_art6__descr Большая часть сайтов на 70-90% состоят из стандартного набора функций, но есть и индивидуально разрабатываемый функционал под определенные задачи.
+
+            button.btn_more_arrow.js-get-price-btn(type="button") Узнать стоимость
+
+    
+    include ./blocks/scr_b_get_price
+
+
+
+    include ./blocks/_scr_keysy_art6
+
+
+
+
+    section.scr_raboti_uslugi_art6
+        .container
+
+            h2.scr_raboti_uslugi_art6__title Этапы и работы
+
+            .scr_raboti_uslugi_art6__wrapper 
+
+                .scr_raboti_uslugi_art6__item.item__55
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Эксклюзивная разработка (CMS 1C-Битрикс)
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Проектирование сайта
+                            li Отрисовка индивидуального дизайн-макета
+                            li Верстка дизайн-макетов
+                            li Программирование (интеграция верстки в CMS)
+                            li Наполнение контентом
+                            li Тестирование сайта
+                            li Размещение на сервере и запуск
+
+                .scr_raboti_uslugi_art6__item.item__44
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name На базе готового решения (CMS 1C-Битрикс)
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Проектирование сайта
+                            li Установка, настройка и кастомизация решения
+                            li Наполнение контентом
+                            li Тестирование сайта
+                            li Размещение на сервере и запуск
+
+                .scr_raboti_uslugi_art6__item.item__44
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Эксклюзивная разработка (платформа Tilda)
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Проектирование сайта
+                            li Индивидуальная разработка на платформе Tilda
+                            li Наполнение контентом
+                            li Тестирование сайта
+                            li Размещение на сервере и запуск
+
+                .scr_raboti_uslugi_art6__item.item__44
+                    .scr_raboti_uslugi_art6__info
+
+                        p.scr_raboti_uslugi_art6__name Разработка на типовых блоках (платформа Tilda)
+
+                        ul.scr_raboti_uslugi_art6__list
+
+                            li Проектирование сайта
+                            li Индивидуальная разработка на платформе Tilda
+                            li Наполнение контентом
+                            li Тестирование сайта
+                            li Размещение на сервере и запуск
+
+
+
+    section.scr_kriterii_art6.scr_more_details
+        .container 
+            h4.scr_kriterii_art6__title Подробно про каждый этап работ
+
+            ul.scr_kriterii_art6__list 
+
+                li.scr_kriterii_art6__item 
+
+                    p.scr_kriterii_art6__name Проектирование сайта
+
+                    p.scr_kriterii_art6__descr Работы по исследованию предметной области деятельности Заказчика, специфики, позиционирования, репутации, целевой аудитории, конкурентов и других факторов влияния. Изучение целей и задач Заказчика и определение каким образом будущий сайт поможет их достижению и решению. Создание концепции сайта, описание его функциональной части и информационной структуры. Результатом проектирования сайта является Проект.
+
+                li.scr_kriterii_art6__item 
+
+                    p.scr_kriterii_art6__name Отрисовка индивидуального дизайн-макета
+
+                    p.scr_kriterii_art6__descr Работа по созданию дизайн-макета сайта — графическое статичное представление уникальных страниц сайта, содержащих все элементы пользовательского интерфейса, все стили оформления необходимых видов информации, планируемых для размещения на разрабатываемом сайте, выполненное на основе Проекта сайта с использованием элементов фирменного стиля, предоставляемого заказчиком.
+
+                li.scr_kriterii_art6__item 
+
+                    p.scr_kriterii_art6__name Проектирование сайта
+
+                    p.scr_kriterii_art6__descr Работы по исследованию предметной области деятельности Заказчика, специфики, позиционирования, репутации, целевой аудитории, конкурентов и других факторов влияния. Изучение целей и задач Заказчика и определение каким образом будущий сайт поможет их достижению и решению. Создание концепции сайта, описание его функциональной части и информационной структуры. Результатом проектирования сайта является Проект.
+
+                li.scr_kriterii_art6__item 
+
+                    p.scr_kriterii_art6__name Отрисовка индивидуального дизайн-макета
+
+                    p.scr_kriterii_art6__descr Работа по созданию дизайн-макета сайта — графическое статичное представление уникальных страниц сайта, содержащих все элементы пользовательского интерфейса, все стили оформления необходимых видов информации, планируемых для размещения на разрабатываемом сайте, выполненное на основе Проекта сайта с использованием элементов фирменного стиля, предоставляемого заказчиком.
+
+
+    .scr_forma_audit_art6
+        .container
+            p.scr_forma_audit_art6__title Закажите полный список работ и КП
+
+            p.scr_forma_audit_art6__subtitle Менеджер предоставит вам #[span полный список работ] по созданию сайта
+            p.scr_forma_audit_art6__subtitle Выяснит ваши цели и задачи, подготовит #[span индивидуальное КП с ценами]
+            p.scr_forma_audit_art6__subtitle Подробно проконсультирует, ответив на все ваши вопросы
+
+            form.scr_forma_audit_art6__form(action="#" novalidate)
+
+                .scr_forma_audit_art6__fields
+                    .scr_forma_audit_art6__client 
+                        .scr_forma_audit_art6__name
+                            input.scr_forma_audit_art6__input.required(type="text" placeholder="Имя*" name="client_name" required)
+
+                        .scr_forma_audit_art6__contact
+                            input.scr_forma_audit_art6__input.required(type="text" placeholder="Телефон/мессенджер*" name="client_contact" required)
+
+                    button.scr_forma_audit_art6__submit(type="submit") Отправить
+
+                    p.scr_forma_audit_art6__confirm Нажав на кнопку, вы даете согласие на обработку #[a(href="./index.html") персональных данных]
+
+
+
+    include ./blocks/_scr_tematiki_art6
+
+
+    include ./blocks/_scr_text_director_art6
+
+
+    include ./blocks/_scr_company_art6
+
+
+    include ./blocks/_scr_komanda_art6
+
+
+    include ./blocks/_scr_dostizheniya_art6
+
+
+    include ./blocks/_scr_sertif_partnery_art6
+
+
+    include ./blocks/_scr_klienty_onas_art6
+
+
+    include ./blocks/_scr_voprosy_art6
+
+
+    .scr_polezn_material_art6
+        .container 
+
+            h3.scr_polezn_material_art6__title Бесплатный полезный материал от экспертов ART6
+
+            .scr_polezn_material_art6__wrapper
+
+                .scr_polezn_material_art6__descr
+
+                    p.scr_polezn_material_art6__name Как повысить конверсию продвигаемого сайта в 2 раза без увеличения бюджета?
+
+                    .scr_polezn_material_art6__text
+                        p Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения.
+                        p Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.
+                        p Все зависит от типа конструкции, используемых материалов, размеров и сложности выполнения.
+                        p Как правило, примерную стоимость изготовления мы сможем озвучить уже при первом звонке, точная стоимость прописывается в договоре и не меняется в дальнейшем.
+
+                    button.scr_polezn_material_art6__btn(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                    a.scr_polezn_material_art6__download(href="#" target="_blank" download)
+                        span Скачать чек-ап по повышению конверсии корпоративного сайта
+                        span Скачать чек-ап 
+                        svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M4.16536 5.34297L5.34036 4.16797L14.1654 12.993L14.1654 7.5013H15.832L15.832 15.8346L7.4987 15.8346V14.168L12.9904 14.168L4.16536 5.34297Z" fill="#166FF5")
+
+                .scr_polezn_material_art6__evaluation
+
+                    label.scr_polezn_material_art6__label.label_interesting
+                        input(type="radio" name="material_evaluation" value="interesting")
+                        span Интересно
+
+                    label.scr_polezn_material_art6__label.label_noninteresting
+                        input(type="radio" name="material_evaluation" value="non_interesting")
+                        span Не интересно
+
+
+
+    section.scr_sm_takzhe_art6
+        .container 
+
+            h4.scr_sm_takzhe_art6__title Смотрите также
+
+            .scr_sm_takzhe_art6__wrapper
+
+                -
+                    var seo_list = [
+                        'SEO-аудит сайтов',
+                        'SEO-оптимизация сайтов',
+                        'Продвижение сайтов в Яндекс',
+                        'SEO-аудит сайтов',
+                        'SEO-оптимизация сайтов',
+                    ]
+
+                    var promotion_list = [
+                        'Интернет-магазины',
+                        'Одностраничные сайты',
+                        'Сайты-визитки',
+                        'Интернет-магазины',
+                        'Одностраничные сайты',
+                        'Сайты-визитки',
+                    ]
+
+                    var promotion_cms_list = [
+                        '1С-Битрикс',
+                        'Tilda',
+                        'WordPress',
+                        '1С-Битрикс',
+                        'Tilda',
+                        'WordPress'
+                    ]
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Услуги по SEO-продвижению:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in seo_list
+                            +src_sm_takzhe_item(item)
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Продвижение по виду сайта:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in promotion_list
+                            +src_sm_takzhe_item(item)
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Услуги по SEO-продвижению:
+
+                    ul.scr_sm_takzhe_art6__list
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in promotion_cms_list
+                            +src_sm_takzhe_item(item)
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+                .scr_sm_takzhe_art6__category
+
+                    .scr_sm_takzhe_art6__name Продвижение по виду сайта:
+
+                    ul.scr_sm_takzhe_art6__list
+                        each item in promotion_list
+                            +src_sm_takzhe_item(item)
+
+                    button.scr_sm_takzhe_art6__toggle.watch_more_toggle_button(data-text-hidden="Показать все" data-text-shown="Скрыть")
+                        span Показать все
+                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z" fill="#8E8E93")
+
+            button.scr_sm_takzhe_art6__more(type="button") Показать больше
+
+
+
+
+
+
+
+    include ./blocks/_scr_forma_footer_art6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
